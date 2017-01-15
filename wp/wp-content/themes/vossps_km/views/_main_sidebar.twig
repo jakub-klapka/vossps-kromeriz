@@ -1,0 +1,53 @@
+<aside class="main_sidebar" role="complementary">
+	{% if sidebar_menu %}
+		<nav class="main_sidebar__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<ul class="main_sidebar__nav__ul">
+				{% for menu_item in sidebar_menu %}
+					{% if menu_item.is_ss %}
+						{% set li_class, icon_name = 'is-stredoskolske', 'books' %}
+					{% endif %}
+					{% if menu_item.is_vos %}
+						{% set li_class, icon_name = 'is-vyssi', 'graduation' %}
+					{% endif %}
+					{% if menu_item.is_dv %}
+						{% set li_class, icon_name = 'is-dalsi', 'presentation' %}
+					{% endif %}
+					{% if menu_item.is_spp %}
+						{% set li_class, icon_name = 'is-spp', 'none' %}
+					{% endif %}
+					<li class="main_sidebar__nav__ul__item {{ li_class }}">
+						<a href="{{ menu_item.url }}" itemprop="name url">
+							{% if icon_name != 'none' %}
+								<div class="main_sidebar__nav__ul__item__icon" aria-hidden="true">
+									<svg><use xlink:href="#icon-{{ icon_name }}"></use></svg>
+								</div>
+							{% endif %}
+							<span>{{ menu_item.name }}</span>
+						</a>
+						{% if menu_item.children %}
+							<ul class="main_sidebar__nav__ul__submenu">
+								{% for child in menu_item.children %}
+									<li class="main_sidebar__nav__ul__submenu__item{% if child.is_active %} is-active{% endif %}">
+										<a href="{{ child.url }}">{{ child.name }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+				{% if facebook_link %}
+					<li class="main_sidebar__nav__ul__item is-image_link">
+						<a href="{{ facebook_link }}" itemprop="name url" target="_blank">
+							<img src="{{ theme.uri }}/assets/images/facebook_menu_button.png" alt="Facebook"/>
+						</a>
+					</li>
+				{% endif %}
+				{% if uzitecne_odkazy_link %}
+					<li class="main_sidebar__nav__ul__item is-text_link">
+						<a href="{{ uzitecne_odkazy_link }}" itemprop="name url">Užitečné odkazy</a>
+					</li>
+				{% endif %}
+			</ul>
+		</nav>
+	{% endif %}
+</aside>

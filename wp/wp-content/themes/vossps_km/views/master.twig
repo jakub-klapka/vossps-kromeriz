@@ -1,0 +1,153 @@
+{#{% spaceless %}#}
+<!doctype html>
+<html {{ fn( 'language_attributes' ) }} itemscope itemtype="http://schema.org/WebPage">
+<head>
+	<meta charset="UTF-8">
+	<title itemprop="name">{{ wp_title }}</title>
+
+	{{ wp_head }}
+
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ theme.uri }}/assets/images/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="{{ theme.uri }}/assets/images/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ theme.uri }}/assets/images/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="{{ theme.uri }}/assets/images/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ theme.uri }}/assets/images/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ theme.uri }}/assets/images/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ theme.uri }}/assets/images/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="{{ theme.uri }}/assets/images/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ theme.uri }}/assets/images/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="{{ theme.uri }}/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="{{ theme.uri }}/assets/images/favicons/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="{{ theme.uri }}/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="{{ theme.uri }}/assets/images/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="{{ theme.uri }}/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="{{ theme.uri }}/assets/images/favicons/manifest.json">
+	<link rel="shortcut icon" href="{{ theme.uri }}/assets/images/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="{{ theme.uri }}/assets/images/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="{{ theme.uri }}/assets/images/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+	<script type="text/javascript">
+		var ajax = new XMLHttpRequest();
+		ajax.open("GET", "{{ template_uri }}/assets/images/svg_sprite.svg", true);
+		ajax.send();
+		ajax.onload = function(e) {
+			var div = document.getElementById("svg_sprite_wrap");
+			div.innerHTML = ajax.responseText;
+			document.body.insertBefore(div, document.body.childNodes[0]);
+		}
+	</script>
+
+</head>
+<body>
+<div id="svg_sprite_wrap" style="display: none;"></div>
+
+{% include '_header.twig' %}
+
+{% block slider %}{% endblock %}
+
+{% include '_quick_links.twig' %}
+
+<div class="main_content_wrap">
+
+	{% include '_main_sidebar.twig' %}
+
+	{% set main_content_class = ( page_theme == 'ss' ) ? 'is-stredoskolske' %}
+	{% set main_content_class = ( page_theme == 'none' ) ? 'is-stredoskolske' : main_content_class %}
+	{% set main_content_class = ( page_theme == 'vos' ) ? 'is-vyssi_odborne' : main_content_class %}
+	{% set main_content_class = ( page_theme == 'dv' ) ? 'is-dalsi_vzdelavani' : main_content_class %}
+
+	<{{ main_content_tag ?: 'article' }} class="main_content content_typo{% if main_content_class %} {{ main_content_class }}{% endif %}" role="main" itemprop="mainContentOfPage">
+
+		{% block breadcrumbs %}
+			{% if breadcrumbs %}
+				<nav class="main_content__breadcrumbs" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<ul class="main_content__breadcrumbs__menu">
+						{% for item in breadcrumbs %}
+							<li class="main_content__breadcrumbs__menu__item">
+								<a href="{{ item.url }}" itemprop="url name">{{ item.name }}</a>
+							</li>
+							{#{% if loop.last != true %}&nbsp;{% endif %}#}
+						{% endfor %}
+					</ul>
+				</nav>
+			{% endif %}
+		{% endblock %}
+
+
+		{% set icon = ( page_theme == 'ss' ) ? 'books' %}
+		{% set icon = ( page_theme == 'none' ) ? 'books' : icon %}
+		{% set icon = ( page_theme == 'vos' ) ? 'graduation' : icon %}
+		{% set icon = ( page_theme == 'dv' ) ? 'presentation' : icon %}
+		<h1>
+			{% if icon %}<span class="heading_icon" aria-hidden="true"><svg><use xlink:href="#icon-{{ icon }}"></use></svg></span>{% endif %}
+			{% block page_title %}{{ post.title }}{% endblock %}
+			{% block main_heading_after %}{% endblock %}
+		</h1>
+
+		{% block main_content %}
+
+			{% for post in posts %}
+				{{ post.content }}
+			{% endfor %}
+
+		{% endblock %}
+
+		{% if gallery %}
+			{% include '_gallery.twig' %}
+		{% endif %}
+
+	</{{ main_content_tag ?: 'article' }}>
+
+</div>
+
+<section class="sponsors">
+
+	<div class="sponsors__item">
+		<img src="{{ theme.uri }}/assets/images/sponsors_univ2.png" alt="Univ2 kraje" width="70" height="73"/>
+	</div>
+
+	<div class="sponsors__item">
+		<img src="{{ theme.uri }}/assets/images/sponsors_projekt_tera.png" alt="Projekt Tera" width="180" height="81"/>
+	</div>
+
+	<div class="sponsors__item">
+		<img src="{{ theme.uri }}/assets/images/sponsors_esf.png" alt="ESF" width="400" height="67"/>
+	</div>
+
+</section>
+
+{% include '_teachers.twig' %}
+
+{% include '_about_school.twig' %}
+
+
+<footer class="main_footer" role="contentinfo">
+	<div class="main_footer__inner">
+
+		<div class="main_footer__meta">
+			<nav class="main_footer__meta__menu" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<ul class="main_footer__meta__menu__ul">
+					<li class="main_footer__meta__menu__ul__item"><a href="{{ admin_url }}" itemprop="url name">Administrace</a></li>
+				</ul>
+			</nav>
+			&copy; Copyright {{ now|date('Y') }}, Všechna práva vyhrazena.
+		</div>
+
+		<div class="main_footer__copyright">
+			Návrh a grafika: <a href="http://www.marekhorava.cz" target="_blank">www.MarekHorava.cz</a><br/>
+			Programování: <a href="http://www.lumiart.cz" target="_blank">www.LumiArt.cz</a>
+		</div>
+
+	</div>
+</footer>
+
+<button class="scroll_to_top" role="button">Nahoru</button>
+
+{{ wp_footer }}
+
+</body>
+</html>
+{#{% endspaceless %}#}

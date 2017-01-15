@@ -1,0 +1,93 @@
+//@charset "UTF-8";
+
+/*
+Rhythm
+*/
+@import "inc/rhythm";
+@include rhythm-init(16px, ( 19/16 ), 'golden section');
+
+/*
+Vars
+*/
+$page_wrap_width: 960px;
+$encode_sans: 'encode_sans';
+$main_orange: #ee8637;
+$bubble_orange: #e24d1f;
+$main_grey: #f0efed;
+$text_grey: #6f6f6f;
+$sidebar_width: 192px;
+
+$stredoskolske: #e8692b;
+$stredoskolske_light: #ff913a;
+$stredoskolske_sub: #fee3b8;
+$vyssi: #db4c47;
+$vyssi_light: #ff6a63;
+$vyssi_sub: #FFA2A2;
+$dalsi: #2788ff;
+$dalsi_light: #18c6ff;
+$dalsi_sub: #c4dfff;
+$spp: #94C11E;
+$spp_light: #B9E34F;
+$spp_sub: #EAF7CB;
+
+$dark_grey: #343434;
+$kontakty_lines: #555555;
+
+/*
+Mixins
+*/
+@mixin respond-to( $key, $value: null ) {
+	@if( $key == 'max-width' ){
+		@media only screen and (max-width: $value) {
+			@content;
+		}
+	}
+	@else if( $key == 'page_wrap' ) {
+		@media only screen and (max-width: $page_wrap_width) {
+			@content;
+		}
+	}
+}
+
+@mixin encode_sans_def() {
+	@font-face {
+		font-family: 'encode_sans';
+		src: url('../fonts/encodesans-bold-webfont.eot');
+		src: url('../fonts/encodesans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/encodesans-bold-webfont.woff2') format('woff2'),
+		url('../fonts/encodesans-bold-webfont.woff') format('woff'),
+		url('../fonts/encodesans-bold-webfont.ttf') format('truetype'),
+		url('../fonts/encodesans-bold-webfont.svg#encode_sansbold') format('svg');
+		font-weight: bold;
+		font-style: normal;
+
+	}
+
+
+
+
+	@font-face {
+		font-family: 'encode_sans';
+		src: url('../fonts/encodesans-regular-webfont.eot');
+		src: url('../fonts/encodesans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/encodesans-regular-webfont.woff2') format('woff2'),
+		url('../fonts/encodesans-regular-webfont.woff') format('woff'),
+		url('../fonts/encodesans-regular-webfont.ttf') format('truetype'),
+		url('../fonts/encodesans-regular-webfont.svg#encode_sansregular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+
+	}
+}
+
+@mixin separator() {
+	$gradient_grey: lighten( $text_grey, 40% );
+	background-image: linear-gradient( to top, #FFF 0, #FFF 1px, $gradient_grey 1px, $gradient_grey 2px, transparent 2px );
+}
+
+@mixin heading_icon_background( $color ) {
+	$color1: $color;
+	$color2: lighten( $color, 15% );
+	background-color: $color1;
+	background: linear-gradient( 135deg, $color1 0, $color1 50%, $color2 50%, $color2 100% );
+}

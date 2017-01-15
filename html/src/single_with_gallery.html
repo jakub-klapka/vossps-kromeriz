@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="cs-CZ" itemscope itemtype="http://schema.org/WebPage">
+<head>
+	<meta charset="UTF-8">
+	<title itemprop="name">VOS SPS Kroměříž</title>
+
+	<link rel="stylesheet" href="../build/css/layout.css?v=3"/>
+
+	<link rel="stylesheet" href="../build/css/ped_gallery.css"/>
+
+	<script type="text/javascript">
+		var ajax = new XMLHttpRequest();
+		ajax.open("GET", "../build/images/svg_sprite.svg", true);
+		ajax.send();
+		ajax.onload = function(e) {
+			var div = document.getElementById("svg_sprite_wrap");
+			div.innerHTML = ajax.responseText;
+			document.body.insertBefore(div, document.body.childNodes[0]);
+		}
+	</script>
+
+</head>
+<body>
+<div id="svg_sprite_wrap" style="display: none;"></div>
+
+<header class="main_header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+	<div class="main_header__inner">
+
+		<nav class="main_header__quick_menu" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<ul class="main_header__quick_menu__ul">
+				<li class="main_header__quick_menu__ul__item">
+					<a href="" itemprop="name url">
+						<svg class="main_header__quick_menu__ul__item__icon" aria-hidden="true"><use xlink:href="#icon-home"></use></svg>
+						Hlavní strana
+					</a>
+				</li>
+				<li class="main_header__quick_menu__ul__item">
+					<a href="" itemprop="name url">
+						<svg class="main_header__quick_menu__ul__item__icon" aria-hidden="true"><use xlink:href="#icon-books"></use></svg>
+						Studium
+					</a>
+					<ul class="main_header__quick_menu__ul__item__submenu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<li class="main_header__quick_menu__ul__item__submenu__item"><a href="" itemprop="name url">Středoškolské</a></li>
+						<li class="main_header__quick_menu__ul__item__submenu__item"><a href="" itemprop="name url">Vyšší odborné</a></li>
+						<li class="main_header__quick_menu__ul__item__submenu__item"><a href="" itemprop="name url">Další vzdělávání</a></li>
+					</ul>
+				</li>
+				<li class="main_header__quick_menu__ul__item">
+					<a href="" itemprop="name url">
+						<svg class="main_header__quick_menu__ul__item__icon" aria-hidden="true"><use xlink:href="#icon-info"></use></svg>
+						Obecně o škole
+					</a>
+				</li>
+				<li class="main_header__quick_menu__ul__item">
+					<a href="" itemprop="name url">
+						<svg class="main_header__quick_menu__ul__item__icon" aria-hidden="true"><use xlink:href="#icon-documents"></use></svg>
+						Dokumenty školy
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<h2 class="main_header__tagline">Vyšší odborná škola pedagogická a sociální<br/>
+			a Střední pedagogická škola Kroměříž</h2>
+
+		<a class="main_header__photo_link" href="">
+			Fotogalerie
+			<svg class="main_header__photo_link__image" aria-hidden="true"><use xlink:href="#icon-photos"></use></svg>
+		</a>
+
+		<a class="main_header__logo" href="" itemprop="image url">
+			<svg class="main_header__logo__image" role="img" title="Logo" alt="Logo" itemprop="image"><use xlink:href="#icon-logo"></use></svg>
+		</a>
+
+	</div>
+</header>
+
+<section class="quick_links is-wo_slider">
+	<div class="quick_links__wrap">
+
+		<div class="quick_links__wrap__item">
+			<svg class="quick_links__wrap__item__icon" title="Adresa" alt="Adresa"><use xlink:href="#icon-building"></use></svg>
+			<div class="quick_links__wrap__item__content">
+				<strong><address>
+					1. máje 221<br/>
+					767 01 Kroměříž
+				</address></strong>
+				IČ: 65269616
+			</div>
+		</div>
+
+		<div class="quick_links__wrap__item">
+			<svg class="quick_links__wrap__item__icon" title="Telefon" alt="Telefon"><use xlink:href="#icon-phone"></use></svg>
+			<div class="quick_links__wrap__item__content">
+				573 337 902<br/>
+				<strong>tel./fax</strong> 573 330 523
+			</div>
+		</div>
+
+		<div class="quick_links__wrap__item">
+			<svg class="quick_links__wrap__item__icon" title="E-mail" alt="E-mail"><use xlink:href="#icon-letter"></use></svg>
+			<div class="quick_links__wrap__item__content">
+				<a href="">vospgs.spgs@ped-km.cz</a>
+			</div>
+		</div>
+
+		<div class="quick_links__wrap__item">
+			<svg class="quick_links__wrap__item__icon" aria-hidden="true"><use xlink:href="#icon-group"></use></svg>
+			<div class="quick_links__wrap__item__content">
+				<a href="">Kontakty na<br/>zaměstnance</a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<div class="main_content_wrap">
+
+	<aside class="main_sidebar" role="complementary">
+
+		<nav class="main_sidebar__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<ul class="main_sidebar__nav__ul">
+				<li class="main_sidebar__nav__ul__item is-stredoskolske">
+					<a href="" itemprop="name url">
+						<div class="main_sidebar__nav__ul__item__icon" aria-hidden="true">
+							<svg><use xlink:href="#icon-books"></use></svg>
+						</div>
+						<span>Středoškolské studium</span>
+					</a>
+				</li>
+				<li class="main_sidebar__nav__ul__item is-vyssi">
+					<a href="" itemprop="name url">
+						<div class="main_sidebar__nav__ul__item__icon" aria-hidden="true">
+							<svg><use xlink:href="#icon-graduation"></use></svg>
+						</div>
+						<span>Vyšší odborné studium</span>
+					</a>
+				</li>
+				<li class="main_sidebar__nav__ul__item is-dalsi">
+					<a href="" itemprop="name url">
+						<div class="main_sidebar__nav__ul__item__icon" aria-hidden="true">
+							<svg><use xlink:href="#icon-presentation"></use></svg>
+						</div>
+						<span>Další vzdělávání</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		
+	</aside>
+
+	<article class="main_content content_typo is-dalsi_vzdelavani" role="main" itemprop="mainContentOfPage">
+
+		<nav class="main_content__breadcrumbs" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<ul class="main_content__breadcrumbs__menu">
+				<li class="main_content__breadcrumbs__menu__item"><a href="" itemprop="url name">Hlavní strana</a></li>
+				<li class="main_content__breadcrumbs__menu__item"><a href="" itemprop="url name">Další vzdělání</a></li>
+			</ul>
+		</nav>
+
+		<h1><span class="heading_icon" aria-hidden="true"><svg><use xlink:href="#icon-presentation"></use></svg></span>Další vzdělávání - fotogalerie</h1>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, debitis delectus eligendi illo, illum
+			impedit, molestiae nobis nulla provident quae quam reiciendis rerum similique tempora ut veritatis vero
+			voluptas. Aliquid?</p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, accusantium asperiores commodi distinctio
+			dolorum earum eligendi explicabo facilis ipsa magnam, natus non nostrum nulla officiis porro quas, saepe
+			sunt velit.</p>
+
+		<section class="ped_gallery">
+			<a class="ped_gallery__item" rel="gallery" href="http://lorempixel.com/1024/768/abstract/1"><img src="//lorempixel.com/220/150/abstract/1" alt=""/></a>
+			<a class="ped_gallery__item" rel="gallery" href="http://lorempixel.com/1024/768/abstract/2"><img src="//lorempixel.com/220/150/abstract/2" alt=""/></a>
+			<a class="ped_gallery__item" rel="gallery" href="http://lorempixel.com/1024/768/abstract/3"><img src="//lorempixel.com/220/150/abstract/3" alt=""/></a>
+			<a class="ped_gallery__item" rel="gallery" href="http://lorempixel.com/1024/768/abstract/4"><img src="//lorempixel.com/220/150/abstract/4" alt=""/></a>
+			<a class="ped_gallery__item" rel="gallery" href="http://lorempixel.com/1024/768/abstract/5"><img src="//lorempixel.com/220/150/abstract/5" alt=""/></a>
+			<a class="ped_gallery__item" rel="gallery" href="http://lorempixel.com/1024/768/abstract/6"><img src="//lorempixel.com/220/150/abstract/6" alt=""/></a>
+			<a class="ped_gallery__item" rel="gallery" href="http://lorempixel.com/1024/768/abstract/7"><img src="//lorempixel.com/220/150/abstract/7" alt=""/></a>
+			<a class="ped_gallery__item" rel="gallery" href="http://lorempixel.com/1024/768/abstract/8"><img src="//lorempixel.com/220/150/abstract/8" alt=""/></a>
+
+		</section>
+
+
+	</article>
+
+</div>
+
+<section class="sponsors">
+
+	<div class="sponsors__item">
+		<img src="images/sponsors_univ2.png" alt="Univ2" width="70" height="73"/>
+	</div>
+
+	<div class="sponsors__item">
+		<img src="images/sponsors_projekt_tera.png" alt="Univ2" width="180" height="81"/>
+	</div>
+
+	<div class="sponsors__item">
+		<img src="images/sponsors_esf.png" alt="Univ2" width="400" height="67"/>
+	</div>
+
+</section>
+
+<section class="kontakty">
+	<div class="kontakty__inner">
+
+		<h2 class="kontakty__heading">Kontakty na učitele</h2>
+
+		<table class="kontakty__table">
+			<thead>
+				<tr>
+					<th>Jméno a Příjmení</th>
+					<th>Telefon</th>
+					<th>E-mail</th>
+					<th>Třída</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr itemscope itemtype="https://schema.org/Person">
+					<td itemprop="name">Vladimír Čert</td>
+					<td itemprop="telephone">573 333 514</td>
+					<td><a href="" itemprop="email">nekdo.nekdo@neco.cz</a></td>
+					<td>IV.A</td>
+				</tr>
+				<tr>
+					<td>Vladimír Čert</td>
+					<td>573 333 514</td>
+					<td><a href="">nekdo.nekdo@neco.cz</a></td>
+					<td>IV.A</td>
+				</tr>
+				<tr>
+					<td>Vladimír Čert</td>
+					<td>573 333 514</td>
+					<td><a href="">nekdo.nekdo@neco.cz</a></td>
+					<td>IV.A</td>
+				</tr>
+				<tr>
+					<td>Vladimír Čert</td>
+					<td>573 333 514</td>
+					<td><a href="">nekdo.nekdo@neco.cz</a></td>
+					<td>IV.A</td>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+</section>
+
+<section class="o_skole content_typo">
+
+	<h1><span class="heading_icon" aria-hidden="true"><svg><use xlink:href="#icon-building"></use></svg></span>Obecně o škole</h1>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita impedit soluta. Alias dolor expedita
+		laborum maiores maxime, pariatur possimus quae quaerat quod reiciendis sed sequi similique vitae. Alias
+		cupiditate deserunt distinctio dolore eius eligendi error, est et, expedita necessitatibus perspiciatis, quaerat
+		quo ratione tempora temporibus vel veniam! Beatae eligendi fuga illum iusto laboriosam laborum porro tempore
+		unde! A ab, ad alias aspernatur aut corporis cumque dignissimos eius et eum eveniet facere facilis fuga impedit
+		incidunt laboriosam laudantium maiores modi natus nemo nisi provident quaerat quas repellendus ullam unde ut
+		vero. Autem excepturi expedita explicabo iusto libero modi similique veniam!</p>
+
+</section>
+
+<footer class="main_footer" role="contentinfo">
+	<div class="main_footer__inner">
+
+		<div class="main_footer__meta">
+			<nav class="main_footer__meta__menu" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<ul class="main_footer__meta__menu__ul">
+					<li class="main_footer__meta__menu__ul__item"><a href="" itemprop="url name">Obecně o škole</a></li>
+					<li class="main_footer__meta__menu__ul__item"><a href="" itemprop="url name">Kontakty na zaměstnance</a></li>
+					<li class="main_footer__meta__menu__ul__item"><a href="" itemprop="url name">Administrace</a></li>
+				</ul>
+			</nav>
+			&copy; Copyright 2015, Všechna práva vyhrazena.
+		</div>
+
+		<div class="main_footer__copyright">
+			Návrh a grafika: <a href="">www.MarekHorava.cz</a><br/>
+			Programování: <a href="">www.LumiArt.cz</a>
+		</div>
+
+	</div>
+</footer>
+
+<button class="scroll_to_top" role="button">Nahoru</button>
+
+
+<script type="text/javascript" src="js/libs/jquery-2.1.3.js"></script>
+<script type="text/javascript" src="js/libs/velocity.js"></script>
+<script type="text/javascript" src="js/libs/picturefill.js"></script>
+<script type="text/javascript" src="js/libs/modernizr.js"></script>
+
+<script src="js/libs/jquery.fancybox.js"></script> <!-- jquery -->
+
+<script type="text/javascript" src="js/header_menu.js"></script><!-- jquery, velocity -->
+<script type="text/javascript" src="js/scroll_to_top.js"></script><!-- jquery -->
+
+<script src="js/gallery.js"></script><!-- jquery, fancybox -->
+
+</body>
+</html>

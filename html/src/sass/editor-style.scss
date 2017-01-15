@@ -1,0 +1,6 @@
+@import "global";
+
+#tinymce {
+	@import "typo";
+	@include typo();
+}

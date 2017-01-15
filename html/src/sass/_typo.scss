@@ -1,0 +1,210 @@
+@import "global";
+
+@mixin typo() {
+
+	color: $text_grey;
+	font-family: arial, sans-serif;
+
+		* {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		> * + * {
+			margin-top: rhythm(1);
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: bold;
+			font-family: $encode_sans;
+		}
+
+		h1 {
+			@include rhythm-text( 29px );
+			line-height: 52px;
+		}
+
+		h2 {
+			@include rhythm-text( 20px );
+			line-height: 1.3em;
+			margin-bottom: 1em;
+		}
+
+		h3 {
+			@include rhythm-text( 16px );
+		}
+
+		blockquote {
+			margin-left: 0;
+			border-left: 10px solid lighten( $text_grey, 20% );
+			padding-left: rhythm(1);
+		}
+
+		a {
+			color: $bubble_orange;
+			transition: color 300ms;
+
+				&:hover {
+					text-decoration: none;
+					color: inherit;
+				}
+		}
+
+		.important_heading {
+			display: block;
+			background: $bubble_orange;
+			padding: 0 rhythm(1);
+			color: #FFF;
+			@include rhythm-text( 18px );
+		}
+
+		table {
+			@include rhythm-text( 12px );
+			border-spacing: 2px;
+			border-collapse: separate;
+
+				thead td, th {
+					color: $bubble_orange;
+					@include rhythm-text( 14px );
+					font-family: $encode_sans;
+					font-weight: bold;
+				}
+
+				td, th {
+					padding: rhythm(0.5);
+				}
+
+				tbody td {
+					background: rgba( $bubble_orange, 0.2 );
+					transition-property: background-color, color;
+					transition-duration: 200ms;
+				}
+
+				tbody tr:hover td {
+					background: $bubble_orange;
+					color: #FFF;
+				}
+		}
+
+
+		/*
+		Colors
+		*/
+		$schemes: (
+			dalsi_vzdelavani: $dalsi,
+			vyssi_odborne: $vyssi
+		);
+
+		@each $scheme, $color in $schemes {
+			&.is-#{$scheme} {
+
+				.heading_icon {
+					@include heading_icon_background( $color );
+				}
+
+				a {
+					color: $color;
+				}
+
+				.important_heading {
+					background: $color;
+				}
+
+				table {
+
+					thead td, th {
+						color: $color;
+					}
+
+					tbody td {
+						background: rgba( $color, 0.2 );
+					}
+
+					tbody tr:hover td {
+						background: $color;
+					}
+				}
+
+			}
+		}
+
+
+		/* =WordPress Core
+	-------------------------------------------------------------- */
+		.alignnone {
+			margin: 5px 20px 20px 0;
+		}
+
+		.aligncenter,
+		div.aligncenter {
+			display: block;
+			margin: 5px auto 5px auto;
+		}
+
+		.alignright {
+			float:right;
+			margin: 5px 0 20px 20px;
+		}
+
+		.alignleft {
+			float: left;
+			margin: 5px 20px 20px 0;
+		}
+
+		a img.alignright {
+			float: right;
+			margin: 5px 0 20px 20px;
+		}
+
+		a img.alignnone {
+			margin: 5px 20px 20px 0;
+		}
+
+		a img.alignleft {
+			float: left;
+			margin: 5px 20px 20px 0;
+		}
+
+		a img.aligncenter {
+			display: block;
+			margin-left: auto;
+			margin-right: auto
+		}
+
+		.wp-caption {
+			background: #fff;
+			border: 1px solid #f0f0f0;
+			max-width: 96%; /* Image does not overflow the content area */
+			padding: 5px 3px 10px;
+			text-align: center;
+		}
+
+		.wp-caption.alignnone {
+			margin: 5px 20px 20px 0;
+		}
+
+		.wp-caption.alignleft {
+			margin: 5px 20px 20px 0;
+		}
+
+		.wp-caption.alignright {
+			margin: 5px 0 20px 20px;
+		}
+
+		.wp-caption img {
+			border: 0 none;
+			height: auto;
+			margin: 0;
+			max-width: 98.5%;
+			padding: 0;
+			width: auto;
+		}
+
+		.wp-caption p.wp-caption-text {
+			font-size: 11px;
+			line-height: 17px;
+			margin: 0;
+			padding: 0 4px 5px;
+		}
+
+}

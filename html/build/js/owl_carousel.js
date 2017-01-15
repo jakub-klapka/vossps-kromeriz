@@ -1,0 +1,1 @@
+!function(a){var o;a(function(){var e=a("#main_slider"),i=e.owlCarousel({singleItem:!0,autoPlay:e.data("timeout"),stopOnHover:!0,responsiveBaseWidth:".main_slider"});o=i.data("owlCarousel")}),a(window).load(function(){o.updateVars()})}(jQuery);
