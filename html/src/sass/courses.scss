@@ -26,3 +26,11 @@
 	}
 
 }
+
+.coursesSignForm {
+
+	[data-form-switching-id] {
+		display: none; //Initially dont' display
+	}
+
+}

@@ -259,38 +259,226 @@
 
 							<div class="form-group">
 								<label for="name">Telefon</label>
-								<input type="tel" class="form-control" required id="tel">
+								<input type="tel" class="form-control" id="tel">
 							</div>
 
 						</div><!-- /.col -->
 					</div><!-- /.row -->
 
+					<div class="row" data-form-switching-group>
+						<div class="col-xs-3">
+							<div class="form-group">
+								<label>Plátce kurzovného:</label>
+							</div>
+						</div>
+
+						<div class="col-xs-3">
+							<div class="form-group">
+								<label>
+									<input type="radio" name="typ_platby" value="samoplatce" data-form-switching-target="samoplatce" xchecked="checked">
+									Samoplátce
+								</label>
+							</div>
+						</div>
+
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label>
+									<input type="radio" name="typ_platby" value="samoplatce" data-form-switching-target="zamestnavatel">
+									Hrazeno zaměstnavatelem (školou)
+								</label>
+							</div>
+						</div>
+
+					</div><!-- /.row -->
+
+					<div data-form-switching-id="zamestnavatel">
+						<div class="row">
+							<div class="col-xs-6">
+
+								<div class="form-group">
+									<label for="name">Název školy*</label>
+									<input type="text" class="form-control" disabled required id="born_place">
+								</div>
+
+							</div><!-- /.col -->
+
+							<div class="col-xs-6">
+
+								<div class="form-group">
+									<label for="name">IČ*</label>
+									<input type="text" class="form-control" disabled required id="tel">
+								</div>
+
+							</div><!-- /.col -->
+
+						</div><!-- /.row -->
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group"><label for="">Adresa školy:</label></div>
+							</div>
+						</div><!-- /.row -->
+
+						<div class="row">
+							<div class="col-xs-6">
+
+								<div class="form-group">
+									<label for="name">Ulice*</label>
+									<input type="text" class="form-control" disabled required id="born_place">
+								</div>
+
+								<div class="form-group">
+									<label for="name">Město*</label>
+									<input type="text" class="form-control" disabled required id="born_date">
+								</div>
+
+							</div><!-- /.col -->
+
+							<div class="col-xs-6">
+
+								<div class="form-group">
+									<label for="name">PSČ*</label>
+									<input type="text" class="form-control" disabled required id="tel">
+								</div>
+
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div>
+
+					<div data-form-switching-id="samoplatce">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group"><label for="">Bydliště účastníka:</label></div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-6">
+
+								<div class="form-group">
+									<label for="name">Ulice*</label>
+									<input type="text" class="form-control" disabled required id="born_place">
+								</div>
+
+								<div class="form-group">
+									<label for="name">Město*</label>
+									<input type="text" class="form-control" disabled required id="born_date">
+								</div>
+
+							</div><!-- /.col -->
+
+							<div class="col-xs-6">
+
+								<div class="form-group">
+									<label for="name">PSČ*</label>
+									<input type="text" class="form-control" disabled required id="tel">
+								</div>
+
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.data-form-switching-id -->
+
+
+					<div class="row" data-form-switching-group>
+						<div class="col-xs-3">
+							<div class="form-group">
+								<label>Způsob platby:</label>
+							</div>
+						</div>
+
+						<div class="col-xs-3">
+							<div class="form-group">
+								<label>
+									<input type="radio" name="platebni_metoda" value="samoplatce" xchecked="checked">
+									Hotově
+								</label>
+							</div>
+						</div>
+
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label>
+									<input type="radio" name="platebni_metoda" value="samoplatce" data-form-switching-target="faktura" xchecked="checked">
+									Fakturou
+								</label>
+							</div>
+						</div>
+
+					</div><!-- /.row -->
+
+					<div data-form-switching-id="faktura">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group"><label for="">Fakturační adresa: </label></div>
+								<div class="form-group"><span class="text-muted">(Vyplňujte pouze pokud se liší od adresy účastníka/školy)</span></div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-6">
+
+								<div class="form-group">
+									<label for="name">Ulice</label>
+									<input type="text" class="form-control" disabled required id="born_place">
+								</div>
+
+								<div class="form-group">
+									<label for="name">Město</label>
+									<input type="text" class="form-control" disabled required id="born_date">
+								</div>
+
+							</div><!-- /.col -->
+
+							<div class="col-xs-6">
+
+								<div class="form-group">
+									<label for="name">PSČ</label>
+									<input type="text" class="form-control" disabled required id="tel">
+								</div>
+
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.data-form-switching-id -->
+
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="form-group">
-								<label>Typ platby</label>
+								<label>
+									<input type="checkbox" name="souhlas" value="1" xchecked="checked" required>
+									Souhlasím s <a href="" data-toggle="modal" data-target="#obchodni_podminky">obchodními podmínkami</a>
+
+									<div class="modal fade" tabindex="-1" role="dialog" id="obchodni_podminky">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													<h4 class="modal-title">Obchodní podmínky</h4>
+												</div>
+												<div class="modal-body">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
+														beatae consequatur dolorem doloremque exercitationem, explicabo
+														facilis illo ipsa itaque saepe. Aliquid cumque debitis explicabo
+														incidunt odit qui ratione tempora ut!</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+											</div><!-- /.modal-content -->
+										</div><!-- /.modal-dialog -->
+									</div><!-- /.modal -->
+								</label>
 							</div>
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="col-xs-6">
-							<label>
-								<input type="radio" name="typ_platby" value="samoplatce">
-								Samoplátce
-							</label>
+						<div class="col-xs-12">
+							<button type="submit" class="btn btn-primary btn-lg">Odeslat přihlášku</button>
 						</div>
+					</div>
 
-						<div class="col-xs-6">
-							<label>
-								<input type="radio" name="typ_platby" value="samoplatce">
-								Platba školou (na fakturu)
-							</label>
-						</div>
-
-					</div><!-- /.row -->
-
-				</div>
+				</div><!-- /.panel-body -->
 			</div>
 		</form>
 
@@ -407,8 +595,9 @@
 <script type="text/javascript" src="js/header_menu.js"></script><!-- jquery, velocity -->
 <script type="text/javascript" src="js/scroll_to_top.js"></script><!-- jquery -->
 
+<script src="js/libs/bootstrap_modal.js"></script><!-- jq -->
 <script src="js/libs/icheck.js"></script><!-- jq-->
-<script src="js/courses_form.js"></script><!-- jq, icheck -->
+<script src="js/courses_form.js"></script><!-- jq, icheck, modal -->
 
 </body>
 </html>
