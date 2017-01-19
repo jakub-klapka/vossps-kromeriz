@@ -8,6 +8,7 @@ $brand-primary: $dalsi; // #337ab7
 $border-radius-base: 0;
 $border-radius-large: 0;
 $border-radius-small: 0;
+$icon-font-path: '../fonts/glyphicons/';
 
 
 // Core variables and mixins
@@ -17,7 +18,7 @@ $border-radius-small: 0;
 // Reset and dependencies
 //@import "bootstrap/normalize";
 //@import "bootstrap/print";
-//@import "bootstrap/glyphicons";
+@import "bootstrap/glyphicons";
 
 // Core CSS
 //@import "bootstrap/scaffolding";

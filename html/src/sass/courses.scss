@@ -33,4 +33,12 @@
 		display: none; //Initially dont' display
 	}
 
+	input[required]:valid {
+		border-color: green;
+	}
+
+	.has-feedback label ~ .form-control-feedback {
+		top: 21px;
+	}
+
 }

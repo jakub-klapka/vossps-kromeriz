@@ -73,7 +73,15 @@
 		showTarget: function( target_name ) {
 
 			var target = this.targets.filter( '[data-form-switching-id="' + target_name + '"]:first' );
-			target.find( 'input,select' ).attr( 'disabled', false );
+			var inputs = target.find( 'input,select' );
+
+			//Set all inputs as enabled
+			inputs.attr( 'disabled', false );
+
+			//Set required where aplicable
+			inputs.filter( '[data-required]' ).attr( 'required', 'required' );
+
+			//Velocity
 			target.velocity( 'slideDown' );
 
 		},
@@ -86,7 +94,15 @@
 		hideTarget: function( target_name ) {
 
 			var target = this.targets.filter( '[data-form-switching-id="' + target_name + '"]:first' );
-			target.find( 'input,select' ).attr( 'disabled', true );
+			var inputs = target.find( 'input,select' );
+
+			//Set all inputs as enabled
+			inputs.attr( 'disabled', true );
+
+			//Set required where aplicable
+			inputs.filter( '[required]' ).attr( 'required', false );
+
+			//Velocity
 			target.velocity( 'slideUp' );
 
 		}
@@ -94,11 +110,34 @@
 	};
 
 	/*
+	Scroll to form
+	 */
+	var ScrollToForm = {
+
+		init: function( button ) {
+			this.button = button;
+			this.target = $( button.data( 'scroll-to' ) ).first();
+
+			this.button.on( 'click', $.proxy( this.scrollToTarget, this ) );
+		},
+
+		scrollToTarget: function () {
+			this.target.velocity( 'scroll' );
+		}
+
+	};
+
+
+	/*
 	DOM ready
 	 */
 	$( function() {
 		$( '[data-form-switching-group]' ).each( function() {
 			Object.create( FormSwithing ).init( $( this ) );
+		} );
+
+		$( '[data-scroll-to]' ).each( function() {
+			Object.create( ScrollToForm ).init( $( this ) );
 		} );
 	} );
 
