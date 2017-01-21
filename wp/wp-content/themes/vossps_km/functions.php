@@ -111,3 +111,8 @@ function lumi_template( $name ) {
 	$lumi['Template'][ $name ] = new $class_name;
 	return $lumi['Template'][ $name ];
 }
+
+/**
+ * Courses
+ */
+require_once( 'courses/loader.php' );
