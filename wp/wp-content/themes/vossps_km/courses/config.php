@@ -1,4 +1,5 @@
 <?php
+use Lumiart\Vosspskm\Courses\Controllers\AdminListController;
 use Lumiart\Vosspskm\Courses\Controllers\Migrations;
 use Lumiart\Vosspskm\Courses\Controllers\RegisterPostTypes;
 
@@ -10,6 +11,13 @@ return [
 	'autoload_classes' => [
 		RegisterPostTypes::class,
 		Migrations::class,
+	],
+
+	/*
+	 * Classes to autoload only on admin request. Hooked to init with prio 5
+	 */
+	'autoload_on_admin_init' => [
+		AdminListController::class
 	],
 
 	/*

@@ -46,6 +46,14 @@ class App {
 			$instance->boot();
 		}
 
+		//Admin-only autoloading
+		add_action( 'init', function() {
+			foreach( $this->config[ 'autoload_on_admin_init' ] as $class_name ) {
+				$instance = $this->make( $class_name );
+				$instance->boot();
+			}
+		}, 5 );
+
 	}
 
 	/**
