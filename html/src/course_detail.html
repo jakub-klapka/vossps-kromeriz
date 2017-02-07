@@ -264,8 +264,14 @@
 							</div>
 
 							<div class="form-group has-feedback">
-								<label for="name">Telefon</label>
-								<input type="tel" class="form-control" id="tel">
+								<label for="name">Telefon*</label>
+								<input type="tel" class="form-control" required id="tel">
+								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+							</div>
+
+							<div class="form-group has-feedback">
+								<label>Rodné číslo*</label>
+								<input type="text" class="form-control" required >
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 							</div>
 
@@ -309,6 +315,12 @@
 									<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 								</div>
 
+								<div class="form-group has-feedback">
+									<label for="name">E-mail školy*</label>
+									<input type="text" class="form-control" disabled data-required id="born_place">
+									<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+								</div>
+
 							</div><!-- /.col -->
 
 							<div class="col-xs-6">
@@ -318,6 +330,14 @@
 									<input type="text" class="form-control" disabled data-required id="tel">
 									<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 								</div>
+
+								<div class="form-group has-feedback">
+									<label for="name">Telefon školy*</label>
+									<input type="text" class="form-control" disabled data-required id="tel">
+									<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+								</div>
+
+
 
 							</div><!-- /.col -->
 
@@ -415,7 +435,7 @@
 							<div class="form-group has-feedback">
 								<label>
 									<input type="radio" name="platebni_metoda"  required value="samoplatce" data-form-switching-target="faktura" xchecked="checked">
-									Fakturou
+									Fakturou&nbsp;/&nbsp;Převodem na účet
 								</label>
 							</div>
 						</div>
@@ -487,6 +507,11 @@
 										</div><!-- /.modal-dialog -->
 									</div><!-- /.modal -->
 								</label>
+							</div>
+							<div class="form-group has-feedback">
+								<label>Poznámka</label>
+								<textarea cols="30" rows="5" class="form-control"></textarea>
+								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 							</div>
 						</div>
 					</div>
