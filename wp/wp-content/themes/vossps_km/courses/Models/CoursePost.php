@@ -29,6 +29,36 @@ class CoursePost extends TimberPost {
 	}
 
 	/**
+	 * Get free text of realization date
+	 *
+	 * @return string
+	 */
+	public function getCourseRealizationDate() {
+		return (string)$this->meta( 'course_realization' );
+	}
+
+	/**
+	 * Get number of course capacity
+	 *
+	 * @return int
+	 */
+	public function getCourseCapacity() {
+		return (int)$this->meta( 'students_count' );
+	}
+
+	/**
+	 * Get remaining free slots for current course
+	 *
+	 * TODO: maybe floor it to 0, so admins can add students above limit and it will still show 0...
+	 *
+	 * @return int
+	 */
+	public function getCourseFreePlaces() {
+		//TODO: implement
+		return 5;
+	}
+
+	/**
 	 * Get post meta without timber filters
 	 *
 	 * @param string $field_name
