@@ -1,7 +1,26 @@
 {
     "key": "group_58866a4dcc445",
-    "title": "Kurzy",
+    "title": "Detail kurzu",
     "fields": [
+        {
+            "default_value": 1,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_589f4fd48b5f8",
+            "label": "Kurz viditeln\u00fd",
+            "name": "course_visible",
+            "type": "true_false",
+            "instructions": "Ur\u010duje, za bude kurz viditeln\u00fd pro n\u00e1v\u0161t\u011bvn\u00edky str\u00e1nek.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
         {
             "display_format": "j. n. Y",
             "return_format": "Ymd",
@@ -185,5 +204,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1485207213
+    "modified": 1486835905
 }

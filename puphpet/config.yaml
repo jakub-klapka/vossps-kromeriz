@@ -275,7 +275,7 @@ php:
         session.save_path: /var/lib/php/session
         date.timezone: Europe/Prague
         error_reporting: '24567'
-        max_execution_time: '600'
+        max_execution_time: '6000'
         memeory_limit: 128M
         memory_limit: 128M
         post_max: 32M

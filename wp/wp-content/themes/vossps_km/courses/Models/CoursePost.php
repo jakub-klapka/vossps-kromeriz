@@ -70,4 +70,13 @@ class CoursePost extends TimberPost {
 		return get_post_meta( $this->ID, $field_name, $single );
 	}
 
+	/**
+	 * Gets, if current post is selected as visible
+	 *
+	 * @return bool
+	 */
+	public function isVisible() {
+		return (bool)$this->meta( 'course_visible' );
+	}
+
 }

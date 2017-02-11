@@ -45,6 +45,10 @@ class AdminListController implements AutoloadableInterface {
 		}
 
 		add_action( 'pre_get_posts', [ $this, 'orderByNewColumns' ] );
+		add_filter( 'disable_months_dropdown', [ $this, 'maybeDisableDateFilter' ], 10, 2 );
+		add_action( 'restrict_manage_posts', [ $this, 'addVisibilityFilterDropdown' ], 10, 2 );
+		add_action( 'pre_get_posts', [ $this, 'filterByVisibility' ] );
+		add_filter( 'query_vars', [ $this, 'registerFilteringQueryVars' ] );
 
 	}
 
@@ -95,6 +99,7 @@ class AdminListController implements AutoloadableInterface {
 	public function addCoursesCustomColumns( $columns ) {
 
 		$new_columns = [
+			'course_visible' => 'Viditelný',
 			'signup_close_date' => 'Datum uzávěrky přihlášek',
 			'course_realization' => 'Datum realizace kurzu',
 			'students_count' => 'Volných míst'
@@ -142,6 +147,14 @@ class AdminListController implements AutoloadableInterface {
 		return $post->getCourseFreePlaces() . '/' . $post->getCourseCapacity();
 	}
 
+	private function renderNewColumn_course_visible( CoursePost $post ) {
+		$html_params = [
+			true => [ 'green', 'yes', 'Ano' ],
+			false => [ 'red', 'no', 'Ne' ]
+		];
+		return vsprintf( '<div style="color: %s;"><span class="dashicons dashicons-%s"></span>&nbsp;%s</div>', $html_params[ $post->isVisible() ] );
+	}
+
 	/**
 	 * Indicate, which columns are sortable on admin screen
 	 *
@@ -177,6 +190,88 @@ class AdminListController implements AutoloadableInterface {
 			//Order is set automatically via admin query
 
 		}
+
+	}
+
+	/**
+	 * Disable Date filter on courses listings
+	 *
+	 * @wp-filter disable_months_dropdown
+	 *
+	 * @param bool $disabled
+	 * @param string $post_type
+	 *
+	 * @return bool
+	 */
+	public function maybeDisableDateFilter( $disabled, $post_type ) {
+		if( in_array( $post_type, array_keys( $this->app->getConfig()[ 'courses_post_types' ] ) ) ) {
+			return true;
+		}
+		return $disabled;
+	}
+
+	/**
+	 * Create dropdown for visibility filtering
+	 *
+	 * @wp-action restrict_manage_posts
+	 *
+	 * @param $post_type
+	 * @param $which
+	 */
+	public function addVisibilityFilterDropdown( $post_type, $which ) {
+		if( !in_array( $post_type, array_keys( $this->app->getConfig()[ 'courses_post_types' ] ) ) ) return;
+
+		$visible_selected = isset( $_GET['course_filter_by_visibility'] ) && $_GET['course_filter_by_visibility'] === 'visible';
+		$invisible_selected = isset( $_GET['course_filter_by_visibility'] ) && $_GET['course_filter_by_visibility'] === 'invisible';
+		$all_selected = isset( $_GET['course_filter_by_visibility'] ) && $_GET['course_filter_by_visibility'] === 'all';
+
+		$output = '<select name="course_filter_by_visibility" style="max-width: none;">
+					<option value="all">— Filtrovat podle Viditelnosti —</option>
+					<option value="visible" ' . ( ( $visible_selected ) ? 'selected="selected"' : '' ) . ' >Pouze viditelné</option>
+					<option value="invisible" ' . ( ( $invisible_selected ) ? 'selected="selected"' : '' ) . ' >Pouze neviditelné</option>
+					<option value="all" ' . ( ( $all_selected ) ? 'selected="selected"' : '' ) . ' >Všechny</option>
+				   </select>';
+
+		echo $output;
+
+	}
+
+	/**
+	 * Register query var used for visibility filtering
+	 *
+	 * @wp-filter query_vars
+	 *
+	 * @param array $vars
+	 *
+	 * @return array
+	 */
+	public function registerFilteringQueryVars( $vars ) {
+		$vars[] = 'course_filter_by_visibility';
+		return $vars;
+	}
+
+	/**
+	 * Do actual filtering by visibility (maybe)
+	 *
+	 * @wp-action pre_get_posts
+	 *
+	 * @param \WP_Query &$query
+	 */
+	public function filterByVisibility( $query ) {
+		if( !is_admin()
+		    || !$query->is_post_type_archive( array_keys( $this->app->getConfig()[ 'courses_post_types' ] ) )
+		    || !$query->is_main_query() ) return;
+
+		if( $query->get( 'course_filter_by_visibility' ) && $query->get( 'course_filter_by_visibility' ) !== 'all' ) {
+
+			$query->set( 'meta_query', [
+				[
+					'key' => 'course_visible',
+					'value' => $query->get( 'course_filter_by_visibility' ) === 'invisible' ? '0' : '1'
+				]
+			] );
+
+		};
 
 	}
 
