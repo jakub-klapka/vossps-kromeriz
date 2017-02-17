@@ -1,0 +1,28 @@
+<form action="{{ form.vars.action }}" method="{{ form.vars.method }}" data-courses_form class="coursesSignForm" id="coursesSignForm" data-toggle="validator" data-disable="false">
+	<h1>Přihláška do kurzu</h1>
+
+	<div class="panel panel-primary">
+		<div class="panel-body">
+
+			{% for field in form.children %}
+
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group has-feedback">
+							<label for="{{ field.vars.id }}" class="control-label">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+							<input type="text" name="{{ field.vars.name }}" class="form-control" {% if field.vars.required %} required {% endif %} id="{{ field.vars.id }}" value="{{ field.vars.value }}">
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+				</div>
+
+				{#{{ dump(field) }}#}
+
+			{% endfor %}
+
+		</div><!-- /.panel-body -->
+	</div><!-- /.panel -->
+
+</form>
+
+{#{{ dump(form) }}#}

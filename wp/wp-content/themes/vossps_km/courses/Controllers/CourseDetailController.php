@@ -36,13 +36,15 @@ class CourseDetailController {
 
 			if( $post->isStillSignable() ) {
 				wp_enqueue_script( 'courses_form' );
+				$form = $post->getCourseForm()->createView();
 			}
 
 			$data = [
 				'breadcrumbs' => $this->generateBreadcrumbs( $post ),
 				'post' => $post,
 				'wp_date_format' => get_option( 'date_format' ),
-				'signup_date_is_critical' => ( $post->getSignupCloseDate() < ( new \DateTime() )->add( new \DateInterval( 'P1W' ) ) ) ? true : false
+				'signup_date_is_critical' => ( $post->getSignupCloseDate() < ( new \DateTime() )->add( new \DateInterval( 'P1W' ) ) ) ? true : false,
+				'form' => ( isset( $form ) ) ? $form : null
 			];
 			Timber::render( 'course_detail.twig', array_merge( Timber::get_context(), $data ) );
 			return;

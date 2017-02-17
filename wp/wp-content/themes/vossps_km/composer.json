@@ -1,0 +1,14 @@
+{
+    "name": "lumiart/vossps_km",
+    "type": "project",
+    "require": {
+        "symfony/form": "^3.2"
+    },
+    "repository": "https://github.com/jakub-klapka/vossps-kromeriz",
+    "authors": [
+        {
+            "name": "Jakub Klapka",
+            "email": "klapka@lumiart.cz"
+        }
+    ]
+}

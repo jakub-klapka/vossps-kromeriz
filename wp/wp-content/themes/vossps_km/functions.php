@@ -1,4 +1,5 @@
 <?php
+include_once( 'vendor/autoload.php' );
 
 define( 'LUMI_CORE_PATH', get_template_directory() . '/core/' );
 define( 'LUMI_CSS_JS_VER', 2 );

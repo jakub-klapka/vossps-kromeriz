@@ -2,9 +2,22 @@
 
 namespace Lumiart\Vosspskm\Courses\Models;
 
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Lumiart\Vosspskm\Courses\Controllers\FormFactory;
 use TimberPost;
 
 class CoursePost extends TimberPost {
+
+	protected $app;
+
+	public function __construct( $pid = null ) {
+		parent::__construct( $pid = null );
+
+		global $vossps_km_courses_app;
+		$this->app = $vossps_km_courses_app;
+	}
 
 	/**
 	 * Get date of signup close
@@ -125,6 +138,27 @@ class CoursePost extends TimberPost {
 	public function isStillSignable() {
 		if( !$this->isSignupDue() && $this->getCourseFreePlaces() > 0 ) return true;
 		return false;
+	}
+
+	/**
+	 * Get Symfony\Form instance for current post
+	 *
+	 * @return \Symfony\Component\Form\FormInterface
+	 */
+	public function getCourseForm() {
+		$form_factory = $this->app->make( FormFactory::class )->getFormFactory();/** @var \Symfony\Component\Form\FormFactory $form_factory */
+
+		$form = $form_factory->createBuilder()
+			->add( 'first_name', TextType::class, [ 'label' => 'Jméno' ] )
+			->add( 'last_name', TextType::class, [ 'label' => 'Příjmení' ] )
+			->add( 'degree', TextType::class, [ 'label' => 'Titul', 'required' => false ] )
+			->add( 'email', EmailType::class, [ 'label' => 'E-mail' ] )
+			->add( 'birth_place', TextType::class, [ 'label' => 'Místo narození' ] )
+			->add( 'birth_date', DateType::class, [ 'label' => 'Datum narození' ] )
+			->add( 'phone', TextType::class, [ 'label' => 'Telefon' ] );
+
+		return $form->getForm();
+
 	}
 
 }
