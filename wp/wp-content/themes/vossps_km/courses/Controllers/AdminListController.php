@@ -102,7 +102,7 @@ class AdminListController implements AutoloadableInterface {
 			'course_visible' => 'Viditelný',
 			'signup_close_date' => 'Datum uzávěrky přihlášek',
 			'course_realization' => 'Datum realizace kurzu',
-			'students_count' => 'Volných míst'
+			'students_count' => 'Obsazenost kurzu'
 		];
 
 		$title_position = array_search( 'title', array_keys( $columns ) ); //1-indexed
@@ -144,7 +144,7 @@ class AdminListController implements AutoloadableInterface {
 	}
 
 	private function renderNewColumn_students_count( CoursePost $post ) {
-		return $post->getCourseFreePlaces() . '/' . $post->getCourseCapacity();
+		return $post->getSignedStudentsCount() . '/' . $post->getCourseCapacity();
 	}
 
 	private function renderNewColumn_course_visible( CoursePost $post ) {

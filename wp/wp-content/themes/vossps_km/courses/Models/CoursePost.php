@@ -47,15 +47,26 @@ class CoursePost extends TimberPost {
 	}
 
 	/**
+	 * Get count of signed students
+	 *
+	 * @return int
+	 */
+	public function getSignedStudentsCount() {
+		$students = $this->meta( 'course_students' );
+		if( !is_array( $students ) ) return 0;
+		return count( $students );
+	}
+
+	/**
 	 * Get remaining free slots for current course
 	 *
-	 * TODO: maybe floor it to 0, so admins can add students above limit and it will still show 0...
+	 * Floored to 0 for use in templates
 	 *
 	 * @return int
 	 */
 	public function getCourseFreePlaces() {
-		//TODO: implement
-		return 5;
+		$real_count = $this->getCourseCapacity() - $this->getSignedStudentsCount();
+		return ( $real_count < 0 ) ? 0 : $real_count;
 	}
 
 	/**
@@ -77,6 +88,43 @@ class CoursePost extends TimberPost {
 	 */
 	public function isVisible() {
 		return (bool)$this->meta( 'course_visible' );
+	}
+
+	/**
+	 * Get course price as string formated to CZK
+	 *
+	 * @return string|null
+	 */
+	public function formatCoursePrice() {
+		$price = $this->meta( 'price' );
+		if( empty( $price ) ) return null;
+
+		$price = (float)$price;
+		setlocale(LC_MONETARY, "cs_CZ.UTF-8");
+		return str_replace( ',00', ',-', money_format( "%n", $price ) );
+
+	}
+
+	/**
+	 * Has the singup date already passed
+	 *
+	 * @return bool
+	 */
+	public function isSignupDue() {
+		if( $this->getSignupCloseDate() < ( new \DateTime() ) ) return true;
+		return false;
+	}
+
+	/**
+	 * Is it still posible to sign in
+	 *
+	 * True, if signup date is not due and there are still free places in course
+	 *
+	 * @return bool
+	 */
+	public function isStillSignable() {
+		if( !$this->isSignupDue() && $this->getCourseFreePlaces() > 0 ) return true;
+		return false;
 	}
 
 }

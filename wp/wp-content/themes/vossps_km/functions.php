@@ -5,7 +5,9 @@ define( 'LUMI_CSS_JS_VER', 2 );
 define( 'LUMI_TEXTDOMAIN', 'vossps_km' );
 
 if (class_exists('Timber')){
-	Timber::$cache = true;
+	if( !in_array( $_SERVER['HTTP_HOST'], [ 'localhost', 'ped-km.dev' ] ) ) {
+		Timber::$cache = true;
+	}
 }
 
 /**

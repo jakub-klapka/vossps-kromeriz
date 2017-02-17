@@ -67,4 +67,13 @@ class RegisterPostTypes implements AutoloadableInterface {
 
 	}
 
+	/**
+	 * Get all post type slugs as simple array
+	 *
+	 * @return array
+	 */
+	public function getArrayOfAllPostTypeSlugs() {
+		return array_keys( $this->app->getConfig()[ 'courses_post_types' ] );
+	}
+
 }

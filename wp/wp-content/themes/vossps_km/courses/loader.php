@@ -16,4 +16,5 @@ spl_autoload_register( function( $class_name ) {
 $app = new \Lumiart\Vosspskm\Courses\App();
 $app->boot();
 
-$new = $app->make( \Lumiart\Vosspskm\Courses\Controllers\RegisterPostTypes::class );
+global $vossps_km_courses_app;
+$vossps_km_courses_app = $app;

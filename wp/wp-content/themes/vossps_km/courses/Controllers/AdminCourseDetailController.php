@@ -4,8 +4,10 @@ namespace Lumiart\Vosspskm\Courses\Controllers;
 
 use Lumiart\Vosspskm\Courses\App;
 use Lumiart\Vosspskm\Courses\AutoloadableInterface;
+use Lumiart\Vosspskm\Courses\SingletonTrait;
 
 class AdminCourseDetailController implements AutoloadableInterface {
+	use SingletonTrait;
 
 	protected $app;
 

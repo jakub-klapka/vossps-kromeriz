@@ -2,6 +2,7 @@
 use Lumiart\Vosspskm\Courses\Controllers\AdminCourseDetailController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminListController;
 use Lumiart\Vosspskm\Courses\Controllers\Migrations;
+use Lumiart\Vosspskm\Courses\Controllers\RegisterAssets;
 use Lumiart\Vosspskm\Courses\Controllers\RegisterPostTypes;
 
 return [
@@ -12,6 +13,7 @@ return [
 	'autoload_classes' => [
 		RegisterPostTypes::class,
 		Migrations::class,
+		RegisterAssets::class,
 	],
 
 	/*
