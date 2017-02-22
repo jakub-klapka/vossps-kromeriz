@@ -4,21 +4,160 @@
 	<div class="panel panel-primary">
 		<div class="panel-body">
 
+			{# PREPARE SECTIONS #}
+			{% set basic_data_section = [] %}
+			{% set payment_subject_radio = null %} {# OMG TWIG #}
+			{% set school_section = [] %}
+			{% set school_address_section = [] %}
+			{% set self_payment_section = [] %}
 			{% for field in form.children %}
+				{% if field.vars.name in [ 'first_name', 'last_name', 'degree', 'email', 'birth_place', 'birth_date', 'phone' ] %}
+					{% set basic_data_section = basic_data_section|merge( [ field ] ) %}
+				{% elseif field.vars.name == 'payment_subject' %}
+					{% set payment_subject_radio = field %}
+				{% elseif field.vars.name in [ 'school_name', 'school_ic', 'school_email', 'school_phone' ] %}
+					{% set school_section = school_section|merge( [ field ] ) %}
+				{% elseif field.vars.name in [ 'school_address_street', 'school_address_city', 'school_address_psc' ] %}
+					{% set school_address_section = school_address_section|merge( [ field ] ) %}
+				{% elseif field.vars.name in [ 'self_payment_street', 'self_payment_city', 'self_payment_psc' ] %}
+					{% set self_payment_section = self_payment_section|merge( [ field ] ) %}
+				{% endif %}
+			{% endfor %}
+
+
+			{# BASIC DATA SECTION #}
+			{% for row in basic_data_section|batch(2) %}
+				<div class="row">
+					{% for field in row %}
+						<div class="col-xs-6">
+							<div class="form-group has-feedback">
+								<label for="{{ field.vars.id }}" class="control-label">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+								<input type="{{ ( field.vars.name == 'email' ) ? field.vars.block_prefixes[2] : field.vars.block_prefixes[1] }}"
+								       name="{{ field.vars.name }}"
+								       class="form-control"
+									   {% if field.vars.required %} required {% endif %}
+	                                   id="{{ field.vars.id }}"
+	                                   value="{{ field.vars.value }}">
+								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			{% endfor %}
+
+			{# PAYMENT SUBJECT RADIO #}
+			{% if payment_subject_radio %}
+				<div class="row" data-form-switching-group>
+					<div class="col-xs-3">
+						<div class="form-group has-feedback">
+							<label>{{ payment_subject_radio.vars.label }}:</label>
+						</div>
+					</div>
+
+					{% set i = 0 %}
+					{% for radio in payment_subject_radio.children %}
+						{% set i = i + 3 %}
+						<div class="col-xs-{{ i }}">
+							<div class="form-group has-feedback">
+								<label>
+									{#{{ dump(payment_subject_radio.children[0]) }}#}
+									<input type="{{ radio.vars.block_prefixes[2] }}"
+									       name="{{ radio.parent.vars.name }}"
+									       value="{{ radio.vars.value }}"
+									       {% if radio.vars.required %} required {% endif %}
+									       data-form-switching-target="{{ radio.vars.attr['data-form-switching-target'] }}"
+									       {% if radio.vars.checked %} checked="checked" {% endif %}>
+									{{ radio.vars.label }}
+								</label>
+							</div>
+						</div>
+					{% endfor %}
+
+				</div><!-- /.row -->
+			{% endif %}
+
+			{# SCHOOL SECTION #}
+
+			<div data-form-switching-id="zamestnavatel">
+				{% for row in school_section|batch(2) %}
+					<div class="row">
+						{% for field in row %}
+							<div class="col-xs-6">
+								<div class="form-group has-feedback">
+									<label for="{{ field.vars.id }}">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+									<input name="{{ field.vars.name }}"
+									       type="{{ ( field.vars.name == 'school_email' ) ? field.vars.block_prefixes[2] : field.vars.block_prefixes[1] }}"
+									       class="form-control"
+									       {% if field.vars.disabled %} disabled {% endif %}
+									       {% for attr_name, attr_val in field.vars.attr %}
+										       {{ attr_name }}="{{ attr_val }}"
+										   {% endfor %}
+									       id="{{ field.vars.id }}">
+									<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+								</div>
+							</div><!-- /.col -->
+						{% endfor %}
+					</div><!-- /.row -->
+				{% endfor %}
 
 				<div class="row">
-					<div class="col-xs-6">
-						<div class="form-group has-feedback">
-							<label for="{{ field.vars.id }}" class="control-label">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
-							<input type="text" name="{{ field.vars.name }}" class="form-control" {% if field.vars.required %} required {% endif %} id="{{ field.vars.id }}" value="{{ field.vars.value }}">
-							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-						</div>
+					<div class="col-xs-12">
+						<div class="form-group"><label>Adresa školy:</label></div>
+					</div>
+				</div><!-- /.row -->
+
+				{% for row in school_address_section|batch(2) %}
+					<div class="row">
+						{% for field in row %}
+							<div class="col-xs-6">
+								<div class="form-group has-feedback">
+									<label for="{{ field.vars.id }}">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+									<input name="{{ field.vars.name }}"
+									       type="{{ field.vars.block_prefixes[1] }}"
+									       class="form-control"
+										   {% if field.vars.disabled %} disabled {% endif %}
+									       {% for attr_name, attr_val in field.vars.attr %}
+										       {{ attr_name }}="{{ attr_val }}"
+										   {% endfor %}
+                                           id="{{ field.vars.id }}">
+									<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+								</div>
+							</div><!-- /.col -->
+						{% endfor %}
+					</div><!-- /.row -->
+				{% endfor %}
+			</div><!-- /.data-form-switching-id="zamestnavatel" -->
+
+			{# SAMOPLATCE #}
+			<div data-form-switching-id="samoplatce">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group"><label>Bydliště účastníka:</label></div>
 					</div>
 				</div>
 
-				{#{{ dump(field) }}#}
+				{% for row in self_payment_section|batch(2) %}
+					<div class="row">
+						{% for field in row %}
+							<div class="col-xs-6">
+								<div class="form-group has-feedback">
+									<label for="{{ field.vars.id }}">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+									<input name="{{ field.vars.name }}"
+									       type="{{ field.vars.block_prefixes[1] }}"
+									       class="form-control"
+											{% if field.vars.disabled %} disabled {% endif %}
+									       {% for attr_name, attr_val in field.vars.attr %}
+										       {{ attr_name }}="{{ attr_val }}"
+											{% endfor %}
+                                           id="{{ field.vars.id }}">
+									<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+								</div>
+							</div><!-- /.col -->
+						{% endfor %}
+					</div><!-- /.row -->
+				{% endfor %}
+			</div><!-- /.samoplatce -->
 
-			{% endfor %}
 
 		</div><!-- /.panel-body -->
 	</div><!-- /.panel -->

@@ -2,8 +2,10 @@
 
 namespace Lumiart\Vosspskm\Courses\Models;
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Lumiart\Vosspskm\Courses\Controllers\FormFactory;
 use TimberPost;
@@ -154,8 +156,35 @@ class CoursePost extends TimberPost {
 			->add( 'degree', TextType::class, [ 'label' => 'Titul', 'required' => false ] )
 			->add( 'email', EmailType::class, [ 'label' => 'E-mail' ] )
 			->add( 'birth_place', TextType::class, [ 'label' => 'Místo narození' ] )
-			->add( 'birth_date', DateType::class, [ 'label' => 'Datum narození' ] )
-			->add( 'phone', TextType::class, [ 'label' => 'Telefon' ] );
+			->add( 'birth_date', DateType::class, [ 'label' => 'Datum narození', 'widget' => 'single_text' ] )
+			->add( 'phone', TextType::class, [ 'label' => 'Telefon' ] )
+			->add( 'payment_subject', ChoiceType::class, [
+				'label' => 'Plátce kurzovného',
+				'choices' => [
+					'Samoplátce' => 'self_payment',
+					'Hrazeno zaměstnavatelem (školou)' => 'school_payment'
+				],
+				'expanded' => true,
+				'multiple' => false,
+				'choice_attr' => function( $val, $key, $index ) {
+					$map = [
+						'self_payment' => 'samoplatce',
+						'school_payment' => 'zamestnavatel'
+					];
+					return [ 'data-form-switching-target' => $map[ $index ] ];
+				},
+			] )
+			->add( 'school_name', TextType::class, [ 'label' => 'Název školy', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
+			->add( 'school_ic', TextType::class, [ 'label' => 'IČ školy', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
+			->add( 'school_email', EmailType::class, [ 'label' => 'E-mail školy', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
+			->add( 'school_phone', TextType::class, [ 'label' => 'Telefon školy', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
+			->add( 'school_address_street', TextType::class, [ 'label' => 'Ulice', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
+			->add( 'school_address_city', TextType::class, [ 'label' => 'Město', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
+			->add( 'school_address_psc', TextType::class, [ 'label' => 'PSČ', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
+			->add( 'self_payment_street', TextType::class, [ 'label' => 'Ulice', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
+			->add( 'self_payment_city', TextType::class, [ 'label' => 'Město', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
+			->add( 'self_payment_psc', TextType::class, [ 'label' => 'PSČ', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] );
+
 
 		return $form->getForm();
 
