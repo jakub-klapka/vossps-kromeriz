@@ -2,6 +2,7 @@
 
 namespace Lumiart\Vosspskm\Courses\Models;
 
+use Lumiart\Vosspskm\Courses\Controllers\FormSubmissionController;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -228,7 +229,28 @@ class CoursePost extends TimberPost {
 
 		$form->handleRequest();
 
+		if( $form->isSubmitted() && $form->isValid() ) {
+			$this->app->make( FormSubmissionController::class )->handle( $form, $this );
+		}
+
 		return $form;
+
+	}
+
+	/**
+	 * Add new student to this course
+	 *
+	 * Expecting already validated and sanitized data
+	 *
+	 * @param array $student_args
+	 */
+	public function addStudent( $student_args ) {
+
+		$students = $this->get_field( 'course_students' );
+		$students = ( is_array( $students ) ) ? $students : [];
+
+		$students[] = $student_args;
+		update_field( 'course_students', $students, $this->ID ) ;
 
 	}
 

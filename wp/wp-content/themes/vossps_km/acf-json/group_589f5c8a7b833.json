@@ -12,7 +12,7 @@
                     "append": "",
                     "key": "field_589f5cf97362e",
                     "label": "Jm\u00e9no",
-                    "name": "first_name",
+                    "name": "name",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -587,5 +587,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1486841620
+    "modified": 1488913863
 }
