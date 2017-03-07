@@ -3,7 +3,9 @@
 namespace Lumiart\Vosspskm\Courses\Controllers;
 
 use Lumiart\Vosspskm\Courses\SingletonTrait;
+use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
 use Symfony\Component\Form\Forms;
+use Symfony\Component\Validator\Validation;
 
 /**
  * Class FormFactory
@@ -19,7 +21,11 @@ class FormFactory {
 
 	public function __construct() {
 
-		$this->form_factory = Forms::createFormFactory();
+		$validator = Validation::createValidator();
+
+		$this->form_factory = Forms::createFormFactoryBuilder()
+		                           ->addExtension( new ValidatorExtension( $validator ) )
+		                           ->getFormFactory();
 
 	}
 

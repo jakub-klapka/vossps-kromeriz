@@ -2,7 +2,8 @@
     "name": "lumiart/vossps_km",
     "type": "project",
     "require": {
-        "symfony/form": "^3.2"
+        "symfony/form": "^3.2",
+        "symfony/validator": "^3.2"
     },
     "repository": "https://github.com/jakub-klapka/vossps-kromeriz",
     "authors": [

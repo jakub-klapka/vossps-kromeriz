@@ -1,0 +1,284 @@
+{# PREPARE SECTIONS #}
+{% set basic_data_section = [] %}
+{% set payment_subject_radio = null %} {# OMG TWIG #}
+{% set school_section = [] %}
+{% set school_address_section = [] %}
+{% set self_payment_section = [] %}
+{% set payment_type_radio = [] %}
+{% set invoice_address_section = [] %}
+{% set tos_conduct = null %}
+{% set note = null %}
+
+{% for field in form.children %}
+	{% if field.vars.name in [ 'first_name', 'last_name', 'degree', 'email', 'birth_place', 'birth_date', 'phone' ] %}
+		{% set basic_data_section = basic_data_section|merge( [ field ] ) %}
+	{% elseif field.vars.name == 'payment_subject' %}
+		{% set payment_subject_radio = field %}
+	{% elseif field.vars.name in [ 'school_name', 'school_ic', 'school_email', 'school_phone' ] %}
+		{% set school_section = school_section|merge( [ field ] ) %}
+	{% elseif field.vars.name in [ 'school_address_street', 'school_address_city', 'school_address_psc' ] %}
+		{% set school_address_section = school_address_section|merge( [ field ] ) %}
+	{% elseif field.vars.name in [ 'self_payment_street', 'self_payment_city', 'self_payment_psc' ] %}
+		{% set self_payment_section = self_payment_section|merge( [ field ] ) %}
+	{% elseif field.vars.name in [ 'payment_type' ] %}
+		{% set payment_type_radio = field %}
+	{% elseif field.vars.name in [ 'invoice_street', 'invoice_city', 'invoice_psc' ] %}
+		{% set invoice_address_section = invoice_address_section|merge( [ field ] ) %}
+	{% elseif field.vars.name == 'tos_conduct' %}
+		{% set tos_conduct = field %}
+	{% elseif field.vars.name == 'note' %}
+		{% set note = field %}
+	{% endif %}
+{% endfor %}
+
+
+{# BASIC DATA SECTION #}
+{% for row in basic_data_section|batch(2) %}
+	<div class="row">
+		{% for field in row %}
+			<div class="col-xs-6">
+				<div class="form-group has-feedback">
+					<label for="{{ field.vars.id }}" class="control-label">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+					<input type="{{ ( field.vars.name == 'email' ) ? field.vars.block_prefixes[2] : field.vars.block_prefixes[1] }}"
+					       name="{{ field.vars.full_name }}"
+					       class="form-control"
+							{% if field.vars.required %} required {% endif %}
+                           id="{{ field.vars.id }}"
+                           value="{{ field.vars.value }}">
+					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+					{#{{ dump(field) }}#}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endfor %}
+
+{# PAYMENT SUBJECT RADIO #}
+{% if payment_subject_radio %}
+	<div class="row" data-form-switching-group>
+		<div class="col-xs-3">
+			<div class="form-group has-feedback">
+				<label>{{ payment_subject_radio.vars.label }}:</label>
+			</div>
+		</div>
+
+		{% set i = 0 %}
+		{% for radio in payment_subject_radio.children %}
+			{% set i = i + 3 %}
+			<div class="col-xs-{{ i }}">
+				<div class="form-group has-feedback">
+					<label>
+						{#{{ dump(payment_subject_radio.children[0]) }}#}
+						<input type="{{ radio.vars.block_prefixes[2] }}"
+						       name="{{ radio.parent.vars.full_name }}"
+						       value="{{ radio.vars.value }}"
+								{% if radio.vars.required %} required {% endif %}
+                               data-form-switching-target="{{ radio.vars.attr['data-form-switching-target'] }}"
+								{% if radio.vars.checked %} checked="checked" {% endif %}>
+						{{ radio.vars.label }}
+					</label>
+				</div>
+			</div>
+		{% endfor %}
+
+	</div><!-- /.row -->
+{% endif %}
+
+{# SCHOOL SECTION #}
+
+<div data-form-switching-id="zamestnavatel">
+	{% for row in school_section|batch(2) %}
+		<div class="row">
+			{% for field in row %}
+				<div class="col-xs-6">
+					<div class="form-group has-feedback">
+						<label for="{{ field.vars.id }}">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+						<input name="{{ field.vars.full_name }}"
+						       type="{{ ( field.vars.name == 'school_email' ) ? field.vars.block_prefixes[2] : field.vars.block_prefixes[1] }}"
+						       class="form-control"
+						       disabled
+						       value="{{ field.vars.value }}"
+						{% for attr_name, attr_val in field.vars.attr %}
+							{{ attr_name }}="{{ attr_val }}"
+						{% endfor %}
+						id="{{ field.vars.id }}">
+						<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+					</div>
+				</div><!-- /.col -->
+			{% endfor %}
+		</div><!-- /.row -->
+	{% endfor %}
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group"><label>Adresa školy:</label></div>
+		</div>
+	</div><!-- /.row -->
+
+	{% for row in school_address_section|batch(2) %}
+		<div class="row">
+			{% for field in row %}
+				<div class="col-xs-6">
+					<div class="form-group has-feedback">
+						<label for="{{ field.vars.id }}">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+						<input name="{{ field.vars.full_name }}"
+						       type="{{ field.vars.block_prefixes[1] }}"
+						       class="form-control"
+						       disabled
+						       value="{{ field.vars.value }}"
+						{% for attr_name, attr_val in field.vars.attr %}
+							{{ attr_name }}="{{ attr_val }}"
+						{% endfor %}
+						id="{{ field.vars.id }}">
+						<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+					</div>
+				</div><!-- /.col -->
+			{% endfor %}
+		</div><!-- /.row -->
+	{% endfor %}
+</div><!-- /.data-form-switching-id="zamestnavatel" -->
+
+{# SAMOPLATCE #}
+<div data-form-switching-id="samoplatce">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group"><label>Bydliště účastníka:</label></div>
+		</div>
+	</div>
+
+	{% for row in self_payment_section|batch(2) %}
+		<div class="row">
+			{% for field in row %}
+				<div class="col-xs-6">
+					<div class="form-group has-feedback">
+						<label for="{{ field.vars.id }}">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+						<input name="{{ field.vars.full_name }}"
+						       type="{{ field.vars.block_prefixes[1] }}"
+						       class="form-control"
+						       disabled
+						       {% for attr_name, attr_val in field.vars.attr %}
+										       {{ attr_name }}="{{ attr_val }}"
+								{% endfor %}
+                               id="{{ field.vars.id }}"
+                               value="{{ field.vars.value }}">
+						<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+					</div>
+				</div><!-- /.col -->
+			{% endfor %}
+		</div><!-- /.row -->
+	{% endfor %}
+</div><!-- /.samoplatce -->
+
+{# PAYMENT TYPE #}
+			{% if payment_type_radio %}
+				<div class="row" data-form-switching-group>
+					<div class="col-xs-3">
+						<div class="form-group has-feedback">
+							<label>{{ payment_type_radio.vars.label }}:</label>
+						</div>
+					</div>
+
+					{% set i = 0 %}
+					{% for radio in payment_type_radio.children %}
+						{% set i = i + 3 %}
+						<div class="col-xs-{{ i }}">
+							<div class="form-group has-feedback">
+								<label>
+									{#{{ dump(payment_type_radio.children[0]) }}#}
+									<input type="{{ radio.vars.block_prefixes[2] }}"
+									       name="{{ radio.parent.vars.full_name }}"
+									       value="{{ radio.vars.value }}"
+											{% if radio.vars.required %} required {% endif %}
+											{% if radio.vars.attr['data-form-switching-target'] %}data-form-switching-target="{{ radio.vars.attr['data-form-switching-target'] }}"{% endif %}
+											{% if radio.vars.checked %} checked="checked" {% endif %}>
+									{{ radio.vars.label }}
+								</label>
+							</div>
+						</div>
+					{% endfor %}
+
+				</div><!-- /.row -->
+			{% endif %}
+
+			{# INVOICE ADDRESS #}
+
+<div data-form-switching-id="faktura2">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group"><label for="">Fakturační adresa: </label></div>
+			<div class="form-group"><span class="text-muted">(Vyplňujte pouze pokud se liší od adresy účastníka/školy)</span></div>
+		</div>
+	</div>
+
+	{% for row in invoice_address_section|batch(2) %}
+		<div class="row">
+			{% for field in row %}
+				<div class="col-xs-6">
+					<div class="form-group has-feedback">
+						<label for="{{ field.vars.id }}" class="control-label">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+						<input type="{{ field.vars.block_prefixes[1] }}"
+						       name="{{ field.vars.full_name }}"
+						       class="form-control"
+								{% if field.vars.required %} required {% endif %}
+                               id="{{ field.vars.id }}"
+                               value="{{ field.vars.value }}">
+						<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						{#{{ dump(field) }}#}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endfor %}
+</div>
+
+{# TOS CONDUCT #}
+			{% set field = tos_conduct %}
+<div class="row">
+	<div class="col-xs-12">
+		<div class="form-group has-error">
+			<label>
+
+				<input type="{{ field.vars.block_prefixes[1] }}"
+				       name="{{ field.vars.full_name }}"
+				       value="{{ field.vars.value }}"
+				       {% if field.vars.checked %}checked="checked"{% endif %}
+						{% if field.vars.required %} required {% endif %}>
+				Souhlasím s <a href="" data-toggle="modal" data-target="#obchodni_podminky">obchodními podmínkami</a>
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+				<div class="modal fade" tabindex="-1" role="dialog" id="obchodni_podminky">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title">Obchodní podmínky</h4>
+							</div>
+							<div class="modal-body">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
+									beatae consequatur dolorem doloremque exercitationem, explicabo
+									facilis illo ipsa itaque saepe. Aliquid cumque debitis explicabo
+									incidunt odit qui ratione tempora ut!</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+			</label>
+		</div><!-- /.form-group -->
+		<div class="form-group has-feedback">
+			<label>Poznámka</label>
+			{#{{ dump(note) }}#}
+			<textarea cols="30" rows="5" name="{{ note.vars.full_name }}" class="form-control">{{ note.vars.value }}</textarea>
+			<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+		</div><!-- /.form-group -->
+	</div><!-- /.col -->
+</div><!-- /.row -->
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<button type="submit" class="btn btn-primary btn-lg">Odeslat přihlášku</button>
+	</div>
+</div>

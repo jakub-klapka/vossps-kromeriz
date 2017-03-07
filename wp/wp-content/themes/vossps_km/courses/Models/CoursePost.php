@@ -6,8 +6,16 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Lumiart\Vosspskm\Courses\Controllers\FormFactory;
+use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
+use Symfony\Component\Form\Form;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\IsTrue;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Validation;
 use TimberPost;
 
 class CoursePost extends TimberPost {
@@ -150,14 +158,24 @@ class CoursePost extends TimberPost {
 	public function getCourseForm() {
 		$form_factory = $this->app->make( FormFactory::class )->getFormFactory();/** @var \Symfony\Component\Form\FormFactory $form_factory */
 
+		$school_constraints = [];
+		$self_constraints = [];
+		if( isset( $_REQUEST[ 'form' ][ 'payment_subject' ] ) && $_REQUEST[ 'form' ][ 'payment_subject' ] === 'school_payment' ) {
+			$school_constraints = [ new NotBlank() ]; //One instance is enough for this case
+		}
+		if( isset( $_REQUEST[ 'form' ][ 'payment_subject' ] ) && $_REQUEST[ 'form' ][ 'payment_subject' ] === 'self_payment' ) {
+			$self_constraints = [ new NotBlank() ]; //One instance is enough for this case
+		}
+
+		/** @var Form $form */
 		$form = $form_factory->createBuilder()
-			->add( 'first_name', TextType::class, [ 'label' => 'Jméno' ] )
-			->add( 'last_name', TextType::class, [ 'label' => 'Příjmení' ] )
+			->add( 'first_name', TextType::class, [ 'label' => 'Jméno', 'constraints' => [ new NotBlank() ] ] )
+			->add( 'last_name', TextType::class, [ 'label' => 'Příjmení', 'constraints' => [ new NotBlank() ] ] )
 			->add( 'degree', TextType::class, [ 'label' => 'Titul', 'required' => false ] )
-			->add( 'email', EmailType::class, [ 'label' => 'E-mail' ] )
-			->add( 'birth_place', TextType::class, [ 'label' => 'Místo narození' ] )
-			->add( 'birth_date', DateType::class, [ 'label' => 'Datum narození', 'widget' => 'single_text' ] )
-			->add( 'phone', TextType::class, [ 'label' => 'Telefon' ] )
+			->add( 'email', EmailType::class, [ 'label' => 'E-mail', 'constraints' => [ new NotBlank(), new Email() ] ] )
+			->add( 'birth_place', TextType::class, [ 'label' => 'Místo narození', 'constraints' => [ new NotBlank() ] ] )
+			->add( 'birth_date', DateType::class, [ 'label' => 'Datum narození', 'widget' => 'single_text', 'constraints' => [ new NotBlank(), new Date() ] ] )
+			->add( 'phone', TextType::class, [ 'label' => 'Telefon', 'constraints' => [ new NotBlank() ] ] )
 			->add( 'payment_subject', ChoiceType::class, [
 				'label' => 'Plátce kurzovného',
 				'choices' => [
@@ -173,20 +191,44 @@ class CoursePost extends TimberPost {
 					];
 					return [ 'data-form-switching-target' => $map[ $index ] ];
 				},
+				'constraints' => [ new NotBlank() ]
 			] )
-			->add( 'school_name', TextType::class, [ 'label' => 'Název školy', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
-			->add( 'school_ic', TextType::class, [ 'label' => 'IČ školy', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
-			->add( 'school_email', EmailType::class, [ 'label' => 'E-mail školy', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
-			->add( 'school_phone', TextType::class, [ 'label' => 'Telefon školy', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
-			->add( 'school_address_street', TextType::class, [ 'label' => 'Ulice', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
-			->add( 'school_address_city', TextType::class, [ 'label' => 'Město', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
-			->add( 'school_address_psc', TextType::class, [ 'label' => 'PSČ', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
-			->add( 'self_payment_street', TextType::class, [ 'label' => 'Ulice', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
-			->add( 'self_payment_city', TextType::class, [ 'label' => 'Město', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] )
-			->add( 'self_payment_psc', TextType::class, [ 'label' => 'PSČ', 'attr' => [ 'data-required' => 'data-required' ], 'disabled' => true ] );
+			->add( 'school_name', TextType::class, [ 'label' => 'Název školy', 'attr' => [ 'data-required' => 'data-required' ], 'constraints' => $school_constraints ] )
+			->add( 'school_ic', TextType::class, [ 'label' => 'IČ školy', 'attr' => [ 'data-required' => 'data-required' ], 'constraints' => $school_constraints ] )
+			->add( 'school_email', EmailType::class, [ 'label' => 'E-mail školy', 'attr' => [ 'data-required' => 'data-required' ], 'constraints' => $school_constraints ] )
+			->add( 'school_phone', TextType::class, [ 'label' => 'Telefon školy', 'attr' => [ 'data-required' => 'data-required' ], 'constraints' => $school_constraints ] )
+			->add( 'school_address_street', TextType::class, [ 'label' => 'Ulice', 'attr' => [ 'data-required' => 'data-required' ], 'constraints' => $school_constraints ] )
+			->add( 'school_address_city', TextType::class, [ 'label' => 'Město', 'attr' => [ 'data-required' => 'data-required' ], 'constraints' => $school_constraints ] )
+			->add( 'school_address_psc', TextType::class, [ 'label' => 'PSČ', 'attr' => [ 'data-required' => 'data-required' ], 'constraints' => $school_constraints ] )
+			->add( 'self_payment_street', TextType::class, [ 'label' => 'Ulice', 'attr' => [ 'data-required' => 'data-required' ], 'constraints' => $self_constraints ] )
+			->add( 'self_payment_city', TextType::class, [ 'label' => 'Město', 'attr' => [ 'data-required' => 'data-required' ], 'constraints' => $self_constraints ] )
+			->add( 'self_payment_psc', TextType::class, [ 'label' => 'PSČ', 'attr' => [ 'data-required' => 'data-required' ], 'constraints' => $self_constraints ] )
+			->add( 'payment_type', ChoiceType::class, [
+				'label' => 'Způsob platby',
+				'choices' => [
+					'Hotově' => 'cash',
+					'Fakturou / Převodem na účet' => 'invoice'
+				],
+				'expanded' => true,
+				'multiple' => false,
+				'choice_attr' => function( $val, $key, $index ) {
+					if( $index === 'invoice' ) {
+						return [ 'data-form-switching-target' => 'faktura2' ];
+					}
+					return [];
+				},
+				'constraints' => [ new NotBlank() ]
+			] )
+			->add( 'invoice_street', TextType::class, [ 'label' => 'Ulice' ] )
+			->add( 'invoice_city', TextType::class, [ 'label' => 'Město' ] )
+			->add( 'invoice_psc', TextType::class, [ 'label' => 'PSČ' ] )
+			->add( 'tos_conduct', RadioType::class, [ 'required' => true, 'constraints' => new IsTrue() ] )
+			->add( 'note', TextareaType::class )
+			->getForm();
 
+		$form->handleRequest();
 
-		return $form->getForm();
+		return $form;
 
 	}
 
