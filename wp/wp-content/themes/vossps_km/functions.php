@@ -1,11 +1,14 @@
 <?php
+include_once( 'vendor/autoload.php' );
 
 define( 'LUMI_CORE_PATH', get_template_directory() . '/core/' );
 define( 'LUMI_CSS_JS_VER', 2 );
 define( 'LUMI_TEXTDOMAIN', 'vossps_km' );
 
 if (class_exists('Timber')){
-	Timber::$cache = true;
+	if( !in_array( $_SERVER['HTTP_HOST'], [ 'localhost', 'ped-km.dev' ] ) ) {
+		Timber::$cache = true;
+	}
 }
 
 /**
@@ -111,3 +114,8 @@ function lumi_template( $name ) {
 	$lumi['Template'][ $name ] = new $class_name;
 	return $lumi['Template'][ $name ];
 }
+
+/**
+ * Courses
+ */
+require_once( 'courses/loader.php' );

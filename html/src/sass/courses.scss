@@ -1,0 +1,44 @@
+@import "global";
+
+@import "inc/bootstrap/bootstrap";
+
+@import "inc/courses_icheck";
+
+.courses {
+
+	/*
+	Bootstrap overwrites
+	 */
+	.btn-primary.btn-primary {
+		color: $btn-primary-color;
+	}
+
+	&__course {
+		color: inherit !important; //Sorry
+		
+		&:hover {
+			text-decoration: none !important;
+		}
+
+		&__signButton:hover {
+			text-decoration: none !important;
+		}
+	}
+
+}
+
+.coursesSignForm {
+
+	[data-form-switching-id] {
+		display: none; //Initially dont' display
+	}
+
+	input[required]:valid {
+		border-color: green;
+	}
+
+	.has-feedback label ~ .form-control-feedback {
+		top: 21px;
+	}
+
+}

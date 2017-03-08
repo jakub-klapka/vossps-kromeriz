@@ -1,0 +1,67 @@
+{% extends 'master.twig' %}
+
+{% set page_theme = 'dv' %}
+
+{% block main_content %}
+
+	<section class="courses" id="courses">
+
+		<div class="courses__course">
+			<div class="panel panel-primary">
+				<!--<div class="panel-heading"><h3>Studium pedagogiky [blížící se termín uzávěrky přihlášek]</h3></div>-->
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-8">
+							<dl class="dl-horizontal">
+								<dt>Uzávěrka přihlášek</dt>
+								{% if signup_date_is_critical %}
+									<dd><strong class="text-danger">{{ post.getSignupCloseDate|date( wp_date_format ) }}</strong></dd>
+								{% else %}
+									<dd>{{ post.getSignupCloseDate|date( wp_date_format ) }}</dd>
+								{% endif %}
+								{% if post.course_realization %}
+									<dt>Termín kurzu</dt>
+									<dd>{{ post.course_realization }}</dd>
+								{% endif %}
+								{% if post.acreditation_number %}
+									<dt>Číslo akreditace</dt>
+									<dd>{{ post.acreditation_number }}</dd>
+								{% endif %}
+								{% if post.formatCoursePrice %}
+									<dt>Cena</dt>
+									<dd>{{ post.formatCoursePrice }}</dd>
+								{% endif %}
+								{% if post.lesson_count %}
+									<dt>Počet Hodin</dt>
+									<dd>{{ post.lesson_count }}</dd>
+								{% endif %}
+								{% if post.teacher %}
+									<dt>Lektor</dt>
+									<dd>{{ post.teacher }}</dd>
+								{% endif %}
+								{% if post.students_count %}
+									<dt>Počet uchazečů</dt>
+									<dd>{{ post.students_count }}</dd>
+								{% endif %}
+							</dl>
+						</div>
+						{% if not post.isSignupDue() %}
+							<div class="col-xs-4 text-right">
+								{% if post.getCourseFreePlaces() > 5 %}{% set class = 'primary' %}{% endif %}
+								{% if post.getCourseFreePlaces() <= 5 %}{% set class = 'warning' %}{% endif %}
+								{% if post.getCourseFreePlaces() <= 0 %}{% set class = 'danger' %}{% endif %}
+								<button type="button" data-scroll-to="#coursesSignForm" class="courses__course__signButton btn btn-lg btn-{{ class }}">Volných míst: <strong>{{ post.getCourseFreePlaces() }}</strong></button>
+							</div><!-- /.col -->
+						{% endif %}
+					</div><!-- /.row -->
+				</div><!-- /.panel-body -->
+			</div><!-- /.panel -->
+		</div><!-- /.courses__course -->
+
+	</section><!-- /.courses -->
+
+	{{ post.content }}
+
+	{% if form %}{% include '_course_detail_form.twig' %}{% endif %}
+
+{% endblock %}

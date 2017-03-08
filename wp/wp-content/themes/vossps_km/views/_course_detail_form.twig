@@ -1,0 +1,20 @@
+<form action="{{ form.vars.action }}#coursesSignForm" method="{{ form.vars.method }}" data-courses_form class="coursesSignForm" id="coursesSignForm" data-toggle="validator" data-disable="false">
+	<h1>Přihláška do kurzu</h1>
+
+	<div class="panel panel-primary">
+		<div class="panel-body">
+
+			{% if form_errors.count > 0 %}
+				<strong style="color: red;">Formulář je neplatný</strong>
+			{% endif %}
+
+			{% if form.vars.submitted and form.vars.valid %}
+				<strong style="color: green;">Vaše přihláška byla odeslána. V e-mailu najdete shrnutí přihlášky a další detaily.</strong>
+			{% else %}
+				{% include '_course_detail_form_inputs.twig' %}
+			{% endif %}
+
+		</div><!-- /.panel-body -->
+	</div><!-- /.panel -->
+
+</form>

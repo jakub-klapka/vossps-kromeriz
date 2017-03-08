@@ -1,3 +1,8 @@
+/**
+ * gulp -> production one-time compile
+ * gulp dev --dev -> watcher with disabled minification
+ */
+
 var gulp = require( 'gulp' ),
 	sass = require( 'gulp-ruby-sass' ),
 	autoprefixer = require( 'gulp-autoprefixer' ),
@@ -7,7 +12,9 @@ var gulp = require( 'gulp' ),
 	filter = require( 'gulp-filter' ),
 	uglify = require( 'gulp-uglify' ),
 	livereload = require( 'gulp-livereload' ),
-	browserSync = require('browser-sync').create();
+	browserSync = require('browser-sync').create(),
+	gulpif = require( 'gulp-if' ),
+	args = require( 'yargs' ).argv;
 
 var plumber_config = {
 	errorHandler: function (err) {
@@ -16,6 +23,8 @@ var plumber_config = {
 	}
 };
 
+var is_dev = ( args.dev !== undefined ) ? true : false;
+
 /*
 CSS
  */
@@ -23,9 +32,12 @@ gulp.task( 'sass', function(){
 	var maps_filter = filter( [ '*', '!*.map' ] );
 	return gulp.src( 'src/sass/**/*.scss', { base: 'src/sass' } )
 		.pipe( plumber( plumber_config ) )
-		.pipe( sass( {
+		.pipe( gulpif( !is_dev, sass( {
 			style: 'compressed'
-		} ) )
+		} ) ) )
+		.pipe( gulpif( is_dev, sass( {
+			style: 'expanded'
+		} ) ) )
 		.pipe( maps_filter )
 		.pipe( autoprefixer() )
 		.pipe( gulp.dest( 'build/css' ) )
@@ -89,7 +101,7 @@ JS
 gulp.task( 'js', function() {
 	return gulp.src( 'src/js/**/*.js', { base: 'src/js' } )
 		.pipe( plumber( plumber_config ) )
-		.pipe( uglify() )
+		.pipe( gulpif( !is_dev, uglify() ) )
 		.pipe( gulp.dest( 'build/js' ) )
 		.pipe( gulp.dest( '../wp/wp-content/themes/vossps_km/assets/js' ) );
 } );
