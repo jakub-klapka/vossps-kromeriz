@@ -33,6 +33,7 @@ class Migrations implements AutoloadableInterface {
 		if( current_user_can( 'manage_options' ) ) {
 
 			$result = $this->runMigrations();
+			$result .= $this->clearCaches();
 
 			wp_die( $result );
 
@@ -40,6 +41,61 @@ class Migrations implements AutoloadableInterface {
 			wp_die( 'Nepovolený přístup' );
 		}
 
+	}
+
+	private function clearCaches() {
+		$out = '';
+		if( function_exists( 'wp_cache_clear_cache' ) ) {
+			wp_cache_clear_cache();
+			$out .= 'WP Super cache cleared.<br/>';
+		}
+
+		$cache_path = ABSPATH . 'wp-content/plugins/timber-library/cache/twig';
+		if( is_dir( $cache_path ) ) {
+			static::rrmdir( $cache_path );
+			$out .= 'Twig cache cleared.<br/>';
+		}
+
+		if( class_exists( 'BWP_MINIFY' ) ) {
+			$bwp = new \BWP_MINIFY();
+
+			$deleted = 0;
+			$cache_dir = !empty($cache_dir) ? $cache_dir : $bwp->get_cache_dir();
+			$cache_dir = trailingslashit($cache_dir);
+
+			if (is_dir($cache_dir))
+			{
+				if ($dh = opendir($cache_dir))
+				{
+					while (($file = readdir($dh)) !== false)
+					{
+						if (preg_match('/^minify_[a-z0-9\\.=_,]+(\.gz)?$/ui', $file)
+						    || preg_match('/^minify-b\d+-[a-z0-9-_.]+(\.gz)?$/ui', $file)
+						) {
+							$deleted += true === @unlink($cache_dir . $file)
+								? 1 : 0;
+						}
+					}
+					closedir($dh);
+				}
+			}
+			return $out .= 'Deleted: ' . $deleted . ' BWP minify files.<br/>';
+		}
+
+		return $out;
+	}
+
+	public static function rrmdir($dir) {
+		if (is_dir($dir)) {
+			$objects = scandir($dir);
+			foreach ($objects as $object) {
+				if ($object != "." && $object != "..") {
+					if (filetype($dir."/".$object) == "dir") self::rrmdir($dir."/".$object); else unlink($dir."/".$object);
+				}
+			}
+			reset($objects);
+			rmdir($dir);
+		}
 	}
 
 	/**

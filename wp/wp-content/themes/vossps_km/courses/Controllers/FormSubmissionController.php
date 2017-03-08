@@ -10,6 +10,7 @@ use Symfony\Component\Form\Form;
 class FormSubmissionController {
 
 	/**
+	 * Handle form submission
 	 *
 	 * Form is already validated by Symfony create builder
 	 *
@@ -20,7 +21,19 @@ class FormSubmissionController {
 
 		//TODO: validate unique e-mail for course
 
-		$data = $form->getData();
+		/*
+		 * Validated from here
+		 */
+		$this->addStudentToPost( $form->getData(), $post );
+		$this->clearCaches( $post );
+
+	}
+
+	/**
+	 * @param array $data
+	 * @param CoursePost $post
+	 */
+	private function addStudentToPost( $data, CoursePost $post ) {
 
 		$mapping = [
 			'name' => $data[ 'last_name'] . ' ' . $data[ 'first_name' ],
@@ -49,6 +62,16 @@ class FormSubmissionController {
 
 		$post->addStudent( $mapping );
 
+	}
+
+	private function clearCaches( CoursePost $post ) {
+
+		/*
+		 * Single Post cache
+		 */
+		if( function_exists( 'wp_cache_post_change' ) ) {
+			wp_cache_post_change( $post->ID );
+		}
 
 	}
 
