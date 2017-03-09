@@ -10,7 +10,7 @@
 {% set note = null %}
 
 {% for field in form.children %}
-	{% if field.vars.name in [ 'first_name', 'last_name', 'degree', 'email', 'birth_place', 'birth_date', 'phone' ] %}
+	{% if field.vars.name in [ 'first_name', 'last_name', 'degree', 'email', 'birth_place', 'birth_date', 'phone', 'pin' ] %}
 		{% set basic_data_section = basic_data_section|merge( [ field ] ) %}
 	{% elseif field.vars.name == 'payment_subject' %}
 		{% set payment_subject_radio = field %}

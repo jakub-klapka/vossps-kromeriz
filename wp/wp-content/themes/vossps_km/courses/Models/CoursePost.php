@@ -169,15 +169,27 @@ class CoursePost extends TimberPost {
 		}
 
 		/** @var Form $form */
-		$form = $form_factory->createBuilder()
-			->add( 'first_name', TextType::class, [ 'label' => 'Jméno', 'constraints' => [ new NotBlank() ] ] )
-			->add( 'last_name', TextType::class, [ 'label' => 'Příjmení', 'constraints' => [ new NotBlank() ] ] )
-			->add( 'degree', TextType::class, [ 'label' => 'Titul', 'required' => false ] )
-			->add( 'email', EmailType::class, [ 'label' => 'E-mail', 'constraints' => [ new NotBlank(), new Email() ] ] )
-			->add( 'birth_place', TextType::class, [ 'label' => 'Místo narození', 'constraints' => [ new NotBlank() ] ] )
-			->add( 'birth_date', DateType::class, [ 'label' => 'Datum narození', 'widget' => 'single_text', 'constraints' => [ new NotBlank(), new Date() ] ] )
-			->add( 'phone', TextType::class, [ 'label' => 'Telefon', 'constraints' => [ new NotBlank() ] ] )
-			->add( 'payment_subject', ChoiceType::class, [
+		$form = $form_factory->createBuilder()->setAction( $this->link() )->getForm();
+
+		$form->add( 'first_name', TextType::class, [ 'label' => 'Jméno', 'constraints' => [ new NotBlank() ] ] )
+		     ->add( 'last_name', TextType::class, [ 'label' => 'Příjmení', 'constraints' => [ new NotBlank() ] ] )
+		     ->add( 'degree', TextType::class, [ 'label' => 'Titul', 'required' => false ] )
+		     ->add( 'email', EmailType::class, [ 'label' => 'E-mail', 'constraints' => [ new NotBlank(), new Email() ] ] )
+		     ->add( 'birth_place', TextType::class, [ 'label' => 'Místo narození', 'constraints' => [ new NotBlank() ] ] )
+		     ->add( 'birth_date', DateType::class, [ 'label' => 'Datum narození', 'widget' => 'single_text', 'constraints' => [ new NotBlank(), new Date() ] ] )
+		     ->add( 'phone', TextType::class, [ 'label' => 'Telefon', 'constraints' => [ new NotBlank() ] ] );
+
+		/*
+		 * PIN is required only in some categories
+		 */
+		if( isset( $this->app->getConfig()[ 'courses_post_types' ][ $this->get_post_type()->name ][ 'requires_pin' ] )
+		    && $this->app->getConfig()[ 'courses_post_types' ][ $this->get_post_type()->name ][ 'requires_pin' ] === true ) {
+
+			$form->add( 'pin', TextType::class, [ 'label' => 'Rodné číslo', 'constraints' => [ new NotBlank() ] ] );
+
+		}
+
+		$form->add( 'payment_subject', ChoiceType::class, [
 				'label' => 'Plátce kurzovného',
 				'choices' => [
 					'Samoplátce' => 'self_payment',
@@ -224,8 +236,7 @@ class CoursePost extends TimberPost {
 			->add( 'invoice_city', TextType::class, [ 'label' => 'Město' ] )
 			->add( 'invoice_psc', TextType::class, [ 'label' => 'PSČ' ] )
 			->add( 'tos_conduct', RadioType::class, [ 'required' => true, 'constraints' => new IsTrue() ] )
-			->add( 'note', TextareaType::class )
-			->getForm();
+			->add( 'note', TextareaType::class );
 
 		$form->handleRequest();
 
@@ -246,12 +257,31 @@ class CoursePost extends TimberPost {
 	 */
 	public function addStudent( $student_args ) {
 
-		$students = $this->get_field( 'course_students' );
+		$students = get_field( 'course_students', $this->ID );
 		$students = ( is_array( $students ) ) ? $students : [];
 
 		$students[] = $student_args;
 		update_field( 'course_students', $students, $this->ID ) ;
 
+	}
+
+	/**
+	 * Get if given e-mail already exist in course students
+	 *
+	 * @param string $email
+	 *
+	 * @return bool
+	 */
+	public function hasSignedUpEmail( $email ) {
+		$signed_students = get_field( 'course_students', $this->ID );
+
+		if( empty( $signed_students) ) return false;
+
+		foreach( $signed_students as $student ) {
+			if( $student[ 'email' ] === $email ) return true;
+		}
+
+		return false;
 	}
 
 }

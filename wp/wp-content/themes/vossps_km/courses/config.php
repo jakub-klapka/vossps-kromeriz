@@ -32,6 +32,7 @@ return [
 			'full_name' => 'Studium ke splnění kvalifikačních předpokladů',
 			'short_name' => 'Kvalifikační předpoklady',
 			'rewrite_slug' => 'studium-ke-splneni-kvalifikacnich-predpokladu',
+			'requires_pin' => true,
 		],
 		'dalsi_vzdelavani' => [
 			'full_name' => 'Další vzdělávání pedagogických pracovníků',
@@ -47,6 +48,7 @@ return [
 			'full_name' => 'Profesní kvalifikace',
 			'short_name' => 'Profesní kvalifikace',
 			'rewrite_slug' => 'profesni-kvalifikace',
+			'requires_pin' => true,
 		],
 		'kurzy_verejnost' => [
 			'full_name' => 'Kurzy pro veřejnost',

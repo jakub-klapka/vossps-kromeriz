@@ -6,6 +6,7 @@ use Lumiart\Vosspskm\Courses\AutoloadableInterface;
 use Lumiart\Vosspskm\Courses\Models\CoursePost;
 use Lumiart\Vosspskm\Courses\SingletonTrait;
 use Symfony\Component\Form\Form;
+use Symfony\Component\Form\FormError;
 
 class FormSubmissionController {
 
@@ -19,21 +20,42 @@ class FormSubmissionController {
 	 */
 	public function handle( $form, $post ) {
 
-		//TODO: validate unique e-mail for course
+		$form_data = $form->getData();
+
+		// TODO: captcha
+
+		// Validate request to open course
+		if( !$post->isStillSignable() ) {
+			$form->addError( new FormError( 'Invalid Request' ) );
+			return;
+		}
+
+		// Validate unique e-mail
+		if( $post->hasSignedUpEmail( $form_data[ 'email' ] ) ) {
+			$form->addError( new FormError( 'Tento e-mail je ke kurzu již registrován. Pokud si myslíte, že je to chyba, tak nás prosím kontaktujte.' ) );
+			return;
+		}
 
 		/*
 		 * Validated from here
 		 */
-		$this->addStudentToPost( $form->getData(), $post );
+		$this->addStudentToPost( $form_data, $post );
 		$this->clearCaches( $post );
 
 	}
 
 	/**
+	 * Handle mapping between symfony form and CoursePost
+	 *
 	 * @param array $data
 	 * @param CoursePost $post
 	 */
 	private function addStudentToPost( $data, CoursePost $post ) {
+
+		$payment_subject_map = [
+			'self_payment' => 'self',
+			'school_payment' => 'school'
+		];
 
 		$mapping = [
 			'name' => $data[ 'last_name'] . ' ' . $data[ 'first_name' ],
@@ -42,7 +64,8 @@ class FormSubmissionController {
 			'born_place' => $data[ 'birth_place' ],
 			'born_date' => $data[ 'birth_date' ]->format( 'Ymd' ),
 			'phone' => $data[ 'phone' ],
-			'payment_object' => $data[ 'payment_subject' ],
+			'pers_pin' => ( isset( $data[ 'pin' ] ) ) ? $data[ 'pin' ] : null,
+			'payment_object' => $payment_subject_map[ $data[ 'payment_subject' ] ],
 			'street' => $data[ 'self_payment_street' ],
 			'city' => $data[ 'self_payment_city' ],
 			'psc' => $data[ 'self_payment_psc' ],
@@ -64,6 +87,11 @@ class FormSubmissionController {
 
 	}
 
+	/**
+	 * Clear caches related to form submission
+	 *
+	 * @param CoursePost $post
+	 */
 	private function clearCaches( CoursePost $post ) {
 
 		/*
