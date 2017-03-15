@@ -1,4 +1,5 @@
 <?php
+use Lumiart\Vosspskm\Courses\Controllers\AdminCourseCategoryController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminCourseDetailController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminListController;
 use Lumiart\Vosspskm\Courses\Controllers\Migrations;
@@ -21,7 +22,8 @@ return [
 	 */
 	'autoload_on_admin_init' => [
 		AdminListController::class,
-		AdminCourseDetailController::class
+		AdminCourseDetailController::class,
+		AdminCourseCategoryController::class,
 	],
 
 	/*
