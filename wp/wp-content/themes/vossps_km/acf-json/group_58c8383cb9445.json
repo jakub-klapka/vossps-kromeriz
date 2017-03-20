@@ -3,17 +3,36 @@
     "title": "Nastaven\u00ed kurz\u016f",
     "fields": [
         {
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
             "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "key": "field_58c8385613b71",
-            "label": "test",
-            "name": "test",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
+            "delay": 0,
+            "key": "field_58d041c75aea5",
+            "label": "Notifika\u010dn\u00ed e-mail pro \u00fa\u010dastn\u00edka - platba hotov\u011b",
+            "name": "student_email_template_cash",
+            "type": "wysiwyg",
+            "instructions": "Pro vlo\u017een\u00ed v\u00fdpisu zadan\u00fdch \u00fadaj\u016f pou\u017eijte tag <b>[zadane_udaje]<\/b>",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "default_value": "",
+            "delay": 0,
+            "key": "field_58d04b9cc8b32",
+            "label": "Notifika\u010dn\u00ed e-mail pro \u00fa\u010dastn\u00edka - platba p\u0159evodem",
+            "name": "student_email_template_invoice",
+            "type": "wysiwyg",
+            "instructions": "Pro vlo\u017een\u00ed v\u00fdpisu zadan\u00fdch \u00fadaj\u016f pou\u017eijte tag <b>[zadane_udaje]<\/b>",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -39,5 +58,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1489519999
+    "modified": 1490045874
 }
