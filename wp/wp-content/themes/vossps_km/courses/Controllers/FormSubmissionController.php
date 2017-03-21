@@ -2,6 +2,8 @@
 
 namespace Lumiart\Vosspskm\Courses\Controllers;
 
+use GuzzleHttp\Client;
+use Lumiart\Vosspskm\Courses\App;
 use Lumiart\Vosspskm\Courses\AutoloadableInterface;
 use Lumiart\Vosspskm\Courses\Models\CoursePost;
 use Lumiart\Vosspskm\Courses\SingletonTrait;
@@ -10,6 +12,15 @@ use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormError;
 
 class FormSubmissionController {
+
+	/**
+	 * @var App
+	 */
+	private $app;
+
+	public function __construct( App $app ) {
+		$this->app = $app;
+	}
 
 	/**
 	 * Cache for email summary HTML output
@@ -30,7 +41,12 @@ class FormSubmissionController {
 
 		$form_data = $form->getData();
 
-		// TODO: captcha
+		// Recaptcha
+		$captcha_valid = $this->validateRecaptcha();
+		if( !$captcha_valid ) {
+			$form->addError( new FormError( 'Selhalo ověření identity. Zkuste prosím formulář odeslat znovu.' ) );
+			return;
+		}
 
 		// Validate request to open course
 		if( !$post->isStillSignable() ) {
@@ -50,6 +66,31 @@ class FormSubmissionController {
 		$this->addStudentToPost( $form_data, $post );
 		$this->clearCaches( $post );
 		$this->sendNotificationEmails( $form, $form_data, $post );
+
+	}
+
+	/**
+	 * Call recaptcha API and check response
+	 *
+	 * @return bool
+	 */
+	private function validateRecaptcha() {
+		if( !isset( $_REQUEST[ 'g-recaptcha-response' ] ) ) return false;
+
+		$client = new Client();
+		$recaptcha_response = $client->request( 'POST', 'https://www.google.com/recaptcha/api/siteverify', [
+			'query' =>[
+				'secret' => $this->app->getConfig()[ 'recaptcha' ][ 'secret' ],
+				'response' => $_REQUEST[ 'g-recaptcha-response' ],
+				'remoteip' => $_SERVER[ 'REMOTE_ADDR' ]
+			]
+		] );
+
+		$result = json_decode( $recaptcha_response->getBody()->getContents() );
+
+		if( !isset( $result->success ) ) return false;
+
+		return $result->success;
 
 	}
 

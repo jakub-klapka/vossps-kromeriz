@@ -46,7 +46,8 @@ class CourseDetailController {
 				'wp_date_format' => get_option( 'date_format' ),
 				'signup_date_is_critical' => ( $post->getSignupCloseDate() < ( new \DateTime() )->add( new \DateInterval( 'P1W' ) ) ) ? true : false,
 				'form' => ( isset( $form_view ) ) ? $form_view : null,
-				'form_errors' => ( isset( $form ) ) ? $form->getErrors( true ) : false
+				'form_errors' => ( isset( $form ) ) ? $form->getErrors( true ) : false,
+				'recaptcha_sitekey' => $this->config[ 'recaptcha' ][ 'sitekey' ]
 			];
 			Timber::render( 'course_detail.twig', array_merge( Timber::get_context(), $data ) );
 			return;

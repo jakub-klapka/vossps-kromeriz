@@ -279,6 +279,14 @@
 
 <div class="row">
 	<div class="col-xs-12">
-		<button type="submit" class="btn btn-primary btn-lg">Odeslat přihlášku</button>
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<script type="text/javascript">
+			var CourseFormRecaptchaSubmit = function() {
+				document.getElementById("coursesSignForm").submit();
+			};
+		</script>
+		<button type="button" class="btn btn-primary btn-lg g-recaptcha"
+		        data-sitekey="{{ recaptcha_sitekey }}"
+		        data-callback="CourseFormRecaptchaSubmit">Odeslat přihlášku</button>
 	</div>
 </div>

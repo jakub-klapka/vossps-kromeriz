@@ -57,6 +57,14 @@ return [
 			'short_name' => 'Kurzy pro veřejnost',
 			'rewrite_slug' => 'kurzy-pro-verejnost',
 		]
+	],
+
+	/*
+	 * Recaptcha API keys
+	 */
+	'recaptcha' => [
+		'sitekey' => ( defined( 'RECAPTCHA_API_SITEKEY' ) ) ? RECAPTCHA_API_SITEKEY : null,
+		'secret' => ( defined( 'RECAPTCHA_API_SECRET' ) ) ? RECAPTCHA_API_SECRET : null,
 	]
 
 ];
