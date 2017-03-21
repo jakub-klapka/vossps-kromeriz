@@ -518,7 +518,16 @@
 
 					<div class="row">
 						<div class="col-xs-12">
-							<button type="submit" class="btn btn-primary btn-lg">Odeslat přihlášku</button>
+							<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+							<!-- public key -->
+							<script type="text/javascript">
+								var CourseFormRecaptchaSubmit = function() {
+									document.getElementById("coursesSignForm").submit();
+								};
+							</script>
+							<button type="button" class="btn btn-primary btn-lg g-recaptcha"
+							        data-sitekey="6LcgMhgUAAAAAK8r2qq7dngyQ6ggyY1W_R9T2Fhk"
+							        data-callback="CourseFormRecaptchaSubmit">Odeslat přihlášku</button>
 						</div>
 					</div>
 
@@ -794,7 +803,10 @@
 
 					<div class="row">
 						<div class="col-xs-12">
-							<button type="submit" class="btn btn-primary btn-lg">Odeslat přihlášku</button>
+							<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+							<button type="submit" class="btn btn-primary btn-lg g-recaptcha"
+							        data-sitekey="6LcgMhgUAAAAAK8r2qq7dngyQ6ggyY1W_R9T2Fhk"
+							        data-callback="YourOnSubmitFn">Odeslat přihlášku</button>
 						</div>
 					</div>
 

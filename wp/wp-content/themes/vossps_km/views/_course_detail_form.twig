@@ -5,7 +5,9 @@
 		<div class="panel-body">
 
 			{% if form_errors.count > 0 %}
-				<strong style="color: red;">Formulář je neplatný</strong>
+				{% for error in form_errors %}
+					<strong style="color: red;">{{ error.getMessage() }}</strong>
+				{% endfor %}
 			{% endif %}
 
 			{% if form.vars.submitted and form.vars.valid %}

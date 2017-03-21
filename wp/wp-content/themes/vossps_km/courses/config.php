@@ -1,4 +1,5 @@
 <?php
+use Lumiart\Vosspskm\Courses\Controllers\AdminCourseCategoryController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminCourseDetailController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminListController;
 use Lumiart\Vosspskm\Courses\Controllers\Migrations;
@@ -21,7 +22,8 @@ return [
 	 */
 	'autoload_on_admin_init' => [
 		AdminListController::class,
-		AdminCourseDetailController::class
+		AdminCourseDetailController::class,
+		AdminCourseCategoryController::class,
 	],
 
 	/*
@@ -32,6 +34,7 @@ return [
 			'full_name' => 'Studium ke splnění kvalifikačních předpokladů',
 			'short_name' => 'Kvalifikační předpoklady',
 			'rewrite_slug' => 'studium-ke-splneni-kvalifikacnich-predpokladu',
+			'requires_pin' => true,
 		],
 		'dalsi_vzdelavani' => [
 			'full_name' => 'Další vzdělávání pedagogických pracovníků',
@@ -47,12 +50,21 @@ return [
 			'full_name' => 'Profesní kvalifikace',
 			'short_name' => 'Profesní kvalifikace',
 			'rewrite_slug' => 'profesni-kvalifikace',
+			'requires_pin' => true,
 		],
 		'kurzy_verejnost' => [
 			'full_name' => 'Kurzy pro veřejnost',
 			'short_name' => 'Kurzy pro veřejnost',
 			'rewrite_slug' => 'kurzy-pro-verejnost',
 		]
+	],
+
+	/*
+	 * Recaptcha API keys
+	 */
+	'recaptcha' => [
+		'sitekey' => ( defined( 'RECAPTCHA_API_SITEKEY' ) ) ? RECAPTCHA_API_SITEKEY : null,
+		'secret' => ( defined( 'RECAPTCHA_API_SECRET' ) ) ? RECAPTCHA_API_SECRET : null,
 	]
 
 ];

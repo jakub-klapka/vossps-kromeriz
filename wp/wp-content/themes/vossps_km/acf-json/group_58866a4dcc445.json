@@ -157,6 +157,45 @@
                 "class": "",
                 "id": ""
             }
+        },
+        {
+            "sub_fields": [
+                {
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_58c835416e3a0",
+                    "label": "E-mail",
+                    "name": "email",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "P\u0159idat e-mail",
+            "collapsed": "",
+            "key": "field_58c835296e39f",
+            "label": "E-maily administr\u00e1tor\u016f",
+            "name": "course_admin_emails",
+            "type": "repeater",
+            "instructions": "Na tyto e-maily budou odesl\u00e1ny notifikace o nov\u00fdch p\u0159ihl\u00e1\u0161k\u00e1ch.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
         }
     ],
     "location": [
@@ -204,5 +243,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1486835905
+    "modified": 1489516070
 }

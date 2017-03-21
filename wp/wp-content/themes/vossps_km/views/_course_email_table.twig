@@ -1,0 +1,10 @@
+<table>
+	<tbody>
+	{% for field in fields %}
+		<tr>
+			<td><strong>{{ field.label }}:</strong></td>
+			<td>{{ field.value }}</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
