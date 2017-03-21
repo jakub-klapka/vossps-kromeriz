@@ -12,6 +12,13 @@ use Symfony\Component\Form\FormError;
 class FormSubmissionController {
 
 	/**
+	 * Cache for email summary HTML output
+	 *
+	 * @var null|string
+	 */
+	protected $email_summary_cache = null;
+
+	/**
 	 * Handle form submission
 	 *
 	 * Form is already validated by Symfony create builder
@@ -116,15 +123,39 @@ class FormSubmissionController {
 	 */
 	private function sendNotificationEmails( $form, $form_data, $post ) {
 
-		//TODO: extract to another method, maybe construct fields table for both student and admin...
+		$student_email_contents = $this->getStudentEmailContents( $form, $form_data, $post );
+		$admin_email_contents = $this->getAdminEmailContents( $post, $form, $form_data );
 
-		$option_name_map = [
-			'cash' => 'cash',
-			'invoice' => 'invoice'
-		];
-		if( !in_array( $form_data[ 'payment_type' ], $option_name_map ) ) throw new \Exception( 'Invalid request' );
+		$headers = array('Content-Type: text/html; charset=UTF-8');
 
-		$student_email_template = get_field( 'course_option_' . $post->get_post_type()->name . '_student_email_template_' . $option_name_map[ $form_data[ 'payment_type' ] ], 'option' );
+		if( is_email( $form_data[ 'email' ] ) ) {
+			wp_mail( $form_data[ 'email' ] , 'Potvrzení online přihlášky ke kurzu ' . $post->post_name, $student_email_contents, $headers );
+		}
+
+		$admin_emails = get_field( 'course_admin_emails', $post->ID );
+		if( is_array( $admin_emails ) ) {
+			$admin_emails = array_map( function ( $field ) {
+				return $field[ 'email' ];
+			}, $admin_emails );
+		}
+
+		if( !empty( $admin_emails ) ) {
+			wp_mail( $admin_emails, 'Nový účastník kurzu ' . $post->post_name, $admin_email_contents, $headers );
+		}
+
+	}
+
+	/**
+	 * Create HTML table of all submitted data
+	 *
+	 * @param Form $form
+	 * @param array $form_data
+	 *
+	 * @return string
+	 */
+	private function constructEmailSummaryTable( $form, $form_data ) {
+
+		if( $this->email_summary_cache !== null ) return $this->email_summary_cache;
 
 		$used_fields_data = [];
 		foreach( $form_data as $field_name => $value ) {
@@ -154,8 +185,60 @@ class FormSubmissionController {
 
 		}
 
-		$compiled_table = \Timber::compile( '_course_email_table.twig', [ 'fields' => $used_fields_data ] );
-		$student_email = str_replace( '[zadane_udaje]', $compiled_table, $student_email_template );
+		$this->email_summary_cache = \Timber::compile( '_course_email_table.twig', [ 'fields' => $used_fields_data ] );
+
+		return $this->email_summary_cache;
+
+	}
+
+	/**
+	 * Compile contents of student e-mail
+	 *
+	 * Student e-mail template is different based on payment type
+	 *
+	 * @param Form $form
+	 * @param array $form_data
+	 * @param CoursePost $post
+	 *
+	 * @return string
+	 * @throws \Exception
+	 */
+	private function getStudentEmailContents( $form, $form_data, $post ) {
+
+		$option_name_map = [
+			'cash' => 'cash',
+			'invoice' => 'invoice'
+		];
+		if( !in_array( $form_data[ 'payment_type' ], $option_name_map ) ) throw new \Exception( 'Invalid request' );
+
+		$student_email_template = get_field( 'course_option_' . $post->get_post_type()->name . '_student_email_template_' . $option_name_map[ $form_data[ 'payment_type' ] ], 'option' );
+
+		$summary_table_contents = $this->constructEmailSummaryTable( $form, $form_data );
+
+		$student_email = str_replace( '[zadane_udaje]', $this->constructEmailSummaryTable( $form, $form_data ), $student_email_template );
+
+		return $student_email;
+
+	}
+
+	/**
+	 * Compile contents for admin e-mail (from hardcoded twig template)
+	 *
+	 * @param CoursePost $post
+	 * @param Form $form
+	 * @param array $form_data
+	 *
+	 * @return string
+	 */
+	private function getAdminEmailContents( $post, $form, $form_data ) {
+
+		$data = [
+			'course_name' => $post->post_name,
+			'course_url' => $post->link(),
+			'course_summary' => $this->constructEmailSummaryTable( $form, $form_data )
+		];
+
+		return \Timber::compile( '_course_email_admin_notification.twig', $data );
 
 	}
 
