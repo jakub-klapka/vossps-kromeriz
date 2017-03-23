@@ -82,7 +82,7 @@ class FormSubmissionController {
 			'query' =>[
 				'secret' => $this->app->getConfig()[ 'recaptcha' ][ 'secret' ],
 				'response' => $_REQUEST[ 'g-recaptcha-response' ],
-				'remoteip' => $_SERVER[ 'REMOTE_ADDR' ]
+				// 'remoteip' => $_SERVER[ 'REMOTE_ADDR' ] // Can't do that on Cloudflare probably
 			]
 		] );
 

@@ -525,7 +525,10 @@
 									document.getElementById("coursesSignForm").submit();
 								};
 							</script>
-							<button type="button" class="btn btn-primary btn-lg g-recaptcha"
+							<button data-submit_button type="submit" class="btn btn-primary btn-lg">Odeslat přihlášku</button>
+							<button data-recaptcha_button
+							        type="submit"
+							        class="btn btn-primary btn-lg g-recaptcha hidden"
 							        data-sitekey="6LcgMhgUAAAAAK8r2qq7dngyQ6ggyY1W_R9T2Fhk"
 							        data-callback="CourseFormRecaptchaSubmit">Odeslat přihlášku</button>
 						</div>
