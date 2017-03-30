@@ -24,7 +24,7 @@ class CoursePost extends TimberPost {
 	protected $app;
 
 	public function __construct( $pid = null ) {
-		parent::__construct( $pid = null );
+		parent::__construct( $pid );
 
 		global $vossps_km_courses_app;
 		$this->app = $vossps_km_courses_app;
@@ -50,6 +50,20 @@ class CoursePost extends TimberPost {
 	public function getFormatedSignupCloseDate() {
 		$date = $this->getSignupCloseDate();
 		return $date->format( get_option( 'date_format' ) );
+	}
+
+	/**
+	 * Get, if signup date is close to current time
+	 *
+	 * Threshold is one week from now
+	 *
+	 * @return bool
+	 */
+	public function isSignupDateCritical() {
+		if( $this->getSignupCloseDate() < ( new \DateTime() )->add( new \DateInterval( 'P1W' ) ) ) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
