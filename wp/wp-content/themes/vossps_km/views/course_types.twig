@@ -1,0 +1,23 @@
+{% extends 'master.twig' %}
+
+{% set page_theme = 'dv' %}
+
+{% block page_title %}Další vzdělávání{% endblock %}
+
+{% block main_content %}
+
+	{% for batch in course_types|batch(3) %}
+		<div class="row course_types">
+			{% for type in batch %}
+				<div class="col-sm-4 course_types__type">
+					<a href="{{ type.url }}">
+						<div class="panel panel-primary">
+							<div class="panel-heading text-center"><strong>{{ type.name }}</strong></div>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	{% endfor %}
+
+{% endblock %}

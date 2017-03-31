@@ -113,6 +113,11 @@ class Migrations implements AutoloadableInterface {
 			$schema_version = 1;
 		};
 
+		if( $schema_version < 2 ) {
+			$result .= $this->migration_2();
+			$schema_version = 2;
+		}
+
 		update_option( 'theme_schema_version', $schema_version, false );
 		return $result;
 
@@ -152,6 +157,17 @@ class Migrations implements AutoloadableInterface {
 
 		return $result;
 
+	}
+
+	/**
+	 * Flush rewrite rules, as we are adding new rewrite tag for types page
+	 *
+	 * @return string
+	 */
+	private function migration_2() {
+		update_option( 'rewrite_rules', '' );
+		flush_rewrite_rules();
+		return 'Migration 2 - rewrite rules flushed.<br/>';
 	}
 
 }

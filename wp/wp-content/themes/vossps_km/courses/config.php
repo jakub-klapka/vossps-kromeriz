@@ -3,6 +3,7 @@ use Lumiart\Vosspskm\Courses\Controllers\AdminCourseCategoryController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminCourseDetailController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminListController;
 use Lumiart\Vosspskm\Courses\Controllers\CourseListController;
+use Lumiart\Vosspskm\Courses\Controllers\CourseTypesController;
 use Lumiart\Vosspskm\Courses\Controllers\Migrations;
 use Lumiart\Vosspskm\Courses\Controllers\RegisterAssets;
 use Lumiart\Vosspskm\Courses\Controllers\RegisterPostTypes;
@@ -17,6 +18,7 @@ return [
 		Migrations::class,
 		RegisterAssets::class,
 		CourseListController::class,
+		CourseTypesController::class,
 	],
 
 	/*
