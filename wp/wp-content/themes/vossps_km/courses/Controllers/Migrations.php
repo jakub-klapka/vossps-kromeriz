@@ -118,6 +118,11 @@ class Migrations implements AutoloadableInterface {
 			$schema_version = 2;
 		}
 
+		if( $schema_version < 3 ) {
+			$result .= $this->migration_3();
+			$schema_version = 3;
+		}
+
 		update_option( 'theme_schema_version', $schema_version, false );
 		return $result;
 
@@ -168,6 +173,37 @@ class Migrations implements AutoloadableInterface {
 		update_option( 'rewrite_rules', '' );
 		flush_rewrite_rules();
 		return 'Migration 2 - rewrite rules flushed.<br/>';
+	}
+
+	/**
+	 * Add new course-related user roles
+	 */
+	private function migration_3() {
+
+		$return = '';
+
+		foreach( $this->app->getConfig()['courses_post_types'] as $slug => $attrs ) {
+
+			$caps = [
+				'read' => true,
+				'upload_files' => true,
+				'edit_kurzy-' . $slug => true,
+				'edit_others_kurzy-' . $slug => true,
+				'publish_kurzy-' . $slug => true,
+				'read_kurzy-' . $slug => true,
+				'delete_kurzy-' . $slug => true,
+				'publish_kurzy-' . $slug => true,
+				'create_kurzy-' . $slug => true,
+				'read_private_kurzy-' . $slug => true
+			];
+
+			$return .= 'Adding role: ' . 'course_admin-' . $slug . ' (' . 'Správce kurzů - ' . $attrs[ 'short_name' ] . ')<br/>';
+			add_role( 'course_admin-' . $slug, 'Správce kurzů - ' . $attrs[ 'short_name' ], $caps );
+
+		}
+
+		return $return;
+
 	}
 
 }
