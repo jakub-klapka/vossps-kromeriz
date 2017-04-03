@@ -131,6 +131,8 @@ class Layout {
 		$flatered_menu = $menu->getFlatteredMenu();
 
 		foreach( $flatered_menu as $key => $item ) {
+			// Allow override of style on item itself
+			if( isset( $item[ 'is_ss' ] ) || isset( $item[ 'is_dv' ] ) || isset( $item[ 'is_dv' ] ) || isset( $item[ 'is_spp' ] ) ) continue;
 			switch( $item['id'] ){
 				case( $this->ss_id ):
 					$flatered_menu[$key]['is_ss'] = true;

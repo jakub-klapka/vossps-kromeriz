@@ -1,0 +1,73 @@
+# Translation of Plugins - User Switching - Stable (latest release) in Czech
+# This file is distributed under the same license as the Plugins - User Switching - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-05 22:00:13+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: cs_CZ\n"
+"Project-Id-Version: Plugins - User Switching - Stable (latest release)\n"
+
+#: user-switching.php:94
+msgctxt "User Switching title on user profile screen"
+msgid "User Switching"
+msgstr "User Switching"
+
+#: user-switching.php:154 user-switching.php:178 user-switching.php:187
+#: user-switching.php:192 user-switching.php:210
+msgid "Could not switch users."
+msgstr "Nepodařilo se přepnout uživatele."
+
+#: user-switching.php:95 user-switching.php:514 user-switching.php:556
+#: user-switching.php:581
+msgid "Switch&nbsp;To"
+msgstr "Přepnout&nbsp;na"
+
+#. Translators: "switch off" means to temporarily log out
+#: user-switching.php:220 user-switching.php:238
+msgid "Could not switch off."
+msgstr "Nepodařilo se dočasně odhlásit."
+
+#. Translators: "switch off" means to temporarily log out
+#: user-switching.php:437
+msgid "Switch Off"
+msgstr "Odhlásit se (dočasně)"
+
+#. Translators: 1: user display name; 2: username;
+#: user-switching.php:335
+msgid "Switched back to %1$s (%2$s)."
+msgstr "Přepnuto zpět na uživatele %1$s (%2$s)."
+
+#. Translators: 1: user display name; 2: username;
+#: user-switching.php:319 user-switching.php:416 user-switching.php:452
+#: user-switching.php:468 user-switching.php:487
+msgid "Switch back to %1$s (%2$s)"
+msgstr "Přepnout zpět na %1$s (%2$s)"
+
+#. Translators: 1: user display name; 2: username;
+#: user-switching.php:309 user-switching.php:338
+msgid "Switched to %1$s (%2$s)."
+msgstr "Přepnut na %1$s (%2$s)."
+
+#. Plugin URI of the plugin/theme
+msgid "https://johnblackbourn.com/wordpress-plugin-user-switching/"
+msgstr "https://johnblackbourn.com/wordpress-plugin-user-switching/"
+
+#. Plugin Name of the plugin/theme
+msgid "User Switching"
+msgstr "User Switching"
+
+#. Author of the plugin/theme
+msgid "John Blackbourn"
+msgstr "John Blackbourn"
+
+#. Description of the plugin/theme
+msgid "Instant switching between user accounts in WordPress"
+msgstr "Možnost přepínání mezi uživatelskými účty ve WordPressu"
+
+#. Author URI of the plugin/theme
+msgid "https://johnblackbourn.com/"
+msgstr "https://johnblackbourn.com/"
