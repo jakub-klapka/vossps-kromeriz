@@ -73,10 +73,21 @@ class CourseTypesController implements AutoloadableInterface {
 		}
 
 		$data = [
-			'course_types' => $types
+			'course_types' => $types,
+			'breadcrumbs' => [
+				[
+					'name' => 'Hlavní strana',
+					'url' => get_bloginfo( 'url' )
+				],
+				[
+					'name' => 'Další vzdělávání',
+					'url' => trailingslashit( get_bloginfo( 'url' ) ) . 'kurzy/'
+				]
+			]
 		];
 
 		\Timber::render( [ 'course_types.twig' ], array_merge( \Timber::get_context(), $data ) );
 
 	}
+
 }

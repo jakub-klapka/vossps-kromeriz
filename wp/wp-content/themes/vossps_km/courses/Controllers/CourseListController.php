@@ -100,10 +100,25 @@ class CourseListController implements AutoloadableInterface {
 			}
 		}
 
+		$course_type_title = $this->app->getConfig()['courses_post_types'][ get_post_type() ]['full_name'];
 		$data = [
-			'page_title' => $this->app->getConfig()[ 'courses_post_types' ][ get_post_type() ][ 'full_name' ],
+			'page_title' => $course_type_title,
 			'avail_courses' => $avail_courses,
-			'due_courses' => $due_courses
+			'due_courses' => $due_courses,
+			'breadcrumbs' => [
+				[
+					'name' => 'Hlavní strana',
+					'url' => get_bloginfo( 'url' )
+				],
+				[
+					'name' => 'Další vzdělávání',
+					'url' => trailingslashit( get_bloginfo( 'url' ) ) . 'kurzy/'
+				],
+				[
+					'name' => $course_type_title,
+					'url' => get_post_type_archive_link( get_post_type() )
+				]
+			]
 		];
 
 		\Timber::render( 'course_archive.twig', array_merge( \Timber::get_context(), $data ) );

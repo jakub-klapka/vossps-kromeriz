@@ -68,8 +68,11 @@ class CourseDetailController {
 	 */
 	private function generateBreadcrumbs( CoursePost $post ) {
 		$home_page = [ 'name' => 'Hlavní strana', 'url' => get_bloginfo( 'url' ) ];
-		$dv = [ 'name' => 'Další vzdělávání', 'url' => 'TODO' ];
-		$category = [ 'name' => $this->config[ 'courses_post_types' ][ $post->get_post_type()->name ][ 'short_name' ], 'url' => 'TODO' ];
+		$dv = [ 'name' => 'Další vzdělávání', 'url' => trailingslashit( get_bloginfo( 'url' ) ) . 'kurzy/' ];
+		$category = [
+			'name' => $this->config[ 'courses_post_types' ][ $post->get_post_type()->name ][ 'full_name' ],
+			'url' => get_post_type_archive_link( $post->post_type )
+		];
 
 		return [ $home_page, $dv, $category ];
 	}
