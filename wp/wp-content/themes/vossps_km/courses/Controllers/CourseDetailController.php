@@ -44,7 +44,7 @@ class CourseDetailController {
 				'breadcrumbs' => $this->generateBreadcrumbs( $post ),
 				'post' => $post,
 				'wp_date_format' => get_option( 'date_format' ),
-				'signup_date_is_critical' => ( $post->getSignupCloseDate() < ( new \DateTime() )->add( new \DateInterval( 'P1W' ) ) ) ? true : false,
+				'signup_date_is_critical' => $post->isSignupDateCritical(),
 				'form' => ( isset( $form_view ) ) ? $form_view : null,
 				'form_errors' => ( isset( $form ) ) ? $form->getErrors( true ) : false,
 				'recaptcha_sitekey' => $this->config[ 'recaptcha' ][ 'sitekey' ]
@@ -68,8 +68,11 @@ class CourseDetailController {
 	 */
 	private function generateBreadcrumbs( CoursePost $post ) {
 		$home_page = [ 'name' => 'Hlavní strana', 'url' => get_bloginfo( 'url' ) ];
-		$dv = [ 'name' => 'Další vzdělávání', 'url' => 'TODO' ];
-		$category = [ 'name' => $this->config[ 'courses_post_types' ][ $post->get_post_type()->name ][ 'short_name' ], 'url' => 'TODO' ];
+		$dv = [ 'name' => 'Další vzdělávání', 'url' => trailingslashit( get_bloginfo( 'url' ) ) . 'kurzy/' ];
+		$category = [
+			'name' => $this->config[ 'courses_post_types' ][ $post->get_post_type()->name ][ 'full_name' ],
+			'url' => get_post_type_archive_link( $post->post_type )
+		];
 
 		return [ $home_page, $dv, $category ];
 	}

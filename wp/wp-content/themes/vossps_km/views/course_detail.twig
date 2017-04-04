@@ -1,6 +1,9 @@
 {% extends 'master.twig' %}
+{% import '_course_date_macros.twig' as course_macros %}
 
 {% set page_theme = 'dv' %}
+
+{# TODO: breadcrumbs #}
 
 {% block main_content %}
 
@@ -14,11 +17,7 @@
 						<div class="col-xs-8">
 							<dl class="dl-horizontal">
 								<dt>Uzávěrka přihlášek</dt>
-								{% if signup_date_is_critical %}
-									<dd><strong class="text-danger">{{ post.getSignupCloseDate|date( wp_date_format ) }}</strong></dd>
-								{% else %}
-									<dd>{{ post.getSignupCloseDate|date( wp_date_format ) }}</dd>
-								{% endif %}
+								<dd><strong class="text-danger">{{ course_macros.maybe_critical_date( post ) }}</strong></dd>
 								{% if post.course_realization %}
 									<dt>Termín kurzu</dt>
 									<dd>{{ post.course_realization }}</dd>
@@ -32,7 +31,7 @@
 									<dd>{{ post.formatCoursePrice }}</dd>
 								{% endif %}
 								{% if post.lesson_count %}
-									<dt>Počet Hodin</dt>
+									<dt>Počet hodin</dt>
 									<dd>{{ post.lesson_count }}</dd>
 								{% endif %}
 								{% if post.teacher %}
@@ -47,10 +46,7 @@
 						</div>
 						{% if not post.isSignupDue() %}
 							<div class="col-xs-4 text-right">
-								{% if post.getCourseFreePlaces() > 5 %}{% set class = 'primary' %}{% endif %}
-								{% if post.getCourseFreePlaces() <= 5 %}{% set class = 'warning' %}{% endif %}
-								{% if post.getCourseFreePlaces() <= 0 %}{% set class = 'danger' %}{% endif %}
-								<button type="button" data-scroll-to="#coursesSignForm" class="courses__course__signButton btn btn-lg btn-{{ class }}">Volných míst: <strong>{{ post.getCourseFreePlaces() }}</strong></button>
+								<button type="button" data-scroll-to="#coursesSignForm" class="courses__course__signButton btn btn-lg btn-{{ course_macros.button_class( post ) }}">Volných míst: <strong>{{ post.getCourseFreePlaces() }}</strong></button>
 							</div><!-- /.col -->
 						{% endif %}
 					</div><!-- /.row -->

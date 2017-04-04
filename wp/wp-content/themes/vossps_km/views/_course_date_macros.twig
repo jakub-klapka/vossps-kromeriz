@@ -1,0 +1,13 @@
+{% macro maybe_critical_date( post ) %}
+	{% set critical_date = post.isSignupDateCritical %}{# cache #}
+	{% if critical_date %}<strong class="text-danger">{% endif %}
+		{{ post.getFormatedSignupCloseDate }}
+	{% if critical_date %}</strong>{% endif %}</dd>
+{% endmacro %}
+
+{% macro button_class( post ) %}{% spaceless %}
+	{% if post.getCourseFreePlaces() > 5 %}{% set class = 'primary' %}{% endif %}
+	{% if post.getCourseFreePlaces() <= 5 %}{% set class = 'warning' %}{% endif %}
+	{% if post.getCourseFreePlaces() <= 0 %}{% set class = 'danger' %}{% endif %}
+	{{ class }}
+{% endspaceless %}{% endmacro %}

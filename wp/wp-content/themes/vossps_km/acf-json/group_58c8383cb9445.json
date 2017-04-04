@@ -3,6 +3,57 @@
     "title": "Nastaven\u00ed kurz\u016f",
     "fields": [
         {
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_58e3cb31ab585",
+            "label": "Popis kategorie kurz\u016f",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0,
+            "key": "field_58e3cb46ab586",
+            "label": "Popis kategorie",
+            "name": "course_type_description",
+            "type": "wysiwyg",
+            "instructions": "Tyto informace jsou zobrazeny na str\u00e1nce s v\u00fdpisem dostupn\u00fdch kurz\u016f v t\u00e9to kategorii.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_58e3cb21ab584",
+            "label": "E-mailov\u00e9 notifikace",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
@@ -58,5 +109,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1490045874
+    "modified": 1491323860
 }

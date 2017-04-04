@@ -90,8 +90,11 @@ class AdminCourseCategoryController implements AutoloadableInterface {
 
 			$new_fields = [];
 			foreach( $template_field_definition as $field ) {
-				$field[ 'key' ] = 'field_options_page_' . $slug . '_' . $field[ 'name' ];
-				$field[ 'name' ] = 'course_option_' . $slug . '_' . $field[ 'name' ];
+				$field[ 'key' ] = $field[ 'key' ] . '_' . $slug;
+				if( !empty( $field[ 'name' ] ) ) {
+					// Count with tab fields, which have empty name
+					$field[ 'name' ] = 'course_option_' . $slug . '_' . $field[ 'name' ];
+				}
 				unset( $field[ 'parent' ] );
 				$new_fields[] = $field;
 			}

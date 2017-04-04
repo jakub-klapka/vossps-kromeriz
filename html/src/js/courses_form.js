@@ -127,6 +127,37 @@
 
 	};
 
+	/*
+	 * Handle submission with validator.js and grecaptcha
+	 *
+	 * Click on visible button will trigger validator.js response. If it's valid, we will click, via JS,
+	 * to another, hidden, button. This button has all the bindings for reCaptcha.
+	 *
+	 * I can understand, why validator.js don't have API, but I'm quite dissapointed with Google...
+	 */
+	var SubmitHandler = {
+
+		init: function( form ) {
+
+			this.form = form;
+			this.recaptcha_button = this.form.find( '[data-recaptcha_button]' );
+			this.form.validator().on( 'submit', $.proxy( this.handleSubmission, this ) );
+
+		},
+
+		handleSubmission: function ( event ) {
+
+			var form_valid = !event.isDefaultPrevented(); // This is, how bootstrap validator does that.
+			event.preventDefault(); // Prevent anyway
+
+			if( form_valid ) {
+				this.recaptcha_button.click();
+			}
+
+		}
+
+	};
+
 
 	/*
 	DOM ready
@@ -138,6 +169,10 @@
 
 		$( '[data-scroll-to]' ).each( function() {
 			Object.create( ScrollToForm ).init( $( this ) );
+		} );
+
+		$( '[data-courses_form]' ).each( function() {
+			Object.create( SubmitHandler ).init( $( this ) );
 		} );
 	} );
 

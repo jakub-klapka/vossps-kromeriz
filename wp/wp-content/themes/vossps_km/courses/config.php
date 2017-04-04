@@ -2,9 +2,13 @@
 use Lumiart\Vosspskm\Courses\Controllers\AdminCourseCategoryController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminCourseDetailController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminListController;
+use Lumiart\Vosspskm\Courses\Controllers\CourseListController;
+use Lumiart\Vosspskm\Courses\Controllers\CourseTypesController;
+use Lumiart\Vosspskm\Courses\Controllers\MainMenuController;
 use Lumiart\Vosspskm\Courses\Controllers\Migrations;
 use Lumiart\Vosspskm\Courses\Controllers\RegisterAssets;
 use Lumiart\Vosspskm\Courses\Controllers\RegisterPostTypes;
+use Lumiart\Vosspskm\Courses\Controllers\UserManagement;
 
 return [
 
@@ -15,6 +19,10 @@ return [
 		RegisterPostTypes::class,
 		Migrations::class,
 		RegisterAssets::class,
+		CourseListController::class,
+		CourseTypesController::class,
+		UserManagement::class,
+		MainMenuController::class,
 	],
 
 	/*
@@ -65,6 +73,12 @@ return [
 	'recaptcha' => [
 		'sitekey' => ( defined( 'RECAPTCHA_API_SITEKEY' ) ) ? RECAPTCHA_API_SITEKEY : null,
 		'secret' => ( defined( 'RECAPTCHA_API_SECRET' ) ) ? RECAPTCHA_API_SECRET : null,
-	]
+	],
+
+	/*
+	 * Disables menu for public and so on
+	 */
+	'courses_published' => ( defined( 'LUMI_COURSES_PUBLISHED' ) ) ? LUMI_COURSES_PUBLISHED : false,
+
 
 ];

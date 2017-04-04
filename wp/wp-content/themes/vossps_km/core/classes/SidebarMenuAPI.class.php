@@ -25,6 +25,11 @@ class SidebarMenuAPI {
 
 		$pages = $this->filter_not_allowed_top_level_pages( $pages );
 
+		/**
+		 * Filter to allow addition of new pages, implementing correct menu interface
+		 */
+		$pages = apply_filters( 'lumi/pedkm/unsorted_menu', $pages );
+
 		$pages = $this->change_menu_order_based_on_current_theme( $pages );
 
 		//sort children based on menu order
@@ -186,6 +191,15 @@ class SidebarMenuAPI {
 		$output = array();
 
 		foreach( $this->menu as $page ) {
+
+			/**
+			 * Allow override of WP_Post -> menu item transformation for each item
+			 */
+			$filtered_output = apply_filters( 'lumi/pedkm/menu_item', null, $page );
+			if( $filtered_output !== null ) {
+				$output[] = $filtered_output;
+				continue;
+			}
 
 			//create children array
 			$children = array();
