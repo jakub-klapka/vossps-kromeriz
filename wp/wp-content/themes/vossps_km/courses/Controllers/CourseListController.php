@@ -105,6 +105,7 @@ class CourseListController implements AutoloadableInterface {
 			'page_title' => $course_type_title,
 			'avail_courses' => $avail_courses,
 			'due_courses' => $due_courses,
+			'course_info' => get_field( 'course_option_' . get_post_type() . '_course_type_description', 'option' ),
 			'breadcrumbs' => [
 				[
 					'name' => 'Hlavní strana',

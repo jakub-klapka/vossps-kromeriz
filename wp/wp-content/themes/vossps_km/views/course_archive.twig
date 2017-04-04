@@ -4,17 +4,13 @@
 
 {% set page_theme = 'dv' %}
 
-{# TODO: breadcrumbs #}
-
 {% block page_title %}{{ page_title }}{% endblock %}
 
 {% block main_content %}
 
-	<h2>Info o kurzech obecně</h2>
+	{{ course_info|raw }}
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid consequatur cumque dolore ducimus ea eos
-		id iusto, laboriosam necessitatibus nostrum odio omnis praesentium quibusdam ratione reiciendis sequi, unde
-		voluptatem.</p>
+	<div class="clearfix"></div>
 
 	<section class="courses" id="courses">
 
