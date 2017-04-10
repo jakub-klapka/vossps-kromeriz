@@ -147,9 +147,11 @@ class FormSubmissionController {
 		/*
 		 * Single Post cache
 		 */
-		if( function_exists( 'wp_cache_post_change' ) ) {
-			wp_cache_post_change( $post->ID );
-		}
+//		if( function_exists( 'wp_cache_post_change' ) ) {
+//			wp_cache_post_change( $post->ID );
+//		}
+
+		// Due legacy setup, whole cache is pruned on form submit, so clearing of post and archive is not needed
 
 	}
 

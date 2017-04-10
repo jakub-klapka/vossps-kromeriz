@@ -4,6 +4,7 @@ namespace Lumiart\Vosspskm\Courses\Controllers;
 
 use Lumiart\Vosspskm\Courses\App;
 use Lumiart\Vosspskm\Courses\AutoloadableInterface;
+use Lumiart\Vosspskm\Courses\Models\CoursePost;
 use Lumiart\Vosspskm\Courses\SingletonTrait;
 
 class AdminCourseDetailController implements AutoloadableInterface {
@@ -22,6 +23,10 @@ class AdminCourseDetailController implements AutoloadableInterface {
 	public function boot() {
 
 		add_action( 'current_screen', [ $this, 'maybeAddStudentRowsCollapsingScript' ] );
+
+		foreach( array_keys( $this->app->getConfig()[ 'courses_post_types' ] ) as $slug ) {
+			add_action( 'add_meta_boxes_' . $slug, [ $this, 'addBatchActionsMetaBox' ] );
+		}
 
 	}
 
@@ -51,6 +56,35 @@ class AdminCourseDetailController implements AutoloadableInterface {
 			})(jQuery);
 		</script>
 		<?php
+	}
+
+	/**
+	 * Register meta boxes for course edit pages
+	 *
+	 * @wp-action add_meta_boxes_{$slug}
+	 */
+	public function addBatchActionsMetaBox() {
+
+		add_meta_box( 'course-batch-actions', 'Hromadné akce', [ $this, 'renderBatchActionsMetabox' ], null, 'normal', 'high' );
+
+	}
+
+	/**
+	 * Render meta boxes for Batch Actions on course edit page
+	 *
+	 * @param \WP_Post $wp_post
+	 */
+	public function renderBatchActionsMetabox( $wp_post ) {
+
+		$post = new CoursePost( $wp_post->ID );
+		$emails = $post->getAllStudentEmails();
+
+		$data = [
+			'batch_email_link' => 'mailto:?bcc=' . implode( ',', $emails )
+		];
+
+		\Timber::render( [ 'course_admin_batch_actions.twig' ], $data );
+
 	}
 
 }

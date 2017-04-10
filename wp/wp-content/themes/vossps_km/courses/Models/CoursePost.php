@@ -298,4 +298,22 @@ class CoursePost extends TimberPost {
 		return false;
 	}
 
+	/**
+	 * Returns array of all student e-mails. Empty array when there is no student.
+	 *
+	 * @return array
+	 */
+	public function getAllStudentEmails() {
+
+		$students = get_field( 'course_students', $this->ID );
+
+		$emails = [];
+		foreach( $students as $student ) {
+			if( !empty( $student[ 'email' ] ) && is_email( $student[ 'email' ] ) ) $emails[] = $student[ 'email' ];
+		}
+
+		return $emails;
+
+	}
+
 }
