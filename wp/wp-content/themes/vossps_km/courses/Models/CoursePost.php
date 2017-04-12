@@ -85,6 +85,15 @@ class CoursePost extends TimberPost {
 	}
 
 	/**
+	 * Get array with all students
+	 *
+	 * @return array|null
+	 */
+	public function getCourseStudents() {
+		return get_field( 'course_students', $this->ID );
+	}
+
+	/**
 	 * Get count of signed students
 	 *
 	 * @return int
@@ -313,6 +322,48 @@ class CoursePost extends TimberPost {
 		}
 
 		return $emails;
+
+	}
+
+	/**
+	 * Generate PHPExcel object with students data
+	 *
+	 * @return \PHPExcel
+	 */
+	public function generateStudentsExcel() {
+
+		\PHPExcel_Settings::setLocale( 'cs' );
+		$excel = new \PHPExcel();
+		$sheet = $excel->getActiveSheet();
+		$sheet->setTitle( 'Studenti kurzu ' . $this->post_title );
+
+		$fields_mapping = [
+			'name' => 'Jméno',
+			'email' => 'E-mail'
+		];
+
+		/*
+		 * Create header
+		 */
+		$i = 0;
+		foreach( $fields_mapping as $key => $title ) {
+			$cell = $sheet->setCellValueByColumnAndRow( $i, 1, $title, true );
+			$cell->getStyle()->applyFromArray( [
+				'borders' => [ 'outline' => [ 'style' => \PHPExcel_Style_Border::BORDER_MEDIUM ] ],
+				'fill' => [ 'type' => \PHPExcel_Style_Fill::FILL_SOLID, 'color' => [ 'rgb' => 'D3D3D3' ] ],
+				'font' => [ 'bold' => true ]
+			] );
+			$i++;
+		}
+
+		//TODO: continue from here
+		return $excel;
+
+		/*
+		 * Fill students
+		 */
+		$students = $this->getCourseStudents();
+
 
 	}
 

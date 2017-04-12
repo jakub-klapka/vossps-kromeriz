@@ -3,6 +3,7 @@ use Lumiart\Vosspskm\Courses\Controllers\AdminCourseCategoryController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminCourseDetailController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminListController;
 use Lumiart\Vosspskm\Courses\Controllers\CourseListController;
+use Lumiart\Vosspskm\Courses\Controllers\CourseStudentsExcelExportController;
 use Lumiart\Vosspskm\Courses\Controllers\CourseTypesController;
 use Lumiart\Vosspskm\Courses\Controllers\MainMenuController;
 use Lumiart\Vosspskm\Courses\Controllers\Migrations;
@@ -23,6 +24,7 @@ return [
 		CourseTypesController::class,
 		UserManagement::class,
 		MainMenuController::class,
+		CourseStudentsExcelExportController::class,
 	],
 
 	/*

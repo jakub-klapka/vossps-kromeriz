@@ -4,7 +4,8 @@
     "require": {
         "symfony/form": "^3.2",
         "symfony/validator": "^3.2",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "phpoffice/phpexcel": "^1.8"
     },
     "repository": "https://github.com/jakub-klapka/vossps-kromeriz",
     "authors": [
