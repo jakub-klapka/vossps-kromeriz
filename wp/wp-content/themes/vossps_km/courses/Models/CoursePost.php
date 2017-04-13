@@ -13,6 +13,7 @@ use Lumiart\Vosspskm\Courses\Controllers\FormFactory;
 use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -338,16 +339,39 @@ class CoursePost extends TimberPost {
 		$sheet->setTitle( 'Studenti kurzu ' . $this->post_title );
 
 		$fields_mapping = [
-			'name' => 'Jméno',
-			'email' => 'E-mail'
+			'name' => [ 'title' => 'Jméno' ],
+			'degree' => [ 'title' => 'Titul' ],
+			'email' => [ 'title' => 'E-mail' ],
+			'born_place' => [ 'title' => 'Místo narození' ],
+			'born_date' => [ 'title' => 'Datum narození', 'type' => 'date' ],
+			'phone' => [ 'title' => 'Telefon' ],
+			'pers_pin' => [ 'title' => 'Osobní číslo' ],
+			'payment_object' => [ 'title' => 'Plátce kurzovného', 'select' => [ 'self' => 'Samoplátce', 'school' => 'Škola' ] ],
+			'street' => [ 'title' => 'Účastník - Ulice' ],
+			'city' => [ 'title' => 'Účastník - Město' ],
+			'psc' => [ 'title' => 'Účastník - PSČ' ],
+			'school_name' => [ 'title' => 'Název školy' ],
+			'school_email' => [ 'title' => 'E-mail školy' ],
+			'school_ic' => [ 'title' => 'IČ' ],
+			'school_phone' => [ 'title' => 'Telefon školy' ],
+			'school_street' => [ 'title' => 'Škola - Ulice' ],
+			'school_city' => [ 'title' => 'Škola - Město' ],
+			'school_psc' => [ 'title' => 'Škola - PSČ' ],
+			'payment_type' => [ 'title' => 'Způsob plabty', 'select' => [ 'cash' => 'Hotově', 'invoice' => 'Fakturou' ] ],
+			'invoice_street' => [ 'title' => 'Fakturace - Ulice' ],
+			'invoice_city' => [ 'title' => 'Fakturace - Město' ],
+			'invoice_psc' => [ 'title' => 'Fakturace - PSČ' ],
+			'note' => [ 'title' => 'Poznámka', 'type' => 'html' ],
 		];
+
+		// TODO: it's working! but refactor it for gods sake. Without wine this time...
 
 		/*
 		 * Create header
 		 */
 		$i = 0;
-		foreach( $fields_mapping as $key => $title ) {
-			$cell = $sheet->setCellValueByColumnAndRow( $i, 1, $title, true );
+		foreach( $fields_mapping as $key => $attributes ) {
+			$cell = $sheet->setCellValueByColumnAndRow( $i, 1, $attributes[ 'title' ], true );
 			$cell->getStyle()->applyFromArray( [
 				'borders' => [ 'outline' => [ 'style' => \PHPExcel_Style_Border::BORDER_MEDIUM ] ],
 				'fill' => [ 'type' => \PHPExcel_Style_Fill::FILL_SOLID, 'color' => [ 'rgb' => 'D3D3D3' ] ],
@@ -356,14 +380,72 @@ class CoursePost extends TimberPost {
 			$i++;
 		}
 
-		//TODO: continue from here
-		return $excel;
-
 		/*
 		 * Fill students
 		 */
 		$students = $this->getCourseStudents();
+		$row = 1;
+		foreach( $students as $student ) {
+			$row++; //Starting at 2
 
+			$column = -1;
+			foreach( $fields_mapping as $key => $attributes ) {
+				$column++; // Starting at 0
+
+				if( isset( $attributes[ 'type' ] ) && $attributes[ 'type' ] === 'date' ) {
+					$date_string = $student[ $key ];
+
+					if( empty( $date_string ) ) {
+						$cell = $sheet->setCellValueByColumnAndRow( $column, $row, '', true );
+					} else {
+						$date = \DateTime::createFromFormat( 'Ymd', $date_string )->setTime( 0, 0, 0 );
+						$cell = $sheet->setCellValueByColumnAndRow( $column, $row, \PHPExcel_Shared_Date::PHPToExcel( $date ), true );
+						$cell->getStyle()->getNumberFormat()->setFormatCode( \PHPExcel_Style_NumberFormat::FORMAT_DATE_DDMMYYYY );
+					}
+
+				} elseif( isset( $attributes[ 'select' ] ) ){
+
+					$value = $student[ $key ];
+					$cell = $sheet->setCellValueByColumnAndRow( $column, $row, $attributes[ 'select' ][ $value ], true );
+
+				} elseif( isset( $attributes[ 'type' ] ) && $attributes[ 'type' ] === 'html' ) {
+
+					$value = strip_tags( preg_replace( '/\s$/', '', $student[ $key ]) ); // Strip last newline character, which is always there
+					$cell = $sheet->setCellValueByColumnAndRow( $column, $row, $value, true );
+					$cell->getStyle()->getAlignment()->setWrapText( true );
+
+				} else {
+
+					$cell = $sheet->setCellValueByColumnAndRow( $column, $row, $student[ $key ], true );
+
+				}
+
+				$border = [ 'style' => \PHPExcel_Style_Border::BORDER_THIN ];
+				$cell->getStyle()->applyFromArray( [
+					'borders' => [
+						'left' => $border,
+						'bottom' => $border,
+						'right' => $border
+					]
+				] );
+
+			}
+
+		}
+
+		/*
+		 * Set autosize columns
+		 */
+		for( $i = 0; $i < count( $fields_mapping ); $i++ ) {
+			$sheet->getColumnDimensionByColumn( $i )->setAutoSize( true );
+		}
+
+		/*
+		 * Set column freeze
+		 */
+		$sheet->freezePaneByColumnAndRow( 0, 2 );
+
+		return $excel;
 
 	}
 
