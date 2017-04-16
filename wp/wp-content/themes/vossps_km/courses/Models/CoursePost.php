@@ -3,6 +3,7 @@
 namespace Lumiart\Vosspskm\Courses\Models;
 
 use Lumiart\Vosspskm\Courses\Controllers\FormSubmissionController;
+use Lumiart\Vosspskm\Courses\Services\CourseExcelGenerator;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -333,118 +334,14 @@ class CoursePost extends TimberPost {
 	 */
 	public function generateStudentsExcel() {
 
-		\PHPExcel_Settings::setLocale( 'cs' );
-		$excel = new \PHPExcel();
-		$sheet = $excel->getActiveSheet();
-		$sheet->setTitle( 'Studenti kurzu ' . $this->post_title );
+		/** @var CourseExcelGenerator $generator */
+		$generator = $this->app->make( CourseExcelGenerator::class );
+		$generator->setTitle( 'Studenti kurzu ' . $this->post_title )
+		          ->setFieldMapping( $this->app->getConfig()[ 'students_export_excel_mapping' ] )
+		          ->setData( $this->getCourseStudents() )
+		          ->setColumnFreeze( 1 );
 
-		$fields_mapping = [
-			'name' => [ 'title' => 'Jméno' ],
-			'degree' => [ 'title' => 'Titul' ],
-			'email' => [ 'title' => 'E-mail' ],
-			'born_place' => [ 'title' => 'Místo narození' ],
-			'born_date' => [ 'title' => 'Datum narození', 'type' => 'date' ],
-			'phone' => [ 'title' => 'Telefon' ],
-			'pers_pin' => [ 'title' => 'Osobní číslo' ],
-			'payment_object' => [ 'title' => 'Plátce kurzovného', 'select' => [ 'self' => 'Samoplátce', 'school' => 'Škola' ] ],
-			'street' => [ 'title' => 'Účastník - Ulice' ],
-			'city' => [ 'title' => 'Účastník - Město' ],
-			'psc' => [ 'title' => 'Účastník - PSČ' ],
-			'school_name' => [ 'title' => 'Název školy' ],
-			'school_email' => [ 'title' => 'E-mail školy' ],
-			'school_ic' => [ 'title' => 'IČ' ],
-			'school_phone' => [ 'title' => 'Telefon školy' ],
-			'school_street' => [ 'title' => 'Škola - Ulice' ],
-			'school_city' => [ 'title' => 'Škola - Město' ],
-			'school_psc' => [ 'title' => 'Škola - PSČ' ],
-			'payment_type' => [ 'title' => 'Způsob plabty', 'select' => [ 'cash' => 'Hotově', 'invoice' => 'Fakturou' ] ],
-			'invoice_street' => [ 'title' => 'Fakturace - Ulice' ],
-			'invoice_city' => [ 'title' => 'Fakturace - Město' ],
-			'invoice_psc' => [ 'title' => 'Fakturace - PSČ' ],
-			'note' => [ 'title' => 'Poznámka', 'type' => 'html' ],
-		];
-
-		// TODO: it's working! but refactor it for gods sake. Without wine this time...
-
-		/*
-		 * Create header
-		 */
-		$i = 0;
-		foreach( $fields_mapping as $key => $attributes ) {
-			$cell = $sheet->setCellValueByColumnAndRow( $i, 1, $attributes[ 'title' ], true );
-			$cell->getStyle()->applyFromArray( [
-				'borders' => [ 'outline' => [ 'style' => \PHPExcel_Style_Border::BORDER_MEDIUM ] ],
-				'fill' => [ 'type' => \PHPExcel_Style_Fill::FILL_SOLID, 'color' => [ 'rgb' => 'D3D3D3' ] ],
-				'font' => [ 'bold' => true ]
-			] );
-			$i++;
-		}
-
-		/*
-		 * Fill students
-		 */
-		$students = $this->getCourseStudents();
-		$row = 1;
-		foreach( $students as $student ) {
-			$row++; //Starting at 2
-
-			$column = -1;
-			foreach( $fields_mapping as $key => $attributes ) {
-				$column++; // Starting at 0
-
-				if( isset( $attributes[ 'type' ] ) && $attributes[ 'type' ] === 'date' ) {
-					$date_string = $student[ $key ];
-
-					if( empty( $date_string ) ) {
-						$cell = $sheet->setCellValueByColumnAndRow( $column, $row, '', true );
-					} else {
-						$date = \DateTime::createFromFormat( 'Ymd', $date_string )->setTime( 0, 0, 0 );
-						$cell = $sheet->setCellValueByColumnAndRow( $column, $row, \PHPExcel_Shared_Date::PHPToExcel( $date ), true );
-						$cell->getStyle()->getNumberFormat()->setFormatCode( \PHPExcel_Style_NumberFormat::FORMAT_DATE_DDMMYYYY );
-					}
-
-				} elseif( isset( $attributes[ 'select' ] ) ){
-
-					$value = $student[ $key ];
-					$cell = $sheet->setCellValueByColumnAndRow( $column, $row, $attributes[ 'select' ][ $value ], true );
-
-				} elseif( isset( $attributes[ 'type' ] ) && $attributes[ 'type' ] === 'html' ) {
-
-					$value = strip_tags( preg_replace( '/\s$/', '', $student[ $key ]) ); // Strip last newline character, which is always there
-					$cell = $sheet->setCellValueByColumnAndRow( $column, $row, $value, true );
-					$cell->getStyle()->getAlignment()->setWrapText( true );
-
-				} else {
-
-					$cell = $sheet->setCellValueByColumnAndRow( $column, $row, $student[ $key ], true );
-
-				}
-
-				$border = [ 'style' => \PHPExcel_Style_Border::BORDER_THIN ];
-				$cell->getStyle()->applyFromArray( [
-					'borders' => [
-						'left' => $border,
-						'bottom' => $border,
-						'right' => $border
-					]
-				] );
-
-			}
-
-		}
-
-		/*
-		 * Set autosize columns
-		 */
-		for( $i = 0; $i < count( $fields_mapping ); $i++ ) {
-			$sheet->getColumnDimensionByColumn( $i )->setAutoSize( true );
-		}
-
-		/*
-		 * Set column freeze
-		 */
-		$sheet->freezePaneByColumnAndRow( 0, 2 );
-
+		$excel = $generator->getExcel();
 		return $excel;
 
 	}

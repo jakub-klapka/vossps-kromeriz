@@ -82,5 +82,36 @@ return [
 	 */
 	'courses_published' => ( defined( 'LUMI_COURSES_PUBLISHED' ) ) ? LUMI_COURSES_PUBLISHED : false,
 
+	/*
+	 * Students Export Excel mapping
+	 *
+	 * Key names have to coexist in course detail ACF
+	 * More setting details in \Lumiart\Vosspskm\Courses\Services\CourseExcelGenerator
+	 */
+	'students_export_excel_mapping' => [
+		'name' => [ 'title' => 'Jméno' ],
+		'degree' => [ 'title' => 'Titul' ],
+		'email' => [ 'title' => 'E-mail' ],
+		'born_place' => [ 'title' => 'Místo narození' ],
+		'born_date' => [ 'title' => 'Datum narození', 'type' => 'date', 'date_format' => 'Ymd' ],
+		'phone' => [ 'title' => 'Telefon' ],
+		'pers_pin' => [ 'title' => 'Osobní číslo' ],
+		'payment_object' => [ 'title' => 'Plátce kurzovného', 'type' => 'select', 'choices' => [ 'self' => 'Samoplátce', 'school' => 'Škola' ] ],
+		'street' => [ 'title' => 'Účastník - Ulice' ],
+		'city' => [ 'title' => 'Účastník - Město' ],
+		'psc' => [ 'title' => 'Účastník - PSČ' ],
+		'school_name' => [ 'title' => 'Název školy' ],
+		'school_email' => [ 'title' => 'E-mail školy' ],
+		'school_ic' => [ 'title' => 'IČ' ],
+		'school_phone' => [ 'title' => 'Telefon školy' ],
+		'school_street' => [ 'title' => 'Škola - Ulice' ],
+		'school_city' => [ 'title' => 'Škola - Město' ],
+		'school_psc' => [ 'title' => 'Škola - PSČ' ],
+		'payment_type' => [ 'title' => 'Způsob plabty', 'type' => 'select', 'choices' => [ 'cash' => 'Hotově', 'invoice' => 'Fakturou' ] ],
+		'invoice_street' => [ 'title' => 'Fakturace - Ulice' ],
+		'invoice_city' => [ 'title' => 'Fakturace - Město' ],
+		'invoice_psc' => [ 'title' => 'Fakturace - PSČ' ],
+		'note' => [ 'title' => 'Poznámka', 'type' => 'html' ],
+	]
 
 ];
