@@ -3,6 +3,7 @@
 namespace Lumiart\Vosspskm\Courses\Models;
 
 use Lumiart\Vosspskm\Courses\Controllers\FormSubmissionController;
+use Lumiart\Vosspskm\Courses\Services\CourseExcelGenerator;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -13,6 +14,7 @@ use Lumiart\Vosspskm\Courses\Controllers\FormFactory;
 use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -82,6 +84,15 @@ class CoursePost extends TimberPost {
 	 */
 	public function getCourseCapacity() {
 		return (int)$this->meta( 'students_count' );
+	}
+
+	/**
+	 * Get array with all students
+	 *
+	 * @return array|null
+	 */
+	public function getCourseStudents() {
+		return get_field( 'course_students', $this->ID );
 	}
 
 	/**
@@ -296,6 +307,43 @@ class CoursePost extends TimberPost {
 		}
 
 		return false;
+	}
+
+	/**
+	 * Returns array of all student e-mails. Empty array when there is no student.
+	 *
+	 * @return array
+	 */
+	public function getAllStudentEmails() {
+
+		$students = get_field( 'course_students', $this->ID );
+
+		$emails = [];
+		foreach( $students as $student ) {
+			if( !empty( $student[ 'email' ] ) && is_email( $student[ 'email' ] ) ) $emails[] = $student[ 'email' ];
+		}
+
+		return $emails;
+
+	}
+
+	/**
+	 * Generate PHPExcel object with students data
+	 *
+	 * @return \PHPExcel
+	 */
+	public function generateStudentsExcel() {
+
+		/** @var CourseExcelGenerator $generator */
+		$generator = $this->app->make( CourseExcelGenerator::class );
+		$generator->setTitle( 'Studenti kurzu ' . $this->post_title )
+		          ->setFieldMapping( $this->app->getConfig()[ 'students_export_excel_mapping' ] )
+		          ->setData( $this->getCourseStudents() )
+		          ->setColumnFreeze( 1 );
+
+		$excel = $generator->getExcel();
+		return $excel;
+
 	}
 
 }
