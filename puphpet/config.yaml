@@ -19,7 +19,7 @@ vagrantfile:
                         check_guest_tools: 0
                         update_guest_tools: 0
                 machines:
-                    vflm_3zx3l1ex5ur5:
+                    vflm_x991d6v8ab8l:
                         id: pedkm
                         hostname: ped-km.dev
                         network:
@@ -36,7 +36,9 @@ vagrantfile:
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
         synced_folder:
-            vflsf_v3c6mrjfv1mn:
+            vflsf_v5sbas59jlgk:
+                owner: www-data
+                group: www-data
                 source: ./wp
                 target: /var/www
                 sync_type: default
@@ -56,8 +58,6 @@ vagrantfile:
                         - .vagrant/
                         - .git/
                     auto: 'true'
-                owner: www-data
-                group: www-data
         usable_port_range:
             start: 10200
             stop: 10500
@@ -80,7 +80,6 @@ vagrantfile:
         https: ''
         ftp: ''
         no_proxy: ''
-        enabled: '0'
 server:
     install: '1'
     packages: {  }
@@ -100,6 +99,13 @@ locale:
 firewall:
     install: '1'
     rules: {  }
+resolv:
+    install: '1'
+    nameservers:
+        - 8.8.8.8
+        - 8.8.4.4
+    domainname: ''
+    searchpath: {  }
 cron:
     install: '1'
     jobs: {  }
@@ -116,7 +122,7 @@ nginx:
         names_hash_bucket_size: 128
     upstreams: {  }
     vhosts:
-        nxv_qysn3p2cp23i:
+        nxv_mpmav2rgf86x:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -124,17 +130,12 @@ nginx:
             listen_port: '80'
             client_max_body_size: 1m
             ssl: '0'
-            ssl_cert: ''
-            ssl_key: ''
-            ssl_port: '443'
-            ssl_protocols: ''
-            ssl_ciphers: ''
-            rewrite_to_https: '1'
-            spdy: '1'
             locations:
-                nxvl_8prd1h54rg5q:
+                nxvl_wuve95zyxq9v:
                     www_root: ''
                     location: /
+                    autoindex: 'off'
+                    internal: 'false'
                     index_files:
                         - index.html
                         - index.htm
@@ -148,9 +149,11 @@ nginx:
                     fastcgi_split_path: ''
                     proxy: ''
                     proxy_redirect: ''
-                nxvl_ns1tsxa7ibog:
+                nxvl_7j8qmmbr265m:
                     www_root: ''
                     location: '~ \.php$'
+                    autoindex: 'off'
+                    internal: 'false'
                     try_files:
                         - $uri
                         - $uri/
@@ -182,42 +185,7 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        av_4o3eef9r99d3:
-            servername: ped-km.dev
-            serveraliases:
-                - www.ped-km.dev
-            docroot: /var/www/
-            port: '80'
-            setenvif:
-                - 'Authorization "(.*)" HTTP_AUTHORIZATION=$1'
-            custom_fragment: ''
-            ssl: '0'
-            ssl_cert: ''
-            ssl_key: ''
-            ssl_chain: ''
-            ssl_certs_dir: ''
-            ssl_protocol: ''
-            ssl_cipher: ''
-            directories:
-                avd_6a97aph45nnc:
-                    path: /var/www/
-                    options:
-                        - Indexes
-                        - FollowSymlinks
-                        - MultiViews
-                    allow_override:
-                        - All
-                    require:
-                        - 'all granted'
-                    custom_fragment: ''
-                    files_match:
-                        avdfm_ijf73dm6w4rb:
-                            path: \.php$
-                            sethandler: 'proxy:fcgi://127.0.0.1:8000'
-                            custom_fragment: ''
-                            provider: filesmatch
-                    provider: directory
-        av_fgtl74dhqgoz:
+        av_sqoe2du14g8f:
             servername: ped-km.dev
             serveraliases:
                 - www.ped-km.dev
@@ -232,8 +200,9 @@ apache:
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_nv0qliahzt6z:
+                avd_u1w0tsvcda41:
                     path: /var/www
+                    directoryindex: ''
                     options:
                         - Indexes
                         - FollowSymlinks
@@ -243,17 +212,18 @@ apache:
                     require:
                         - 'all granted'
                     custom_fragment: ''
-                    files_match:
-                        avdfm_b4ljekf3d4kt:
-                            path: \.php$
-                            sethandler: 'proxy:fcgi://127.0.0.1:8000'
-                            custom_fragment: ''
-                            provider: filesmatch
                     provider: directory
+            files_match:
+                avfm_s4vma2cn16so:
+                    path: \.php$
+                    sethandler: 'proxy:fcgi://127.0.0.1:8000'
+                    custom_fragment: ''
+                    provider: filesmatch
 letsencrypt:
     install: '1'
     settings:
         email: ''
+        webserver_service: ''
     domains: {  }
 php:
     install: '1'
@@ -275,16 +245,16 @@ php:
         session.save_path: /var/lib/php/session
         date.timezone: Europe/Prague
         error_reporting: '24567'
-        max_execution_time: '600000'
         memeory_limit: 128M
         memory_limit: 128M
         post_max: 32M
         upload_max: 32M
         disable_functions: 'apache_child_terminate,apache_setenv,define_syslog_variables,diskfreespace,disk_free_space,disk_total_space,dl,escapeshellarg,escapeshellcmd,exec,leak,link,openlog,passthru,pfsockopen,popen,posix_getgrnam,posix_getpgid,posix_getpwuid,posix_getpwnam,posix_getrlimit,posix_initgroups,posix_kill,posix_mkfifo,posix_mknod,posix_setpgid,posix_setsid,posix_setuid,posix_uname,proc_close,proc_get_status,proc_nice,proc_open,proc_terminate,putenv,readlink,register_tick_function,set_time_limit,shell_exec,show_source,symlink,syslog,system'
+        max_execution_time: '30000'
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
-        phpfp_74b1w3hllrrb:
+        phpfp_f8stqi0damgo:
             ini:
                 prefix: www
                 security.limit_extensions: .php
@@ -337,37 +307,22 @@ nodejs:
     settings:
         version: '6'
     npm_packages: {  }
-hhvm:
-    install: '0'
-    composer: '1'
-    composer_home: ''
-    settings: {  }
-    server_ini:
-        hhvm.server.host: 127.0.0.1
-        hhvm.server.port: '9000'
-        hhvm.log.use_log_file: '1'
-        hhvm.log.file: /var/log/hhvm/error.log
-    php_ini:
-        display_errors: 'On'
-        error_reporting: '-1'
-        date.timezone: UTC
 mariadb:
     install: '0'
     settings:
         version: '10.1'
         root_password: '123'
         override_options: {  }
-    adminer: 0
     users:
-        mariadbnu_grw1ngwci9xx:
+        mariadbnu_ewvuyfml35d4:
             name: dbuser
             password: '123'
     databases:
-        mariadbnd_e80q5a14rof6:
+        mariadbnd_b1xwuuslkxe0:
             name: dbname
             sql: ''
     grants:
-        mariadbng_sjgumcvor4jv:
+        mariadbng_stnzt8l7t4dj:
             user: dbuser
             table: '*.*'
             privileges:
@@ -378,10 +333,9 @@ mysql:
         version: '5.6'
         root_password: root
         override_options: {  }
-    adminer: 0
     users: {  }
     databases:
-        mysqlnd_yg144jo72b65:
+        mysqlnd_vgijzy3qqj3i:
             name: pedkm
             sql: ''
     grants: {  }
@@ -396,7 +350,6 @@ postgresql:
     databases: {  }
     users: {  }
     grants: {  }
-    adminer: 0
 mongodb:
     install: '0'
     settings:
@@ -411,7 +364,6 @@ redis:
         port: '6379'
 sqlite:
     install: '0'
-    adminer: 0
     databases: {  }
 mailhog:
     install: '1'
@@ -445,7 +397,7 @@ elastic_search:
         version: 2.3.1
         java_install: true
     instances:
-        esi_zxcnnu2q9uoe:
+        esi_8kvh156m5bz4:
             name: es-01
 solr:
     install: '0'
