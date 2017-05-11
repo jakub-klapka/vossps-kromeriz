@@ -6,6 +6,7 @@ namespace Lumiart\Vosspskm\Courses\Controllers;
 use Lumiart\Vosspskm\Courses\App;
 use Lumiart\Vosspskm\Courses\AutoloadableInterface;
 use Lumiart\Vosspskm\Courses\Models\CoursePost;
+use Lumiart\Vosspskm\Courses\Services\CourseExcelGenerator;
 use Lumiart\Vosspskm\Courses\SingletonTrait;
 
 class AdminListController implements AutoloadableInterface {
@@ -49,6 +50,10 @@ class AdminListController implements AutoloadableInterface {
 		add_action( 'restrict_manage_posts', [ $this, 'addVisibilityFilterDropdown' ], 10, 2 );
 		add_action( 'pre_get_posts', [ $this, 'filterByVisibility' ] );
 		add_filter( 'query_vars', [ $this, 'registerFilteringQueryVars' ] );
+
+		add_action( 'manage_posts_extra_tablenav', [ $this, 'maybeAddExportToExcelButton' ] );
+		add_filter( 'query_vars', [ $this, 'registerExportQueryVars' ] );
+		add_action( 'wp', [ $this, 'doExcelExport' ] );
 
 	}
 
@@ -102,7 +107,7 @@ class AdminListController implements AutoloadableInterface {
 			'course_visible' => 'Viditelný',
 			'signup_close_date' => 'Datum uzávěrky přihlášek',
 			'course_realization' => 'Datum realizace kurzu',
-			'students_count' => 'Obsazenost kurzu'
+			'students_count' => 'Obsazenost kurzu',
 		];
 
 		$title_position = array_search( 'title', array_keys( $columns ) ); //1-indexed
@@ -135,22 +140,26 @@ class AdminListController implements AutoloadableInterface {
 
 	}
 
+	/** @noinspection PhpUnusedPrivateMethodInspection */
 	private function renderNewColumn_course_realization( CoursePost $post ) {
 		return $post->getCourseRealizationDate();
 	}
 
+	/** @noinspection PhpUnusedPrivateMethodInspection */
 	private function renderNewColumn_signup_close_date( CoursePost $post ) {
 		return $post->getFormatedSignupCloseDate();
 	}
 
+	/** @noinspection PhpUnusedPrivateMethodInspection */
 	private function renderNewColumn_students_count( CoursePost $post ) {
 		return $post->getSignedStudentsCount() . '/' . $post->getCourseCapacity();
 	}
 
+	/** @noinspection PhpUnusedPrivateMethodInspection */
 	private function renderNewColumn_course_visible( CoursePost $post ) {
 		$html_params = [
 			true => [ 'green', 'yes', 'Ano' ],
-			false => [ 'red', 'no', 'Ne' ]
+			false => [ 'red', 'no', 'Ne' ],
 		];
 		return vsprintf( '<div style="color: %s;"><span class="dashicons dashicons-%s"></span>&nbsp;%s</div>', $html_params[ $post->isVisible() ] );
 	}
@@ -216,9 +225,8 @@ class AdminListController implements AutoloadableInterface {
 	 * @wp-action restrict_manage_posts
 	 *
 	 * @param $post_type
-	 * @param $which
 	 */
-	public function addVisibilityFilterDropdown( $post_type, $which ) {
+	public function addVisibilityFilterDropdown( $post_type ) {
 		if( !in_array( $post_type, array_keys( $this->app->getConfig()[ 'courses_post_types' ] ) ) ) return;
 
 		$visible_selected = isset( $_GET['course_filter_by_visibility'] ) && $_GET['course_filter_by_visibility'] === 'visible';
@@ -267,11 +275,97 @@ class AdminListController implements AutoloadableInterface {
 			$query->set( 'meta_query', [
 				[
 					'key' => 'course_visible',
-					'value' => $query->get( 'course_filter_by_visibility' ) === 'invisible' ? '0' : '1'
-				]
+					'value' => $query->get( 'course_filter_by_visibility' ) === 'invisible' ? '0' : '1',
+				],
 			] );
 
 		};
+
+	}
+
+	/**
+	 * Check for course post type edit screen and add button to tablenav
+	 *
+	 * @wp-action 'manage_posts_extra_tablenav'
+	 * @param string $which 'top'|'bottom'
+	 */
+	public function maybeAddExportToExcelButton( $which ) {
+
+		$screen = get_current_screen();
+		if( $which !== 'top'
+			|| $screen->parent_base !== 'edit'
+		    || ! in_array( $screen->post_type, array_keys( $this->app->getConfig()['courses_post_types'] ) ) ) return;
+
+		global $wp;
+		$current_url = trailingslashit( get_bloginfo( 'url' ) ) . $wp->request . '?' . $wp->query_string;
+		$target_url = add_query_arg( 'do-course-list-excel-export', true, $current_url );
+
+		echo '<div class="alignleft actions"><a href="' . $target_url . '" class="button button-primary" style="margin-top: 0;" target="_blank">Exportovat seznam kurzů do Excelu</a></div>';
+
+	}
+
+	/**
+	 * Register query var indicating request for excel export
+	 *
+	 * @param array $vars
+	 *
+	 * @wp-filter 'query_vars'
+	 * @return array
+	 */
+	public function registerExportQueryVars( $vars ) {
+		$vars[] = 'do-course-list-excel-export';
+		return $vars;
+	}
+
+	/**
+	 * Handle request for course list export
+	 *
+	 * @param \WP $wp
+	 */
+	public function doExcelExport( $wp ) {
+		if( ! isset( $wp->query_vars[ 'do-course-list-excel-export' ] )
+		    || $wp->query_vars[ 'do-course-list-excel-export' ] !== '1' ) return;
+
+		$data = [];
+		global $wp_query;
+		foreach( $wp_query->posts as $post ) {
+			/** @var \WP_Post $post */
+			$course_post = new CoursePost( $post->ID );
+			$data[] = [
+				'title' => $course_post->title(),
+				'visible' => $course_post->isVisible() ? 'Ano' : 'Ne',
+				'signup_close_date' => get_field( 'signup_close_date', $course_post->ID ),
+				'course_realization' => get_field( 'course_realization', $course_post->ID ),
+				'acreditation_number' => get_field( 'acreditation_number', $course_post->ID ),
+				'price' => get_field( 'price', $course_post->ID ),
+				'lesson_count' => get_field( 'lesson_count', $course_post->ID ),
+				'teacher' => get_field( 'teacher', $course_post->ID ),
+				'students_count' => get_field( 'students_count', $course_post->ID ),
+				'signed_students_count' => $course_post->getSignedStudentsCount(),
+			];
+		}
+
+		/** @var CourseExcelGenerator $generator */
+		$generator = $this->app->make( CourseExcelGenerator::class );
+		$generator->setTitle( 'Kurzy' )
+		          ->setFieldMapping( [
+			          'title' => [ 'title' => 'Název' ],
+			          'visible' => [ 'title' => 'Kurz viditelný' ],
+			          'signup_close_date' => [ 'title' => 'Termín uzávěrky přihlášek', 'type' => 'date', 'date_format' => 'Ymd' ],
+			          'course_realization' => [ 'title' => 'Termín realizace kurzu' ],
+			          'acreditation_number' => [ 'title' => 'Číslo akreditace' ],
+			          'price' => [ 'title' => 'Cena', 'type' => 'price' ],
+			          'lesson_count' => [ 'title' => 'Počet lekcí' ],
+			          'teacher' => [ 'title' => 'Lektor' ],
+			          'students_count' => [ 'title' => 'Kapacita kurzu' ],
+			          'signed_students_count' => [ 'title' => 'Přihlášených studentů' ]
+		          ] )
+		          ->setData( $data )
+		          ->setColumnFreeze( 1 )
+		          ->setFilename( 'export-kurzu' );
+
+		$generator->writeExcelToPhpOutput();
+		exit();
 
 	}
 

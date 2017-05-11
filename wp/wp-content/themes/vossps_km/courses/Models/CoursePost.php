@@ -336,13 +336,14 @@ class CoursePost extends TimberPost {
 
 		/** @var CourseExcelGenerator $generator */
 		$generator = $this->app->make( CourseExcelGenerator::class );
-		$generator->setTitle( 'Studenti kurzu ' . $this->post_title )
+		$generator->setTitle( 'Studenti' )
 		          ->setFieldMapping( $this->app->getConfig()[ 'students_export_excel_mapping' ] )
 		          ->setData( $this->getCourseStudents() )
-		          ->setColumnFreeze( 1 );
+		          ->setColumnFreeze( 1 )
+		          ->setFilename( $this->slug );
 
-		$excel = $generator->getExcel();
-		return $excel;
+		$generator->writeExcelToPhpOutput();
+		exit();
 
 	}
 
