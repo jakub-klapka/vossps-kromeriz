@@ -318,6 +318,8 @@ class CoursePost extends TimberPost {
 
 		$students = get_field( 'course_students', $this->ID );
 
+		if( empty( $students ) ) return [];
+
 		$emails = [];
 		foreach( $students as $student ) {
 			if( !empty( $student[ 'email' ] ) && is_email( $student[ 'email' ] ) ) $emails[] = $student[ 'email' ];
@@ -344,6 +346,17 @@ class CoursePost extends TimberPost {
 
 		$generator->writeExcelToPhpOutput();
 		exit();
+
+	}
+
+	/**
+	 * Get URL for post duplication in admin
+	 *
+	 * @return string
+	 */
+	public function getDuplicatePostUrl() {
+
+		return admin_url( "post.php?post={$this->ID}&action=duplicate" );
 
 	}
 
