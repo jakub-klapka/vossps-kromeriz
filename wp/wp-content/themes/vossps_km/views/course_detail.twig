@@ -3,15 +3,13 @@
 
 {% set page_theme = 'dv' %}
 
-{# TODO: breadcrumbs #}
-
 {% block main_content %}
 
 	<section class="courses" id="courses">
 
 		<div class="courses__course">
 			<div class="panel panel-primary">
-				<!--<div class="panel-heading"><h3>Studium pedagogiky [blížící se termín uzávěrky přihlášek]</h3></div>-->
+				{#<!--<div class="panel-heading"><h3>Studium pedagogiky [blížící se termín uzávěrky přihlášek]</h3></div>-->#}
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-xs-8">
@@ -58,6 +56,11 @@
 
 	{{ post.content }}
 
-	{% if form %}{% include '_course_detail_form.twig' %}{% endif %}
+	{% if form %}
+		{% include '_course_detail_form.twig' %}
+	{% else %}
+		<hr>
+		<p class="text-center"><strong class="text-warning">{{ sign_closed_reason }}</strong></p>
+	{% endif %}
 
 {% endblock %}

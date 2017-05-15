@@ -177,6 +177,17 @@ class CoursePost extends TimberPost {
 	}
 
 	/**
+	 * Get textual reason, why course is not signable
+	 *
+	 * @return string
+	 */
+	public function getSignClosedReason() {
+		if( $this->isSignupDue() ) return 'Přihlášky do kurzu byly uzavřeny.';
+		if( $this->getCourseFreePlaces() <= 0 ) return 'Kapacita kurzu byla naplněna.';
+		return '';
+	}
+
+	/**
 	 * Get Symfony\Form instance for current post
 	 *
 	 * @return \Symfony\Component\Form\FormInterface
@@ -318,6 +329,8 @@ class CoursePost extends TimberPost {
 
 		$students = get_field( 'course_students', $this->ID );
 
+		if( empty( $students ) ) return [];
+
 		$emails = [];
 		foreach( $students as $student ) {
 			if( !empty( $student[ 'email' ] ) && is_email( $student[ 'email' ] ) ) $emails[] = $student[ 'email' ];
@@ -336,13 +349,25 @@ class CoursePost extends TimberPost {
 
 		/** @var CourseExcelGenerator $generator */
 		$generator = $this->app->make( CourseExcelGenerator::class );
-		$generator->setTitle( 'Studenti kurzu ' . $this->post_title )
+		$generator->setTitle( 'Studenti' )
 		          ->setFieldMapping( $this->app->getConfig()[ 'students_export_excel_mapping' ] )
 		          ->setData( $this->getCourseStudents() )
-		          ->setColumnFreeze( 1 );
+		          ->setColumnFreeze( 1 )
+		          ->setFilename( $this->slug );
 
-		$excel = $generator->getExcel();
-		return $excel;
+		$generator->writeExcelToPhpOutput();
+		exit();
+
+	}
+
+	/**
+	 * Get URL for post duplication in admin
+	 *
+	 * @return string
+	 */
+	public function getDuplicatePostUrl() {
+
+		return admin_url( "post.php?post={$this->ID}&action=duplicate" );
 
 	}
 

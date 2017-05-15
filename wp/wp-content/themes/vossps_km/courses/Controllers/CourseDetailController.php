@@ -46,6 +46,7 @@ class CourseDetailController {
 				'wp_date_format' => get_option( 'date_format' ),
 				'signup_date_is_critical' => $post->isSignupDateCritical(),
 				'form' => ( isset( $form_view ) ) ? $form_view : null,
+				'sign_closed_reason' => $post->getSignClosedReason(),
 				'form_errors' => ( isset( $form ) ) ? $form->getErrors( true ) : false,
 				'recaptcha_sitekey' => $this->config[ 'recaptcha' ][ 'sitekey' ]
 			];

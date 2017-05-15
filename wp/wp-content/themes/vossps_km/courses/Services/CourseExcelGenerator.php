@@ -35,6 +35,11 @@ class CourseExcelGenerator {
 	 */
 	protected $column_freeze = 1;
 
+	/**
+	 * @var string
+	 */
+	protected $filename = 'excel';
+
 	public function __construct() {
 
 		\PHPExcel_Settings::setLocale( 'cs' );
@@ -99,6 +104,17 @@ class CourseExcelGenerator {
 	}
 
 	/**
+	 * @param string $filename
+	 *
+	 * @return CourseExcelGenerator
+	 */
+	public function setFilename( $filename ) {
+		$this->filename = $filename;
+
+		return $this;
+	}
+
+	/**
 	 * Generate and return PHPExcel object with all relevant data set up.
 	 *
 	 * @return \PHPExcel
@@ -113,6 +129,28 @@ class CourseExcelGenerator {
 		$this->applyPostProcessFormatting();
 
 		return $this->excel;
+
+	}
+
+	/**
+	 * Pushes excel contents to php://output
+	 * No headers should be sent before and no content after
+	 */
+	public function writeExcelToPhpOutput() {
+
+		$excel = $this->getExcel();
+
+		$excel_writer = new \PHPExcel_Writer_Excel2007( $excel );
+
+		header('Content-Type: application/vnd.ms-excel');
+		header('Content-Disposition: attachment;filename="' . $this->filename . '.xlsx"');
+		header('Cache-Control: max-age=0');
+		header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+		header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+		header('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+		header('Pragma: public'); // HTTP/1.0
+
+		$excel_writer->save('php://output');
 
 	}
 
@@ -199,6 +237,27 @@ class CourseExcelGenerator {
 	protected function writeCellDefault( $row = 1, $column = 1, $value = '' ) {
 
 		return $this->excel->getActiveSheet()->setCellValueByColumnAndRow( $column, $row, $value, true );
+
+	}
+
+	/**
+	 * Generate and write cell for simple strings
+	 *
+	 * IDE-unfriendly polymorphic call in $this->fillData
+	 *
+	 * @param int $row
+	 * @param int $column
+	 * @param string $value
+	 *
+	 * @return \PHPExcel_Cell
+	 */
+	protected function writeCellPrice( $row = 1, $column = 1, $value = '' ) {
+
+		$cell = $this->excel->getActiveSheet()->setCellValueByColumnAndRow( $column, $row, $value, true );
+
+		$cell->getStyle()->getNumberFormat()->setFormatCode( '# ##0,00 Kč' );
+
+		return $cell;
 
 	}
 

@@ -80,6 +80,7 @@ class AdminCourseDetailController implements AutoloadableInterface {
 		$emails = $post->getAllStudentEmails();
 
 		$data = [
+			'has_any_student_emails' => ! empty( $emails ),
 			'batch_email_link' => 'mailto:?bcc=' . implode( ',', $emails ),
 			'excel_download_link' => trailingslashit( get_bloginfo( 'url' ) ) . 'wp-admin/course-excel-export/' . $post->ID,
 		];

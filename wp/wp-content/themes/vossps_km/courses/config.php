@@ -2,6 +2,7 @@
 use Lumiart\Vosspskm\Courses\Controllers\AdminCourseCategoryController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminCourseDetailController;
 use Lumiart\Vosspskm\Courses\Controllers\AdminListController;
+use Lumiart\Vosspskm\Courses\Controllers\AdminPostDuplicatorController;
 use Lumiart\Vosspskm\Courses\Controllers\CourseListController;
 use Lumiart\Vosspskm\Courses\Controllers\CourseStudentsExcelExportController;
 use Lumiart\Vosspskm\Courses\Controllers\CourseTypesController;
@@ -34,6 +35,7 @@ return [
 		AdminListController::class,
 		AdminCourseDetailController::class,
 		AdminCourseCategoryController::class,
+		AdminPostDuplicatorController::class,
 	],
 
 	/*
@@ -112,6 +114,12 @@ return [
 		'invoice_city' => [ 'title' => 'Fakturace - Město' ],
 		'invoice_psc' => [ 'title' => 'Fakturace - PSČ' ],
 		'note' => [ 'title' => 'Poznámka', 'type' => 'html' ],
-	]
+	],
+
+	/*
+	 * Duplicate post - which metadata duplicate as well
+	 * 'signup_close_date' and 'students_count' are mandatory and will always be duplicated
+	 */
+	'duplicate_post_optional_metadata' => [ 'course_visible', 'course_realization', 'acreditation_number', 'price', 'lesson_count', 'teacher', 'course_admin_emails' ]
 
 ];
