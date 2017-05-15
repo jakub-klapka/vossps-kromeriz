@@ -177,6 +177,17 @@ class CoursePost extends TimberPost {
 	}
 
 	/**
+	 * Get textual reason, why course is not signable
+	 *
+	 * @return string
+	 */
+	public function getSignClosedReason() {
+		if( $this->isSignupDue() ) return 'Přihlášky do kurzu byly uzavřeny.';
+		if( $this->getCourseFreePlaces() <= 0 ) return 'Kapacita kurzu byla naplněna.';
+		return '';
+	}
+
+	/**
 	 * Get Symfony\Form instance for current post
 	 *
 	 * @return \Symfony\Component\Form\FormInterface
