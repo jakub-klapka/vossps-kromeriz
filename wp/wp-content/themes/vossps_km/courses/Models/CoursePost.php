@@ -51,6 +51,7 @@ class CoursePost extends TimberPost {
 	 */
 	public function getFormatedSignupCloseDate() {
 		$date = $this->getSignupCloseDate();
+		if( empty( $date ) ) return '';
 		return $date->format( get_option( 'date_format' ) );
 	}
 
