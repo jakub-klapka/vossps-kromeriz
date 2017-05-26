@@ -64,11 +64,28 @@ class CourseTypesController implements AutoloadableInterface {
 
 		wp_enqueue_style( 'courses_style' );
 
+		/*
+		 * Builin types
+		 */
 		$types = [];
 		foreach( $this->app->getConfig()[ 'courses_post_types' ] as $slug => $attributes ) {
 			$types[] = [
 				'name' => $attributes[ 'full_name' ],
 				'url' => get_post_type_archive_link( $slug )
+			];
+		}
+
+		/*
+		 * Custom buttons from settings
+		 */
+		$custom_post_ids = get_field('courses_types_additional_links', 'option' );
+		if( empty( $custom_post_ids ) ) $custom_post_ids = [];
+		foreach( $custom_post_ids as $post_id ) {
+			$post = new \TimberPost( $post_id );
+			$types[] = [
+				'name' => $post->post_title,
+				'url' => $post->link(),
+				'custom_button' => true
 			];
 		}
 

@@ -344,6 +344,34 @@
             }
         },
         {
+            "post_type": [
+                "page",
+                "aktuality",
+                "studium"
+            ],
+            "taxonomy": [],
+            "min": "",
+            "max": "",
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "elements": "",
+            "return_format": "id",
+            "key": "field_59287191b93c1",
+            "label": "Dal\u0161\u00ed odkazy ve v\u00fdpisu typ\u016f",
+            "name": "courses_types_additional_links",
+            "type": "relationship",
+            "instructions": "Odkazy na tyto str\u00e1nky budou p\u0159id\u00e1ny mezi v\u00fdpis typ\u016f kurz\u016f.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1,
@@ -380,5 +408,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1495821927
+    "modified": 1495822868
 }
