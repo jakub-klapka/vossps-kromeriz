@@ -40,6 +40,10 @@
 									<dt>Počet uchazečů</dt>
 									<dd>{{ post.students_count }}</dd>
 								{% endif %}
+								{% for attribute in post.getAditionalAttributes() %}
+									<dt>{{ attribute.name }}</dt>
+									<dd>{{ attribute.value }}</dd>
+								{% endfor %}
 							</dl>
 						</div>
 						{% if not post.isSignupDue() %}
