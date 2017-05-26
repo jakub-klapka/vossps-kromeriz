@@ -48,7 +48,8 @@ class CourseDetailController {
 				'form' => ( isset( $form_view ) ) ? $form_view : null,
 				'sign_closed_reason' => $post->getSignClosedReason(),
 				'form_errors' => ( isset( $form ) ) ? $form->getErrors( true ) : false,
-				'recaptcha_sitekey' => $this->config[ 'recaptcha' ][ 'sitekey' ]
+				'recaptcha_sitekey' => $this->config[ 'recaptcha' ][ 'sitekey' ],
+				'terms_of_service' => $this->getTermsOfService()
 			];
 			Timber::render( 'course_detail.twig', array_merge( Timber::get_context(), $data ) );
 			return;
@@ -76,6 +77,19 @@ class CourseDetailController {
 		];
 
 		return [ $home_page, $dv, $category ];
+	}
+
+	/**
+	 * Get terms of service from global settings
+	 *
+	 * @return string
+	 */
+	private function getTermsOfService() {
+
+		$field = get_field( 'courses_terms_of_service', 'option' );
+
+		return ( ! empty( $field ) ) ? $field : '';
+
 	}
 
 }

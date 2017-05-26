@@ -274,7 +274,7 @@ xdebug:
         xdebug.remote_handler: dbgp
         xdebug.remote_port: '9000'
 blackfire:
-    install: '0'
+    install: '1'
     settings:
         server_id: ''
         server_token: ''
