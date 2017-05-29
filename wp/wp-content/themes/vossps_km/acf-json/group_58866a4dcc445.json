@@ -162,6 +162,65 @@
             "sub_fields": [
                 {
                     "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_592874317fdb0",
+                    "label": "N\u00e1zev vlastnosti",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_5928743b7fdb1",
+                    "label": "Hodnota",
+                    "name": "value",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "P\u0159idat vlastnost",
+            "collapsed": "",
+            "key": "field_592873ff7fdaf",
+            "label": "Dal\u0161\u00ed vlastnosti kurzu",
+            "name": "additional_attributes",
+            "type": "repeater",
+            "instructions": "Zde m\u016f\u017eete p\u0159idat dal\u0161\u00ed vlastnosti, kter\u00e9 budou zobrazeny v hlavi\u010dce kurzu.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "sub_fields": [
+                {
+                    "default_value": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
@@ -243,5 +302,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1489516070
+    "modified": 1495823444
 }

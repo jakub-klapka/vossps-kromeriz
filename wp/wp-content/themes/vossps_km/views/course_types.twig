@@ -11,7 +11,12 @@
 			{% for type in batch %}
 				<div class="col-sm-4 course_types__type">
 					<a href="{{ type.url }}">
-						<div class="panel panel-primary">
+						{% if type.custom_button %}
+							{% set class = 'panel-info' %}
+						{% else %}
+							{% set class = 'panel-primary' %}
+						{% endif %}
+						<div class="panel {{ class }}">
 							<div class="panel-heading text-center"><strong>{{ type.name }}</strong></div>
 						</div>
 					</a>

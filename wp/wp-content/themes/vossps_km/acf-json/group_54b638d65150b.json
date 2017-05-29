@@ -3,6 +3,8 @@
     "title": "Obecn\u00e9 nastaven\u00ed",
     "fields": [
         {
+            "placement": "top",
+            "endpoint": 0,
             "key": "field_54be64184566e",
             "label": "Hlavi\u010dka str\u00e1nek",
             "name": "",
@@ -14,11 +16,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
+            }
         },
         {
+            "default_value": "",
+            "new_lines": "br",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": 3,
             "key": "field_54b638e8aa43d",
             "label": "Adresa \u0161koly",
             "name": "school_address",
@@ -31,15 +36,15 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 3,
-            "new_lines": "br",
             "readonly": 0,
             "disabled": 0
         },
         {
+            "default_value": "",
+            "new_lines": "br",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": 3,
             "key": "field_54b63ce3cca70",
             "label": "Telefon \u0161koly",
             "name": "school_tel",
@@ -52,15 +57,14 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 3,
-            "new_lines": "br",
             "readonly": 0,
             "disabled": 0
         },
         {
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
             "key": "field_54b63d00cca71",
             "label": "E-mail \u0161koly",
             "name": "school_email",
@@ -72,13 +76,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            }
         },
         {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
             "key": "field_57dc331826280",
             "label": "Text pod e-mailem",
             "name": "school_email_below",
@@ -90,14 +95,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            }
         },
         {
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": "",
             "key": "field_54cf9ac987361",
             "label": "SEO popisek",
             "name": "seo_desc",
@@ -110,18 +115,15 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
             "readonly": 0,
             "disabled": 0
         },
         {
+            "placement": "top",
+            "endpoint": 0,
             "key": "field_54cf4aa3d6352",
             "label": "Slider na hlavn\u00ed str\u00e1nce",
-            "name": "slider_na_hlavni_strance",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -130,29 +132,21 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
+            }
         },
         {
-            "key": "field_54cf4ab6d6353",
-            "label": "Obr\u00e1zky slideru",
-            "name": "home_slider",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "min": "",
-            "max": "",
-            "layout": "table",
-            "button_label": "P\u0159idat obr\u00e1zek",
             "sub_fields": [
                 {
+                    "return_format": "id",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
                     "key": "field_54cf4ad4d6354",
                     "label": "Obr\u00e1zek",
                     "name": "image",
@@ -164,19 +158,14 @@
                         "width": "",
                         "class": "",
                         "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": 0,
-                    "min_height": 0,
-                    "min_size": 0,
-                    "max_width": 0,
-                    "max_height": 0,
-                    "max_size": 0,
-                    "mime_types": ""
+                    }
                 },
                 {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
                     "key": "field_54cf4affd6355",
                     "label": "Nadpis",
                     "name": "heading",
@@ -189,15 +178,15 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
                     "readonly": 0,
                     "disabled": 0
                 },
                 {
+                    "default_value": "",
+                    "new_lines": "br",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "rows": "",
                     "key": "field_54cf4b0cd6356",
                     "label": "Popis",
                     "name": "desc",
@@ -210,18 +199,36 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "br",
                     "readonly": 0,
                     "disabled": 0
                 }
             ],
-            "collapsed": ""
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "P\u0159idat obr\u00e1zek",
+            "collapsed": "",
+            "key": "field_54cf4ab6d6353",
+            "label": "Obr\u00e1zky slideru",
+            "name": "home_slider",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
         },
         {
+            "default_value": 5,
+            "min": 1,
+            "max": 99,
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "sekund",
             "key": "field_54cf56e97741f",
             "label": "Prodleva ot\u00e1\u010den\u00ed slideru",
             "name": "home_slider_timeout",
@@ -234,17 +241,12 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 5,
-            "placeholder": "",
-            "prepend": "",
-            "append": "sekund",
-            "min": 1,
-            "max": 99,
-            "step": "",
             "readonly": 0,
             "disabled": 0
         },
         {
+            "placement": "top",
+            "endpoint": 0,
             "key": "field_54be64254566f",
             "label": "Obecn\u011b o \u0161kole",
             "name": "",
@@ -256,11 +258,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
+            }
         },
         {
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0,
             "key": "field_54be642d45670",
             "label": "Obecn\u011b o \u0161kole",
             "name": "about_school",
@@ -272,13 +277,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1
+            }
         },
         {
+            "placement": "top",
+            "endpoint": 0,
             "key": "field_5526cea18705a",
             "label": "Extern\u00ed odkazy",
             "name": "",
@@ -290,11 +293,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
+            }
         },
         {
+            "default_value": "",
+            "placeholder": "",
             "key": "field_5526ceb58705b",
             "label": "Odkaz na \"Elektronickou \u017e\u00e1kovskou\"",
             "name": "zakovska_link",
@@ -306,11 +309,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
+            }
         },
         {
+            "default_value": "",
+            "placeholder": "",
             "key": "field_5526ceda8705c",
             "label": "Facebook odkaz v menu",
             "name": "menu_facebook_link",
@@ -322,9 +325,70 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
+            }
+        },
+        {
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_59286da4460cd",
+            "label": "Kurzy",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "post_type": [
+                "page",
+                "aktuality",
+                "studium"
+            ],
+            "taxonomy": [],
+            "min": "",
+            "max": "",
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "elements": "",
+            "return_format": "id",
+            "key": "field_59287191b93c1",
+            "label": "Dal\u0161\u00ed odkazy ve v\u00fdpisu typ\u016f",
+            "name": "courses_types_additional_links",
+            "type": "relationship",
+            "instructions": "Odkazy na tyto str\u00e1nky budou p\u0159id\u00e1ny mezi v\u00fdpis typ\u016f kurz\u016f.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
             "default_value": "",
-            "placeholder": ""
+            "delay": 0,
+            "key": "field_59286dbd460ce",
+            "label": "Obchodn\u00ed podm\u00ednky kurz\u016f",
+            "name": "courses_terms_of_service",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
         }
     ],
     "location": [
@@ -344,5 +408,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1474048825
+    "modified": 1495822868
 }

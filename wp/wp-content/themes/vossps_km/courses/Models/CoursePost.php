@@ -372,4 +372,19 @@ class CoursePost extends TimberPost {
 
 	}
 
+	/**
+	 * Gets aditional attributes, set on course detail.
+	 *
+	 * Returns array in either way
+	 *
+	 * @return array
+	 */
+	public function getAditionalAttributes() {
+
+		$attrs = get_field( 'additional_attributes', $this->ID );
+		if( empty( $attrs ) ) return [];
+		return $attrs;
+
+	}
+
 }
