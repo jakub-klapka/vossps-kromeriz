@@ -213,7 +213,11 @@ class CoursePost extends TimberPost {
 		     ->add( 'degree', TextType::class, [ 'label' => 'Titul', 'required' => false ] )
 		     ->add( 'email', EmailType::class, [ 'label' => 'E-mail', 'constraints' => [ new NotBlank(), new Email() ] ] )
 		     ->add( 'birth_place', TextType::class, [ 'label' => 'Místo narození', 'constraints' => [ new NotBlank() ] ] )
-		     ->add( 'birth_date', DateType::class, [ 'label' => 'Datum narození', 'widget' => 'single_text', 'constraints' => [ new NotBlank(), new Date() ] ] )
+		     ->add( 'birth_date', TextType::class, [
+		     	'label' => 'Datum narození',
+		        'constraints' => [ new NotBlank() ],
+		        'attr' => [ 'data-datepicker' => true, 'pattern' => '\d\d?\.\d\d?\.\d\d\d\d', 'placeholder' => 'dd.mm.rrrr' ]
+		     ] )
 		     ->add( 'phone', TextType::class, [ 'label' => 'Telefon', 'constraints' => [ new NotBlank() ] ] );
 
 		/*
@@ -269,9 +273,9 @@ class CoursePost extends TimberPost {
 				},
 				'constraints' => [ new NotBlank() ]
 			] )
-			->add( 'invoice_street', TextType::class, [ 'label' => 'Ulice' ] )
-			->add( 'invoice_city', TextType::class, [ 'label' => 'Město' ] )
-			->add( 'invoice_psc', TextType::class, [ 'label' => 'PSČ' ] )
+			->add( 'invoice_street', TextType::class, [ 'label' => 'Ulice', 'required' => false ] )
+			->add( 'invoice_city', TextType::class, [ 'label' => 'Město', 'required' => false ] )
+			->add( 'invoice_psc', TextType::class, [ 'label' => 'PSČ', 'required' => false ] )
 			->add( 'tos_conduct', RadioType::class, [ 'required' => true, 'constraints' => new IsTrue() ] )
 			->add( 'note', TextareaType::class );
 

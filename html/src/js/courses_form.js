@@ -182,7 +182,8 @@
 			changeYear: true,
 			dateFormat: 'dd.mm.yy',
 			constrainInput: true,
-			regional: 'cs'
+			regional: 'cs',
+			yearRange: 'c-100:c'
 		});
 
 	} );
