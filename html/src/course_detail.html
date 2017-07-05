@@ -259,7 +259,7 @@
 
 							<div class="form-group has-feedback">
 								<label for="name">Datum narození*</label>
-								<input type="date" class="form-control" required id="born_date">
+								<input type="text" data-datepicker class="form-control" required id="born_date" placeholder="dd.mm.rrrr" pattern="\d\d?\.\d\d?\.\d\d\d\d">
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 							</div>
 
@@ -930,10 +930,13 @@
 <script type="text/javascript" src="js/header_menu.js"></script><!-- jquery, velocity -->
 <script type="text/javascript" src="js/scroll_to_top.js"></script><!-- jquery -->
 
+
 <script src="js/libs/bootstrap_modal.js"></script><!-- jq -->
+<script src="js/libs/jquery-ui-datepicker.js"></script><!-- jq -->
+<script src="js/libs/jquery-ui-datepicker-cs.js"></script><!-- jq,datepicker -->
 <script src="js/libs/icheck.js"></script><!-- jq-->
 <script src="js/libs/validator.js"></script><!-- jq -->
-<script src="js/courses_form.js"></script><!-- jq, icheck, modal -->
+<script src="js/courses_form.js"></script><!-- jq, icheck, modal, datepicker-cs -->
 
 </body>
 </html>
