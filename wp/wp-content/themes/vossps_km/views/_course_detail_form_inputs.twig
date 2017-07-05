@@ -39,12 +39,17 @@
 			<div class="col-xs-6">
 				<div class="form-group has-feedback">
 					<label for="{{ field.vars.id }}" class="control-label">{{ field.vars.label }}{% if field.vars.required %}*{% endif %}</label>
+					{#{{ dump(field) }}#}
 					<input type="{{ ( field.vars.name == 'email' ) ? field.vars.block_prefixes[2] : field.vars.block_prefixes[1] }}"
 					       name="{{ field.vars.full_name }}"
 					       class="form-control"
 							{% if field.vars.required %} required {% endif %}
                            id="{{ field.vars.id }}"
-                           value="{{ field.vars.value }}">
+                           value="{{ field.vars.value }}"
+							{% for attr_name, attr_val in field.vars.attr %}
+								{{ attr_name }}="{{ attr_val }}"
+							{% endfor %}
+					>
 					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 					{#{{ dump(field) }}#}
 				</div>

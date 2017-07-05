@@ -31,7 +31,9 @@ class RegisterAssets implements AutoloadableInterface {
 		wp_register_script( 'bootstrap_modal', get_template_directory_uri() . '/assets/js/libs/bootstrap_modal.js', [ 'jquery' ], $version, true );
 		wp_register_script( 'icheck', get_template_directory_uri() . '/assets/js/libs/icheck.js', [ 'jquery' ], $version, true );
 		wp_register_script( 'validator', get_template_directory_uri() . '/assets/js/libs/validator.js', [ 'jquery' ], $version, true );
-		wp_register_script( 'courses_form', get_template_directory_uri() . '/assets/js/courses_form.js', [ 'jquery', 'bootstrap_modal', 'icheck', 'validator', 'velocity' ], $version, true );
+		wp_register_script( 'datepicker_dep', get_template_directory_uri() . '/assets/js/libs/jquery-ui-datepicker.js', [ 'jquery' ], $version, true );
+		wp_register_script( 'datepicker', get_template_directory_uri() . '/assets/js/libs/jquery-ui-datepicker-cs.js', [ 'jquery', 'datepicker_dep' ], $version, true );
+		wp_register_script( 'courses_form', get_template_directory_uri() . '/assets/js/courses_form.js', [ 'jquery', 'bootstrap_modal', 'icheck', 'validator', 'velocity', 'datepicker' ], $version, true );
 	}
 
 }

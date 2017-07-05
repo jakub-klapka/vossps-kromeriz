@@ -158,7 +158,6 @@
 
 	};
 
-
 	/*
 	DOM ready
 	 */
@@ -174,6 +173,19 @@
 		$( '[data-courses_form]' ).each( function() {
 			Object.create( SubmitHandler ).init( $( this ) );
 		} );
+
+		/*
+		Datepicker
+		 */
+		$( '[data-datepicker]' ).datepicker({
+			changeMonth: true,
+			changeYear: true,
+			dateFormat: 'dd.mm.yy',
+			constrainInput: true,
+			regional: 'cs',
+			yearRange: 'c-100:c'
+		});
+
 	} );
 
 } )( jQuery );

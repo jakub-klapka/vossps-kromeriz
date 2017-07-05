@@ -112,7 +112,7 @@ class FormSubmissionController {
 			'degree' => $data[ 'degree' ],
 			'email' => $data[ 'email' ],
 			'born_place' => $data[ 'birth_place' ],
-			'born_date' => $data[ 'birth_date' ]->format( 'Ymd' ),
+			'born_date' => \DateTimeImmutable::createFromFormat( 'd.m.Y', $data[ 'birth_date' ] )->format( 'Ymd' ),
 			'phone' => $data[ 'phone' ],
 			'pers_pin' => ( isset( $data[ 'pin' ] ) ) ? $data[ 'pin' ] : null,
 			'payment_object' => $payment_subject_map[ $data[ 'payment_subject' ] ],

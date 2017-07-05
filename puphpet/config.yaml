@@ -266,7 +266,7 @@ php:
 xdebug:
     install: '1'
     settings:
-        xdebug.remote_host: 192.168.56.101
+        xdebug.remote_host: 192.168.56.1
         xdebug.default_enable: '1'
         xdebug.remote_autostart: '0'
         xdebug.remote_connect_back: '1'
