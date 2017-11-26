@@ -15,6 +15,9 @@
 					{% if menu_item.is_spp %}
 						{% set li_class, icon_name = 'is-spp', 'none' %}
 					{% endif %}
+					{% if menu_item.is_ckp %}
+						{% set li_class, icon_name = 'is-ckp', 'none' %}
+					{% endif %}
 					<li class="main_sidebar__nav__ul__item {{ li_class }}">
 						<a href="{{ menu_item.url }}" itemprop="name url">
 							{% if icon_name != 'none' %}

@@ -261,7 +261,8 @@ class SidebarMenuAPI {
 			$lumi['config']['ss_id'],
 			$lumi['config']['vos_id'],
 			$lumi['config']['dv_id'],
-			$lumi['config']['spp_id']
+			$lumi['config']['spp_id'],
+			$lumi['config']['ckp_id']
 		);
 
 		foreach( $pages as $key => $page ) {

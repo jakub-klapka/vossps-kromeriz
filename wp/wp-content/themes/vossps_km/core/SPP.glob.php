@@ -30,7 +30,7 @@ class SPP {
 			$rule_offset = array_search( $orig_regex, array_keys( $rules ) );
 			$rules = array_merge(
 				array_slice( $rules, 0, $rule_offset, true ),
-				[ 'studium\/(?!spp)([^/]+)\/?$' => $path ],
+				[ 'studium\/(?![spp|centrum\-kolegialni\-podpory])([^/]+)\/?$' => $path ],
 				array_slice( $rules, $rule_offset + 1, null, true )
 			);
 

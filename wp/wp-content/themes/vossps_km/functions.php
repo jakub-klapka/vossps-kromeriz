@@ -46,6 +46,7 @@ $lumi['config'] = array(
 	'vos_id' => 24,
 	'dv_id' => 26,
 	'spp_id' => 2908,
+	'ckp_id' => 3813,
 	'tax_vos_id' => 4,
 	'tax_ss_id' => 3,
 	'tax_dv_id' => 5,
