@@ -82,7 +82,8 @@ vagrantfile:
         no_proxy: ''
 server:
     install: '1'
-    packages: {  }
+    packages:
+        - htop
 users_groups:
     install: '1'
     groups: {  }

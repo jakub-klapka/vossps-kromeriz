@@ -1,0 +1,186 @@
+# Translation of Plugins - Email Log - Stable (latest release) in Czech
+# This file is distributed under the same license as the Plugins - Email Log - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-06-20 13:36:25+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: cs_CZ\n"
+"Project-Id-Version: Plugins - Email Log - Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "http://sudarmuthu.com/"
+msgstr "http://sudarmuthu.com/"
+
+#. Author of the plugin/theme
+msgid "Sudar"
+msgstr "Sudar"
+
+#. Description of the plugin/theme
+msgid "Logs every email sent through WordPress"
+msgstr "Zaznamenává každý email odeslaný přes WordPress"
+
+#. Plugin URI of the plugin/theme
+msgid "http://sudarmuthu.com/wordpress/email-log"
+msgstr "http://sudarmuthu.com/wordpress/email-log"
+
+#: include/class-email-log-list-table.php:348
+msgid "Your email log is empty"
+msgstr "Nemáte žádné emaily "
+
+#: include/class-email-log-list-table.php:239
+msgid "Delete All Logs"
+msgstr "Smazat všechny záznamy"
+
+#: include/class-email-log-list-table.php:169
+#: include/class-email-log-list-table.php:238
+msgid "Delete"
+msgstr "Smazat"
+
+#: include/class-email-log-list-table.php:155
+msgid "View Content"
+msgstr "Zobrazit obsah"
+
+#: include/class-email-log-list-table.php:154
+msgid "Email Content"
+msgstr "Obsah emailu"
+
+#: include/class-email-log-list-table.php:135
+msgid "%s @ %s"
+msgstr "%s @ %s"
+
+#: include/class-email-log-list-table.php:91
+msgid "Subject"
+msgstr "Předmět"
+
+#: include/class-email-log-list-table.php:90
+msgid "To"
+msgstr "Komu"
+
+#: include/class-email-log-list-table.php:89
+msgid "Sent at"
+msgstr "Odeslané"
+
+#: include/class-email-log-list-table.php:70
+msgid "This addon allows you to send a copy of all emails send from WordPress to another email address"
+msgstr "Toto rozšíření umožňuje odeslat kopii všech emailů odesílaných přes WordPress na jinou emailovou adresu"
+
+#: include/class-email-log-list-table.php:69
+msgid "Email Log - Forward Email"
+msgstr "Email Log - předat email"
+
+#: include/class-email-log-list-table.php:63
+msgid "Adds more fields (From, CC, BCC, Reply To, Attachment) to the logs page."
+msgstr "Přidat další pole (od, kopie, skrytá kopie, odpovědět , příloha) na stránku záznamů."
+
+#: include/class-email-log-list-table.php:62
+msgid "Email Log - More fields"
+msgstr "Email Log - další pole"
+
+#: include/class-email-log-list-table.php:58
+#: include/class-email-log-list-table.php:65
+#: include/class-email-log-list-table.php:72
+msgid "Buy now"
+msgstr "Koupit nyní"
+
+#: include/class-email-log-list-table.php:57
+#: include/class-email-log-list-table.php:64
+#: include/class-email-log-list-table.php:71
+msgid "More Info"
+msgstr "Více informací"
+
+#: include/class-email-log-list-table.php:56
+msgid "Adds the ability to resend email from logs."
+msgstr "Přidá možnost odesílat emaily přímo ze záznamů."
+
+#: include/class-email-log-list-table.php:55
+msgid "Email Log - Resend Email"
+msgstr "Email Log - přeposlat email"
+
+#: include/class-email-log-list-table.php:49
+msgid "The following are the list of pro addons that are currently available for purchase."
+msgstr "Níže jsou rozšíření, která se dají teď koupit."
+
+#: include/class-email-log-list-table.php:38
+msgid "Buy Now"
+msgstr "Koupit nyní"
+
+#: include/class-email-log-list-table.php:36
+msgid "More fields are available in Pro addon. "
+msgstr "Další pole jsou dostupná jako placená rozšíření."
+
+#: email-log.php:376
+msgid "by"
+msgstr " "
+
+#: email-log.php:376
+msgid "Version"
+msgstr "Verze:"
+
+#: email-log.php:376
+msgid "plugin"
+msgstr "plugin"
+
+#: email-log.php:361
+msgid "Log"
+msgstr "Záznamy"
+
+#: email-log.php:274
+msgid "Entries per page"
+msgstr "Záznamů na stránku"
+
+#: email-log.php:267
+msgid "Other Plugin's by Author"
+msgstr "Ostatní pluginy autora"
+
+#: email-log.php:266
+msgid "Plugin author's blog"
+msgstr "Blog autora pluginu"
+
+#: email-log.php:265
+msgid "Plugin Homepage/support"
+msgstr "Domovská stránka/podpora pluginu"
+
+#: email-log.php:264
+msgid "More information"
+msgstr "Více informací"
+
+#: email-log.php:257
+msgid "Email Log WordPress Plugin, allows you to log all emails that are sent through WordPress."
+msgstr "Email Log WordPress plugin, umožňuje zaznamenávat všechny emaily, které jsou odesílány přes WordPress."
+
+#: email-log.php:255
+msgid "About Plugin"
+msgstr "O pluginu"
+
+#: email-log.php:213
+msgid "Search Logs"
+msgstr "Prohledat záznamy"
+
+#: email-log.php:205
+msgid "There was some problem in deleting the email logs"
+msgstr "Při odstraňování emailů došlo k nějakému problému"
+
+#: email-log.php:203
+msgid "1 email log deleted."
+msgid_plural "%s email logs deleted"
+msgstr[0] "1 email smazán"
+msgstr[1] "%s emaily smazány"
+msgstr[2] "%s emailů smazáno"
+
+#: email-log.php:197
+msgid "Email Logs"
+msgstr "Logy emailu"
+
+#. #-#-#-#-#  tmp-email-log.pot (Email Log 1.9.1)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: email-log.php:181
+msgid "Email Log"
+msgstr "Log emailu"
+
+#: email-log.php:168
+msgid "Buy Addons"
+msgstr "Koupit rozšíření"
