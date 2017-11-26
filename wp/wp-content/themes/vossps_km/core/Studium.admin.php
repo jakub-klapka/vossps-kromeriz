@@ -25,7 +25,7 @@ class Studium {
 
 		global $lumi;
 		global $post;
-		$restricted = array( $lumi['config']['ss_id'], $lumi['config']['vos_id'], $lumi['config']['dv_id'], $lumi['config']['spp_id'] );
+		$restricted = array( $lumi['config']['ss_id'], $lumi['config']['vos_id'], $lumi['config']['dv_id'], $lumi['config']['spp_id'], $lumi['config']['ckp_id'] );
 
 		if( in_array( $post->ID, $restricted ) ) return;
 

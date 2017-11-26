@@ -473,6 +473,11 @@ $header_overflow_height: 31px;
 							main: $spp,
 							light: $spp_light,
 							sub: $spp_sub
+						),
+						ckp: (
+							main: $ckp,
+							light: $ckp_light,
+							sub: $ckp_sub
 						)
 					);
 
@@ -712,6 +717,7 @@ $sponsors_margin_width: 10px;
 	width: ( $page_wrap_width + $sponsors_margin_width);
 	margin: rhythm(1) auto 0 auto;
 	display: flex;
+	flex-wrap: wrap;
 
 		.no-flexbox & {
 			text-align: center;
@@ -724,8 +730,8 @@ $sponsors_margin_width: 10px;
 		align-items: center;
 		justify-content: center;
 		background: #FFF;
-		padding: rhythm(1) 0;
-		margin: 0 ( $sponsors_margin_width / 2);
+		padding: rhythm(1) 50px;
+		margin: 0 ( $sponsors_margin_width / 2 ) $sponsors_margin_width ( $sponsors_margin_width / 2 );
 		border: 1px solid #e8e8ec;
 
 			img {

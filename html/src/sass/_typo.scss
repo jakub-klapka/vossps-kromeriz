@@ -92,7 +92,9 @@
 		*/
 		$schemes: (
 			dalsi_vzdelavani: $dalsi,
-			vyssi_odborne: $vyssi
+			vyssi_odborne: $vyssi,
+			spp: $spp,
+			ckp: $ckp
 		);
 
 		@each $scheme, $color in $schemes {

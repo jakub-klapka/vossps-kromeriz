@@ -58,6 +58,8 @@
 	{% set main_content_class = ( page_theme == 'none' ) ? 'is-stredoskolske' : main_content_class %}
 	{% set main_content_class = ( page_theme == 'vos' ) ? 'is-vyssi_odborne' : main_content_class %}
 	{% set main_content_class = ( page_theme == 'dv' ) ? 'is-dalsi_vzdelavani' : main_content_class %}
+	{% set main_content_class = ( page_theme == 'spp' ) ? 'is-spp' : main_content_class %}
+	{% set main_content_class = ( page_theme == 'ckp' ) ? 'is-ckp' : main_content_class %}
 
 	<{{ main_content_tag ?: 'article' }} class="main_content content_typo{% if main_content_class %} {{ main_content_class }}{% endif %}" role="main" itemprop="mainContentOfPage">
 
@@ -81,6 +83,8 @@
 		{% set icon = ( page_theme == 'none' ) ? 'books' : icon %}
 		{% set icon = ( page_theme == 'vos' ) ? 'graduation' : icon %}
 		{% set icon = ( page_theme == 'dv' ) ? 'presentation' : icon %}
+		{% set icon = ( page_theme == 'spp' ) ? 'books' : icon %}
+		{% set icon = ( page_theme == 'ckp' ) ? 'books' : icon %}
 		<h1>
 			{% if icon %}<span class="heading_icon" aria-hidden="true"><svg><use xlink:href="#icon-{{ icon }}"></use></svg></span>{% endif %}
 			{% block page_title %}{{ post.title }}{% endblock %}
@@ -115,6 +119,10 @@
 
 	<div class="sponsors__item">
 		<img src="{{ theme.uri }}/assets/images/sponsors_esf.png" alt="ESF" width="400" height="67"/>
+	</div>
+
+	<div class="sponsors__item">
+		<img src="{{ theme.uri }}/assets/images/sponsors_zlinsky_kraj.png" alt="Zlínský kraj" width="330" height="80"/>
 	</div>
 
 </section>

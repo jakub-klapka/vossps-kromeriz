@@ -1,5 +1,5 @@
-# Translation of WordPress - Development - Continents & Cities in Czech
-# This file is distributed under the same license as the WordPress - Development - Continents & Cities package.
+# Translation of WordPress - 4.8.x - Continents & Cities in Czech
+# This file is distributed under the same license as the WordPress - 4.8.x - Continents & Cities package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2016-08-08 12:52:40+0000\n"
@@ -7,9 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: GlotPress/2.3.0-alpha\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: cs_CZ\n"
-"Project-Id-Version: WordPress - Development - Continents & Cities\n"
+"Project-Id-Version: WordPress - 4.8.x - Continents & Cities\n"
 
 #: wp-admin/includes/continents-cities.php:537
 msgid "Pohnpei"

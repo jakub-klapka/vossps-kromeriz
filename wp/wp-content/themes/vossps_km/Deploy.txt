@@ -1,0 +1,3 @@
+Crete CKP post - order 5
+modify config value in functions.php
+remove trash link for CKP

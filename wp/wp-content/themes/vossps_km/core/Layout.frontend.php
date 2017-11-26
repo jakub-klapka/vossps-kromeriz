@@ -20,6 +20,7 @@ class Layout {
 	private $vos_id;
 	private $dv_id;
 	private $spp_id;
+	private $ckp_id;
 
 
 	public function __construct() {
@@ -32,6 +33,7 @@ class Layout {
 		$this->vos_id = $lumi['config']['vos_id'];
 		$this->dv_id = $lumi['config']['dv_id'];
 		$this->spp_id = $lumi['config']['spp_id'];
+		$this->ckp_id = $lumi['config']['ckp_id'];
 
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -132,7 +134,7 @@ class Layout {
 
 		foreach( $flatered_menu as $key => $item ) {
 			// Allow override of style on item itself
-			if( isset( $item[ 'is_ss' ] ) || isset( $item[ 'is_dv' ] ) || isset( $item[ 'is_dv' ] ) || isset( $item[ 'is_spp' ] ) ) continue;
+			if( isset( $item[ 'is_ss' ] ) || isset( $item[ 'is_dv' ] ) || isset( $item[ 'is_dv' ] ) || isset( $item[ 'is_spp' ] ) || isset( $item[ 'is_ckp' ] ) ) continue;
 			switch( $item['id'] ){
 				case( $this->ss_id ):
 					$flatered_menu[$key]['is_ss'] = true;
@@ -145,6 +147,9 @@ class Layout {
 					break;
 				case( $this->spp_id ):
 					$flatered_menu[$key]['is_spp'] = true;
+					break;
+				case( $this->ckp_id ):
+					$flatered_menu[$key]['is_ckp'] = true;
 			}
 		}
 
@@ -196,6 +201,12 @@ class Layout {
 					break;
 				case( $this->dv_id ):
 					$page_theme = 'dv';
+					break;
+				case( $this->spp_id ):
+					$page_theme = 'spp';
+					break;
+				case( $this->ckp_id ):
+					$page_theme = 'ckp';
 					break;
 				default:
 					$page_theme = 'ss';
