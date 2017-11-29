@@ -172,7 +172,7 @@ class FormSubmissionController {
 		$headers = array('Content-Type: text/html; charset=UTF-8');
 
 		if( is_email( $form_data[ 'email' ] ) ) {
-			wp_mail( $form_data[ 'email' ] , 'Potvrzení online přihlášky ke kurzu ' . $post->post_name, $student_email_contents, $headers );
+			wp_mail( $form_data[ 'email' ] , 'Potvrzení online přihlášky ke kurzu ' . $post->post_title, $student_email_contents, $headers );
 		}
 
 		$admin_emails = get_field( 'course_admin_emails', $post->ID );
@@ -183,7 +183,7 @@ class FormSubmissionController {
 		}
 
 		if( !empty( $admin_emails ) ) {
-			wp_mail( $admin_emails, 'Nový účastník kurzu ' . $post->post_name, $admin_email_contents, $headers );
+			wp_mail( $admin_emails, 'Nový účastník kurzu ' . $post->post_title, $admin_email_contents, $headers );
 		}
 
 	}
@@ -276,7 +276,7 @@ class FormSubmissionController {
 	private function getAdminEmailContents( $post, $form, $form_data ) {
 
 		$data = [
-			'course_name' => $post->post_name,
+			'course_name' => $post->post_title,
 			'course_url' => $post->link(),
 			'course_summary' => $this->constructEmailSummaryTable( $form, $form_data )
 		];
