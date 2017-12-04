@@ -36,15 +36,15 @@ vagrantfile:
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
         synced_folder:
-            vflsf_v5sbas59jlgk:
+            vflsf_v5sblsdjfkgk:
                 owner: www-data
                 group: www-data
                 source: ./wp
                 target: /var/www
-                sync_type: default
+                sync_type: smb
                 smb:
                     smb_host: ''
-                    smb_username: ''
+                    smb_username: 'Kuba'
                     smb_password: ''
                     mount_options:
                         dir_mode: '0775'

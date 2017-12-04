@@ -6,7 +6,7 @@ define( 'LUMI_CSS_JS_VER', 2 );
 define( 'LUMI_TEXTDOMAIN', 'vossps_km' );
 
 if (class_exists('Timber')){
-	if( !in_array( $_SERVER['HTTP_HOST'], [ 'localhost', 'ped-km.dev' ] ) ) {
+	if( ! defined( 'WP_DEBUG' ) || WP_DEBUG !== true ) {
 		Timber::$cache = true;
 	}
 }
