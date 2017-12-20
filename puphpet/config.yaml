@@ -229,7 +229,7 @@ letsencrypt:
 php:
     install: '1'
     settings:
-        version: '5.6'
+        version: '7.1'
     modules:
         php:
             - cli
