@@ -15,6 +15,8 @@ class SPP {
 	 * Because we have same post type name as tax rewrite slug, we will get 404 for any root page (since it's lookig for tax)
 	 * We will add exception for /spp page, which is only one, which have to be root and also not tax item
 	 *
+	 * Now, all root menu items should not point to tax summary. So we will add rewrite rule for all of them to point to static page.
+	 *
 	 * @wp-filter rewrite_rules_array
 	 *
 	 * @param $rules
@@ -30,7 +32,7 @@ class SPP {
 			$rule_offset = array_search( $orig_regex, array_keys( $rules ) );
 			$rules = array_merge(
 				array_slice( $rules, 0, $rule_offset, true ),
-				[ 'studium\/(?![spp|projekty\-skoly])([^/]+)\/?$' => $path ],
+				[ 'studium\/(?![spp|projekty\-skoly|stredoskolske\-studium|vyssi\-odborne\-studium])([^/]+)\/?$' => $path ],
 				array_slice( $rules, $rule_offset + 1, null, true )
 			);
 
