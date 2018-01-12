@@ -38,7 +38,8 @@ class Studium {
 	public function restrict_root_items_edit_screen() {
 
 		global $lumi;
-		$restricted = array( $lumi['config']['ss_id'], $lumi['config']['vos_id'], $lumi['config']['dv_id'] );
+//		$restricted = array( $lumi['config']['ss_id'], $lumi['config']['vos_id'], $lumi['config']['dv_id'] );
+		$restricted = array( $lumi['config']['dv_id'] );
 
 		if( is_admin()
 		    && isset( $_GET['action'] )
