@@ -277,6 +277,7 @@ class Layout {
 		$data[ 'zakovska_link' ] = get_field( 'zakovska_link', 'option' );
 		$data[ 'facebook_link' ] = get_field( 'menu_facebook_link', 'option' );
 		$data[ 'uzitecne_odkazy_link' ] = get_permalink( $lumi[ 'config' ][ 'uzitecne_odkazy_id' ] );
+		$data[ 'sbor_link' ] = get_field( 'sbor_link', 'option' );
 		return $data;
 	}
 

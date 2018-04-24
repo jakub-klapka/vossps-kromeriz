@@ -1,15 +1,221 @@
-# Translation of Plugins - Google Analytics Dashboard for WP - Stable (latest release) in Czech
-# This file is distributed under the same license as the Plugins - Google Analytics Dashboard for WP - Stable (latest release) package.
+# Translation of Plugins - Google Analytics Dashboard for WP (GADWP) - Stable (latest release) in Czech
+# This file is distributed under the same license as the Plugins - Google Analytics Dashboard for WP (GADWP) - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-02-14 07:41:17+0000\n"
+"PO-Revision-Date: 2018-01-03 10:40:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: GlotPress/2.3.0-alpha\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: cs_CZ\n"
-"Project-Id-Version: Plugins - Google Analytics Dashboard for WP - Stable (latest release)\n"
+"Project-Id-Version: Plugins - Google Analytics Dashboard for WP (GADWP) - Stable (latest release)\n"
+
+#: admin/setup.php:362
+msgid "the release notes"
+msgstr "poznámky k vydání"
+
+#: admin/settings.php:870
+msgid "enable Google AMP Client Id API"
+msgstr "povolit Google AMP Client Id API"
+
+#: admin/settings.php:784
+msgid "enable Force SSL"
+msgstr "povolit Vynucené SSL"
+
+#: admin/settings.php:772
+msgid "use hitCallback to increase event tracking accuracy"
+msgstr "použijte hitCallback pro zvýšení přesnosti sledování událostí"
+
+#: tools/tools.php:235
+msgid "DOM is disabled or libxml PHP extension is missing. Contact your hosting provider. Automatic tracking of events for AMP pages is not possible."
+msgstr "Je zakázán DOM nebo není nainstalováno rozšíření PHP libxml. Kontaktujte Vašeho poskytovatele hostingu. Automatické sledování událostí pro AMG stránky není možné."
+
+#: admin/settings.php:748
+msgid "exclude events from bounce-rate and time on page calculation"
+msgstr "vynechat události z míry odchodů a času na stránce výpočtu"
+
+#. translators: Developer debugging message. 1: PHP function name, 2:
+#. Explanatory message, 3: Version information message
+#: tools/tools.php:219
+msgid "%1$s was called <strong>incorrectly</strong>. %2$s %3$s"
+msgstr "%1$s byl volán <strong>nesprávně</strong>. %2$s %3$s"
+
+#. translators: %s: version number
+#: tools/tools.php:215
+msgid "This message was added in version %s."
+msgstr "Tato zpráva byla přidána ve verzi %s."
+
+#: front/tracking.php:33
+msgid "This method is deprecated, read the documentation!"
+msgstr "Tato metoda je zastaralá, přečtěte si dokumentaci!"
+
+#: admin/setup.php:193 admin/setup.php:293 front/setup.php:101
+msgid "No Data"
+msgstr "Žádná DATA"
+
+#: admin/settings.php:707
+msgid "User Sample Rate:"
+msgstr "Uživatelská vzorkovací frekvence:"
+
+#: admin/settings.php:697
+msgid "Speed Sample Rate:"
+msgstr "Rychlost vzorkovací frekvence:"
+
+#. Plugin Name of the plugin/theme
+msgid "Google Analytics Dashboard for WP (GADWP)"
+msgstr "Google Analytics Dashboard for WP (GADWP)"
+
+#: front/setup.php:118
+msgid "Precision: "
+msgstr "Přesnost:"
+
+#: admin/settings.php:1249 admin/settings.php:1581
+msgid "developer mode (requires advanced API knowledge)"
+msgstr "vývojářský mód (vyžaduje pokročilé znalosti API)"
+
+#: admin/settings.php:1083
+msgid "Sessions ratio: %s."
+msgstr "Poměr relací: %s."
+
+#: admin/settings.php:1081
+msgid "The report was based on %s of sessions."
+msgstr "Report je založen na počtu relací: %s "
+
+#: admin/settings.php:1079
+msgid "Last Detected on %s."
+msgstr "Naposledy detekováno %s."
+
+#: admin/settings.php:1072
+msgid "Sampled Data"
+msgstr "Ukázková data"
+
+#: admin/settings.php:1065
+msgid "Error Details: "
+msgstr "Detail chyby:"
+
+#: admin/settings.php:1056
+msgid "Last Error: "
+msgstr "Poslední chyba:"
+
+#: admin/settings.php:946
+msgid "AMP Container ID:"
+msgstr "ID AMP kontejneru:"
+
+#: admin/settings.php:918
+msgid "Container ID:"
+msgstr "ID kontejneru:"
+
+#: admin/settings.php:913
+msgid "enable Page Hiding support"
+msgstr "povolit podporu Schování Stránky"
+
+#: admin/settings.php:901
+msgid "enable Optimize tracking"
+msgstr "povolit Optimalizaci sledování"
+
+#: admin/settings.php:890
+msgid "Optimize"
+msgstr "Optimalizace"
+
+#: admin/settings.php:885
+msgid "Enhanced Ecommerce Plugin"
+msgstr "Vylepšený E-komerce modul"
+
+#: admin/settings.php:884
+msgid "Ecommerce Plugin"
+msgstr "E-komerce modul"
+
+#: admin/settings.php:878
+msgid "Ecommerce Tracking:"
+msgstr "Sledování E-komerce:"
+
+#: admin/settings.php:874
+msgid "Ecommerce"
+msgstr "E-komerce"
+
+#: admin/settings.php:858 admin/settings.php:941
+msgid "enable tracking for Accelerated Mobile Pages (AMP)"
+msgstr "povolit sledování pro Accelerated Mobile Pages (AMP)"
+
+#: admin/settings.php:847 admin/settings.php:930
+msgid "Accelerated Mobile Pages (AMP)"
+msgstr "Accelerated Mobile Pages (AMP)"
+
+#: admin/settings.php:839
+msgid "seconds"
+msgstr "vteřin"
+
+#: admin/settings.php:685
+msgid "enable page scrolling depth variables: "
+msgstr "povolit proměnné hloubky posuvů stránky"
+
+#: admin/settings.php:674
+msgid "Page Scrolling Depth Variables"
+msgstr "Proměnné hloubky posuvů stránky"
+
+#: admin/settings.php:599
+msgid "Main Variables"
+msgstr "Hlavní proměnné"
+
+#: admin/settings.php:514
+msgid "Custom Dimensions"
+msgstr "Vlastní Rozměry"
+
+#: admin/settings.php:476
+msgid "track page scrolling depth"
+msgstr "sledování hloubky posuvů stránky (page scrolling depth)"
+
+#: admin/settings.php:464
+msgid "track form submit actions"
+msgstr "sleduj akce odeslání formuláře"
+
+#: admin/settings.php:440
+msgid "track affiliate links"
+msgstr "sleduj odkazy provizních systémů"
+
+#: admin/settings.php:428
+msgid "track downloads, mailto, telephone and outbound links"
+msgstr "sleduj stahovací, mailové, telefonní a externí odkazy "
+
+#: admin/settings.php:408 admin/settings.php:505
+msgid "HTML Body"
+msgstr "HTML Tělo"
+
+#: admin/settings.php:407 admin/settings.php:504
+msgid "HTML Head"
+msgstr "HTML hlavička"
+
+#: admin/settings.php:402 admin/settings.php:499
+msgid "Code Placement:"
+msgstr "Umístění kódu:"
+
+#: admin/settings.php:392
+msgid "Web Container ID:"
+msgstr "ID Web kontejneru:"
+
+#: admin/settings.php:376
+msgid "Tag Manager"
+msgstr "Správce štítků"
+
+#: admin/settings.php:355
+msgid "DataLayer Variables"
+msgstr "Proměnné Datových vrstev"
+
+#: admin/settings.php:353 admin/settings.php:355
+msgid "Integration"
+msgstr "Integrace"
+
+#: admin/setup.php:309 front/setup.php:117
+msgid "Exit Rate"
+msgstr "Míra opuštění"
+
+#: admin/setup.php:301 admin/setup.php:302 admin/setup.php:303
+#: admin/setup.php:304 admin/setup.php:305 admin/setup.php:306
+#: front/setup.php:109 front/setup.php:110 front/setup.php:111
+#: front/setup.php:112 front/setup.php:113 front/setup.php:114
+msgid "Future Use"
+msgstr "Budoucí použití"
 
 #: admin/setup.php:209
 msgid "Session Duration"
@@ -23,31 +229,31 @@ msgstr "Prům. doba načtení stránky"
 msgid "Time on Page"
 msgstr "Prům. doba na stránce"
 
-#: tools/gapi.php:508
+#: tools/gapi.php:509
 msgid "Source:"
 msgstr "Zdroj:"
 
-#: tools/gapi.php:508
+#: tools/gapi.php:509
 msgid "URI:"
 msgstr "URI:"
 
-#: admin/setup.php:178 tools/gapi.php:504
+#: admin/setup.php:178 tools/gapi.php:505
 msgid "404 Errors"
 msgstr "Chyby 404"
 
-#: admin/settings.php:466
+#: admin/settings.php:544 admin/settings.php:627
 msgid "Publication Month:"
 msgstr "Měsíc publikace:"
 
-#: admin/settings.php:287
+#: admin/settings.php:304
 msgid "404 Page Title contains:"
 msgstr "Název stránky 404 obsahuje:"
 
-#: admin/settings.php:283
+#: admin/settings.php:300
 msgid "404 Errors Report"
 msgstr "Hlášení chyb 404"
 
-#: admin/settings.php:278
+#: admin/settings.php:294
 msgid "Maps API Key:"
 msgstr "API klíč map:"
 
@@ -55,15 +261,15 @@ msgstr "API klíč map:"
 msgid "Invalid response"
 msgstr "Neplatná odpověď"
 
-#: admin/settings.php:490
+#: admin/settings.php:583 admin/settings.php:663
 msgid "Tags:"
 msgstr "Štítky:"
 
-#: tools/gapi.php:728
+#: tools/gapi.php:734
 msgid "Other"
 msgstr "Jiný"
 
-#: tools/gapi.php:665
+#: tools/gapi.php:671
 msgid "Devices"
 msgstr "Zařízení"
 
@@ -94,33 +300,33 @@ msgstr "Provoz"
 #. translators: Example: 'l, F j, Y' will become 'Thusday, November 17, 2015'
 #. For details see:
 #. http://php.net/manual/en/function.date.php#refsect1-function.date-parameters
-#: tools/gapi.php:391 tools/gapi.php:765
+#: tools/gapi.php:396 tools/gapi.php:771
 msgid "l, F j, Y"
 msgstr "l, j F, Y"
 
 #. translators: Example: 'F, Y' will become 'November, 2015' For details see:
 #. http://php.net/manual/en/function.date.php#refsect1-function.date-parameters
-#: tools/gapi.php:382
+#: tools/gapi.php:387
 msgid "F, Y"
 msgstr "F, Y"
 
-#: admin/settings.php:542
+#: admin/settings.php:788
 msgid "Cross-domain Tracking"
 msgstr "Sledování cross-domain"
 
-#: admin/settings.php:560
+#: admin/settings.php:812
 msgid "Cookie Customization"
 msgstr "Přizpůsobení cookie:"
 
-#: admin/settings.php:571
+#: admin/settings.php:834
 msgid "Cookie Expires:"
 msgstr "Expirace cookie:"
 
-#: admin/settings.php:567
+#: admin/settings.php:825
 msgid "Cookie Name:"
 msgstr "Název cookie:"
 
-#: admin/settings.php:563
+#: admin/settings.php:816
 msgid "Cookie Domain:"
 msgstr "Doména cookie:"
 
@@ -130,70 +336,68 @@ msgstr "Alin Marcu"
 
 #. Description of the plugin/theme
 msgid "Displays Google Analytics Reports and Real-Time Statistics in your Dashboard. Automatically inserts the tracking code in every page of your website."
-msgstr "Zobraz reporty Google Analytics a živoi statictiku na Vaší Nástěnce. Automaticky vložit sledovací kód do každé stránky Vaší sítě."
+msgstr ""
+"Zobrazit Google Analytics Reports a Real-Time Statistics ve vašem Dashboardu.\n"
+"Automaticky vložit sledovací kód do každé stránky."
 
-#. #-#-#-#-#  tmp-google-analytics-dashboard-for-wp.pot (Google Analytics
-#. Dashboard for WP 4.9.6.1)  #-#-#-#-#
+#. #-#-#-#-#  google-analytics-dashboard-for-wp-code.pot (Google Analytics
+#. Dashboard for WP (GADWP) 5.1.2.5)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  tmp-google-analytics-dashboard-for-wp.pot (Google Analytics
-#. Dashboard for WP 4.9.6.1)  #-#-#-#-#
+#. #-#-#-#-#  google-analytics-dashboard-for-wp-code.pot (Google Analytics
+#. Dashboard for WP (GADWP) 5.1.2.5)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "https://deconf.com"
 msgstr "https://deconf.com"
 
-#. Plugin Name of the plugin/theme
-msgid "Google Analytics Dashboard for WP"
-msgstr "Google Analytics Dashboard for WP"
-
-#: tools/gapi.php:713
+#: tools/gapi.php:719
 msgid "Type"
 msgstr "Typ"
 
-#: tools/gapi.php:665
+#: tools/gapi.php:671
 msgid "Channels"
 msgstr "Kanály"
 
-#: tools/gapi.php:608
+#: tools/gapi.php:609
 msgid "Cities from"
 msgstr "Města z"
 
-#: tools/gapi.php:598
+#: tools/gapi.php:599
 msgid "Countries"
 msgstr "Státy"
 
-#: tools/gapi.php:356 tools/gapi.php:359 tools/gapi.php:756
+#: tools/gapi.php:357 tools/gapi.php:360 tools/gapi.php:762
 msgid "Date"
 msgstr "Datum"
 
-#: tools/gapi.php:353
+#: tools/gapi.php:354
 msgid "Hour"
 msgstr "Hodina"
 
-#: tools/gapi.php:345
+#: tools/gapi.php:346
 msgid "Unique Page Views"
 msgstr "Unikátní zobrazení stránky"
 
-#: tools/gapi.php:342
+#: tools/gapi.php:343
 msgid "Organic Searches"
 msgstr "Organické vyhledávání"
 
-#: tools/gapi.php:168
+#: admin/views/access-code.php:32
 msgid "Save Access Code"
 msgstr "Uložit přístupový kód"
 
-#: tools/gapi.php:161
+#: admin/views/access-code.php:19
 msgid "Access Code:"
 msgstr "Přístupový kód:"
 
-#: tools/gapi.php:161 tools/gapi.php:162
+#: admin/views/access-code.php:19 admin/views/access-code.php:22
 msgid "Use the red link to get your access code!"
 msgstr "Použijte červený  link pro získání přístupového kódu."
 
-#: tools/gapi.php:157
+#: admin/views/access-code.php:14
 msgid "Get Access Code"
 msgstr "Získat Přístupový Kód"
 
-#: tools/gapi.php:157
+#: admin/views/access-code.php:14
 msgid "Use this link to get your access code:"
 msgstr "Použijte tento link pro získání přístupového kódu."
 
@@ -277,13 +481,12 @@ msgstr "KAMPAŇ"
 msgid "SOCIAL"
 msgstr "SOCIÁLNÍ"
 
-#: admin/setup.php:173 tools/gapi.php:476
+#: admin/setup.php:173 tools/gapi.php:477
 msgid "Pages"
 msgstr "Stránky"
 
 #: admin/setup.php:167 admin/setup.php:186 front/widgets.php:40
-#: tools/gapi.php:348 tools/gapi.php:476 tools/gapi.php:504 tools/gapi.php:540
-#: tools/gapi.php:575 tools/gapi.php:627 tools/gapi.php:713 tools/gapi.php:756
+#: tools/gapi.php:349 tools/gapi.php:762
 msgid "Sessions"
 msgstr "Návštěvy"
 
@@ -316,10 +519,6 @@ msgid "the plugin&#39;s settings page"
 msgstr "stránka s nastavením pluginu"
 
 #: admin/setup.php:362
-msgid "the documentation page"
-msgstr "stránka dokumentace"
-
-#: admin/setup.php:362
 msgid "For details, check out %1$s and %2$s."
 msgstr "Pro detaily koukněte na %1$s a %2$s."
 
@@ -344,10 +543,6 @@ msgstr "hlášení vytvořené  s pomocí"
 #: front/widgets.php:107
 msgid "This report is unavailable"
 msgstr "Toto hlášení není dostupné"
-
-#: admin/setup.php:193 admin/setup.php:293 front/setup.php:101
-msgid "Not enough data collected"
-msgstr "Nedostatečné množství dat"
 
 #: admin/setup.php:191 admin/setup.php:291 front/setup.php:99
 msgid "Pages/Session"
@@ -378,12 +573,12 @@ msgid "A JavaScript Error is blocking plugin resources!"
 msgstr "Chyva JavaScriptu blokuje zdroje modulu."
 
 #: admin/setup.php:175 admin/setup.php:276 front/setup.php:84
-#: tools/gapi.php:575
+#: tools/gapi.php:576
 msgid "Searches"
 msgstr "Vyhledávání"
 
 #: admin/setup.php:174 admin/setup.php:275 front/setup.php:83
-#: tools/gapi.php:540
+#: tools/gapi.php:541
 msgid "Referrers"
 msgstr "Odkazy"
 
@@ -392,12 +587,12 @@ msgid "Location"
 msgstr "Poloha"
 
 #: admin/setup.php:171 admin/setup.php:189 admin/setup.php:273
-#: admin/setup.php:289 front/setup.php:81 front/setup.php:97 tools/gapi.php:339
+#: admin/setup.php:289 front/setup.php:81 front/setup.php:97 tools/gapi.php:340
 msgid "Bounce Rate"
 msgstr "Míra opuštění"
 
 #: admin/setup.php:170 admin/setup.php:188 admin/setup.php:272
-#: admin/setup.php:288 front/setup.php:80 front/setup.php:96 tools/gapi.php:336
+#: admin/setup.php:288 front/setup.php:80 front/setup.php:96 tools/gapi.php:337
 msgid "Page Views"
 msgstr "Zobrazení stránky"
 
@@ -406,7 +601,7 @@ msgid "Organic"
 msgstr "Organické"
 
 #: admin/setup.php:168 admin/setup.php:187 admin/setup.php:270
-#: admin/setup.php:287 front/setup.php:78 front/setup.php:95 tools/gapi.php:333
+#: admin/setup.php:287 front/setup.php:78 front/setup.php:95 tools/gapi.php:334
 msgid "Users"
 msgstr "Uživatelé"
 
@@ -464,451 +659,406 @@ msgstr "Nastavení backendu"
 msgid "Google Analytics"
 msgstr "Google Analytics"
 
-#: admin/settings.php:1330
+#: admin/settings.php:1786
 msgid "Web Analytics"
 msgstr "Webová Analýza"
 
-#: admin/settings.php:1330
+#: admin/settings.php:1786
 msgid "%s service with users tracking at IP level."
 msgstr "Služba %s se sledováním uživatelů na úrovni IP."
 
-#: admin/settings.php:1344
+#: admin/settings.php:1800
 msgid "WordPress Plugins"
 msgstr "Zásuvné moduly WordPressu"
 
-#: admin/settings.php:1344
+#: admin/settings.php:1800
 msgid "Other %s written by the same author"
 msgstr "Ostatní %s vytvořené stejným autorem"
 
-#: admin/settings.php:1337
+#: admin/settings.php:1793
 msgid "Improve search rankings"
 msgstr "Vylepšit výsledky vyhledávání"
 
-#: admin/settings.php:1337
+#: admin/settings.php:1793
 msgid "%s by moving your website to HTTPS/SSL."
 msgstr "%s migrací vašeho webu na HTTPS/SSL."
 
-#: admin/settings.php:1323
+#: admin/settings.php:1779
 msgid "Further Reading"
 msgstr "Další čtení"
 
-#: admin/settings.php:1317
+#: admin/settings.php:1773
 msgid "rate this plugin"
 msgstr "ohodnotit plugin"
 
-#: admin/settings.php:1317
+#: admin/settings.php:1773
 msgid "Your feedback and review are both important, %s!"
 msgstr "Vaše zpětná vazba a hodnocení jsou pro nás důležité, %s!"
 
-#: admin/settings.php:1292
+#: admin/settings.php:1748
 msgid "Follow & Review"
 msgstr "Předplatné a recenze"
 
-#: admin/settings.php:1284
+#: admin/settings.php:1740
 msgid "Setup Tutorial & Demo"
 msgstr "Průvodce nastavením a ukázky"
 
-#: admin/settings.php:1236
+#: admin/settings.php:1684
 msgid "exclude Super Admin tracking for the entire network"
 msgstr "vypnout sledování Super-adminů pro celou síť"
 
-#: admin/settings.php:1182
+#: admin/settings.php:1622
 msgid "Properties/Views Settings"
 msgstr "Možnosti/Zobrazení nastavení"
 
-#: admin/settings.php:1176
+#: admin/settings.php:1612
 msgid "Refresh Properties"
 msgstr "Obnovit nastavení"
 
-#: admin/settings.php:1135
+#: admin/settings.php:1561
 msgid "use a single Google Analytics account for the entire network"
 msgstr "použít jeden účet Google Analytics  pro celou síť"
 
-#: admin/settings.php:1125
+#: admin/settings.php:1549
 msgid "Network Setup"
 msgstr "Nastavení sítě"
 
-#: admin/settings.php:1041
+#: admin/settings.php:1463
 msgid "Properties refreshed."
 msgstr "Nastavení obnoveno"
 
-#: admin/settings.php:951 admin/settings.php:1252 admin/widgets.php:35
+#: admin/settings.php:1369 admin/settings.php:1705 admin/widgets.php:35
 msgid "Authorize Plugin"
 msgstr "Autorizovat modul"
 
-#: admin/settings.php:936 admin/settings.php:1222
+#: admin/settings.php:1347 admin/settings.php:1668
 msgid "automatic updates for minor versions (security and maintenance releases only)"
 msgstr "automatické aktualizace méně významných verzí pluginu (jen bezpečnostní a údržbové)"
 
-#: admin/settings.php:926 admin/settings.php:1212
+#: admin/settings.php:1336 admin/settings.php:1656
 msgid "Automatic Updates"
 msgstr "Automatické aktualizace"
 
-#: admin/settings.php:918
+#: admin/settings.php:1323
 msgid "Theme Color:"
 msgstr "Barva šablony:"
 
-#: admin/settings.php:899
+#: admin/settings.php:1308
 msgid "Lock Selection"
 msgstr "Uzamknout vybrané"
 
-#: admin/settings.php:893 admin/settings.php:1203
+#: admin/settings.php:1304 admin/settings.php:1646
 msgid "Property not found"
 msgstr "Možnost nenalezena:"
 
-#: admin/settings.php:882
+#: admin/settings.php:1291
 msgid "Select View:"
 msgstr "Zvolte zobrazení:"
 
-#: admin/settings.php:879 admin/setup.php:43 admin/setup.php:59
+#: admin/settings.php:1287 admin/setup.php:43 admin/setup.php:59
 msgid "General Settings"
 msgstr "Hlavní Nastavení"
 
-#: admin/settings.php:873
+#: admin/settings.php:1278
 msgid "Reset Errors"
 msgstr "Smazat chyby"
 
-#: admin/settings.php:873 admin/settings.php:951 admin/settings.php:1176
-#: admin/settings.php:1252
+#: admin/settings.php:1277 admin/settings.php:1370 admin/settings.php:1611
+#: admin/settings.php:1706
 msgid "Clear Cache"
 msgstr "Smazat dočasnou paměť (cache)."
 
-#: admin/settings.php:873 admin/settings.php:1176
+#: admin/settings.php:1276 admin/settings.php:1610
 msgid "Clear Authorization"
 msgstr "Smazat autorizaci."
 
-#: admin/settings.php:863 admin/settings.php:1166
+#: admin/settings.php:1264 admin/settings.php:1597
 msgid "Client Secret:"
 msgstr "Klientský klíč (tajný):"
 
-#: admin/settings.php:859 admin/settings.php:1162
+#: admin/settings.php:1256 admin/settings.php:1588
 msgid "Client ID:"
 msgstr "Klientské ID:"
 
-#: admin/settings.php:854 admin/settings.php:1154
-msgid "use your own API Project credentials"
-msgstr "použijte své vlastní přístupové údaje projektového API"
-
-#: admin/settings.php:849 admin/settings.php:1147
+#: admin/settings.php:1243 admin/settings.php:1575
 msgid "tutorial"
 msgstr "tutoriál"
 
-#: admin/settings.php:849 admin/settings.php:1147
+#: admin/settings.php:1243 admin/settings.php:1575
 msgid "video"
 msgstr "video"
 
-#: admin/settings.php:849 admin/settings.php:1147
+#: admin/settings.php:1243 admin/settings.php:1575
 msgid "You should watch the %1$s and read this %2$s before proceeding to authorization. This plugin requires a properly configured Google Analytics account!"
 msgstr "Měli byste se podívat na %1$s a přečíst si %2$s, předtím, než provedete autorizaci. Tento plugin vyžaduje správně nakonfigurovaný účet Google Analytics!"
 
-#: admin/settings.php:844 admin/settings.php:1143
+#: admin/settings.php:1238 admin/settings.php:1571
 msgid "Plugin Authorization"
 msgstr "Autorizace modulu"
 
-#: admin/settings.php:832 admin/settings.php:1114
+#: admin/settings.php:1226 admin/settings.php:1537
 msgid "Use the red link (see below) to generate and get your access code!"
 msgstr "Použijte červený odkaz níže pro vygenerování a získání vašeho přístupového kódu!"
 
-#: admin/settings.php:817 admin/settings.php:1100
+#: admin/settings.php:1211 admin/settings.php:1522
 msgid "Google Analytics Settings"
 msgstr "Nastavení Google Analytics"
 
-#: admin/settings.php:807 admin/settings.php:1090
+#: admin/settings.php:1201 admin/settings.php:1512
 msgid "All other domains/properties were removed."
 msgstr "Všechny ostatní domény/nastavení byly odstraněny."
 
-#: admin/settings.php:794
+#: admin/settings.php:1188
 msgid "All errors reseted."
 msgstr "Všechny chyby vymazány."
 
-#: admin/settings.php:784 admin/settings.php:1076
+#: admin/settings.php:1178 admin/settings.php:1498
 msgid "Token Reseted and Revoked."
 msgstr "Token byl resetován a zrušen."
 
-#: admin/settings.php:775 admin/settings.php:1067
+#: admin/settings.php:1169 admin/settings.php:1489
 msgid "Cleared Cache."
 msgstr "Vyčištěná dočasná paměť (cache)."
 
-#: admin/settings.php:769 admin/settings.php:1035
+#: admin/settings.php:1163 admin/settings.php:1457
 msgid "The access code is <strong>NOT</strong> your <strong>Tracking ID</strong> (UA-XXXXX-X). Try again, and use the red link to get your access code"
 msgstr "Přístupový kód  <strong>NENÍ</strong> vaše <strong>sledovací ID</strong> (UA-XXXXX-X).  Zkuste to znovu a použijte červený odkaz pro získání přístupového kódu."
 
-#: admin/settings.php:737 admin/settings.php:996
+#: admin/settings.php:1131 admin/settings.php:1418
 msgid "Plugin authorization succeeded."
 msgstr "Modul byl autorizován."
 
-#: admin/settings.php:724
+#: admin/settings.php:1118
 msgid "Library conflicts between WordPress plugins"
 msgstr "Knihovna koliduje mezi moduly WordPressu"
 
-#: admin/settings.php:724 admin/settings.php:981
+#: admin/settings.php:1118 admin/settings.php:1403
 msgid "Loading the required libraries. If this results in a blank screen or a fatal error, try this solution:"
 msgstr "Nahrávání  požadovaných knihoven. Pokud to má za následek prázdnou obrazovku nebo fatální chybu, zkuste toto řešení:"
 
-#: admin/settings.php:703
+#: admin/settings.php:1094
 msgid "Plugin Configuration"
 msgstr "Nastavení modulu"
 
-#: admin/settings.php:683
+#: admin/settings.php:1061
 msgid "Error Details"
 msgstr "Detail chyby"
 
-#: admin/settings.php:676 admin/settings.php:689
+#: admin/settings.php:1055 admin/settings.php:1065 admin/settings.php:1085
 msgid "None"
 msgstr "Nic"
 
-#: admin/settings.php:670
+#: admin/settings.php:1050
 msgid "Last Error detected"
 msgstr "Poslední zaznamenaná chyba"
 
-#: admin/settings.php:663
+#: admin/settings.php:1044
 msgid "Plugin Settings"
 msgstr "Nastavení modulu:"
 
-#: admin/settings.php:663
+#: admin/settings.php:1044
 msgid "Errors & Details"
 msgstr "Chyby a popisy"
 
-#: admin/settings.php:654
+#: admin/settings.php:1036
 msgid "Google Analytics Errors & Debugging"
 msgstr "Chyby a Ladění Google Analytics"
 
-#: admin/settings.php:582
+#: admin/settings.php:962
 msgid "Exclude tracking for:"
 msgstr "Vynechat sledování pro:"
 
-#: admin/settings.php:556
+#: admin/settings.php:804
 msgid "Cross Domains:"
 msgstr "Cross Domains:"
 
-#: admin/settings.php:552
+#: admin/settings.php:799
 msgid "enable cross domain tracking"
 msgstr "povolit sledování cross domain"
 
-#: admin/settings.php:538
-msgid "enable AdSense account linking"
-msgstr "povolit prolinkování účtu AdSense"
-
-#: admin/settings.php:527
+#: admin/settings.php:760
 msgid "enable enhanced link attribution"
 msgstr "povolit vylepšné vlastnosti odkazů"
 
-#: admin/settings.php:516
-msgid "exclude events from bounce-rate calculation"
-msgstr "vyloučit události z výpočtů míry opuštění"
-
-#: admin/settings.php:505
-msgid "Page Speed SR:"
-msgstr "Rychlost stránky SR:"
-
-#: admin/settings.php:502
+#: admin/settings.php:693
 msgid "Advanced Tracking"
 msgstr "Pokročilé sledování"
 
-#: admin/settings.php:482
+#: admin/settings.php:570 admin/settings.php:651
 msgid "User Type:"
 msgstr "Typ uživatele:"
 
-#: admin/settings.php:474
+#: admin/settings.php:557 admin/settings.php:639
 msgid "Categories:"
 msgstr "Kategorie:"
 
-#: admin/settings.php:458
+#: admin/settings.php:531 admin/settings.php:615
 msgid "Publication Year:"
 msgstr "Rok zveřejnění:"
 
-#: admin/settings.php:450
+#: admin/settings.php:518 admin/settings.php:603
 msgid "Authors:"
 msgstr "Autoři:"
 
-#: admin/settings.php:439
+#: admin/settings.php:452
 msgid "track fragment identifiers, hashmarks (#) in URI links"
 msgstr "sledování identifikátorů, hashmarks (#) v URI odkazech"
 
-#: admin/settings.php:428
+#: admin/settings.php:490
 msgid "Affiliates Regex:"
 msgstr "Referenční regex:"
 
-#: admin/settings.php:424
-msgid "track affiliate links matching this regex"
-msgstr "sledovat referenční odkazy, které sedí na tento Regex"
-
-#: admin/settings.php:413
+#: admin/settings.php:481
 msgid "Downloads Regex:"
 msgstr "Stažené Regex:"
 
-#: admin/settings.php:409
-msgid "track downloads, mailto and outbound links"
-msgstr "sledovat počet stáhnutí souborů, odkazy mailto (odeslat mail) a odchozí odkazy"
-
-#: admin/settings.php:391
+#: admin/settings.php:736
 msgid "enable remarketing, demographics and interests reports"
 msgstr "umožnit remarketing (rentabilita?), demografii a zprávy zájmů"
 
-#: admin/settings.php:380
+#: admin/settings.php:724
 msgid "anonymize IPs while tracking"
 msgstr "anonymizovat IP při sledování"
 
-#: admin/settings.php:369
-msgid "Universal Analytics"
-msgstr "Univerzální Analytics"
-
-#: admin/settings.php:368
-msgid "Classic Analytics"
-msgstr "Klasické Analytics"
-
-#: admin/settings.php:366
+#: admin/settings.php:370
 msgid "Tracking Type:"
 msgstr "Druh sledování"
 
-#: admin/settings.php:363
-msgid "Basic Tracking"
-msgstr "Základní sledování"
-
-#: admin/settings.php:358 admin/settings.php:911
+#: admin/settings.php:386 admin/settings.php:1317
 msgid "Time Zone:"
 msgstr "Časová Zóna:"
 
-#: admin/settings.php:358 admin/settings.php:911
+#: admin/settings.php:386 admin/settings.php:1317
 msgid "Default URL:"
 msgstr "Zákaldní URL:"
 
-#: admin/settings.php:358 admin/settings.php:911
+#: admin/settings.php:386 admin/settings.php:1317
 msgid "Tracking ID:"
 msgstr "Sledovací ID:"
 
-#: admin/settings.php:358 admin/settings.php:889 admin/settings.php:911
-#: admin/settings.php:1199
+#: admin/settings.php:386 admin/settings.php:1298 admin/settings.php:1317
+#: admin/settings.php:1639
 msgid "View Name:"
 msgstr "Zobrazované Jméno:"
 
-#: admin/settings.php:350
-msgid "Enabled"
-msgstr "Povolit"
-
-#: admin/settings.php:349
+#: admin/settings.php:377 admin/settings.php:609 admin/settings.php:621
+#: admin/settings.php:633 admin/settings.php:645 admin/settings.php:657
+#: admin/settings.php:669 admin/settings.php:883
 msgid "Disabled"
 msgstr "Zakázat"
 
-#: admin/settings.php:347
-msgid "Tracking Options:"
-msgstr "Možnosti sledování"
-
-#: admin/settings.php:344
+#: admin/settings.php:366
 msgid "Tracking Settings"
 msgstr "Nastavení sledování"
 
-#: admin/settings.php:336
+#: admin/settings.php:353
 msgid "Advanced Settings"
 msgstr "Pokročilá nastavení"
 
-#: admin/settings.php:336 admin/settings.php:579 admin/settings.php:1226
+#: admin/settings.php:353 admin/settings.php:355 admin/settings.php:958
+#: admin/settings.php:1673
 msgid "Exclude Tracking"
 msgstr "Vyloučit ze sledování"
 
-#: admin/settings.php:336 admin/settings.php:447
+#: admin/settings.php:353
 msgid "Custom Definitions"
 msgstr "Vlastní definice"
 
-#: admin/settings.php:336 admin/settings.php:399
+#: admin/settings.php:353 admin/settings.php:417
 msgid "Events Tracking"
 msgstr "Sledování událostí"
 
-#: admin/settings.php:336
+#: admin/settings.php:353 admin/settings.php:355 admin/settings.php:357
 msgid "Basic Settings"
 msgstr "Základní nastavení"
 
-#: admin/settings.php:328
+#: admin/settings.php:345
 msgid "Google Analytics Tracking Code"
 msgstr "Sledovací kód Google Analytics"
 
-#: admin/settings.php:323
-msgid "The tracking component is disabled. You should set <strong>Tracking Options</strong> to <strong>Enabled</strong>"
-msgstr "Komponenta sledování je zakázána. Měli byste nastavit <strong> Možnosti sledování </ strong> na <strong> Povoleno </ strong>"
-
-#: admin/settings.php:272
+#: admin/settings.php:288
 msgid "Target Geo Map to country:"
 msgstr "Zacílení Geo Map ke státu"
 
-#: admin/settings.php:268
+#: admin/settings.php:284
 msgid "Location Settings"
 msgstr "Nastavení Umístění"
 
-#: admin/settings.php:263
+#: admin/settings.php:278
 msgid "Maximum number of pages to display on real-time tab:"
 msgstr "Maximální počet stránek zobrazených na záložce reálného času"
 
-#: admin/settings.php:260
+#: admin/settings.php:275
 msgid "Real-Time Settings"
 msgstr "Nastavení v reálném čase"
 
-#: admin/settings.php:256
+#: admin/settings.php:270
 msgid "enable the main Dashboard Widget"
 msgstr "povolit hlavní widget na nástěnce"
 
-#: admin/settings.php:245
+#: admin/settings.php:258
 msgid "enable reports on Posts List and Pages List"
 msgstr "povolit report na seznamu příspěvků a seznamu stránek"
 
-#: admin/settings.php:234
+#: admin/settings.php:246
 msgid "enable Switch View functionality"
 msgstr "povol funkci Přepni Náhled"
 
-#: admin/settings.php:181
+#: admin/settings.php:196
 msgid "Google Analytics Backend Settings"
 msgstr "Nastavení backendu Google Analytics"
 
-#: admin/settings.php:153 admin/settings.php:295 admin/settings.php:617
-#: admin/settings.php:944 admin/settings.php:1243
+#: admin/settings.php:167 admin/settings.php:315 admin/settings.php:998
+#: admin/settings.php:1358 admin/settings.php:1694
 msgid "Save Changes"
 msgstr "Uložit změny"
 
-#: admin/settings.php:146
+#: admin/settings.php:157
 msgid "enable web page reports on frontend"
 msgstr "povolit stránku s reporty na zveřejněných stránkách (frontend)"
 
-#: admin/settings.php:108 admin/settings.php:194
+#: admin/settings.php:121 admin/settings.php:210
 msgid "Show stats to:"
 msgstr "Zobrazit statistiky pro:"
 
-#: admin/settings.php:105 admin/settings.php:191
+#: admin/settings.php:117 admin/settings.php:206
 msgid "Permissions"
 msgstr "Oprávnění"
 
-#: admin/settings.php:95
+#: admin/settings.php:107
 msgid "Google Analytics Frontend Settings"
 msgstr "Nastavení Google Analytics pro veřejnou část"
 
-#: admin/settings.php:90 admin/settings.php:176 admin/settings.php:320
-#: admin/settings.php:650 admin/settings.php:827 admin/settings.php:1109
+#: admin/settings.php:102 admin/settings.php:191 admin/settings.php:340
+#: admin/settings.php:1032 admin/settings.php:1220 admin/settings.php:1531
 #: admin/setup.php:196 admin/setup.php:296 front/setup.php:104
 msgid "authorize the plugin"
 msgstr "autorizovat modul"
 
-#: admin/settings.php:90 admin/settings.php:176 admin/settings.php:320
-#: admin/settings.php:650 admin/settings.php:827 admin/settings.php:1109
+#: admin/settings.php:102 admin/settings.php:191 admin/settings.php:340
+#: admin/settings.php:1032 admin/settings.php:1220 admin/settings.php:1531
 #: admin/setup.php:47 admin/setup.php:60
 msgid "Errors & Debug"
 msgstr "Chyby a ladění"
 
-#: admin/settings.php:90 admin/settings.php:176 admin/settings.php:320
-#: admin/settings.php:650 admin/settings.php:827 admin/settings.php:1109
+#: admin/settings.php:102 admin/settings.php:191 admin/settings.php:340
+#: admin/settings.php:1032 admin/settings.php:1220 admin/settings.php:1531
 msgid "Something went wrong, check %1$s or %2$s."
 msgstr "Něco je špatně, zkontroluj %1$s nebo %2$s."
 
-#: admin/settings.php:86 admin/settings.php:172 admin/settings.php:316
-#: admin/settings.php:777 admin/settings.php:787 admin/settings.php:796
-#: admin/settings.php:802 admin/settings.php:812 admin/settings.php:1061
-#: admin/settings.php:1069 admin/settings.php:1079 admin/settings.php:1085
-#: admin/settings.php:1095
+#: admin/settings.php:98 admin/settings.php:187 admin/settings.php:336
+#: admin/settings.php:1171 admin/settings.php:1181 admin/settings.php:1190
+#: admin/settings.php:1196 admin/settings.php:1206 admin/settings.php:1483
+#: admin/settings.php:1491 admin/settings.php:1501 admin/settings.php:1507
+#: admin/settings.php:1517
 msgid "Cheating Huh?"
 msgstr "Podvádět jo?"
 
-#: admin/settings.php:84 admin/settings.php:170 admin/settings.php:314
-#: admin/settings.php:800 admin/settings.php:1083
+#: admin/settings.php:96 admin/settings.php:185 admin/settings.php:334
+#: admin/settings.php:1194 admin/settings.php:1505
 msgid "Settings saved."
 msgstr "Nastavení uloženo"
 
-#: admin/item-reports.php:53 front/item-reports.php:30
+#: admin/item-reports.php:53 admin/settings.php:375 front/item-reports.php:30
 msgid "Analytics"
 msgstr "Analýza"

@@ -21,7 +21,7 @@ vagrantfile:
                 machines:
                     vflm_x991d6v8ab8l:
                         id: pedkm
-                        hostname: ped-km.dev
+                        hostname: ped-km.test
                         network:
                             private_network: 192.168.56.101
                         memory: '512'
@@ -186,10 +186,10 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        av_sqoe2du14g8f:
-            servername: ped-km.dev
+        av_sklasjdklsf:
+            servername: ped-km.test
             serveraliases:
-                - www.ped-km.dev
+                - www.ped-km.test
             docroot: /var/www
             port: '443'
             custom_fragment: ''

@@ -1,12 +1,10 @@
 {
     "key": "group_54b638d65150b",
-    "title": "Obecn\u00e9 nastaven\u00ed",
+    "title": "Obecné nastavení",
     "fields": [
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_54be64184566e",
-            "label": "Hlavi\u010dka str\u00e1nek",
+            "label": "Hlavička stránek",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -16,19 +14,16 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "default_value": "",
-            "new_lines": "br",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": 3,
             "key": "field_54b638e8aa43d",
-            "label": "Adresa \u0161koly",
+            "label": "Adresa školy",
             "name": "school_address",
             "type": "textarea",
-            "instructions": "Text mezi <strong>**hv\u011bzdi\u010dkami**<\/strong> bude tu\u010dn\u00fd.",
+            "instructions": "Text mezi <strong>**hvězdičkami**<\/strong> bude tučný.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -36,20 +31,20 @@
                 "class": "",
                 "id": ""
             },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br",
             "readonly": 0,
             "disabled": 0
         },
         {
-            "default_value": "",
-            "new_lines": "br",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": 3,
             "key": "field_54b63ce3cca70",
-            "label": "Telefon \u0161koly",
+            "label": "Telefon školy",
             "name": "school_tel",
             "type": "textarea",
-            "instructions": "Text mezi <strong>**hv\u011bzdi\u010dkami**<\/strong> bude tu\u010dn\u00fd.",
+            "instructions": "Text mezi <strong>**hvězdičkami**<\/strong> bude tučný.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -57,16 +52,17 @@
                 "class": "",
                 "id": ""
             },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br",
             "readonly": 0,
             "disabled": 0
         },
         {
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_54b63d00cca71",
-            "label": "E-mail \u0161koly",
+            "label": "E-mail školy",
             "name": "school_email",
             "type": "email",
             "instructions": "",
@@ -76,38 +72,18 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
-        },
-        {
+            },
             "default_value": "",
-            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
+            "append": ""
+        },
+        {
             "key": "field_57dc331826280",
             "label": "Text pod e-mailem",
             "name": "school_email_below",
             "type": "text",
-            "instructions": "Text mezi <strong>**hv\u011bzdi\u010dkami**<\/strong> bude tu\u010dn\u00fd.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": "",
-            "key": "field_54cf9ac987361",
-            "label": "SEO popisek",
-            "name": "seo_desc",
-            "type": "textarea",
-            "instructions": "Tento text se bude zobrazovat u v\u00fdsledk\u016f hled\u00e1n\u00ed va\u0161\u00ed str\u00e1nky v Googlu a dal\u0161\u00edch vyhled\u00e1va\u010d\u00edch. M\u011bl by obsahovat stru\u010dn\u00fd popis va\u0161\u00ed \u010dinnosti. Pro konkr\u00e9tn\u00ed str\u00e1nky m\u016f\u017eete tento text p\u0159epsat v administraci detailu str\u00e1nky.\r\nText by nem\u011bl b\u00fdt del\u0161\u00ed jak 155 znak\u016f.",
+            "instructions": "Text mezi <strong>**hvězdičkami**<\/strong> bude tučný.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -115,14 +91,36 @@
                 "class": "",
                 "id": ""
             },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_54cf9ac987361",
+            "label": "SEO popisek",
+            "name": "seo_desc",
+            "type": "textarea",
+            "instructions": "Tento text se bude zobrazovat u výsledků hledání vaší stránky v Googlu a dalších vyhledávačích. Měl by obsahovat stručný popis vaší činnosti. Pro konkrétní stránky můžete tento text přepsat v administraci detailu stránky.\r\nText by neměl být delší jak 155 znaků.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
             "readonly": 0,
             "disabled": 0
         },
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_54cf4aa3d6352",
-            "label": "Slider na hlavn\u00ed str\u00e1nce",
+            "label": "Slider na hlavní stránce",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -132,11 +130,41 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
+            "key": "field_54cf4ab6d6353",
+            "label": "Obrázky slideru",
+            "name": "home_slider",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Přidat obrázek",
             "sub_fields": [
                 {
+                    "key": "field_54cf4ad4d6354",
+                    "label": "Obrázek",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "Nahrávejte obrázky o šířce alespoň 1980px. Obrázky budou automaticky zmenšeny na výšku 340px.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "return_format": "id",
                     "preview_size": "thumbnail",
                     "library": "all",
@@ -146,26 +174,9 @@
                     "max_width": 0,
                     "max_height": 0,
                     "max_size": 0,
-                    "mime_types": "",
-                    "key": "field_54cf4ad4d6354",
-                    "label": "Obr\u00e1zek",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "Nahr\u00e1vejte obr\u00e1zky o \u0161\u00ed\u0159ce alespo\u0148 1980px. Obr\u00e1zky budou automaticky zmen\u0161eny na v\u00fd\u0161ku 340px.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
+                    "mime_types": ""
                 },
                 {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
                     "key": "field_54cf4affd6355",
                     "label": "Nadpis",
                     "name": "heading",
@@ -178,15 +189,15 @@
                         "class": "",
                         "id": ""
                     },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
                     "readonly": 0,
                     "disabled": 0
                 },
                 {
-                    "default_value": "",
-                    "new_lines": "br",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "rows": "",
                     "key": "field_54cf4b0cd6356",
                     "label": "Popis",
                     "name": "desc",
@@ -199,38 +210,20 @@
                         "class": "",
                         "id": ""
                     },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "br",
                     "readonly": 0,
                     "disabled": 0
                 }
             ],
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "P\u0159idat obr\u00e1zek",
-            "collapsed": "",
-            "key": "field_54cf4ab6d6353",
-            "label": "Obr\u00e1zky slideru",
-            "name": "home_slider",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
+            "collapsed": ""
         },
         {
-            "default_value": 5,
-            "min": 1,
-            "max": 99,
-            "step": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "sekund",
             "key": "field_54cf56e97741f",
-            "label": "Prodleva ot\u00e1\u010den\u00ed slideru",
+            "label": "Prodleva otáčení slideru",
             "name": "home_slider_timeout",
             "type": "number",
             "instructions": "",
@@ -241,14 +234,19 @@
                 "class": "",
                 "id": ""
             },
+            "default_value": 5,
+            "placeholder": "",
+            "prepend": "",
+            "append": "sekund",
+            "min": 1,
+            "max": 99,
+            "step": "",
             "readonly": 0,
             "disabled": 0
         },
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_54be64254566f",
-            "label": "Obecn\u011b o \u0161kole",
+            "label": "Obecně o škole",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -258,16 +256,13 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "default_value": "",
-            "delay": 0,
             "key": "field_54be642d45670",
-            "label": "Obecn\u011b o \u0161kole",
+            "label": "Obecně o škole",
             "name": "about_school",
             "type": "wysiwyg",
             "instructions": "",
@@ -277,13 +272,16 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_5526cea18705a",
-            "label": "Extern\u00ed odkazy",
+            "label": "Externí odkazy",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -293,13 +291,13 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "default_value": "",
-            "placeholder": "",
             "key": "field_5526ceb58705b",
-            "label": "Odkaz na \"Elektronickou \u017e\u00e1kovskou\"",
+            "label": "Odkaz na \"Elektronickou žákovskou\"",
             "name": "zakovska_link",
             "type": "url",
             "instructions": "",
@@ -309,11 +307,11 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "placeholder": ""
         },
         {
-            "default_value": "",
-            "placeholder": "",
             "key": "field_5526ceda8705c",
             "label": "Facebook odkaz v menu",
             "name": "menu_facebook_link",
@@ -325,62 +323,15 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
-        },
-        {
-            "placement": "top",
-            "endpoint": 0,
-            "key": "field_59286da4460cd",
-            "label": "Kurzy",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "post_type": [
-                "page",
-                "aktuality",
-                "studium"
-            ],
-            "taxonomy": [],
-            "min": "",
-            "max": "",
-            "filters": [
-                "search",
-                "post_type"
-            ],
-            "elements": "",
-            "return_format": "id",
-            "key": "field_59287191b93c1",
-            "label": "Dal\u0161\u00ed odkazy ve v\u00fdpisu typ\u016f",
-            "name": "courses_types_additional_links",
-            "type": "relationship",
-            "instructions": "Odkazy na tyto str\u00e1nky budou p\u0159id\u00e1ny mezi v\u00fdpis typ\u016f kurz\u016f.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
+            },
             "default_value": "",
-            "delay": 0,
-            "key": "field_59286dbd460ce",
-            "label": "Obchodn\u00ed podm\u00ednky kurz\u016f",
-            "name": "courses_terms_of_service",
-            "type": "wysiwyg",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ade313c5f976",
+            "label": "Odkaz v menu na pěvecký sbor",
+            "name": "sbor_link",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -388,7 +339,9 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -408,5 +361,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1495822868
+    "modified": 1524511070
 }
