@@ -28,6 +28,7 @@ class Layout {
 		global $lumi;
 		$this->static_ver = $lumi['config']['static_ver'];
 		$this->dokumenty_id = $lumi['config']['dokumenty_id'];
+		$this->gdpr_id = $lumi['config']['gdpr_id'];
 		$this->fotogalerie_id = $lumi['config']['fotogalerie_id'];
 		$this->ss_id = $lumi['config']['ss_id'];
 		$this->vos_id = $lumi['config']['vos_id'];
@@ -102,6 +103,7 @@ class Layout {
 
 	public function add_custom_context_data( $data ) {
 		$data['dokumenty_permalink'] = get_permalink( $this->dokumenty_id );
+		$data['gdpr_permalink'] = get_permalink( $this->gdpr_id );
 		$data['fotogalerie_permalink'] = get_permalink( $this->fotogalerie_id );
 		$data['school_address'] = get_field( 'school_address', 'option' );
 		$data['school_tel'] = get_field( 'school_tel', 'option' );

@@ -41,6 +41,7 @@ global $lumi;
 $lumi['config'] = array(
 	'static_ver' => 2,
 	'dokumenty_id' => 98,
+	'gdpr_id' => 4284,
 	'fotogalerie_id' => 100,
 	'ss_id' => 22,
 	'vos_id' => 24,

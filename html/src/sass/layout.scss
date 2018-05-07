@@ -176,17 +176,23 @@ body {
 		text-shadow: 0 0 3px #ee9310;
 	}
 
-	.main_header__photo_link {
-		@extend %header_link;
+	.main_header__important_links {
 		position: absolute;
 		right: $tagline_right;
-		top: 140px;
+		top: 114px;
+		text-align: right;
+		line-height: 1.8em;
 		}
-		.main_header__photo_link__image {
-			@extend %header_icons;
-			margin-left: 5px;
-			margin-right: 0;
-		}
+		.main_header__important_links__link {
+			@extend %header_link;
+			display: block;
+			text-decoration: none;
+			}
+			.main_header__important_links__link__image {
+				@extend %header_icons;
+				margin-left: 5px;
+				margin-right: 0;
+			}
 
 	.main_header__logo {
 		position: absolute;
