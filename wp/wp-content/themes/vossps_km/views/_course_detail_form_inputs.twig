@@ -7,6 +7,7 @@
 {% set payment_type_radio = [] %}
 {% set invoice_address_section = [] %}
 {% set tos_conduct = null %}
+{% set gdpr_consent = null %}
 {% set note = null %}
 
 {% for field in form.children %}
@@ -26,6 +27,8 @@
 		{% set invoice_address_section = invoice_address_section|merge( [ field ] ) %}
 	{% elseif field.vars.name == 'tos_conduct' %}
 		{% set tos_conduct = field %}
+    {% elseif field.vars.name == 'gdpr_consent' %}
+        {% set gdpr_consent = field %}
 	{% elseif field.vars.name == 'note' %}
 		{% set note = field %}
 	{% endif %}
@@ -237,7 +240,7 @@
 </div>
 
 {# TOS CONDUCT #}
-			{% set field = tos_conduct %}
+{% set field = tos_conduct %}
 <div class="row">
 	<div class="col-xs-12">
 		<div class="form-group has-error">
@@ -269,6 +272,19 @@
 				</div><!-- /.modal -->
 			</label>
 		</div><!-- /.form-group -->
+
+		<div class="form-group has-error">
+			<label>
+				<input type="{{ gdpr_consent.vars.block_prefixes[1] }}"
+					   name="{{ gdpr_consent.vars.full_name }}"
+					   value="{{ gdpr_consent.vars.value }}"
+                       {% if gdpr_consent.vars.checked %}checked="checked"{% endif %}
+					   {% if gdpr_consent.vars.required %} required {% endif %}>
+				Souhlasím se <a href="{{ gdpr_consent_file_link }}" target="_blank">zpracováním a archivací osobních údajů</a> uvedených v přihlášce
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+			</label>
+		</div><!-- /.form-group -->
+
 		<div class="form-group has-feedback">
 			<label>Poznámka</label>
 			{#{{ dump(note) }}#}

@@ -277,6 +277,7 @@ class CoursePost extends TimberPost {
 			->add( 'invoice_city', TextType::class, [ 'label' => 'Město', 'required' => false ] )
 			->add( 'invoice_psc', TextType::class, [ 'label' => 'PSČ', 'required' => false ] )
 			->add( 'tos_conduct', RadioType::class, [ 'required' => true, 'constraints' => new IsTrue() ] )
+			->add( 'gdpr_consent', RadioType::class, [ 'required' => true, 'constraints' => new IsTrue() ] )
 			->add( 'note', TextareaType::class );
 
 		$form->handleRequest();
@@ -388,6 +389,22 @@ class CoursePost extends TimberPost {
 		$attrs = get_field( 'additional_attributes', $this->ID );
 		if( empty( $attrs ) ) return [];
 		return $attrs;
+
+	}
+
+	/**
+	 * Returns URL of GDPR consent file.
+	 * File is specific to every course type
+	 *
+	 * @return null|string
+	 */
+	public function getGdprConsentFileLink() {
+
+		$attachment_id = get_field( 'course_option_' . $this->post_type . '_gdpr_consent_file', 'option' );
+
+		if( $attachment_id === null ) return null;
+
+		return wp_get_attachment_url( $attachment_id );
 
 	}
 

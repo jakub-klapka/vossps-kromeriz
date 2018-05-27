@@ -219,7 +219,7 @@ class FormSubmissionController {
 			/*
 			 * Filter out TOS conduct
 			 */
-			if( $field_name === 'tos_conduct' ) continue;
+			if( $field_name === 'tos_conduct' || $field_name === 'gdpr_consent' ) continue;
 
 			$used_fields_data[] = [
 				'label' => $form->get( $field_name )->getConfig()->getOptions()['label'],

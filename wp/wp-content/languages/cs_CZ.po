@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.9.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-04-30 07:03:59+0000\n"
+"PO-Revision-Date: 2018-05-23 06:41:17+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,11 +36,408 @@ msgstr " "
 msgid "number_format_decimal_point"
 msgstr ","
 
+#: wp-includes/user.php:3128
+msgid "The site administrator has been notified. You will receive an email confirmation when they erase your data."
+msgstr "Administrátor webu byl informován. O provedení výmazu vašich osobních údajů budete informováni emailem."
+
+#: wp-includes/user.php:3127
+msgid "Thanks for confirming your erasure request."
+msgstr "Děkujeme za potvrzení žádosti o výmaz."
+
+#: wp-includes/user.php:3125
+msgid "The site administrator has been notified. You will receive a link to download your export via email when they fulfill your request."
+msgstr "Administrátor webu byl informován. Po potvrzení žádosti administrátorem vám bude na email zaslán odkaz pro stažení."
+
+#: wp-includes/user.php:3124
+msgid "Thanks for confirming your export request."
+msgstr "Děkujeme za potvrzení žádosti o export."
+
+#. translators: Do not translate SITENAME, SITEURL, PRIVACY_POLICY_URL; those
+#. are placeholders.
+#: wp-includes/user.php:3052
+msgid ""
+"Howdy,\n"
+"\n"
+"Your request to erase your personal data on ###SITENAME### has been completed.\n"
+"\n"
+"If you have any follow-up questions or concerns, please contact the site administrator.\n"
+"\n"
+"For more information, you can also read our privacy policy: ###PRIVACY_POLICY_URL###\n"
+"\n"
+"Regards,\n"
+"All at ###SITENAME###\n"
+"###SITEURL###"
+msgstr ""
+"Dobrý den,\n"
+"\n"
+"žádost o vymazání vašich osobních údajů z webu ###SITENAME###, byla dokončena.\n"
+"\n"
+"Pokud máte nějaké další dotazy nebo obavy, kontaktujte administrátora webu.\n"
+"\n"
+"Pro více informací si můžete také přečíst naše zásady ochrany osobních údajů: ###PRIVACY_POLICY_URL###\n"
+"\n"
+"S pozdravem,\n"
+"Tým  ###SITENAME###\n"
+"###SITEURL###"
+
+#. translators: Do not translate SITENAME, SITEURL; those are placeholders.
+#: wp-includes/user.php:3039
+msgid ""
+"Howdy,\n"
+"\n"
+"Your request to erase your personal data on ###SITENAME### has been completed.\n"
+"\n"
+"If you have any follow-up questions or concerns, please contact the site administrator.\n"
+"\n"
+"Regards,\n"
+"All at ###SITENAME###\n"
+"###SITEURL###"
+msgstr ""
+"Dobrý den,\n"
+"\n"
+"žádost o vymazání vašich osobních údajů z webu ###SITENAME### byla dokončena.\n"
+"\n"
+"Pokud máte nějaké další dotazy nebo obavy, kontaktujte administrátora webu.\n"
+"\n"
+"S pozdravem,\n"
+"Tým ###SITENAME###\n"
+"###SITEURL###"
+
+#. translators: %s Site name.
+#: wp-includes/user.php:3015
+msgid "[%s] Erasure Request Fulfilled"
+msgstr "[%s] Žádost o výmaz byla splněna"
+
+#. translators: Do not translate SITENAME, USER_EMAIL, DESCRIPTION, MANAGE_URL,
+#. SITEURL; those are placeholders.
+#: wp-includes/user.php:2933
+msgid ""
+"Howdy,\n"
+"\n"
+"A user data privacy request has been confirmed on ###SITENAME###:\n"
+"\n"
+"User: ###USER_EMAIL###\n"
+"Request: ###DESCRIPTION###\n"
+"\n"
+"You can view and manage these data privacy requests here:\n"
+"\n"
+"###MANAGE_URL###\n"
+"\n"
+"Regards,\n"
+"All at ###SITENAME###\n"
+"###SITEURL###"
+msgstr ""
+"Dobrý den,\n"
+"\n"
+"u webu ###SITENAME### byla potvrzena žádost o export osobních údajů uživatele:\n"
+"\n"
+"Uživatel: ###USER_EMAIL###\n"
+"Žádost: ###DESCRIPTION###\n"
+"\n"
+"Žádosti o poskytnutí osobních údajů můžete zobrazit a spravovat zde:\n"
+"\n"
+"###MANAGE_URL###\n"
+"\n"
+"S pozdravem,\n"
+"Tým ###SITENAME###\n"
+"###SITEURL###"
+
+#. translators: %s Site name.
+#: wp-includes/user.php:2900
+msgid "[%s] Action Confirmed"
+msgstr "[%s] Akce byla potvrzena"
+
+#. translators: Privacy data request subject. 1: Site name, 2: Name of the
+#. action
+#: wp-includes/user.php:3320
+msgid "[%1$s] Confirm Action: %2$s"
+msgstr "[%1$s] Potvrzení akce: %2$s"
+
+#: wp-includes/user.php:3214
+msgid "Erase Personal Data"
+msgstr "Výmaz osobních údajů"
+
+#: wp-includes/comment-template.php:2208
+msgid "Save my name, email, and website in this browser for the next time I comment."
+msgstr "Uložit do prohlížeče jméno, email a webovou stránku pro budoucí komentáře."
+
+#: wp-includes/user.php:2802
+msgid "User Description"
+msgstr "Popis uživatele"
+
+#: wp-includes/user.php:2801
+msgid "User Last Name"
+msgstr "Příjmení uživatele"
+
+#: wp-includes/user.php:2800
+msgid "User First Name"
+msgstr "Jméno uživatele"
+
+#: wp-includes/user.php:2799
+msgid "User Nickname"
+msgstr "Přezdívka uživatele"
+
+#: wp-includes/user.php:2798
+msgid "User Display Name"
+msgstr "Veřejně zobrazované jméno uživatele"
+
+#: wp-includes/user.php:2797
+msgid "User Registration Date"
+msgstr "Datum registrace uživatele"
+
+#: wp-includes/user.php:2796
+msgid "User URL"
+msgstr "URL adresa uživatele"
+
+#: wp-includes/user.php:2795
+msgid "User Email"
+msgstr "Email uživatele"
+
+#: wp-includes/user.php:2794
+msgid "User Nice Name"
+msgstr "Nice Name uživatele"
+
+#: wp-includes/user.php:2793
+msgid "User Login Name"
+msgstr "Přihlašovací jméno uživatele"
+
+#: wp-includes/user.php:2792
+msgid "User ID"
+msgstr "ID uživatele"
+
+#: wp-includes/user.php:2760
+msgid "WordPress User"
+msgstr "Uživatel WordPressu"
+
+#: wp-includes/media.php:3969
+msgid "WordPress Media"
+msgstr "Média WordPressu"
+
+#: wp-includes/link-template.php:4166
+msgid "Privacy Policy"
+msgstr "Zásady ochrany osobních údajů"
+
+#: wp-includes/script-loader.php:670
+msgid "An error occurred while attempting to export personal data."
+msgstr "Při pokusu o export osobních údajů nastala chyba."
+
+#: wp-includes/script-loader.php:669
+msgid "No personal data export file was generated."
+msgstr "Žádný soubor exportu osobních údajů nebyl vygenerován."
+
+#: wp-login.php:875
+msgid "User action confirmed."
+msgstr "Uživatelská akce byla potvrzena."
+
+#: wp-includes/user.php:3396
+msgid "This link has expired."
+msgstr "Platnost odkazu vypršela."
+
+#: wp-includes/user.php:3248 wp-includes/user.php:3392 wp-login.php:844
+msgid "Invalid request."
+msgstr "Neplatná žádost."
+
+#. translators: %s: action name
+#: wp-includes/user.php:3218
+msgid "Confirm the \"%s\" action"
+msgstr "Potvrďte akci „%s“"
+
+#: wp-includes/user.php:3211
+msgid "Export Personal Data"
+msgstr "Export osobních údajů"
+
+#: wp-includes/user.php:3183
+msgid "A request for this email address already exists."
+msgstr "Žádost pro tuto emailovou adresu již existuje."
+
+#: wp-includes/user.php:3167
+msgid "Invalid action name."
+msgstr "Neplatný název akce."
+
+#: wp-includes/user.php:3120
+msgid "The site administrator has been notified and will fulfill your request as soon as possible."
+msgstr "Administrátor webu byl informován a bude se vaši žádosti věnovat co nejdříve."
+
+#: wp-includes/post.php:216
+msgid "User Request"
+msgstr "Žádost uživatele"
+
+#: wp-includes/post.php:215
+msgid "User Requests"
+msgstr "Uživatelské žádosti"
+
+#. translators: deleted long text
+#: wp-includes/functions.php:5921
+msgid "This content was deleted by the author."
+msgstr "Tento obsah byl odstraněn autorem."
+
+#. translators: deleted text
+#: wp-includes/functions.php:5917
+msgid "[deleted]"
+msgstr "[smazáno]"
+
+#. translators: %d: Comment ID
+#: wp-includes/comment.php:3358
+msgid "Comment %d contains personal data but could not be anonymized."
+msgstr "Komentář %d obsahuje osobní údaje, které nemohly být anonymizovány."
+
+#: wp-includes/user.php:3119
+msgid "Action has been confirmed."
+msgstr "Akce byla potvrzena."
+
+#: wp-includes/user.php:3434
+msgid "The confirmation email has expired."
+msgstr "Platnost potvrzujícího emailu vypršela."
+
+#: wp-includes/user.php:3416
+msgid "Invalid action"
+msgstr "Neplatná akce"
+
+#. translators: Do not translate DESCRIPTION, CONFIRM_URL, EMAIL, SITENAME,
+#. SITEURL: those are placeholders.
+#: wp-includes/user.php:3264
+msgid ""
+"Howdy,\n"
+"\n"
+"A request has been made to perform the following action on your account:\n"
+"\n"
+"     ###DESCRIPTION###\n"
+"\n"
+"To confirm this, please click on the following link:\n"
+"###CONFIRM_URL###\n"
+"\n"
+"You can safely ignore and delete this email if you do not want to\n"
+"take this action.\n"
+"\n"
+"This email has been sent to ###EMAIL###.\n"
+"\n"
+"Regards,\n"
+"All at ###SITENAME###\n"
+"###SITEURL###"
+msgstr ""
+"Dobrý den,\n"
+" \n"
+" byl vytvořen požadavek o provedení následující akce pro váš účet:\n"
+" \n"
+" ###DESCRIPTION###\n"
+" \n"
+" Pro potvrzení akce klikněte na následující odkaz:\n"
+" ###CONFIRM_URL###\n"
+" \n"
+" Pokud tuto akci nechcete provést, můžete tento email bez obav smazat.\n"
+" \n"
+" Tento email byl odeslán na adresu ###EMAIL###.\n"
+" \n"
+" S pozdravem,\n"
+"Tým ###SITENAME###\n"
+" ###SITEURL###"
+
+#: wp-includes/script-loader.php:668
+msgid "An error occurred while attempting to find and erase personal data."
+msgstr "Při pokusu o nalezení a vymazání osobních údajů došlo k chybě."
+
+#: wp-includes/script-loader.php:667
+msgid "Personal data was found for this user but some of the personal data found was not erased."
+msgstr "Osobní údaje pro tohoto uživatele sice byly nalezeny, ale některé z nich nebyly vymazány."
+
+#: wp-includes/script-loader.php:666
+msgid "Personal data was found for this user but was not erased."
+msgstr "Osobní údaje pro tohoto uživatele sice byly nalezeny, ale nebyly vymazány."
+
+#: wp-includes/script-loader.php:665
+msgid "All of the personal data found for this user was erased."
+msgstr "Veškeré nalezené osobní údaje pro tohoto uživatele byly vymazány."
+
+#: wp-includes/script-loader.php:664
+msgid "No personal data was found for this user."
+msgstr "Pro tohoto uživatele nebyly nalezeny žádné osobní údaje."
+
+#: wp-includes/post.php:787
+msgid "Completed"
+msgstr "Dokončeno"
+
+#: wp-includes/post.php:785
+msgid "Confirmed"
+msgstr "Potvrzeno"
+
+#: wp-includes/post.php:784
+msgid "Pending"
+msgstr "Nevyřízeno"
+
+#: wp-includes/post.php:306
+msgctxt "request status"
+msgid "Completed"
+msgstr "Vyřízeno"
+
+#: wp-includes/post.php:299
+msgctxt "request status"
+msgid "Failed"
+msgstr "Selhalo"
+
+#: wp-includes/post.php:292
+msgctxt "request status"
+msgid "Confirmed"
+msgstr "Potvrzeno"
+
+#: wp-includes/post.php:285
+msgctxt "request status"
+msgid "Pending"
+msgstr "Nevyřízeno"
+
+#: wp-includes/comment.php:3215
+msgid "Comment URL"
+msgstr "URL adresa komentáře"
+
+#: wp-includes/comment.php:3214
+msgid "Comment Content"
+msgstr "Obsah komentáře"
+
+#: wp-includes/comment.php:3213
+msgid "Comment Date"
+msgstr "Datum komentáře"
+
+#: wp-includes/comment.php:3212
+msgid "Comment Author User Agent"
+msgstr "User agent autora komentáře"
+
+#: wp-includes/comment.php:3211
+msgid "Comment Author IP"
+msgstr "IP adresa autora komentáře"
+
+#: wp-includes/comment.php:3210
+msgid "Comment Author URL"
+msgstr "URL adresa autora komentáře"
+
+#: wp-includes/comment.php:3209
+msgid "Comment Author Email"
+msgstr "Email autora komentáře"
+
+#: wp-includes/comment.php:3208
+msgid "Comment Author"
+msgstr "Autor komentáře"
+
+#: wp-includes/comment.php:3173 wp-includes/comment.php:3282
+msgid "WordPress Comments"
+msgstr "Komentáře WordPressu"
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1382
+msgid "Limit result set to users who are considered authors."
+msgstr "Omezit výpis výsledků na uživatele považované za autory."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:199
+msgid "Sorry, you are not allowed to query users by this parameter."
+msgstr "Nemáte dostatečné oprávnění pro procházení uživatelů pomocí tohoto parametru."
+
+#: wp-includes/media.php:3526
+msgctxt "media items"
+msgid "Mine"
+msgstr "Mé"
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:228
 msgid "Whether or not the post type can be viewed."
 msgstr "Informace o tom, jestli lze konkrétní typ obsahu zobrazit."
 
-#: wp-includes/functions.php:2607
+#: wp-includes/functions.php:2608
 msgid "The link you followed has expired."
 msgstr "Vámi sledovaný odkaz vypršel."
 
@@ -50,9 +447,9 @@ msgid "You need a higher level of permission."
 msgstr "Potřebujete vyšší úroveň oprávnění."
 
 #: wp-includes/class-wp-customize-manager.php:450
-#: wp-includes/class-wp-xmlrpc-server.php:3689 wp-includes/functions.php:2617
+#: wp-includes/class-wp-xmlrpc-server.php:3689 wp-includes/functions.php:2618
 #: wp-includes/script-loader.php:133 wp-includes/script-loader.php:565
-#: wp-includes/script-loader.php:645 wp-includes/script-loader.php:839
+#: wp-includes/script-loader.php:645 wp-includes/script-loader.php:850
 msgid "Something went wrong."
 msgstr "Něco se pokazilo."
 
@@ -114,7 +511,7 @@ msgstr "Klikněte na tlačítko &#8222;Další&#8220;, a začněte do nového me
 msgid "Sorry, we can&#8217;t load the video at the supplied URL. Please check that the URL is for a supported video file (%s) or stream (e.g. YouTube and Vimeo)."
 msgstr "Nahrání videa ze zadané URL adresy se nezdařilo. Zkontrolujte si, zda se na ní nachází video v podporovaném formátu (%s) nebo stream (YouTube, Vimeo, &hellip;)."
 
-#: wp-includes/script-loader.php:691
+#: wp-includes/script-loader.php:702
 msgctxt "post action/button label"
 msgid "Schedule"
 msgstr "Naplánovat"
@@ -255,7 +652,7 @@ msgid "Your theme can display menus in one location. Select which menu you would
 msgstr "V šabloně je definována jedna oblast, kam můžete umístit vytvořené menu. Zvolte si konkrétní menu, které zde chcete zobrazit."
 
 #. translators: %s: site name
-#: wp-login.php:362
+#: wp-login.php:363
 msgid "Site Name: %s"
 msgstr "Název webu: %s"
 
@@ -275,7 +672,7 @@ msgid "Unsupported value type (%s)."
 msgstr "Nepodporovaný typ hodnoty (%s)."
 
 #. translators: %s: register_widget()
-#: wp-includes/widgets.php:1053
+#: wp-includes/widgets.php:1054
 msgid "Widgets need to be registered using %s, before they can be displayed."
 msgstr "Aby mohly být widgety zobrazeny, musí být zaregistrovány pomocí %s."
 
@@ -361,15 +758,15 @@ msgstr "&larr; Zpět k rubrikám"
 msgid "&larr; Back to Link Categories"
 msgstr "&larr; Zpět na rubriky odkazů"
 
-#: wp-includes/script-loader.php:857
+#: wp-includes/script-loader.php:868
 msgid "Color value"
 msgstr "Hodnota barvy"
 
-#: wp-includes/script-loader.php:853
+#: wp-includes/script-loader.php:864
 msgid "Clear color"
 msgstr "Zrušit barvu"
 
-#: wp-includes/script-loader.php:799
+#: wp-includes/script-loader.php:810
 msgid "Installation Failed!"
 msgstr "Instalace se nezdařila!"
 
@@ -824,13 +1221,13 @@ msgstr "Kontrola Scrape nonce se nezdařila. Zkuste to prosím znovu."
 
 #. translators: Site admin email change notification email subject. %s: Site
 #. title
-#: wp-includes/functions.php:5779
+#: wp-includes/functions.php:5780
 msgid "[%s] Notice of Admin Email Change"
 msgstr "[%s] Upozorněné na změnu emailu administrátora"
 
 #. translators: Do not translate OLD_EMAIL, NEW_EMAIL, SITENAME, SITEURL: those
 #. are placeholders.
-#: wp-includes/functions.php:5764
+#: wp-includes/functions.php:5765
 msgid ""
 "Hi,\n"
 "\n"
@@ -856,7 +1253,7 @@ msgstr ""
 "Web ###SITENAME###\n"
 "###SITEURL###"
 
-#: wp-includes/functions.php:5700
+#: wp-includes/functions.php:5701
 msgid "Only UUID V4 is supported at this time."
 msgstr "V současné době je podporováno pouze UUID V4."
 
@@ -1232,7 +1629,7 @@ msgid "(no author)"
 msgstr "(žádný autor)"
 
 #. translators: %s: the name of a city
-#: wp-includes/script-loader.php:1202
+#: wp-includes/script-loader.php:1213
 msgid "City updated. Listing events near %s."
 msgstr "Město bylo aktualizováno. Seznam událostí v blízkosti %s."
 
@@ -1243,19 +1640,19 @@ msgstr "Město bylo aktualizováno. Seznam událostí v blízkosti %s."
 #. locale that would be recognizable to most users. Use only the city name
 #. itself, without any region or country. Use the endonym (native locale name)
 #. instead of the English name if possible.
-#: wp-includes/script-loader.php:1198
+#: wp-includes/script-loader.php:1209
 msgid "We couldn&#8217;t locate %s. Please try another nearby city. For example: Kansas City; Springfield; Portland."
 msgstr "Město %s se nepodařilo najít. Zkuste prosím jiné blízké město. Například: Praha; Brno; Ostrava."
 
-#: wp-includes/script-loader.php:1181
+#: wp-includes/script-loader.php:1192
 msgid "Attend an upcoming event near you."
 msgstr "Zúčastněte se nadcházející akce ve vašem okolí."
 
-#: wp-includes/script-loader.php:1180
+#: wp-includes/script-loader.php:1191
 msgid "An error occurred. Please try again."
 msgstr "Vyskytla se chyba. Zkuste to prosím znovu."
 
-#: wp-includes/script-loader.php:1179
+#: wp-includes/script-loader.php:1190
 msgid "Enter your closest city to find nearby events."
 msgstr "Zadejte nejbližší město, pro hledání událostí v okolí."
 
@@ -1473,62 +1870,62 @@ msgstr "Zatím nebylo vybráno žádné audio"
 msgid "Displays an audio player."
 msgstr "Audio přehrávač."
 
-#: wp-includes/script-loader.php:828
+#: wp-includes/script-loader.php:839
 msgctxt "theme"
 msgid "Deleted!"
 msgstr "Smazáno!"
 
-#: wp-includes/script-loader.php:827
+#: wp-includes/script-loader.php:838
 msgctxt "plugin"
 msgid "Deleted!"
 msgstr "Smazáno!"
 
-#: wp-includes/script-loader.php:798
+#: wp-includes/script-loader.php:809
 msgctxt "theme"
 msgid "Installed!"
 msgstr "Nainstalováno!"
 
-#: wp-includes/script-loader.php:797
+#: wp-includes/script-loader.php:808
 msgctxt "plugin"
 msgid "Installed!"
 msgstr "Nainstalováno!"
 
 #. translators: %s: Plugin name
-#: wp-includes/script-loader.php:795
+#: wp-includes/script-loader.php:806
 msgctxt "plugin"
 msgid "Install %s now"
 msgstr "Instalovat %s"
 
 #. translators: %s: Plugin name and version
-#: wp-includes/script-loader.php:785
+#: wp-includes/script-loader.php:796
 msgctxt "plugin"
 msgid "%s update failed"
 msgstr "Aktualizace pluginu %s selhala!"
 
 #. translators: %s: Plugin name and version
-#: wp-includes/script-loader.php:783
+#: wp-includes/script-loader.php:794
 msgctxt "plugin"
 msgid "%s updated!"
 msgstr "%s aktualizován!"
 
 #. translators: %s: Plugin name and version
-#: wp-includes/script-loader.php:781
+#: wp-includes/script-loader.php:792
 msgctxt "plugin"
 msgid "Updating %s..."
 msgstr "Akutalizace %s..."
 
 #. translators: %s: Plugin name and version
-#: wp-includes/script-loader.php:776
+#: wp-includes/script-loader.php:787
 msgctxt "plugin"
 msgid "Update %s now"
 msgstr "Aktualizovat plugin %s"
 
-#: wp-includes/script-loader.php:772
+#: wp-includes/script-loader.php:783
 msgctxt "theme"
 msgid "Updated!"
 msgstr "Aktualizováno!"
 
-#: wp-includes/script-loader.php:771
+#: wp-includes/script-loader.php:782
 msgctxt "plugin"
 msgid "Updated!"
 msgstr "Aktualizováno!"
@@ -1553,7 +1950,7 @@ msgstr "%1$s musí být větší nebo rovno %2$d"
 msgid "%1$s must be greater than %2$d"
 msgstr "%1$s musí být větší než %2$d"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1350
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1366
 msgid "Limit result set to users with one or more specific slugs."
 msgstr "Omezit sadu výsledků na uživatele s jedním nebo více konkrétními názvy v URL."
 
@@ -1578,42 +1975,42 @@ msgstr "Všechny funkce, podporované typem obsahu."
 msgid "The password for the parent post of the comment (if the post is password protected)."
 msgstr "Heslo k nadřazenému příspěvku komentáře (je-li příspěvek je chráněn heslem)."
 
-#: wp-includes/post.php:1405
+#: wp-includes/post.php:1464
 msgctxt "page"
 msgid "Use as featured image"
 msgstr "Použít jako náhledový obrázek"
 
-#: wp-includes/post.php:1405
+#: wp-includes/post.php:1464
 msgctxt "post"
 msgid "Use as featured image"
 msgstr "Použít jako náhledový obrázek"
 
-#: wp-includes/post.php:1404
+#: wp-includes/post.php:1463
 msgctxt "page"
 msgid "Remove featured image"
 msgstr "Odstranit náhledový obrázek"
 
-#: wp-includes/post.php:1404
+#: wp-includes/post.php:1463
 msgctxt "post"
 msgid "Remove featured image"
 msgstr "Odstranit náhledový obrázek"
 
-#: wp-includes/post.php:1403
+#: wp-includes/post.php:1462
 msgctxt "page"
 msgid "Set featured image"
 msgstr "Zvolit náhledový obrázek"
 
-#: wp-includes/post.php:1403
+#: wp-includes/post.php:1462
 msgctxt "post"
 msgid "Set featured image"
 msgstr "Zvolit náhledový obrázek"
 
-#: wp-includes/post.php:1402
+#: wp-includes/post.php:1461
 msgctxt "page"
 msgid "Featured Image"
 msgstr "Náhledový obrázek"
 
-#: wp-includes/post.php:1402
+#: wp-includes/post.php:1461
 msgctxt "post"
 msgid "Featured Image"
 msgstr "Náhledový obrázek"
@@ -1623,7 +2020,7 @@ msgstr "Náhledový obrázek"
 msgid "%1$s is deprecated. The callback from %2$s is used instead."
 msgstr "%1$s již nadále není podporováno. Místo toho je použito zpětné volání z %2$s."
 
-#: wp-includes/media.php:3529 wp-includes/script-loader.php:80
+#: wp-includes/media.php:3530 wp-includes/script-loader.php:80
 msgid ""
 "You are about to permanently delete these items from your site.\n"
 "This action cannot be undone.\n"
@@ -1633,7 +2030,7 @@ msgstr ""
 "Tuto akci nelze vrátit zpět.\n"
 "„Zrušit“ pro zastavení, „OK“ pro odstranění."
 
-#: wp-includes/media.php:3528
+#: wp-includes/media.php:3529
 msgid ""
 "You are about to permanently delete this item from your site.\n"
 "This action cannot be undone.\n"
@@ -1643,7 +2040,7 @@ msgstr ""
 "Akci můžete zastavit kliknutím na 'Zrušit' nebo potvrdit pomocí 'OK'."
 
 #. translators: 1: suggested width number, 2: suggested height number.
-#: wp-includes/media-template.php:240 wp-includes/media.php:3578
+#: wp-includes/media-template.php:240 wp-includes/media.php:3579
 msgid "Suggested image dimensions: %1$s by %2$s pixels."
 msgstr "Doporučené rozměry obrázku:%1$s na %2$s pixelů."
 
@@ -1651,7 +2048,7 @@ msgstr "Doporučené rozměry obrázku:%1$s na %2$s pixelů."
 msgid "Sorry, this file type is not permitted for security reasons."
 msgstr "Z bezpečnostních důvodů tento typ souborů není povolen."
 
-#: wp-includes/comment.php:3052
+#: wp-includes/comment.php:3066
 msgid "Sorry, comments are not allowed for this item."
 msgstr "Komentáře k tomuto příspěvku nejsou bohužel povoleny."
 
@@ -1808,56 +2205,56 @@ msgstr "Omezit odpovědi na komentáře publikované před daným datem, které 
 msgid "Limit response to comments published after a given ISO8601 compliant date."
 msgstr "Omezit odpovědi na komentáře publikované po daném datu, které je v souladu s ISO8601."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1278
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1294
 msgid "Avatar URLs for the user."
 msgstr "URL adresy avatarů pro uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1231
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1247
 msgid "Roles assigned to the user."
 msgstr "Úrovně přiřazené uživateli."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1208
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1224
 msgid "The nickname for the user."
 msgstr "Přezdívka uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1202
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1218
 msgid "Locale for the user."
 msgstr "Jazyk uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1195
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1211
 msgid "Author URL of the user."
 msgstr "Autorská URL adresa uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1190
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1206
 msgid "Description of the user."
 msgstr "Popis uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1184
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1200
 msgid "URL of the user."
 msgstr "URL adresa uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1169
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1185
 msgid "Last name for the user."
 msgstr "Příjmení uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1161
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1177
 msgid "First name for the user."
 msgstr "Křestní jméno uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1153
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1169
 msgid "Display name for the user."
 msgstr "Veřejně zobrazované jméno uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1144
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1160
 msgid "Login name for the user."
 msgstr "Přihlašovací jméno uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:731
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:764
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:747
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:780
 msgid "The user cannot be deleted."
 msgstr "Uživatele nelze smazat."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:486
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:502
 msgid "Error creating new user."
 msgstr "Nastala chyba při vytváření nového uživatele."
 
@@ -1964,7 +2361,7 @@ msgctxt "New site notification email subject"
 msgid "[%1$s] Activate %2$s"
 msgstr "[%1$s] Aktivace %2$s"
 
-#: wp-includes/widgets.php:1398 wp-includes/widgets.php:1507
+#: wp-includes/widgets.php:1399 wp-includes/widgets.php:1508
 msgid "RSS Error:"
 msgstr "Chyba RSS:"
 
@@ -1972,12 +2369,12 @@ msgstr "Chyba RSS:"
 msgid "Cannot create a comment with that type."
 msgstr "Nelze vytvořit komentář tohoto typu."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:615
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:631
 msgid "Invalid slug."
 msgstr "Neplatný název v URL."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:607
-#: wp-includes/rest-api.php:1157
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:623
+#: wp-includes/rest-api.php:1157 wp-includes/user.php:3163
 msgid "Invalid email address."
 msgstr "Neplatná emailová adresa."
 
@@ -1990,11 +2387,11 @@ msgstr "Neplatný obsah komentáře."
 msgid "Invalid JSONP callback function."
 msgstr "Neplatná funkce zpětného volání JSONP."
 
-#: wp-includes/post.php:3487
+#: wp-includes/post.php:3546
 msgid "Invalid page template."
 msgstr "Neplatná šablona stránky."
 
-#: wp-includes/post.php:3207 wp-includes/rest-api.php:1151
+#: wp-includes/post.php:3266 wp-includes/rest-api.php:1151
 #: wp-includes/script-loader.php:606
 msgid "Invalid date."
 msgstr "Neplatné datum."
@@ -2061,8 +2458,8 @@ msgstr "Kalendář"
 msgid "Sorry, you are not allowed to change the comment type."
 msgstr "Nemáte dostatečné oprávnění pro změnu typu komentáře."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1052
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1062
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1068
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1078
 msgid "Sorry, you are not allowed to give users that role."
 msgstr "Nemáte dostatečné oprávnění pro poskytnutí této uživatelské úrovně uživatelům."
 
@@ -2293,20 +2690,20 @@ msgctxt "Theme starter content"
 msgid "Find Us"
 msgstr "Najdete nás"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1118
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1134
 msgid "Passwords cannot contain the \"\\\" character."
 msgstr "Heslo nesmí obsahovat znak „\\“."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1114
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1130
 msgid "Passwords cannot be empty."
 msgstr "Hesla nemohou být prázdná."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1085
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1101
 msgid "Username contains invalid characters."
 msgstr "Uživatelské jméno obsahuje neplatné znaky."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:164
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:469
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:485
 msgid "Invalid user parameter(s)."
 msgstr "Neplatné uživatelské parametry."
 
@@ -2371,7 +2768,7 @@ msgid "Collapse Main menu"
 msgstr "Sbalit hlavní menu"
 
 #. translators: %s: force=true
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:745
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:761
 msgid "Users do not support trashing. Set '%s' to delete."
 msgstr "Uživatele nelze přesunout do koše. Pro smazání nastavte &#8222;%s&#8220;."
 
@@ -2453,19 +2850,19 @@ msgstr "Pro správnou funkci je ID vážně zapotřebí."
 msgid "Homepage"
 msgstr "Úvodní stránka"
 
-#: wp-includes/script-loader.php:676
+#: wp-includes/script-loader.php:687
 msgid "Term removed."
 msgstr "Položka byla odstraněna."
 
-#: wp-includes/script-loader.php:675
+#: wp-includes/script-loader.php:686
 msgid "Term added."
 msgstr "Položka byla přidána."
 
-#: wp-includes/script-loader.php:674
+#: wp-includes/script-loader.php:685
 msgid "Term selected."
 msgstr "Položka je vybrána."
 
-#: wp-includes/script-loader.php:673
+#: wp-includes/script-loader.php:684
 msgid "Remove term:"
 msgstr "Odebrat termín:"
 
@@ -2525,56 +2922,56 @@ msgstr "Nepodařilo se aktualizovat hodnotu metadat v databázi."
 msgid "Could not delete meta value from database."
 msgstr "Meta hodnotu se nepodařilo odebrat z databáze."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1358
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1374
 msgid "Limit result set to users matching at least one specific role provided. Accepts csv list or single role."
 msgstr "Omezit sadu výsledků na uživatele odpovídající alespoň jedné ze zadaných uživatelských úrovní. Je akceptován csv seznam nebo samostatná uživatelská úroveň."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1254
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1270
 msgid "Any extra capabilities assigned to the user."
 msgstr "Žádné další oprávnění nejsou uživateli přiřazeny."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1248
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1264
 msgid "All capabilities assigned to the user."
 msgstr "Všechna oprávnění přiřazena uživateli."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1239
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1255
 msgid "Password for the user (never included)."
 msgstr "Heslo uživatele (není nikdy zahrnuto)."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1224
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1240
 msgid "Registration date for the user."
 msgstr "Datum registrace uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1177
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1193
 msgid "The email address for the user."
 msgstr "Emailová adresa uživatele."
 
 #. translators: %s: role key
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1038
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1054
 msgid "The role %s does not exist."
 msgstr "Uživatelská úroveň %s neexistuje."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:750
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:766
 msgid "Invalid user ID for reassignment."
 msgstr "Neplatné ID uživatele k přeřazení."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:714
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:730
 msgid "Sorry, you are not allowed to delete this user."
 msgstr "Nemáte dostatečné oprávnění pro smazání tohoto uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:611
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:627
 msgid "Username isn't editable."
 msgstr "Uživatelské jméno nelze upravovat."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:567
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:583
 msgid "Sorry, you are not allowed to edit roles of this user."
 msgstr "Nemáte dostatečné oprávnění pro úpravu úrovní tohoto uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:450
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:466
 msgid "Cannot create existing user."
 msgstr "Nelze vytvořit již existujícího uživatele."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:412
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:428
 msgid "You are not currently logged in."
 msgstr "Momentálně nejste přihlášeni."
 
@@ -2611,7 +3008,7 @@ msgid "Number of published posts for the term."
 msgstr "Počet publikovaných příspěvků pro výraz."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:67
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1138
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1154
 msgid "Unique identifier for the user."
 msgstr "Jedinečný identifikátor uživatele."
 
@@ -2660,7 +3057,7 @@ msgstr "Omezit sadu výsledků na ty položky, které mají konkrétní nadřaze
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1361
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2136
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:921
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1322
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1338
 msgid "Offset the result set by a specific number of items."
 msgstr "Odsadit sadu výsledků o zadaný počet položek."
 
@@ -2833,7 +3230,7 @@ msgstr "Nemáte dostatečné oprávnění pro úpravy komentářů na tomto webu
 msgid "Cannot create existing post."
 msgstr "Nelze vytvořit již existující příspěvek."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:434
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:450
 msgid "Sorry, you are not allowed to create new users."
 msgstr "Nemáte dostatečné oprávnění pro vytváření nových uživatelů."
 
@@ -2866,7 +3263,7 @@ msgstr "Lidsky čitelný popis taxonomie."
 msgid "All capabilities used by the taxonomy."
 msgstr "Všechna oprávnění používaná taxonomií."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1216
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1232
 msgid "An alphanumeric identifier for the user."
 msgstr "Alfanumerický identifikátor uživatele."
 
@@ -2944,28 +3341,28 @@ msgstr "Omezit sadu výsledků na ty komentáře, které mají konkrétní nadř
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1376
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2148
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1335
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1351
 msgid "Sort collection by object attribute."
 msgstr "Řadit kolekci podle atributu objektu."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1366
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2141
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:927
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1328
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1344
 msgid "Order sort attribute ascending or descending."
 msgstr "Nastavte typ řazení - vzestupně nebo sestupně."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1352
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2120
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:911
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1313
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1329
 msgid "Limit result set to specific IDs."
 msgstr "Omezit sadu výsledků na konkrétní ID."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1343
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2111
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:902
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1304
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1320
 msgid "Ensure result set excludes specific IDs."
 msgstr "Zajistí, aby sada výsledků neobsahovala konkrétní ID."
 
@@ -2995,7 +3392,7 @@ msgstr "URL adresy avatarů pro autora objektu."
 
 #. translators: %d: avatar image size in pixels
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1274
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1270
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1286
 msgid "Avatar URL with image size of %d pixels."
 msgstr "URL adresa avataru s velikostí %d pixelů."
 
@@ -3104,7 +3501,7 @@ msgstr "Vytvoření komentáře vyžaduje platné jméno autora a emailovou adre
 msgid "Cannot create existing comment."
 msgstr "Nelze vytvořit již existující komentář."
 
-#: wp-includes/comment.php:3103
+#: wp-includes/comment.php:3117
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:395
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:412
 msgid "Sorry, you must be logged in to comment."
@@ -3182,19 +3579,19 @@ msgstr "Nemáte dostatečné oprávnění pro nahrávání mediálních souborů
 msgid "The REST API can no longer be completely disabled, the rest_authentication_errors filter can be used to restrict access to the API, instead."
 msgstr "REST API již nemůže být úplně zakázáno, místo toho použijte filtr rest_authentication_errors lze použít k omezení přístupu k API rozhraní."
 
-#: wp-includes/post.php:1399
+#: wp-includes/post.php:1458
 msgid "Page Attributes"
 msgstr "Vlastnosti stránky"
 
-#: wp-includes/post.php:1399
+#: wp-includes/post.php:1458
 msgid "Post Attributes"
 msgstr "Vlastnosti příspěvku"
 
-#: wp-includes/post.php:1392
+#: wp-includes/post.php:1451
 msgid "View Pages"
 msgstr "Zobrazit stránky"
 
-#: wp-includes/post.php:1392
+#: wp-includes/post.php:1451
 msgid "View Posts"
 msgstr "Zobrazit příspěvky"
 
@@ -3322,7 +3719,7 @@ msgstr "Město ve vaší časové zóně."
 msgid "Site title."
 msgstr "Název webu."
 
-#: wp-includes/media.php:3541
+#: wp-includes/media.php:3542
 msgid "Search media items..."
 msgstr "Hledat mediální soubory..."
 
@@ -3336,7 +3733,7 @@ msgctxt "previous set of posts"
 msgid "Previous"
 msgstr "Předchozí"
 
-#: wp-includes/general-template.php:396 wp-login.php:588 wp-login.php:988
+#: wp-includes/general-template.php:396 wp-login.php:589 wp-login.php:1026
 msgid "Username or Email Address"
 msgstr "Uživatelské jméno nebo email"
 
@@ -3665,7 +4062,7 @@ msgstr "Upravit vybrané menu"
 msgid "Warning: the link has been inserted but may have errors. Please test it."
 msgstr "Upozornění: Právě vložený odkaz může obsahovat chyby, raději ho prosím vyzkoušejte."
 
-#: wp-includes/script-loader.php:767
+#: wp-includes/script-loader.php:778
 msgid "Search Results"
 msgstr "Výsledky vyhledávání"
 
@@ -3722,73 +4119,73 @@ msgid "Inexistent terms."
 msgstr "Neexistující položky."
 
 #. translators: %s: Importer name
-#: wp-includes/script-loader.php:838
+#: wp-includes/script-loader.php:849
 msgid "Run %s"
 msgstr "Spustit import pro %s"
 
-#: wp-includes/script-loader.php:836
+#: wp-includes/script-loader.php:847
 msgid "Run Importer"
 msgstr "Spustit import"
 
 #. translators: %s: Activation URL
-#: wp-includes/script-loader.php:817
+#: wp-includes/script-loader.php:828
 msgid "Importer installed successfully. <a href=\"%s\">Run importer</a>"
 msgstr "Importovací nástroj byl úspěšně nainstalován. <a href=\"%s\">Spustit import</a>"
 
-#: wp-includes/script-loader.php:835
+#: wp-includes/script-loader.php:846
 msgctxt "theme"
 msgid "Activate %s"
 msgstr "Aktivovat šablonu %s"
 
 #. translators: %s: Theme name
-#: wp-includes/script-loader.php:835
+#: wp-includes/script-loader.php:846
 msgctxt "theme"
 msgid "Network Activate %s"
 msgstr "Aktivovat šablonu %s pro celou síť webů"
 
-#: wp-includes/script-loader.php:833
+#: wp-includes/script-loader.php:844
 msgctxt "plugin"
 msgid "Activate %s"
 msgstr "Aktivovat plugin %s"
 
 #. translators: %s: Plugin name
-#: wp-includes/script-loader.php:833
+#: wp-includes/script-loader.php:844
 msgctxt "plugin"
 msgid "Network Activate %s"
 msgstr "Aktivovat plugin %s pro celou síť webů"
 
 #. translators: %s: Theme name and version
-#: wp-includes/script-loader.php:813
+#: wp-includes/script-loader.php:824
 msgctxt "theme"
 msgid "%s installation failed"
 msgstr "Instalace šablony %s se nezdařila"
 
 #. translators: %s: Plugin name and version
-#: wp-includes/script-loader.php:811
+#: wp-includes/script-loader.php:822
 msgctxt "plugin"
 msgid "%s installation failed"
 msgstr "Instalace pluginu %s se nezdařila"
 
 #. translators: %s: Theme name and version
-#: wp-includes/script-loader.php:809
+#: wp-includes/script-loader.php:820
 msgctxt "theme"
 msgid "%s installed!"
 msgstr "Šablona %s byla nainstalována!"
 
 #. translators: %s: Plugin name and version
-#: wp-includes/script-loader.php:807
+#: wp-includes/script-loader.php:818
 msgctxt "plugin"
 msgid "%s installed!"
 msgstr "Plugin %s byl nainstalován!"
 
 #. translators: %s: Theme name and version
-#: wp-includes/script-loader.php:805
+#: wp-includes/script-loader.php:816
 msgctxt "theme"
 msgid "Installing %s..."
 msgstr "Instalace šablony %s..."
 
 #. translators: %s: Plugin name and version
-#: wp-includes/script-loader.php:803
+#: wp-includes/script-loader.php:814
 msgctxt "plugin"
 msgid "Installing %s..."
 msgstr "Instalace pluginu %s..."
@@ -3797,7 +4194,7 @@ msgstr "Instalace pluginu %s..."
 msgid "Sorry, you are not allowed to access user data on this site."
 msgstr "Nemáte dostatečné oprávnění pro přístup k informacím o registrovaných uživatelích na tomto webu."
 
-#: wp-includes/script-loader.php:842
+#: wp-includes/script-loader.php:853
 msgid "Number of plugins found: %d"
 msgstr "Počet nalezených pluginů: %d"
 
@@ -3812,7 +4209,7 @@ msgid "Sorry, you are not allowed to edit your profile."
 msgstr "Nemůžete bohužel upravovat svůj profil."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2500
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:580
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:596
 msgid "Sorry, you are not allowed to edit this user."
 msgstr "Nemůžete bohužel upravovat tohoto uživatele."
 
@@ -3852,7 +4249,7 @@ msgid "Tan"
 msgstr "Žlutohnědá"
 
 #. translators: %s: Error string for a failed installation
-#: wp-includes/script-loader.php:801
+#: wp-includes/script-loader.php:812
 msgid "Installation failed: %s"
 msgstr "Instalace se nezdařila: %s"
 
@@ -3887,55 +4284,55 @@ msgstr "Nelze načíst chybovou zprávu z MySQL"
 msgid "Edit Menu"
 msgstr "Upravit menu"
 
-#: wp-includes/script-loader.php:1127
+#: wp-includes/script-loader.php:1138
 msgid "Today"
 msgstr "Dnes"
 
-#: wp-includes/script-loader.php:830
+#: wp-includes/script-loader.php:841
 msgid "Network Activate"
 msgstr "Aktivovat v síti webů"
 
 #. translators: %s: Error string for a failed deletion
-#: wp-includes/script-loader.php:826
+#: wp-includes/script-loader.php:837
 msgid "Deletion failed: %s"
 msgstr "Mazání selhalo: %s"
 
-#: wp-includes/script-loader.php:824
+#: wp-includes/script-loader.php:835
 msgid "Deleting..."
 msgstr "Probíhá mazání..."
 
-#: wp-includes/script-loader.php:823
+#: wp-includes/script-loader.php:834
 msgid "Caution: These themes may be active on other sites in the network. Are you sure you want to proceed?"
 msgstr "Upozornění: Tyto šablony mohou být aktivní na jiných webech v síti webů. Opravdu chcete pokračovat?"
 
-#: wp-includes/script-loader.php:822
+#: wp-includes/script-loader.php:833
 msgid "Are you sure you want to delete the selected plugins and their data?"
 msgstr "Opravdu chcete smazat zvolené pluginy (soubory i data)?"
 
 #. translators: %s: Plugin name
-#: wp-includes/script-loader.php:821
+#: wp-includes/script-loader.php:832
 msgid "Are you sure you want to delete %s and its data?"
 msgstr "Opravdu chcete smazat plugin %s (soubory i data)?"
 
 #. translators: %s: Theme name
-#: wp-includes/script-loader.php:819
+#: wp-includes/script-loader.php:830
 msgid "Are you sure you want to delete %s?"
 msgstr "Opravdu chcete smazat šablonu %s?"
 
-#: wp-includes/script-loader.php:774
+#: wp-includes/script-loader.php:785
 msgid "Update Now"
 msgstr "Aktualizovat"
 
-#: wp-includes/script-loader.php:769
+#: wp-includes/script-loader.php:780
 msgid "Please select at least one item to perform this action on."
 msgstr "Vyberte prosím alespoň jednu položku, u které chcete provést tuto akci."
 
-#: wp-includes/script-loader.php:768
+#: wp-includes/script-loader.php:779
 msgid "You do not appear to have any plugins available at this time."
 msgstr "V současné době pravděpodobně nejsou k dispozici žádné pluginy."
 
 #. translators: %s: Search string
-#: wp-includes/script-loader.php:766
+#: wp-includes/script-loader.php:777
 msgid "Search results for &#8220;%s&#8221;"
 msgstr "Výsledky vyhledávání &#8222;%s&#8220;"
 
@@ -3947,7 +4344,7 @@ msgstr ""
 "Opravdu to chcete udělat?\n"
 "Provedené změny komentáře budou nenávratně ztraceny."
 
-#: wp-includes/script-loader.php:507 wp-login.php:704
+#: wp-includes/script-loader.php:507 wp-login.php:705
 msgid "Confirm use of weak password"
 msgstr "Potvrďte použití slabého hesla"
 
@@ -4000,8 +4397,8 @@ msgstr "Nemáte dostatečné oprávnění pro vytvoření nové rubriky."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2558
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:182
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:372
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:374
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:388
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:390
 msgid "Sorry, you are not allowed to list users."
 msgstr "Nemůžete bohužel prohlížet registrované uživatele."
 
@@ -4041,11 +4438,11 @@ msgstr "Odkaz byl vybrán."
 msgid "%s is required to strip image meta."
 msgstr "Pro odstranění metadat obrázku je požadovaná metoda %s."
 
-#: wp-includes/script-loader.php:757
+#: wp-includes/script-loader.php:768
 msgid "Plugin details"
 msgstr "Podrobnosti o pluginu"
 
-#: wp-includes/media.php:3542
+#: wp-includes/media.php:3543
 msgid "No media files found."
 msgstr "Nebyly nalezeny žádné mediální soubory."
 
@@ -4065,13 +4462,13 @@ msgid "1 result found. Use up and down arrow keys to navigate."
 msgstr "Nalezen 1 výsledek. Pro výběr konkrétní položky můžete použít šipky na klávesnici."
 
 #. translators: %s: user name
-#: wp-includes/comment-template.php:2231
+#: wp-includes/comment-template.php:2236
 msgid "Logged in as %s. Edit your profile."
 msgstr "Přihlášený uživatel: %s. Upravit profil."
 
 #. translators: 1: edit user link, 2: accessibility text, 3: user name, 4:
 #. logout URL
-#: wp-includes/comment-template.php:2228
+#: wp-includes/comment-template.php:2233
 msgid "<a href=\"%1$s\" aria-label=\"%2$s\">Logged in as %3$s</a>. <a href=\"%4$s\">Log out?</a>"
 msgstr "<a href=\"%1$s\" aria-label=\"%2$s\">Přihlášený uživatel: %3$s</a>. <a href=\"%4$s\">Odhlásit se?</a>"
 
@@ -4091,7 +4488,7 @@ msgstr "Ruční odebrání %1$s způsobí PHP varování. Místo toho raději po
 msgid "The next group of formatting shortcuts are applied as you type or when you insert them around plain text in the same paragraph. Press Escape or the Undo button to undo."
 msgstr "Další skupina formátovacích zkratek se použije při psaní, nebo jejím vložením do stejného odstavce. Pro vrácení změn stiskněte klávesu Esc nebo tlačítko Zpět."
 
-#: wp-login.php:942
+#: wp-login.php:980
 msgid "Your session has expired. Please log in to continue where you left off."
 msgstr "Platnost relace vypršela. Přihlaste se, abyste mohli pokračovat, kde jste přestali."
 
@@ -4118,7 +4515,7 @@ msgstr "<strong>CHYBA</strong>: Emailové pole je prázdné."
 msgid "Unregistering a built-in taxonomy is not allowed."
 msgstr "Zrušení registrace zabudované taxonomie není povoleno."
 
-#: wp-includes/script-loader.php:665
+#: wp-includes/script-loader.php:676
 msgid "Drag boxes here"
 msgstr "Přesuňte sem nějaké prvky"
 
@@ -4134,36 +4531,36 @@ msgstr "Trasa musí být zadána."
 msgid "Routes must be namespaced with plugin or theme name and version."
 msgstr "Trasy musí být označeny názvem a verzí pluginu/šablony."
 
-#: wp-includes/post.php:1182
+#: wp-includes/post.php:1241
 msgid "Unregistering a built-in post type is not allowed"
 msgstr "Zrušení registrace zabudovaného typu obsahu není povoleno"
 
-#: wp-includes/post.php:249
+#: wp-includes/post.php:264
 msgctxt "post status"
 msgid "Trash"
 msgstr "Koš"
 
-#: wp-includes/post.php:242
+#: wp-includes/post.php:257
 msgctxt "post status"
 msgid "Private"
 msgstr "Soukromé"
 
-#: wp-includes/post.php:235
+#: wp-includes/post.php:250
 msgctxt "post status"
 msgid "Pending"
 msgstr "Čeká na schválení"
 
-#: wp-includes/post.php:228
+#: wp-includes/post.php:243
 msgctxt "post status"
 msgid "Draft"
 msgstr "Koncept"
 
-#: wp-includes/post.php:221
+#: wp-includes/post.php:236
 msgctxt "post status"
 msgid "Scheduled"
 msgstr "Plánováno"
 
-#: wp-includes/post.php:214
+#: wp-includes/post.php:229
 msgctxt "post status"
 msgid "Published"
 msgstr "Publikováno"
@@ -4183,13 +4580,13 @@ msgstr "<strong>CHYBA</strong>: Neplatné uživatelské jméno, emailová adresa
 msgid "%1$s %2$s %3$s %4$s Feed"
 msgstr "%1$s %2$s %3$s %4$s RSS"
 
-#: wp-includes/functions.php:5313
+#: wp-includes/functions.php:5314
 msgid "Close dialog"
 msgstr "Zavřít dialog"
 
 #. translators: 1: PHP class name, 2: PHP parent class name, 3: version number,
 #. 4: __construct() method
-#: wp-includes/functions.php:3901
+#: wp-includes/functions.php:3902
 msgid "The called constructor method for %1$s in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead."
 msgstr "Volaná metoda konstruktoru třídy pro %1$s v %2$s je <strong>zastaralá</strong> od verze %3$s! Místo toho použijte %4$s."
 
@@ -4219,19 +4616,19 @@ msgstr "%s je zakázáno"
 msgid "Partial render must echo the content or return the content string (or array), but not both."
 msgstr "Částečné vykreslení musí vypsat obsah nebo vrátit řetězec obsahu (nebo pole), ale ne obojí."
 
-#: wp-includes/comment.php:1158
+#: wp-includes/comment.php:1172
 msgid "<strong>ERROR</strong>: your comment is too long."
 msgstr "<strong>CHYBA</strong>: Váš komentář je příliš dlouhý."
 
-#: wp-includes/comment.php:1154
+#: wp-includes/comment.php:1168
 msgid "<strong>ERROR</strong>: your url is too long."
 msgstr "<strong>CHYBA</strong>: vaše URL adresa je příliš dlouhá."
 
-#: wp-includes/comment.php:1150
+#: wp-includes/comment.php:1164
 msgid "<strong>ERROR</strong>: your email address is too long."
 msgstr "<strong>ERROR</strong>: vaše emailová adresa je příliš dlouhá."
 
-#: wp-includes/comment.php:1146
+#: wp-includes/comment.php:1160
 msgid "<strong>ERROR</strong>: your name is too long."
 msgstr "<strong>CHYBA</strong>: Vaše jméno je příliš dlouhé."
 
@@ -4327,12 +4724,12 @@ msgstr "https://codex.wordpress.org/Debugging_a_WordPress_Network"
 msgid "Read the <a href=\"%s\" target=\"_blank\">bug report</a> page. Some of the guidelines there may help you figure out what went wrong."
 msgstr "Prozkoumejte prosím pozorně následující návod: <a href=\"%s\" target=\"_blank\">Odstraňování problémů při provozování sítě webů ve WordPressu</a> (anglicky). Následně byste měli být schopni identifikovat příčinu stávajícího problému a nalézt jeho řešení."
 
-#: wp-includes/functions.php:4144
+#: wp-includes/functions.php:4145
 msgid "https://codex.wordpress.org/Debugging_in_WordPress"
 msgstr "https://codex.wordpress.org/Debugging_in_WordPress"
 
 #. translators: %s: Codex URL
-#: wp-includes/functions.php:4143
+#: wp-includes/functions.php:4144
 msgid "Please see <a href=\"%s\">Debugging in WordPress</a> for more information."
 msgstr "Další informace o testování programu a hledání chyb naleznete v manuálu na stránce <a href=\"%s\">Ladění ve WordPressu</a> (anglicky)."
 
@@ -4341,7 +4738,7 @@ msgstr "Další informace o testování programu a hledání chyb naleznete v ma
 msgid "<strong>ERROR</strong>: %1$s in %2$s can only contain numbers, letters, and underscores."
 msgstr "<strong>CHYBA</strong>: %1$s ve %2$s může obsahovat pouze písmena, číslice a podtržítka."
 
-#: wp-includes/script-loader.php:745 wp-includes/script-loader.php:751
+#: wp-includes/script-loader.php:756 wp-includes/script-loader.php:762
 msgid "Changes saved."
 msgstr "Změny byly uloženy."
 
@@ -4651,7 +5048,7 @@ msgstr "Neplatný název zkráceného zápisu: %1$s. Nepoužívejte mezery nebo 
 msgid "Invalid shortcode name: Empty name given."
 msgstr "Neplatný název zkráceného zápisu. Prázdný název."
 
-#: wp-includes/script-loader.php:703
+#: wp-includes/script-loader.php:714
 msgid "Permalink saved"
 msgstr "Trvalý odkaz byl uložen"
 
@@ -4706,35 +5103,35 @@ msgstr "Chybějící parametr(y): %s"
 msgid "In %1$s, use the %2$s method, not the %3$s function. See %4$s."
 msgstr "Pro filtr %1$s použijte místo funkce %3$s raději metodu %2$s>. Další podrobnosti naleznete v manuálu: %4$s (anglicky)."
 
-#: wp-includes/post.php:1408
+#: wp-includes/post.php:1467
 msgid "Pages list"
 msgstr "Seznam stránek"
 
-#: wp-includes/post.php:1408
+#: wp-includes/post.php:1467
 msgid "Posts list"
 msgstr "Seznam příspěvků"
 
-#: wp-includes/post.php:1407
+#: wp-includes/post.php:1466
 msgid "Pages list navigation"
 msgstr "Navigace v seznamu stránek"
 
-#: wp-includes/post.php:1407
+#: wp-includes/post.php:1466
 msgid "Posts list navigation"
 msgstr "Navigace v seznamu příspěvků"
 
-#: wp-includes/post.php:1406
+#: wp-includes/post.php:1465
 msgid "Filter pages list"
 msgstr "Filtrovat seznam stránek"
 
-#: wp-includes/post.php:1406
+#: wp-includes/post.php:1465
 msgid "Filter posts list"
 msgstr "Filtrovat seznam příspěvků"
 
-#: wp-includes/post.php:1398
+#: wp-includes/post.php:1457
 msgid "Page Archives"
 msgstr "Archivy stránek"
 
-#: wp-includes/post.php:1398
+#: wp-includes/post.php:1457
 msgid "Post Archives"
 msgstr "Archivy příspěvků"
 
@@ -4749,7 +5146,7 @@ msgid "Site names can only contain lowercase letters (a-z) and numbers."
 msgstr "Názvy webů mohou obsahovat pouze malá písmena (a-z) a číslice."
 
 #: wp-includes/ms-functions.php:460 wp-includes/ms-functions.php:467
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1092
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1108
 #: wp-includes/user.php:1499
 msgid "Sorry, that username is not allowed."
 msgstr "Zvolené uživatelské jméno bohužel není povoleno."
@@ -4963,8 +5360,8 @@ msgid "Sorry, you are not allowed to edit theme options on this site."
 msgstr "Nemáte dostatečné oprávnění pro úpravy možností šablony na tomto webu."
 
 #. translators: 1: post type, 2: capability name
-#: wp-includes/capabilities.php:83 wp-includes/capabilities.php:144
-#: wp-includes/capabilities.php:203 wp-includes/capabilities.php:240
+#: wp-includes/capabilities.php:83 wp-includes/capabilities.php:153
+#: wp-includes/capabilities.php:221 wp-includes/capabilities.php:258
 msgid "The post type %1$s is not registered, so it may not be reliable to check the capability \"%2$s\" against a post of that type."
 msgstr "Typ obsahu %1$s není zaregistrován, a proto bude ověření způsobilosti „%2$s“ vůči tomuto typu obsahu nespolehlivé."
 
@@ -4993,7 +5390,7 @@ msgstr "Změnit zobrazení sekce: %s"
 #. Asian characters), enter 'characters_excluding_spaces' or
 #. 'characters_including_spaces'. Otherwise, enter 'words'. Do not translate
 #. into your own language.
-#: wp-includes/formatting.php:3372 wp-includes/script-loader.php:1089
+#: wp-includes/formatting.php:3372 wp-includes/script-loader.php:1100
 msgctxt "Word count type. Do not translate!"
 msgid "words"
 msgstr "words"
@@ -5050,7 +5447,7 @@ msgstr "Ikona v prohlížeči"
 msgid "No items"
 msgstr "Žádné položky"
 
-#: wp-login.php:820
+#: wp-login.php:821
 msgid "Registration confirmation will be emailed to you."
 msgstr "Potvrzení o registraci bude zasláno emailem."
 
@@ -5115,11 +5512,11 @@ msgstr "Přidat do menu: %1$s (%2$s)"
 msgid "When starting a new paragraph with one of these formatting shortcuts followed by a space, the formatting will be applied automatically. Press Backspace or Escape to undo."
 msgstr "Pokud začnete nový odstavec s některou z definovaných zkratek a následně doplníte mezeru, tak bude automaticky použito příslušné formátování. Pro zrušení navržené úpravy slouží klávesy Backspace nebo Escape."
 
-#: wp-login.php:555
+#: wp-login.php:556
 msgid "Your password reset link has expired. Please request a new link below."
 msgstr "Odkaz pro vytvoření nového hesla je patrně zastaralý. Zkuste prosím znovu změnit heslo."
 
-#: wp-login.php:553
+#: wp-login.php:554
 msgid "Your password reset link appears to be invalid. Please request a new link below."
 msgstr "Odkaz pro vytvoření nového hesla je patrně neplatný. Zkuste prosím znovu změnit heslo."
 
@@ -5141,7 +5538,7 @@ msgid "The %s directory of the develop repository must be used for RTL."
 msgstr "Adresář %s musí být v rámci vývojářského prostředí použit pro možnost textu zapisovaného zprava doleva (RTL)."
 
 #. translators: 1: PHP class name, 2: version number, 3: __construct() method
-#: wp-includes/functions.php:3905
+#: wp-includes/functions.php:3906
 msgid "The called constructor method for %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr "Aktuální metoda pro konstruktor třídy %1$s <strong>není podporována</strong> už od verze %2$s! Použijte prosím raději funkci %3$s."
 
@@ -5285,7 +5682,7 @@ msgid "Attempting to parse a shortcode without a valid callback: %s"
 msgstr "Pro zkrácený zápis %s musí být přiřazena platná funkce, aby mohl být zpracován."
 
 #. translators: %s: Error string for a failed update
-#: wp-includes/script-loader.php:779
+#: wp-includes/script-loader.php:790
 msgid "Update Failed: %s"
 msgstr "Aktualizace se nezdařila: %s"
 
@@ -5610,7 +6007,7 @@ msgstr "CSS třídy"
 msgid "Title Attribute"
 msgstr "Atribut title"
 
-#: wp-includes/class-wp-editor.php:1709
+#: wp-includes/class-wp-editor.php:1717
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:100
 #: wp-includes/media-template.php:1008
 #: wp-includes/widgets/class-wp-widget-media-image.php:136
@@ -5647,7 +6044,7 @@ msgstr "Chyba XML: %1$s (řádek %2$s)"
 msgid "User Dashboard: %s"
 msgstr "Administrace uživatele: %s"
 
-#: wp-login.php:882 wp-login.php:887
+#: wp-login.php:920 wp-login.php:925
 msgid "https://codex.wordpress.org/Cookies"
 msgstr "https://codex.wordpress.org/Cookies"
 
@@ -5664,20 +6061,20 @@ msgstr "https://codex.wordpress.org/"
 msgid "No %1$s was set in the arguments array for the \"%2$s\" sidebar. Defaulting to \"%3$s\". Manually set the %1$s to \"%3$s\" to silence this notice and keep existing sidebar content."
 msgstr "Definovaná oblast pro widgety (např. postranní panel) s názvem \"%2$s\" neobsahuje parametr %1$s, takže byla automaticky použita doporučená výchozí hodnota \"%3$s\". Doplňte prosím na příslušné místo parametr %1$s s hodnotou \"%3$s\", aby mohlo být zachováno stávající rozmístění widgetů, a přitom zmizelo upozornění na nesprávné použití funkce."
 
-#: wp-includes/script-loader.php:840
+#: wp-includes/script-loader.php:851
 msgid "Connection lost or the server is busy. Please try again later."
 msgstr "Připojení bylo ztraceno nebo je server právě zaneprázdněný. Zkuste to prosím později."
 
-#: wp-includes/script-loader.php:792
+#: wp-includes/script-loader.php:803
 msgid "Updates may not complete if you navigate away from this page."
 msgstr "Opuštěním této stránky můžete přerušit probíhající aktualizace."
 
-#: wp-includes/script-loader.php:777
+#: wp-includes/script-loader.php:788
 msgid "Update Failed!"
 msgstr "Aktualizace se nezdařila!"
 
 #. translators: Accessibility text
-#: wp-includes/script-loader.php:791
+#: wp-includes/script-loader.php:802
 msgid "Update canceled."
 msgstr "Aktualizace byla zrušena."
 
@@ -5707,33 +6104,33 @@ msgstr "<span>Náhled:</span> %s"
 msgid "Site Preview"
 msgstr "Aktuální náhled webu"
 
-#: wp-includes/script-loader.php:770
+#: wp-includes/script-loader.php:781
 msgid "Updating..."
 msgstr "Aktualizace..."
 
-#: wp-includes/script-loader.php:793
+#: wp-includes/script-loader.php:804
 msgid "Install Now"
 msgstr "Instalovat"
 
-#: wp-includes/script-loader.php:796
+#: wp-includes/script-loader.php:807
 msgid "Installing..."
 msgstr "Instalace..."
 
-#: wp-includes/script-loader.php:814
+#: wp-includes/script-loader.php:825
 msgid "Installing... please wait."
 msgstr "Instalace právě probíhá, počkejte prosím..."
 
 #. translators: Accessibility text
-#: wp-includes/script-loader.php:787
+#: wp-includes/script-loader.php:798
 msgid "Updating... please wait."
 msgstr "Aktualizace právě probíhá, počkejte prosím..."
 
 #. translators: Accessibility text
-#: wp-includes/script-loader.php:789
+#: wp-includes/script-loader.php:800
 msgid "Update completed successfully."
 msgstr "Aktualizace byla úspěšně dokončena."
 
-#: wp-includes/script-loader.php:815
+#: wp-includes/script-loader.php:826
 msgid "Installation completed successfully."
 msgstr "Instalace byla úspěšně dokončena."
 
@@ -5837,7 +6234,7 @@ msgstr "Uživatelský odkaz"
 msgid "<strong>Could not find site %1$s.</strong> Searched for table %2$s in database %3$s. Is that right?"
 msgstr "<strong>Síť webů na adrese %1$s se nepodařilo nalézt.</strong> Proběhl neúspěšný pokus o připojení k tabulce %2$s v databázi s názvem %3$s. Jsou tyto informace správné?"
 
-#: wp-includes/post.php:1131 wp-includes/post.php:1132
+#: wp-includes/post.php:1190 wp-includes/post.php:1191
 msgid "Post type names must be between 1 and 20 characters in length."
 msgstr "Název vlastního typu obsahu musí být definován a obsahovat maximálně 20 znaků."
 
@@ -5848,7 +6245,7 @@ msgid "F j, Y @ H:i:s"
 msgstr "j. n. Y @ G:i:s"
 
 #: wp-includes/class-wp-customize-nav-menus.php:1115
-#: wp-includes/class-wp-editor.php:1704 wp-includes/media-template.php:820
+#: wp-includes/class-wp-editor.php:1712 wp-includes/media-template.php:820
 msgid "Link Text"
 msgstr "Text odkazu"
 
@@ -5909,7 +6306,7 @@ msgid "Theme Details"
 msgstr "Podrobnosti"
 
 #: wp-includes/customize/class-wp-customize-theme-control.php:118
-#: wp-includes/script-loader.php:829
+#: wp-includes/script-loader.php:840
 msgid "Live Preview"
 msgstr "Aktuální náhled"
 
@@ -6000,7 +6397,7 @@ msgstr "Navigace pro příspěvky"
 msgid "Newer posts"
 msgstr "Novější příspěvky"
 
-#: wp-includes/script-loader.php:1131
+#: wp-includes/script-loader.php:1142
 msgid "Previous"
 msgstr "Předchozí"
 
@@ -6008,7 +6405,7 @@ msgstr "Předchozí"
 msgid "Edit Selection"
 msgstr "Upravit výběr"
 
-#: wp-includes/media.php:3526
+#: wp-includes/media.php:3527
 msgctxt "noun"
 msgid "Trash"
 msgstr "Koš"
@@ -6246,19 +6643,19 @@ msgctxt "add new media"
 msgid "Add New"
 msgstr "Nahrát soubor"
 
-#: wp-login.php:956
+#: wp-login.php:994
 msgid "<strong>You have successfully updated WordPress!</strong> Please log back in to see what&#8217;s new."
 msgstr "<strong>WordPress byl úspěšně aktualizován!</strong> Přihlaste se prosím zpět do administrace, abyste mohli vyzkoušet nejnovější funkce."
 
-#: wp-includes/media.php:3534
+#: wp-includes/media.php:3535
 msgid "Untrash Selected"
 msgstr "Obnovit zvolené položky"
 
-#: wp-includes/media.php:3533
+#: wp-includes/media.php:3534
 msgid "Trash Selected"
 msgstr "Odstranit zvolené položky"
 
-#: wp-includes/media.php:3530
+#: wp-includes/media.php:3531
 msgid ""
 "You are about to trash these items.\n"
 "  'Cancel' to stop, 'OK' to delete."
@@ -6274,15 +6671,15 @@ msgstr "Obnovit"
 msgid "Press return or enter to open this panel"
 msgstr "Zobrazit podrobnosti pomocí kláves Enter či Return"
 
-#: wp-includes/media.php:3535
+#: wp-includes/media.php:3536
 msgid "Delete Selected"
 msgstr "Smazat zvolené položky"
 
-#: wp-includes/media.php:3532
+#: wp-includes/media.php:3533
 msgid "Cancel Selection"
 msgstr "Zrušit hromadné úpravy"
 
-#: wp-includes/media.php:3531
+#: wp-includes/media.php:3532
 msgid "Bulk Select"
 msgstr "Hromadné úpravy"
 
@@ -6293,7 +6690,7 @@ msgid "%s: %l."
 msgstr "%s: %l."
 
 #: wp-includes/class-wp-customize-nav-menus.php:427
-#: wp-includes/script-loader.php:889
+#: wp-includes/script-loader.php:900
 msgctxt "missing menu item navigation label"
 msgid "(no label)"
 msgstr "(žádný název)"
@@ -6302,19 +6699,19 @@ msgstr "(žádný název)"
 msgid "This site is no longer available."
 msgstr "Zvolený web už není dostupný."
 
-#: wp-includes/script-loader.php:843
+#: wp-includes/script-loader.php:854
 msgid "No plugins found. Try a different search."
 msgstr "Nebyly nalezeny žádné pluginy. Zkuste to znovu s nějakým dalším klíčovým slovem."
 
-#: wp-includes/media.php:3540
+#: wp-includes/media.php:3541
 msgid "Search Media"
 msgstr "Hledání mediálních souborů"
 
-#: wp-includes/media.php:3539
+#: wp-includes/media.php:3540
 msgid "Filter by type"
 msgstr "Filtrovat podle typu souboru"
 
-#: wp-includes/media.php:3538
+#: wp-includes/media.php:3539
 msgid "Filter by date"
 msgstr "Filtrovat podle data"
 
@@ -6398,7 +6795,7 @@ msgstr "Ukončit nahrávání mediálních souborů"
 msgid "Close media panel"
 msgstr "Zavřít okno pro práci s mediálními soubory"
 
-#: wp-includes/class-wp-editor.php:1730
+#: wp-includes/class-wp-editor.php:1738
 msgid "Search or use up and down arrow keys to select an item."
 msgstr "Zadejte hledaný výraz nebo můžete použít šipky na klávesnici pro výběr konkrétní položky."
 
@@ -6424,7 +6821,7 @@ msgstr "Widgety jsou nezávislé prvky webu s různým obsahem, jejichž grafick
 msgid "You are customizing %s"
 msgstr "Aktuální možnosti nastavení %s"
 
-#: wp-includes/comment.php:3143
+#: wp-includes/comment.php:3157
 msgid "<strong>ERROR</strong>: The comment could not be saved. Please try again later."
 msgstr "<strong>CHYBA</strong>: Komentář nemohl být bohužel uložen. Zkuste to prosím později."
 
@@ -6451,40 +6848,40 @@ msgid "Keyboard Shortcuts"
 msgstr "Klávesové zkratky"
 
 #. translators: 1: Browser cookie documentation URL
-#: wp-login.php:886
+#: wp-login.php:924
 msgid "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href=\"%s\">enable cookies</a> to use WordPress."
 msgstr "<strong>CHYBA</strong>: Používaný internetový prohlížeč cookies buď nepodporuje nebo je dokonce blokuje. Pro bezproblémové používání WordPressu musíte mít <a href=\"%s\">povolené cookies</a>."
 
 #. translators: 1: Browser cookie documentation URL, 2: Support forums URL
-#: wp-login.php:881
+#: wp-login.php:919
 msgid "<strong>ERROR</strong>: Cookies are blocked due to unexpected output. For help, please see <a href=\"%1$s\">this documentation</a> or try the <a href=\"%2$s\">support forums</a>."
 msgstr "<strong>CHYBA</strong>: Cookies jsou blokovány kvůli neočekávanému výstupu. Další informace naleznete v <a href=\"%1$s\">manuálu</a> nebo můžete zkusit oficiální fórum podpory (<a href=\"https://www.separatista.net/forum/\">česky</a> - <a href=\"%2$s\">anglicky</a>)."
 
-#: wp-includes/media.php:3603
+#: wp-includes/media.php:3604
 msgid "Add to Audio Playlist"
 msgstr "Přidat do seznamu"
 
-#: wp-includes/media.php:3602
+#: wp-includes/media.php:3603
 msgid "Add to audio playlist"
 msgstr "Přidat soubor do audio seznamu"
 
-#: wp-includes/media.php:3601
+#: wp-includes/media.php:3602
 msgid "Update audio playlist"
 msgstr "Aktualizovat audio seznam"
 
-#: wp-includes/media.php:3600
+#: wp-includes/media.php:3601
 msgid "Insert audio playlist"
 msgstr "Vložit audio seznam"
 
-#: wp-includes/media.php:3599
+#: wp-includes/media.php:3600
 msgid "&#8592; Cancel Audio Playlist"
 msgstr "&#8592; Zrušit úpravy"
 
-#: wp-includes/media.php:3598
+#: wp-includes/media.php:3599
 msgid "Edit Audio Playlist"
 msgstr "Upravit audio seznam"
 
-#: wp-includes/media.php:3579
+#: wp-includes/media.php:3580
 msgid "There has been an error cropping your image."
 msgstr "Během ořezávání zvoleného obrázku došlo k nečekané chybě."
 
@@ -6604,7 +7001,7 @@ msgstr "Kompletní soubor"
 msgid "Tracks (subtitles, captions, descriptions, chapters, or metadata)"
 msgstr "Textové soubory (titulky, popisky, kapitoly a další informace)"
 
-#: wp-includes/media.php:3576
+#: wp-includes/media.php:3577
 msgid "Cropping&hellip;"
 msgstr "Probíhá ořezávání&hellip;"
 
@@ -6859,104 +7256,104 @@ msgstr "Při použití funkce %s musí parametr query obsahovat nějaký zástup
 msgid "Invalid menu ID."
 msgstr "Neplatné ID menu."
 
-#: wp-includes/media.php:3613
+#: wp-includes/media.php:3614
 msgid "Add to Video Playlist"
 msgstr "Přidat do seznamu"
 
-#: wp-includes/media.php:3612
+#: wp-includes/media.php:3613
 msgid "Add to video playlist"
 msgstr "Přidat soubor do video seznamu"
 
-#: wp-includes/media.php:3611
+#: wp-includes/media.php:3612
 msgid "Update video playlist"
 msgstr "Aktualizovat video seznam"
 
-#: wp-includes/media.php:3610
+#: wp-includes/media.php:3611
 msgid "Insert video playlist"
 msgstr "Vložit video seznam"
 
-#: wp-includes/media.php:3609
+#: wp-includes/media.php:3610
 msgid "&#8592; Cancel Video Playlist"
 msgstr "&#8592; Zrušit úpravy"
 
-#: wp-includes/media.php:3608
+#: wp-includes/media.php:3609
 msgid "Edit Video Playlist"
 msgstr "Upravit video seznam"
 
-#: wp-includes/media.php:3607
+#: wp-includes/media.php:3608
 msgid "Create Video Playlist"
 msgstr "Vytvořit video seznam"
 
-#: wp-includes/media.php:3606
+#: wp-includes/media.php:3607
 msgid "Drag and drop to reorder videos."
 msgstr "Pokud chcete video soubory libovolně seřadit, tak je stačí snadno přesunout pomocí myši."
 
-#: wp-includes/media.php:3597
+#: wp-includes/media.php:3598
 msgid "Create Audio Playlist"
 msgstr "Vytvořit audio seznam"
 
-#: wp-includes/media.php:3596
+#: wp-includes/media.php:3597
 msgid "Drag and drop to reorder tracks."
 msgstr "Pokud chcete audio soubory libovolně seřadit, tak je stačí snadno přesunout pomocí myši."
 
-#: wp-includes/media.php:3593
+#: wp-includes/media.php:3594
 msgid "Add Subtitles"
 msgstr "Přidat titulky"
 
-#: wp-includes/media.php:3592
+#: wp-includes/media.php:3593
 msgid "Select Poster Image"
 msgstr "Zvolit náhledový obrázek"
 
-#: wp-includes/media.php:3590
+#: wp-includes/media.php:3591
 msgid "Add Video Source"
 msgstr "Přidat další formát pro video soubor"
 
-#: wp-includes/media.php:3589
+#: wp-includes/media.php:3590
 msgid "Replace Video"
 msgstr "Nahradit video"
 
-#: wp-includes/media.php:3588
+#: wp-includes/media.php:3589
 msgid "Video Details"
 msgstr "Podrobné informace o video souboru"
 
-#: wp-includes/media.php:3584
+#: wp-includes/media.php:3585
 msgid "Add Audio Source"
 msgstr "Přidat další formát pro audio soubor"
 
-#: wp-includes/media.php:3583
+#: wp-includes/media.php:3584
 msgid "Replace Audio"
 msgstr "Nahradit audio"
 
-#: wp-includes/media.php:3582
+#: wp-includes/media.php:3583
 msgid "Audio Details"
 msgstr "Podrobné informace o audio souboru"
 
-#: wp-includes/media.php:3575
+#: wp-includes/media.php:3576
 msgid "Crop your image"
 msgstr "Oříznout obrázek"
 
-#: wp-includes/media.php:3574
+#: wp-includes/media.php:3575
 msgid "Crop Image"
 msgstr "Oříznout obrázek"
 
-#: wp-includes/media.php:3573
+#: wp-includes/media.php:3574
 msgid "Skip Cropping"
 msgstr "Neořezávat obrázek"
 
-#: wp-includes/media.php:3572
+#: wp-includes/media.php:3573
 msgid "Select and Crop"
 msgstr "Zvolit obrázek a oříznout"
 
-#: wp-includes/media.php:3571
+#: wp-includes/media.php:3572
 msgid "Choose Image"
 msgstr "Zvolit obrázek"
 
-#: wp-includes/media.php:3567 wp-includes/media.php:3585
-#: wp-includes/media.php:3591
+#: wp-includes/media.php:3568 wp-includes/media.php:3586
+#: wp-includes/media.php:3592
 msgid "Cancel Edit"
 msgstr "Zrušit úpravy"
 
-#: wp-includes/media.php:3566
+#: wp-includes/media.php:3567
 msgid "Replace Image"
 msgstr "Nahradit obrázek"
 
@@ -7034,7 +7431,7 @@ msgstr "Zpět"
 msgid "An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href=\"https://wordpress.org/support/\">support forums</a>."
 msgstr "Objevila se nečekaná chyba. Patrně došlo k nějakému výpadku na straně WordPress.org nebo to může souviset s nastavením serveru u poskytovatele hostingu. Pokud bude nadále docházet k podobným problémům, zkuste se prosím obrátit na oficiální fórum podpory (<a href=\"https://www.separatista.net/forum/\">česky</a> - <a href=\"https://wordpress.org/support/\">anglicky</a>)."
 
-#: wp-includes/media.php:3565
+#: wp-includes/media.php:3566
 msgid "Image Details"
 msgstr "Podrobné informace o obrázku"
 
@@ -7211,7 +7608,7 @@ msgid "Align right"
 msgstr "Zarovnat doprava"
 
 #: wp-includes/class-wp-customize-widgets.php:755
-#: wp-includes/script-loader.php:841 wp-includes/script-loader.php:867
+#: wp-includes/script-loader.php:852 wp-includes/script-loader.php:878
 msgid "An error has occurred. Please reload the page and try again."
 msgstr "Objevila se nečekaná chyba. Obnovte prosím tuto stránku a zkuste to znovu."
 
@@ -7280,7 +7677,7 @@ msgstr "https://cs.wordpress.org/contact/"
 #: wp-includes/admin-bar.php:164 wp-includes/update.php:153
 #: wp-includes/update.php:345 wp-includes/update.php:527
 #: wp-includes/wp-db.php:1062 wp-includes/wp-db.php:1595
-#: wp-includes/wp-db.php:1753 wp-login.php:882
+#: wp-includes/wp-db.php:1753 wp-login.php:920
 msgid "https://wordpress.org/support/"
 msgstr "https://www.separatista.net/forum/"
 
@@ -7384,7 +7781,7 @@ msgstr "Přehled vytvořených stránek."
 #. translators: If there are characters in your language that are not supported
 #. by Open Sans, translate this to 'off'. Do not translate into your own
 #. language.
-#: wp-includes/script-loader.php:936
+#: wp-includes/script-loader.php:947
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
@@ -7398,7 +7795,7 @@ msgstr "Objevila se neočekávaná chyba. Patrně došlo k nějakému výpadku n
 #. translators: To add an additional Open Sans character subset specific to
 #. your language, translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not
 #. translate into your own language.
-#: wp-includes/script-loader.php:942
+#: wp-includes/script-loader.php:953
 msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
 msgid "no-subset"
 msgstr "no-subset"
@@ -7506,6 +7903,10 @@ msgstr "Ovládání zvuku"
 msgid "Download Video"
 msgstr "Stáhnout video"
 
+#: wp-includes/post.php:786
+msgid "Failed"
+msgstr "Selhalo"
+
 #: wp-includes/script-loader.php:556
 msgid "Invalid"
 msgstr "Neplatný"
@@ -7580,7 +7981,7 @@ msgstr "Internetový prohlížeč na aktuálně používaném zařízení bohuž
 msgid "<strong>ERROR</strong>: Couldn&#8217;t register you&hellip; please contact the <a href=\"mailto:%s\">webmaster</a> !"
 msgstr "<strong>CHYBA</strong>: Registrace se nezdařila&hellip; Kontaktujte prosím <a href=\"mailto:%s\">administrátora webu</a> !"
 
-#: wp-login.php:400
+#: wp-login.php:401
 msgid "Possible reason: your host may have disabled the mail() function."
 msgstr "Možná příčina: Poskytovatel hostingu nemá na serveru povolenou PHP funkci mail()."
 
@@ -7599,7 +8000,7 @@ msgid "Have you entered your email correctly? You have entered %s, if it&#8217;s
 msgstr "Opravdu byla emailová adresa zadána správně? Aktivační email byl odeslán na adresu %s a pokud byla špatně vyplněna (překlep), tak už nebude email nikdy doručen."
 
 #. translators: 1: month, 2: day, 3: year, 4: hour, 5: minute
-#: wp-includes/script-loader.php:687 wp-includes/script-loader.php:715
+#: wp-includes/script-loader.php:698 wp-includes/script-loader.php:726
 msgid "%1$s %2$s, %3$s @ %4$s:%5$s"
 msgstr "%2$s. %1$s %3$s @ %4$s:%5$s"
 
@@ -7607,7 +8008,7 @@ msgstr "%2$s. %1$s %3$s @ %4$s:%5$s"
 msgid "Your session has expired. You can log in again from this page or go to the login page."
 msgstr "Aktuální relace právě vypršela. Můžete se rovnou přihlásit nebo použít standardní přihlašovací stránku."
 
-#: wp-includes/functions.php:5330
+#: wp-includes/functions.php:5331
 msgid "The login page will open in a new window. After logging in you can close it and return to this page."
 msgstr "Přihlašovací stránka bude zobrazena v novém okně. Po přihlášení můžete okno zavřít a vrátit se zpět na stávající stránku."
 
@@ -7632,7 +8033,7 @@ msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr "Hledat &hellip;"
 
-#: wp-includes/functions.php:5328 wp-includes/script-loader.php:569
+#: wp-includes/functions.php:5329 wp-includes/script-loader.php:569
 msgid "Session expired"
 msgstr "Aktuální přihlašovací relace právě vypršela"
 
@@ -7659,8 +8060,8 @@ msgid "WordPress Address (URL)"
 msgstr "Instalace WordPressu (URL)"
 
 #: wp-includes/class-wp-xmlrpc-server.php:2505
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:334
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:603
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:350
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:619
 #: wp-includes/user.php:1451 wp-includes/user.php:1804
 #: wp-includes/user.php:1810
 msgid "Invalid user ID."
@@ -7674,7 +8075,7 @@ msgstr "Stručný popis obrázku&hellip;"
 msgid "Random Order"
 msgstr "Náhodné pořadí"
 
-#: wp-includes/media.php:3548
+#: wp-includes/media.php:3549
 msgid "Insert from URL"
 msgstr "Vložit z URL adresy"
 
@@ -7691,7 +8092,7 @@ msgctxt "Links widget"
 msgid "Random"
 msgstr "Náhodně"
 
-#: wp-includes/media.php:3561
+#: wp-includes/media.php:3562
 msgid "Add to Gallery"
 msgstr "Přidat do galerie"
 
@@ -7699,7 +8100,7 @@ msgstr "Přidat do galerie"
 msgid "No items found."
 msgstr "Nebyly nalezeny žádné položky."
 
-#: wp-includes/media.php:3562
+#: wp-includes/media.php:3563
 msgid "Reverse order"
 msgstr "Seřadit opačně"
 
@@ -7713,7 +8114,7 @@ msgid "Sorry, that file cannot be edited."
 msgstr "Zvolený soubor bohužel nelze upravovat."
 
 #: wp-includes/media-template.php:441 wp-includes/media-template.php:544
-#: wp-includes/media.php:3536
+#: wp-includes/media.php:3537
 msgid "Delete Permanently"
 msgstr "Smazat"
 
@@ -7733,58 +8134,58 @@ msgstr "Nahrávání"
 msgid "No editor could be selected."
 msgstr "Pro obrázek nemohl být použit žádný editor."
 
-#: wp-includes/post.php:2320
+#: wp-includes/post.php:2379
 msgid "Video <span class=\"count\">(%s)</span>"
 msgid_plural "Video <span class=\"count\">(%s)</span>"
 msgstr[0] "Video soubory <span class=\"count\">(%s)</span>"
 msgstr[1] "Video soubory <span class=\"count\">(%s)</span>"
 msgstr[2] "Video soubory <span class=\"count\">(%s)</span>"
 
-#: wp-includes/post.php:2320
+#: wp-includes/post.php:2379
 msgid "Manage Video"
 msgstr "Správa video souborů"
 
-#: wp-includes/post.php:2320
+#: wp-includes/post.php:2379
 #: wp-includes/widgets/class-wp-widget-media-video.php:25
 msgid "Video"
 msgstr "Video"
 
-#: wp-includes/post.php:2319
+#: wp-includes/post.php:2378
 msgid "Audio <span class=\"count\">(%s)</span>"
 msgid_plural "Audio <span class=\"count\">(%s)</span>"
 msgstr[0] "Audio soubory <span class=\"count\">(%s)</span>"
 msgstr[1] "Audio soubory <span class=\"count\">(%s)</span>"
 msgstr[2] "Audio soubory <span class=\"count\">(%s)</span>"
 
-#: wp-includes/post.php:2319
+#: wp-includes/post.php:2378
 msgid "Manage Audio"
 msgstr "Správa audio souborů"
 
-#: wp-includes/post.php:2318
+#: wp-includes/post.php:2377
 msgid "Image <span class=\"count\">(%s)</span>"
 msgid_plural "Images <span class=\"count\">(%s)</span>"
 msgstr[0] "Obrázky <span class=\"count\">(%s)</span>"
 msgstr[1] "Obrázky <span class=\"count\">(%s)</span>"
 msgstr[2] "Obrázky <span class=\"count\">(%s)</span>"
 
-#: wp-includes/post.php:2318
+#: wp-includes/post.php:2377
 msgid "Manage Images"
 msgstr "Správa obrázků"
 
-#: wp-includes/post.php:1401
+#: wp-includes/post.php:1460
 msgid "Uploaded to this page"
 msgstr "Přiřazeno ke stránce"
 
-#: wp-includes/post.php:1400
+#: wp-includes/post.php:1459
 msgid "Insert into page"
 msgstr "Vložit do stránky"
 
-#: wp-includes/post.php:2319
+#: wp-includes/post.php:2378
 #: wp-includes/widgets/class-wp-widget-media-audio.php:25
 msgid "Audio"
 msgstr "Audio"
 
-#: wp-includes/post.php:1401
+#: wp-includes/post.php:1460
 msgid "Uploaded to this post"
 msgstr "Přiřazeno k příspěvku"
 
@@ -7810,7 +8211,7 @@ msgstr "Sloupce"
 msgid "Alt Text"
 msgstr "Alternativní text"
 
-#: wp-includes/media-template.php:501 wp-includes/media.php:3545
+#: wp-includes/media-template.php:501 wp-includes/media.php:3546
 msgid "Attachment Details"
 msgstr "Podrobné informace o souboru"
 
@@ -7819,7 +8220,7 @@ msgstr "Podrobné informace o souboru"
 msgid "Large"
 msgstr "Velký obrázek"
 
-#: wp-includes/media.php:3557
+#: wp-includes/media.php:3558
 msgid "&#8592; Cancel Gallery"
 msgstr "&#8592; Zrušit úpravy"
 
@@ -7847,7 +8248,7 @@ msgstr "Nahrávání souborů"
 msgid "Drop files anywhere to upload"
 msgstr "Přetáhnout soubory z počítače"
 
-#: wp-includes/media.php:3558
+#: wp-includes/media.php:3559
 msgid "Insert gallery"
 msgstr "Vložit galerii"
 
@@ -7855,7 +8256,7 @@ msgstr "Vložit galerii"
 msgid "Drop files to upload"
 msgstr "Přetáhnout soubory z počítače"
 
-#: wp-includes/media.php:3555
+#: wp-includes/media.php:3556
 msgid "Create Gallery"
 msgstr "Vytvořit galerii"
 
@@ -7943,7 +8344,7 @@ msgstr "Stručný popis zvukového souboru&hellip;"
 msgid "Describe this video&hellip;"
 msgstr "Stručný popis videa&hellip;"
 
-#: wp-includes/media.php:3559
+#: wp-includes/media.php:3560
 msgid "Update gallery"
 msgstr "Aktualizovat galerii"
 
@@ -8008,19 +8409,19 @@ msgstr "%1$s %2$s"
 msgid "Could not insert term relationship into the database."
 msgstr "Napojení zvolené položky taxonomie k příslušnému obsahu se nepodařilo uložit do databáze."
 
-#: wp-includes/script-loader.php:856
+#: wp-includes/script-loader.php:867
 msgid "Select Color"
 msgstr "Zvolit barvu"
 
-#: wp-includes/media-template.php:601 wp-includes/script-loader.php:852
+#: wp-includes/media-template.php:601 wp-includes/script-loader.php:863
 msgid "Clear"
 msgstr "Zrušit"
 
-#: wp-includes/media.php:3560
+#: wp-includes/media.php:3561
 msgid "Add to gallery"
 msgstr "Přidat do galerie"
 
-#: wp-includes/post.php:1400
+#: wp-includes/post.php:1459
 msgid "Insert into post"
 msgstr "Vložit do příspěvku"
 
@@ -8104,7 +8505,7 @@ msgstr "Barva textu v záhlaví"
 msgid "Colors"
 msgstr "Barvy"
 
-#: wp-includes/script-loader.php:560 wp-includes/script-loader.php:723
+#: wp-includes/script-loader.php:560 wp-includes/script-loader.php:734
 msgid "Saved"
 msgstr "Uloženo"
 
@@ -8386,8 +8787,8 @@ msgstr "Nemáte dostatečné oprávnění pro úpravy tohoto příspěvku."
 msgid "Edit Site"
 msgstr "Upravit web"
 
-#: wp-includes/post.php:3952 wp-includes/script-loader.php:672
-#: wp-includes/script-loader.php:744
+#: wp-includes/post.php:4011 wp-includes/script-loader.php:683
+#: wp-includes/script-loader.php:755
 msgctxt "tag delimiter"
 msgid ","
 msgstr ","
@@ -8522,7 +8923,7 @@ msgid "https://codex.wordpress.org/CSS"
 msgstr "https://codex.wordpress.org/CSS"
 
 #. translators: 1: login URL, 2: username, 3: user email, 4: lost password URL
-#: wp-activate.php:103
+#: wp-activate.php:105
 msgid "Your account has been activated. You may now <a href=\"%1$s\">log in</a> to the site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
 msgstr "Uživatelský účet byl právě aktivován. Nyní se už můžete <a href=\"%1$s\">přihlásit</a>, a to pomocí zvoleného uživatelského jména &#8222;%2$s&#8220;. Zkontrolujte prosím emailovou schránku %3$s, kam bylo odesláno heslo a podrobné pokyny k přihlašování. Pokud žádný podobný email nenajdete, prohlédněte ještě složku určenou pro Spam. Pokud email nedorazí ani za hodinu, tak zkuste raději <a href=\"%4$s\">získat nové heslo</a>."
 
@@ -8532,7 +8933,7 @@ msgid "%1$s is your new site. <a href=\"%2$s\">Log in</a> as &#8220;%3$s&#8221; 
 msgstr "Nově vytvořený web je dostupný na adrese %1$s a prostřednictvím aktuálně použitého uživatelského účtu &#8222;%3$s&#8220; se můžete se stejným heslem <a href=\"%2$s\">přihlásit</a> do jeho administrace."
 
 #. translators: 1: site URL, 2: username, 3: user email, 4: lost password URL
-#: wp-activate.php:112
+#: wp-activate.php:114
 msgid "Your site at %1$s is active. You may now log in to your site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
 msgstr "Nový web na serveru %1$s byl úspěšně vytvořen a související uživatelský účet aktivován. Můžete se rovnou přihlásit do administrace, a to pomocí zvoleného uživatelského jména &#8222;%2$s&#8220;. Zkontrolujte prosím emailovou schránku %3$s, kam bylo odesláno heslo a podrobné pokyny k přihlašování. Pokud žádný podobný email nenajdete, prohlédněte ještě složku určenou pro Spam. Pokud email nedorazí ani za hodinu, tak zkuste raději <a href=\"%4$s\">získat nové heslo</a>."
 
@@ -8541,8 +8942,8 @@ msgstr "Nový web na serveru %1$s byl úspěšně vytvořen a související uži
 msgid "One or more database tables are unavailable. The database may need to be <a href=\"%s\">repaired</a>."
 msgstr "Minimálně jedna databázová tabulka není dostupná. Pravděpodobně bude potřeba databázi <a href=\"%s\">opravit</a>."
 
-#: wp-includes/comment.php:726 wp-includes/comment.php:872
-#: wp-includes/comment.php:875
+#: wp-includes/comment.php:740 wp-includes/comment.php:886
+#: wp-includes/comment.php:889
 msgid "You are posting comments too quickly. Slow down."
 msgstr "Odesíláte komentáře moc rychle po sobě. Zpomalte prosím."
 
@@ -8604,19 +9005,19 @@ msgstr "Soubor %s překročil maximální povolenou velikost nahrávaného soubo
 msgid "Feedback"
 msgstr "Kontakt"
 
-#: wp-includes/comment.php:3111
+#: wp-includes/comment.php:3125
 msgid "<strong>ERROR</strong>: please fill the required fields (name, email)."
 msgstr "<strong>CHYBA</strong>: Doplňte prosím všechny požadované informace (jméno, email)."
 
-#: wp-includes/comment.php:3113
+#: wp-includes/comment.php:3127
 msgid "<strong>ERROR</strong>: please enter a valid email address."
 msgstr "<strong>CHYBA</strong>: Zadejte prosím platnou emailovou adresu."
 
-#: wp-includes/comment.php:3118
+#: wp-includes/comment.php:3132
 msgid "<strong>ERROR</strong>: please type a comment."
 msgstr "<strong>CHYBA</strong>: Zadejte prosím nějaký text komentáře."
 
-#: wp-includes/script-loader.php:872
+#: wp-includes/script-loader.php:883
 msgid "Could not load the preview image. Please reload the page and try again."
 msgstr "Nepodařilo se načíst náhled obrázku. Obnovte prosím tuto stránku a zkuste to znovu."
 
@@ -8640,12 +9041,12 @@ msgstr "Manuál (anglicky)"
 msgid "&hellip;"
 msgstr "&hellip;"
 
-#: wp-includes/functions.php:3778 wp-includes/ms-load.php:455
+#: wp-includes/functions.php:3779 wp-includes/ms-load.php:455
 #: wp-includes/wp-db.php:1577
 msgid "Error establishing a database connection"
 msgstr "Během připojování k databázovému serveru došlo k chybě"
 
-#: wp-includes/functions.php:3774
+#: wp-includes/functions.php:3775
 msgid "Database Error"
 msgstr "Chyba databáze"
 
@@ -8730,20 +9131,20 @@ msgid "You should specify a nonce action to be verified by using the first param
 msgstr "Prostřednictvím prvního parametru funkce check_admin_referer() byste měli upřesnit nonce akci, aby mohla být správně ověřena."
 
 #. translators: 1: site URL, 2: login URL
-#: wp-activate.php:144
+#: wp-activate.php:146
 msgid "Your account is now activated. <a href=\"%1$s\">View your site</a> or <a href=\"%2$s\">Log in</a>"
 msgstr "Uživatelský účet byl právě aktivován. <a href=\"%1$s\">Prohlédněte</a> si nově vytvořený web nebo se rovnou <a href=\"%2$s\">přihlaste</a> do jeho administrace."
 
 #. translators: 1: login URL, 2: network home URL
-#: wp-activate.php:149
+#: wp-activate.php:151
 msgid "Your account is now activated. <a href=\"%1$s\">Log in</a> or go back to the <a href=\"%2$s\">homepage</a>."
 msgstr "Uživatelský účet byl právě aktivován. Můžete se rovnou <a href=\"%1$s\">přihlásit</a> nebo přejít zpět na <a href=\"%2$s\">úvodní stránku</a>."
 
-#: wp-includes/post.php:1397
+#: wp-includes/post.php:1456
 msgid "All Pages"
 msgstr "Přehled stránek"
 
-#: wp-includes/post.php:1397
+#: wp-includes/post.php:1456
 msgid "All Posts"
 msgstr "Přehled příspěvků"
 
@@ -8794,11 +9195,11 @@ msgctxt "post format"
 msgid "Format"
 msgstr "Formát"
 
-#: wp-includes/class-wp-editor.php:1712
+#: wp-includes/class-wp-editor.php:1720
 msgid "Or link to existing content"
 msgstr "Nebo můžete snadno vyhledat existující obsah webu"
 
-#: wp-includes/class-wp-editor.php:1698
+#: wp-includes/class-wp-editor.php:1706
 msgid "Enter the destination URL"
 msgstr "Zadejte přímo cílovou URL adresu"
 
@@ -8823,13 +9224,13 @@ msgid "The user is already active."
 msgstr "Uživatel už byl úspěšně aktivován."
 
 #. translators: %s: version number
-#: wp-includes/functions.php:4140
+#: wp-includes/functions.php:4141
 msgid "(This message was added in version %s.)"
 msgstr "(Tato zpráva se nově zobrazuje od verze %s.)"
 
 #. translators: Developer debugging message. 1: PHP function name, 2:
 #. Explanatory message, 3: Version information message
-#: wp-includes/functions.php:4147
+#: wp-includes/functions.php:4148
 msgid "%1$s was called <strong>incorrectly</strong>. %2$s %3$s"
 msgstr "Funkce %1$s <strong>nebyla použita správným způsobem</strong>. %2$s %3$s"
 
@@ -8861,7 +9262,7 @@ msgstr "Audio"
 msgid "Invalid post format."
 msgstr "Neplatný formát příspěvku."
 
-#: wp-includes/class-wp-editor.php:1729
+#: wp-includes/class-wp-editor.php:1737
 msgid "No search term specified. Showing recent items."
 msgstr "Zatím nebylo nic hledáno, takže bude zobrazen nejnovější obsah webu."
 
@@ -8869,7 +9270,7 @@ msgstr "Zatím nebylo nic hledáno, takže bude zobrazen nejnovější obsah web
 msgid "Only a static class method or function can be used in an uninstall hook."
 msgstr "Pro možnost registrace vlastní funkce spouštěné během případného odinstalování pluginu je třeba použít funkci nebo metodu statické třídy."
 
-#: wp-includes/post.php:2954
+#: wp-includes/post.php:3013
 msgid "Passing an integer number of posts is deprecated. Pass an array of arguments instead."
 msgstr "Možnost jednoduchého definování počtu příspěvků jako celého čísla už není jako parametr této funkce nadále podporována. Použijte raději pole s konkrétními parametry a hodnotami."
 
@@ -8913,19 +9314,19 @@ msgctxt "Post format"
 msgid "Aside"
 msgstr "Poznámka"
 
-#: wp-includes/post.php:1395
+#: wp-includes/post.php:1454
 msgid "No posts found in Trash."
 msgstr "V koši nebyly nalezeny žádné příspěvky."
 
-#: wp-includes/post.php:1394
+#: wp-includes/post.php:1453
 msgid "No pages found."
 msgstr "Nebyly nalezeny žádné stránky."
 
-#: wp-includes/post.php:1395
+#: wp-includes/post.php:1454
 msgid "No pages found in Trash."
 msgstr "V koši nebyly nalezeny žádné stránky."
 
-#: wp-includes/script-loader.php:831
+#: wp-includes/script-loader.php:842
 msgid "Network Enable"
 msgstr "Povolit v síti webů"
 
@@ -8944,7 +9345,7 @@ msgstr "Neplatné ID mediálního souboru."
 msgid "This file no longer needs to be included."
 msgstr "Tento soubor už není třeba nadále používat."
 
-#: wp-login.php:576
+#: wp-login.php:577
 msgid "Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "Zadejte prosím své uživatelské jméno nebo emailovou adresu. Odkaz na stránku s možností vytvoření nového hesla vám bude automaticky zaslán emailem."
 
@@ -8981,43 +9382,43 @@ msgstr "Šířka střední velikosti obrázku"
 msgid "Large size image height"
 msgstr "Výška velkého obrázku"
 
-#: wp-login.php:681
+#: wp-login.php:682
 msgid "Enter your new password below."
 msgstr "Zadejte vaše nové heslo."
 
-#: wp-login.php:365
+#: wp-login.php:366
 msgid "If this was a mistake, just ignore this email and nothing will happen."
 msgstr "Pokud šlo pouze o nějaký omyl, nemusíte už tomuto emailu věnovat další pozornost a nic se nestane."
 
-#: wp-login.php:360
+#: wp-login.php:361
 msgid "Someone has requested a password reset for the following account:"
 msgstr "Někdo požádal o vytvoření nového hesla pro následující účet:"
 
-#: wp-login.php:673
+#: wp-login.php:674
 msgid "Your password has been reset."
 msgstr "Nové heslo bylo vytvořeno."
 
-#: wp-login.php:673
+#: wp-login.php:674
 msgid "Password Reset"
 msgstr "Vytvoření nového hesla"
 
-#: wp-login.php:658
+#: wp-login.php:659
 msgid "The passwords do not match."
 msgstr "Zadaná hesla se neshodují."
 
-#: wp-login.php:681 wp-login.php:728
+#: wp-login.php:682 wp-login.php:729
 msgid "Reset Password"
 msgstr "Vytvořit nové heslo"
 
-#: wp-login.php:366
+#: wp-login.php:367
 msgid "To reset your password, visit the following address:"
 msgstr "Možnost vytvoření nového hesla získáte kliknutím na následující odkaz:"
 
-#: wp-login.php:710
+#: wp-login.php:711
 msgid "Confirm new password"
 msgstr "Potvrdit nové heslo"
 
-#: wp-login.php:689
+#: wp-login.php:690
 msgid "New password"
 msgstr "Nové heslo"
 
@@ -9038,7 +9439,7 @@ msgid "Blavatar"
 msgstr "Blavatar"
 
 #. translators: %s: taxonomy name
-#: wp-includes/post.php:3420
+#: wp-includes/post.php:3479
 msgid "Invalid taxonomy: %s."
 msgstr "Neplatná taxonomie: %s."
 
@@ -9065,6 +9466,10 @@ msgstr "Vytvořit novou rubriku odkazů"
 #: wp-includes/taxonomy.php:119
 msgid "New Link Category Name"
 msgstr "Název nové rubriky odkazů"
+
+#: wp-includes/user.php:2838
+msgid "User"
+msgstr "Uživatel"
 
 #: wp-includes/admin-bar.php:444
 msgid "Network Admin"
@@ -9173,47 +9578,47 @@ msgstr "Nové registrace bohužel nejsou v současné době povoleny."
 msgid "We send your registration email to this address. (Double-check your email address before continuing.)"
 msgstr "Na zadanou adresu bude automaticky zaslán aktivační email. (Ještě, než budete pokračovat dále, zkontrolujte prosím správnost emailové adresy.)"
 
-#: wp-includes/post.php:1386
+#: wp-includes/post.php:1445
 msgctxt "post type singular name"
 msgid "Post"
 msgstr "Příspěvek"
 
-#: wp-includes/post.php:1386
+#: wp-includes/post.php:1445
 msgctxt "post type singular name"
 msgid "Page"
 msgstr "Stránka"
 
-#: wp-includes/post.php:1385
+#: wp-includes/post.php:1444
 msgctxt "post type general name"
 msgid "Pages"
 msgstr "Stránky"
 
-#: wp-includes/post.php:1388
+#: wp-includes/post.php:1447
 msgid "Add New Page"
 msgstr "Vytvořit novou stránku"
 
-#: wp-includes/post.php:1393
+#: wp-includes/post.php:1452
 msgid "Search Posts"
 msgstr "Hledat příspěvky"
 
-#: wp-includes/post.php:1389
+#: wp-includes/post.php:1448
 msgid "Edit Page"
 msgstr "Upravit stránku"
 
-#: wp-includes/post.php:1385
+#: wp-includes/post.php:1444
 msgctxt "post type general name"
 msgid "Posts"
 msgstr "Příspěvky"
 
-#: wp-includes/post.php:1396
+#: wp-includes/post.php:1455
 msgid "Parent Page:"
 msgstr "Nadřazená stránka:"
 
-#: wp-includes/post.php:1388
+#: wp-includes/post.php:1447
 msgid "Add New Post"
 msgstr "Vytvořit nový příspěvek"
 
-#: wp-includes/post.php:1393
+#: wp-includes/post.php:1452
 msgid "Search Pages"
 msgstr "Hledat stránky"
 
@@ -9225,7 +9630,7 @@ msgstr "<strong>Konstanty VHOST a SUBDOMAIN_INSTALL mají definované konfliktn�
 msgid "<strong>ERROR</strong>: This username is invalid because it uses illegal characters. Please enter a valid username."
 msgstr "<strong>CHYBA</strong>: Uživatelské jméno není platné, protože obsahuje nepovolené znaky. Zadejte prosím správné uživatelské jméno."
 
-#: wp-includes/comment-template.php:2206
+#: wp-includes/comment-template.php:2211
 msgid "Required fields are marked %s"
 msgstr "Vyžadované informace jsou označeny %s"
 
@@ -9387,7 +9792,7 @@ msgstr "Během ověřování registrace uživatele na tomto webu došlo k chybě
 msgid "This file is too big. Files must be less than %d KB in size."
 msgstr "Nahrávaný soubor je příliš velký. Velikost souborů nesmí přesáhnout %d KB."
 
-#: wp-includes/comment-template.php:2235
+#: wp-includes/comment-template.php:2240
 msgid "Your email address will not be published."
 msgstr "Vaše emailová adresa nebude zveřejněna."
 
@@ -9430,11 +9835,11 @@ msgstr "Pokud chcete vytvořit nový web, tak se musíte nejdříve <a href=\"%s
 msgid "Must be at least 4 characters, letters and numbers only. It cannot be changed, so choose carefully!"
 msgstr "Zvolená adresa musí obsahovat alespoň 4 znaky a použít můžete pouze malá písmena bez diakritiky (a-z) a číslice. Adresu webu také nemůžete později měnit, takže vybírejte opravdu pečlivě!"
 
-#: wp-includes/script-loader.php:758
+#: wp-includes/script-loader.php:769
 msgid "Are you sure you want to install this plugin?"
 msgstr "Opravdu chcete nainstalovat tento plugin?"
 
-#: wp-includes/script-loader.php:877
+#: wp-includes/script-loader.php:888
 msgid "Use as featured image"
 msgstr "Použít jako náhledový obrázek"
 
@@ -9471,7 +9876,7 @@ msgstr "Odkazy z webu %s"
 msgid "No menus have been created yet. <a href=\"%s\">Create some</a>."
 msgstr "Zatím nebylo vytvořeno žádné menu. <a href=\"%s\">Vytvořit menu</a>."
 
-#: wp-includes/script-loader.php:887
+#: wp-includes/script-loader.php:898
 msgid ""
 "You are about to permanently delete this menu. \n"
 " 'Cancel' to stop, 'OK' to delete."
@@ -9707,7 +10112,7 @@ msgstr "Nemáte dostatečné oprávnění pro vytváření stránek, kde bude te
 #: wp-includes/class-wp-xmlrpc-server.php:4959
 #: wp-includes/class-wp-xmlrpc-server.php:5017
 #: wp-includes/class-wp-xmlrpc-server.php:5295
-#: wp-includes/class-wp-xmlrpc-server.php:5359 wp-includes/post.php:1175
+#: wp-includes/class-wp-xmlrpc-server.php:5359 wp-includes/post.php:1234
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:123
 msgid "Invalid post type."
 msgstr "Neplatný typ obsahu."
@@ -9768,8 +10173,8 @@ msgstr "Pro přidání komentáře musíte vyplnit své jméno a email."
 #: wp-includes/class-wp-xmlrpc-server.php:5585
 #: wp-includes/class-wp-xmlrpc-server.php:6098
 #: wp-includes/class-wp-xmlrpc-server.php:6152
-#: wp-includes/class-wp-xmlrpc-server.php:6271 wp-includes/post.php:3088
-#: wp-includes/post.php:3622
+#: wp-includes/class-wp-xmlrpc-server.php:6271 wp-includes/post.php:3147
+#: wp-includes/post.php:3681
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:326
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:688
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:369
@@ -9854,7 +10259,7 @@ msgid "%s is your new username"
 msgstr "Registrovaný uživatelský účet: %s"
 
 #: wp-includes/class-wp-customize-nav-menus.php:967
-#: wp-includes/script-loader.php:1130 wp-signup.php:564
+#: wp-includes/script-loader.php:1141 wp-signup.php:564
 msgid "Next"
 msgstr "Další"
 
@@ -9901,40 +10306,40 @@ msgstr "Nevypadá to, že by byl zadán nějaký nový email."
 msgid "Slow down cowboy, no need to check for new mails so often!"
 msgstr "Uklidněte se, není potřeba kontrolovat příchozí emaily každou chvíli!"
 
-#: wp-login.php:954
+#: wp-login.php:992
 msgid "Registration complete. Please check your email."
 msgstr "Registrace byla úspěšně dokončena. Zkontrolujte svou emailovou schránku."
 
-#: wp-login.php:952
+#: wp-login.php:990
 msgid "Check your email for your new password."
 msgstr "Zkontrolujte emailovou schránku, zda už nedorazilo nové heslo."
 
-#: wp-login.php:950
+#: wp-login.php:988
 msgid "Check your email for the confirmation link."
 msgstr "Zkontrolujte emailovou schránku, zda už nedorazil aktivační email."
 
-#: wp-login.php:948
+#: wp-login.php:986
 msgid "User registration is currently not allowed."
 msgstr "Registrace uživatelů není v tuto chvíli povolena."
 
-#: wp-login.php:946
+#: wp-login.php:984
 msgid "You are now logged out."
 msgstr "Odhlášení proběhlo úspěšně."
 
-#: wp-login.php:905
+#: wp-login.php:943
 msgid "You have logged in successfully."
 msgstr "Přihlášení proběhlo úspěšně."
 
 #: wp-includes/user.php:149 wp-includes/user.php:175 wp-includes/user.php:227
-#: wp-includes/user.php:247 wp-login.php:829 wp-login.php:1030
+#: wp-includes/user.php:247 wp-login.php:830 wp-login.php:1068
 msgid "Lost your password?"
 msgstr "Zapomněli jste heslo?"
 
-#: wp-login.php:801
+#: wp-login.php:802
 msgid "Register For This Site"
 msgstr "Registrace na tomto webu"
 
-#: wp-login.php:801
+#: wp-login.php:802
 msgid "Registration Form"
 msgstr "Registrační formulář"
 
@@ -9942,11 +10347,11 @@ msgstr "Registrační formulář"
 msgid "&larr; Back to Tags"
 msgstr "&larr; Zpět ke štítkům"
 
-#: wp-login.php:599
+#: wp-login.php:600
 msgid "Get New Password"
 msgstr "Získat nové heslo"
 
-#: wp-login.php:576
+#: wp-login.php:577
 msgid "Lost Password"
 msgstr "Zapomenuté heslo"
 
@@ -9961,16 +10366,17 @@ msgstr "<strong>CHYBA</strong>: Zadejte svoji emailovou adresu."
 #: wp-includes/user.php:2227 wp-includes/user.php:2230
 #: wp-includes/user.php:2234 wp-includes/user.php:2259
 #: wp-includes/user.php:2268 wp-includes/user.php:2272
-#: wp-includes/user.php:2289
+#: wp-includes/user.php:2289 wp-includes/user.php:3400
+#: wp-includes/user.php:3412 wp-includes/user.php:3430 wp-login.php:853
 msgid "Invalid key"
 msgstr "Neplatný klíč"
 
-#: wp-login.php:400
+#: wp-login.php:401
 msgid "The email could not be sent."
 msgstr "Email nemohl být odeslán."
 
 #. translators: Password reset email subject. %s: Site name
-#: wp-login.php:370
+#: wp-login.php:371
 msgid "[%s] Password Reset"
 msgstr "[%s] Vytvoření nového hesla"
 
@@ -9978,15 +10384,15 @@ msgstr "[%s] Vytvoření nového hesla"
 msgid "Password reset is not allowed for this user"
 msgstr "Nemáte dostatečné oprávnění pro vytvoření nového hesla"
 
-#: wp-login.php:337
+#: wp-login.php:338
 msgid "<strong>ERROR</strong>: Invalid username or email."
 msgstr "<strong>CHYBA</strong>: Neplatné uživatelské jméno nebo email."
 
-#: wp-login.php:316
+#: wp-login.php:317
 msgid "<strong>ERROR</strong>: There is no user registered with that email address."
 msgstr "<strong>CHYBA</strong>: Žádný uživatel se zvolenou emailovou adresou tu není registrován."
 
-#: wp-login.php:312
+#: wp-login.php:313
 msgid "<strong>ERROR</strong>: Enter a username or email address."
 msgstr "<strong>CHYBA</strong>: Zadejte uživatelské jméno nebo emailovou adresu."
 
@@ -10004,7 +10410,7 @@ msgstr "<strong>CHYBA</strong>: WordPress %1$s vyžaduje alespoň MySQL %2$s"
 msgid "Sidebar %d"
 msgstr "Postranní panel %d"
 
-#: wp-includes/functions.php:5329 wp-includes/user.php:285
+#: wp-includes/functions.php:5330 wp-includes/user.php:285
 msgid "Please log in again."
 msgstr "Přihlaste se prosím znovu."
 
@@ -10046,51 +10452,51 @@ msgstr "Položku se nepodařilo uložit do databáze."
 msgid "Empty Term."
 msgstr "Prázdný název."
 
-#: wp-includes/script-loader.php:702
+#: wp-includes/script-loader.php:713
 msgid "Saving Draft&#8230;"
 msgstr "Ukládání konceptu&#8230;"
 
-#: wp-includes/script-loader.php:879
+#: wp-includes/script-loader.php:890
 msgid "Could not set that as the thumbnail image. Try a different attachment."
 msgstr "Nepodařilo se nastavit tento soubor jako náhledový obrázek. Zkuste to prosím s jiným souborem."
 
-#: wp-includes/script-loader.php:878
+#: wp-includes/script-loader.php:889
 msgid "Saving..."
 msgstr "Probíhá ukládání..."
 
-#: wp-includes/script-loader.php:742
+#: wp-includes/script-loader.php:753
 msgid "Remove From Bulk Edit"
 msgstr "Odebrat z hromadných úprav"
 
-#: wp-includes/script-loader.php:741 wp-includes/script-loader.php:750
+#: wp-includes/script-loader.php:752 wp-includes/script-loader.php:761
 msgid "Error while saving the changes."
 msgstr "Během ukládání změn se objevila nečekaná chyba."
 
-#: wp-includes/script-loader.php:713
+#: wp-includes/script-loader.php:724
 msgid "Submitted on:"
 msgstr "Uloženo:"
 
-#: wp-includes/script-loader.php:698
+#: wp-includes/script-loader.php:709
 msgid "Password Protected"
 msgstr "Chráněno heslem"
 
-#: wp-includes/script-loader.php:689
+#: wp-includes/script-loader.php:700
 msgid "No more comments found."
 msgstr "Nebyly nalezeny žádné další komentáře."
 
-#: wp-includes/script-loader.php:688
+#: wp-includes/script-loader.php:699
 msgid "Show more comments"
 msgstr "Zobrazit další komentáře"
 
-#: wp-includes/script-loader.php:685
+#: wp-includes/script-loader.php:696
 msgid "Published on:"
 msgstr "Publikováno:"
 
-#: wp-includes/script-loader.php:684
+#: wp-includes/script-loader.php:695
 msgid "Schedule for:"
 msgstr "Naplánováno na:"
 
-#: wp-includes/script-loader.php:683
+#: wp-includes/script-loader.php:694
 msgid "Publish on:"
 msgstr "Publikovat:"
 
@@ -10188,7 +10594,7 @@ msgstr "uzavřít značky"
 msgid "Close all open tags"
 msgstr "Uzavřít všechny otevřené značky"
 
-#: wp-includes/rss.php:917 wp-includes/widgets.php:1413
+#: wp-includes/rss.php:917 wp-includes/widgets.php:1414
 msgid "An error has occurred, which probably means the feed is down. Try again later."
 msgstr "Objevila se nečekaná chyba, což pravděpodobně znamená, že je RSS zdroj mimo provoz. Zkuste to prosím později."
 
@@ -10212,54 +10618,54 @@ msgstr "Nemůžete vytvořit nového uživatele, pokud nezadáte jeho uživatels
 msgid "Cannot create a revision of a revision"
 msgstr "Nemůžete vytvářet další varianty starší verze příspěvku"
 
-#: wp-includes/post.php:3389
+#: wp-includes/post.php:3448
 msgid "Could not insert post into the database"
 msgstr "Nepodařilo se uložit příspěvek do databáze"
 
-#: wp-includes/post.php:3374
+#: wp-includes/post.php:3433
 msgid "Could not update post in the database"
 msgstr "Nepodařilo se aktualizovat příspěvek v databázi"
 
-#: wp-includes/post.php:3135
+#: wp-includes/post.php:3194
 msgid "Content, title, and excerpt are empty."
 msgstr "Obsah, název a stručný výpis nejsou vyplněny."
 
-#: wp-includes/post.php:252
+#: wp-includes/post.php:267
 msgid "Trash <span class=\"count\">(%s)</span>"
 msgid_plural "Trash <span class=\"count\">(%s)</span>"
 msgstr[0] "Koš <span class=\"count\">(%s)</span>"
 msgstr[1] "Koš <span class=\"count\">(%s)</span>"
 msgstr[2] "Koš <span class=\"count\">(%s)</span>"
 
-#: wp-includes/post.php:245
+#: wp-includes/post.php:260
 msgid "Private <span class=\"count\">(%s)</span>"
 msgid_plural "Private <span class=\"count\">(%s)</span>"
 msgstr[0] "Soukromé <span class=\"count\">(%s)</span>"
 msgstr[1] "Soukromé <span class=\"count\">(%s)</span>"
 msgstr[2] "Soukromé <span class=\"count\">(%s)</span>"
 
-#: wp-includes/post.php:238
+#: wp-includes/post.php:253
 msgid "Pending <span class=\"count\">(%s)</span>"
 msgid_plural "Pending <span class=\"count\">(%s)</span>"
 msgstr[0] "Čeká na schválení <span class=\"count\">(%s)</span>"
 msgstr[1] "Čeká na schválení <span class=\"count\">(%s)</span>"
 msgstr[2] "Čeká na schválení <span class=\"count\">(%s)</span>"
 
-#: wp-includes/post.php:231
+#: wp-includes/post.php:246
 msgid "Draft <span class=\"count\">(%s)</span>"
 msgid_plural "Drafts <span class=\"count\">(%s)</span>"
 msgstr[0] "Koncepty <span class=\"count\">(%s)</span>"
 msgstr[1] "Koncepty <span class=\"count\">(%s)</span>"
 msgstr[2] "Koncepty <span class=\"count\">(%s)</span>"
 
-#: wp-includes/post.php:224
+#: wp-includes/post.php:239
 msgid "Scheduled <span class=\"count\">(%s)</span>"
 msgid_plural "Scheduled <span class=\"count\">(%s)</span>"
 msgstr[0] "Plánováno <span class=\"count\">(%s)</span>"
 msgstr[1] "Plánováno <span class=\"count\">(%s)</span>"
 msgstr[2] "Plánováno <span class=\"count\">(%s)</span>"
 
-#: wp-includes/post.php:217
+#: wp-includes/post.php:232
 msgid "Published <span class=\"count\">(%s)</span>"
 msgid_plural "Published <span class=\"count\">(%s)</span>"
 msgstr[0] "Publikováno <span class=\"count\">(%s)</span>"
@@ -10318,7 +10724,7 @@ msgstr "[%s] Registrace nového uživatele"
 
 #. translators: %s: user login
 #: wp-includes/pluggable.php:1830 wp-includes/pluggable.php:1894
-#: wp-login.php:364
+#: wp-login.php:365
 msgid "Username: %s"
 msgstr "Uživatelské jméno: %s"
 
@@ -10521,7 +10927,7 @@ msgstr "Druh odkazu (rel)"
 msgid "Source"
 msgstr "Zdroj"
 
-#: wp-includes/media.php:3556
+#: wp-includes/media.php:3557
 msgid "Edit Gallery"
 msgstr "Upravit galerii"
 
@@ -10699,8 +11105,8 @@ msgid "Document properties"
 msgstr "Vlastnosti dokumentu"
 
 #: wp-includes/class-wp-editor.php:1238 wp-includes/script-loader.php:477
-#: wp-includes/script-loader.php:559 wp-includes/script-loader.php:701
-#: wp-includes/script-loader.php:724 wp-includes/script-loader.php:888
+#: wp-includes/script-loader.php:559 wp-includes/script-loader.php:712
+#: wp-includes/script-loader.php:735 wp-includes/script-loader.php:899
 #: wp-includes/theme.php:2962
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr "Provedené změny budou ztraceny, pokud opustíte tuto stránku."
@@ -10766,7 +11172,7 @@ msgid "Insert row before"
 msgstr "Vložit nový řádek nahoru"
 
 #: wp-includes/class-wp-editor.php:1126 wp-includes/class-wp-editor.php:1132
-#: wp-includes/class-wp-editor.php:1694 wp-includes/script-loader.php:523
+#: wp-includes/class-wp-editor.php:1702 wp-includes/script-loader.php:523
 msgid "Insert/edit link"
 msgstr "Vložit/upravit odkaz"
 
@@ -11001,12 +11407,12 @@ msgstr "Výsledky vyhledávání %1$s %2$s"
 msgid "Site Admin"
 msgstr "Administrace webu"
 
-#: wp-includes/general-template.php:527 wp-login.php:606 wp-login.php:735
-#: wp-login.php:823 wp-login.php:1022
+#: wp-includes/general-template.php:527 wp-login.php:607 wp-login.php:736
+#: wp-login.php:824 wp-login.php:1060
 msgid "Register"
 msgstr "Registrace"
 
-#: wp-includes/general-template.php:398 wp-login.php:1003
+#: wp-includes/general-template.php:398 wp-login.php:1041
 msgid "Remember Me"
 msgstr "Pamatovat si mě"
 
@@ -11014,39 +11420,39 @@ msgstr "Pamatovat si mě"
 msgid "Log out"
 msgstr "Odhlásit se"
 
-#: wp-includes/general-template.php:260 wp-login.php:603 wp-login.php:673
-#: wp-login.php:732 wp-login.php:827
+#: wp-includes/general-template.php:260 wp-login.php:604 wp-login.php:674
+#: wp-login.php:733 wp-login.php:828
 msgid "Log in"
 msgstr "Přihlásit se"
 
-#: wp-includes/functions.php:4723
+#: wp-includes/functions.php:4724
 msgid "Manual Offsets"
 msgstr "Ruční nastavení časového posunu"
 
-#: wp-includes/functions.php:4715 wp-includes/functions.php:4719
+#: wp-includes/functions.php:4716 wp-includes/functions.php:4720
 msgid "UTC"
 msgstr "UTC"
 
-#: wp-includes/functions.php:4670
+#: wp-includes/functions.php:4671
 msgid "Select a city"
 msgstr "Vyberte město"
 
 #. translators: 1: PHP function name, 2: version number
-#: wp-includes/functions.php:4034
+#: wp-includes/functions.php:4035
 msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available."
 msgstr "Funkce %1$s byla použita s parametrem, který <strong>není podporován</strong> už od verze %2$s a v aktuální verzi WordPressu není dostupné ani žádné náhradní řešení."
 
 #. translators: 1: PHP function name, 2: version number, 3: optional message
 #. regarding the change
-#: wp-includes/functions.php:4031
+#: wp-includes/functions.php:4032
 msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s"
 msgstr "Funkce %1$s byla použita s parametrem, který <strong>není podporován</strong> už od verze %2$s! %3$s"
 
 #. translators: 1: PHP function name, 2: version number
 #. translators: 1: PHP file name, 2: version number
 #. translators: 1: WordPress hook name, 2: version number
-#: wp-includes/functions.php:3842 wp-includes/functions.php:3970
-#: wp-includes/functions.php:4093
+#: wp-includes/functions.php:3843 wp-includes/functions.php:3971
+#: wp-includes/functions.php:4094
 msgid "%1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
 msgstr "Funkce %1$s <strong>není podporována</strong> už od verze %2$s a v aktuální verzi WordPressu není dostupné ani žádné náhradní řešení."
 
@@ -11055,30 +11461,30 @@ msgstr "Funkce %1$s <strong>není podporována</strong> už od verze %2$s a v ak
 #. translators: 1: PHP file name, 2: version number, 3: alternative file name
 #. translators: 1: WordPress hook name, 2: version number, 3: alternative hook
 #. name
-#: wp-includes/functions.php:3839 wp-includes/functions.php:3967
-#: wp-includes/functions.php:4090
+#: wp-includes/functions.php:3840 wp-includes/functions.php:3968
+#: wp-includes/functions.php:4091
 msgid "%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr "Funkce %1$s <strong>není podporována</strong> už od verze %2$s! Použijte prosím raději funkci %3$s."
 
-#: wp-includes/functions.php:2749 wp-load.php:92
+#: wp-includes/functions.php:2750 wp-load.php:92
 msgid "WordPress &rsaquo; Error"
 msgstr "WordPress &rsaquo; Chyba"
 
-#: wp-includes/functions.php:2737
+#: wp-includes/functions.php:2738
 msgid "&laquo; Back"
 msgstr "&laquo; Zpět"
 
-#: wp-includes/functions.php:2612 wp-includes/ms-functions.php:2047
+#: wp-includes/functions.php:2613 wp-includes/ms-functions.php:2047
 msgid "Please try again."
 msgstr "Zkuste to prosím znovu."
 
 #. translators: %s: logout URL
-#: wp-includes/functions.php:2603
+#: wp-includes/functions.php:2604
 msgid "Do you really want to <a href=\"%s\">log out</a>?"
 msgstr "Opravdu se chcete <a href=\"%s\">odhlásit</a>?"
 
 #. translators: %s: site name
-#: wp-includes/functions.php:2596
+#: wp-includes/functions.php:2597
 msgid "You are attempting to log out of %s"
 msgstr "Pokoušíte se odhlásit z %s"
 
@@ -11174,31 +11580,31 @@ msgstr "nový WordPress Loop"
 msgid "Tag Cloud"
 msgstr "Štítky"
 
-#: wp-includes/widgets.php:1535
+#: wp-includes/widgets.php:1536
 msgid "Display item date?"
 msgstr "Zobrazit datum?"
 
-#: wp-includes/widgets.php:1532
+#: wp-includes/widgets.php:1533
 msgid "Display item author if available?"
 msgstr "Zobrazit autora (je-li k dispozici)?"
 
-#: wp-includes/widgets.php:1529
+#: wp-includes/widgets.php:1530
 msgid "Display item content?"
 msgstr "Zobrazit obsah?"
 
-#: wp-includes/widgets.php:1519
+#: wp-includes/widgets.php:1520
 msgid "How many items would you like to display?"
 msgstr "Kolik položek chcete zobrazit?"
 
-#: wp-includes/widgets.php:1516
+#: wp-includes/widgets.php:1517
 msgid "Give the feed a title (optional):"
 msgstr "Název RSS zdroje (volitelné):"
 
-#: wp-includes/widgets.php:1513
+#: wp-includes/widgets.php:1514
 msgid "Enter the RSS feed URL here:"
 msgstr "Zadejte URL adresu RSS zdroje:"
 
-#: wp-includes/widgets.php:1429
+#: wp-includes/widgets.php:1430
 msgid "Untitled"
 msgstr "Bez názvu"
 
@@ -11311,12 +11717,12 @@ msgstr "Jednou za hodinu"
 msgid "This argument has changed to an array to match the behavior of the other cron functions."
 msgstr "Parametr funkce byl změněn na pole, aby se přizpůsobil fungování dalších funkcí zajišťujících automatické spouštění různých skriptů (cron)."
 
-#: wp-includes/comment.php:2129
+#: wp-includes/comment.php:2143
 msgid "Could not update comment status"
 msgstr "Nepodařilo se aktualizovat stav komentáře"
 
-#: wp-includes/comment.php:670 wp-includes/comment.php:673
-#: wp-includes/comment.php:676
+#: wp-includes/comment.php:684 wp-includes/comment.php:687
+#: wp-includes/comment.php:690
 msgid "Duplicate comment detected; it looks as though you&#8217;ve already said that!"
 msgstr "Tento komentář je patrně duplicitní; možná jste ho již jednou odeslali?"
 
@@ -11324,19 +11730,19 @@ msgstr "Tento komentář je patrně duplicitní; možná jste ho již jednou ode
 msgid "Unapproved"
 msgstr "Odmítnuté"
 
-#: wp-includes/comment-template.php:2250
+#: wp-includes/comment-template.php:2255
 msgid "Post Comment"
 msgstr "Odeslat komentář"
 
-#: wp-includes/comment-template.php:2249
+#: wp-includes/comment-template.php:2254
 msgid "Cancel reply"
 msgstr "Zrušit odpověď na komentář"
 
-#: wp-includes/comment-template.php:1874 wp-includes/comment-template.php:2244
+#: wp-includes/comment-template.php:1874 wp-includes/comment-template.php:2249
 msgid "Leave a Reply to %s"
 msgstr "Napsat komentář: %s"
 
-#: wp-includes/comment-template.php:1873 wp-includes/comment-template.php:2243
+#: wp-includes/comment-template.php:1873 wp-includes/comment-template.php:2248
 msgid "Leave a Reply"
 msgstr "Napsat komentář"
 
@@ -11407,7 +11813,7 @@ msgstr "Komentář čeká na schválení."
 msgid "Comments are closed."
 msgstr "Komentáře nejsou povoleny."
 
-#: wp-includes/script-loader.php:855
+#: wp-includes/script-loader.php:866
 msgid "Select default color"
 msgstr "Vyberte výchozí barvu"
 
@@ -11429,7 +11835,7 @@ msgid "Tags: "
 msgstr "Štítky: "
 
 #. translators: %s: login URL
-#: wp-includes/comment-template.php:2222
+#: wp-includes/comment-template.php:2227
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Pro přidávání komentářů se musíte nejdříve <a href=\"%s\">přihlásit</a>."
 
@@ -11461,7 +11867,7 @@ msgstr "Komentáře: %s"
 
 #: wp-includes/class-wp-customize-nav-menus.php:276
 #: wp-includes/script-loader.php:242 wp-includes/script-loader.php:527
-#: wp-includes/script-loader.php:886
+#: wp-includes/script-loader.php:897
 msgid "No results found."
 msgstr "Nic nebylo nalezeno."
 
@@ -11473,7 +11879,7 @@ msgstr "Další stránka &raquo;"
 msgid "&laquo; Previous Page"
 msgstr "&laquo; Předchozí stránka"
 
-#: wp-includes/class-wp-xmlrpc-server.php:3634 wp-includes/comment.php:3025
+#: wp-includes/class-wp-xmlrpc-server.php:3634 wp-includes/comment.php:3039
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:465
 msgid "Sorry, comments are closed for this item."
 msgstr "Komentáře k tomuto příspěvku nejsou bohužel povoleny."
@@ -11483,11 +11889,11 @@ msgid "For some strange yet very annoying reason, this post could not be edited.
 msgstr "Z nějakých neznámých důvodů nelze tento příspěvek upravit."
 
 #: wp-includes/admin-bar.php:830 wp-includes/class-wp-customize-widgets.php:412
-#: wp-includes/functions.php:3715
+#: wp-includes/functions.php:3716
 msgid "Widgets"
 msgstr "Widgety"
 
-#: wp-includes/comment-template.php:2202
+#: wp-includes/comment-template.php:2205
 msgid "Website"
 msgstr "Webová stránka"
 
@@ -11512,7 +11918,7 @@ msgstr "Více štítků oddělte čárkami."
 msgid "Title:"
 msgstr "Název:"
 
-#: wp-includes/script-loader.php:756
+#: wp-includes/script-loader.php:767
 msgid "Plugin:"
 msgstr "Plugin:"
 
@@ -11522,7 +11928,7 @@ msgstr "Plugin:"
 #: wp-includes/customize/class-wp-customize-media-control.php:235
 #: wp-includes/customize/class-wp-customize-media-control.php:245
 #: wp-includes/customize/class-wp-customize-media-control.php:255
-#: wp-includes/script-loader.php:854
+#: wp-includes/script-loader.php:865
 msgid "Default"
 msgstr "Výchozí"
 
@@ -11543,7 +11949,7 @@ msgstr "Formát data"
 msgid "Allow people to post comments on new articles"
 msgstr "Povolit návštěvníkům webu přidávat komentáře k novým článkům"
 
-#: wp-includes/comment-template.php:2200 wp-login.php:809
+#: wp-includes/comment-template.php:2203 wp-login.php:810
 msgid "Email"
 msgstr "Email"
 
@@ -11560,7 +11966,7 @@ msgstr "První příspěvek"
 msgid "Settings"
 msgstr "Nastavení"
 
-#: wp-includes/post.php:1387
+#: wp-includes/post.php:1446
 msgctxt "page"
 msgid "Add New"
 msgstr "Vytvořit stránku"
@@ -11586,11 +11992,11 @@ msgstr "Ano"
 msgid "Edit Category"
 msgstr "Upravit rubriku"
 
-#: wp-includes/general-template.php:399 wp-login.php:973 wp-login.php:1005
+#: wp-includes/general-template.php:399 wp-login.php:1011 wp-login.php:1043
 msgid "Log In"
 msgstr "Přihlásit se"
 
-#: wp-login.php:699
+#: wp-login.php:700
 msgid "Strength indicator"
 msgstr "Ukazatel bezpečnosti hesla"
 
@@ -11673,12 +12079,12 @@ msgid "Help"
 msgstr "Nápověda"
 
 #: wp-includes/media.php:3143 wp-includes/script-loader.php:526
-#: wp-includes/script-loader.php:743
+#: wp-includes/script-loader.php:754
 #: wp-includes/widgets/class-wp-widget-recent-posts.php:91
 msgid "(no title)"
 msgstr "(žádný název)"
 
-#: wp-includes/admin-bar.php:550 wp-includes/post.php:1390
+#: wp-includes/admin-bar.php:550 wp-includes/post.php:1449
 msgid "New Post"
 msgstr "Vytvořit příspěvek"
 
@@ -11686,7 +12092,7 @@ msgstr "Vytvořit příspěvek"
 msgid "Edit Media"
 msgstr "Upravit mediální soubor"
 
-#: wp-includes/post.php:1390
+#: wp-includes/post.php:1449
 msgid "New Page"
 msgstr "Vytvořit stránku"
 
@@ -11695,9 +12101,9 @@ msgid "Select"
 msgstr "Vybrat"
 
 #: wp-includes/class-wp-customize-manager.php:5301
-#: wp-includes/class-wp-editor.php:1053 wp-includes/class-wp-editor.php:1695
+#: wp-includes/class-wp-editor.php:1053 wp-includes/class-wp-editor.php:1703
 #: wp-includes/script-loader.php:277 wp-includes/script-loader.php:371
-#: wp-includes/script-loader.php:562 wp-includes/script-loader.php:1126
+#: wp-includes/script-loader.php:562 wp-includes/script-loader.php:1137
 msgid "Close"
 msgstr "Zavřít"
 
@@ -11722,16 +12128,16 @@ msgstr "Nezařazené"
 msgid "Links"
 msgstr "Odkazy"
 
-#: wp-includes/post.php:1391
+#: wp-includes/post.php:1450
 msgid "View Page"
 msgstr "Zobrazit stránku"
 
-#: wp-includes/post.php:2318
+#: wp-includes/post.php:2377
 msgid "Images"
 msgstr "Obrázky"
 
 #: wp-includes/admin-bar.php:904 wp-includes/admin-bar.php:905
-#: wp-includes/class-wp-editor.php:1716 wp-includes/media.php:3496
+#: wp-includes/class-wp-editor.php:1724 wp-includes/media.php:3496
 msgid "Search"
 msgstr "Hledat"
 
@@ -11756,32 +12162,32 @@ msgid "Add or remove tags"
 msgstr "Přidat nebo odebrat štítky"
 
 #: wp-includes/media.php:3499 wp-includes/script-loader.php:524
-#: wp-includes/script-loader.php:692 wp-includes/script-loader.php:773
+#: wp-includes/script-loader.php:703 wp-includes/script-loader.php:784
 msgid "Update"
 msgstr "Aktualizovat"
 
-#: wp-includes/script-loader.php:696
+#: wp-includes/script-loader.php:707
 msgid "Public"
 msgstr "Veřejné"
 
-#: wp-includes/script-loader.php:697
+#: wp-includes/script-loader.php:708
 msgid "Public, Sticky"
 msgstr "Veřejný, zvýrazněný"
 
-#: wp-includes/post.php:705 wp-includes/post.php:725
-#: wp-includes/script-loader.php:695
+#: wp-includes/post.php:748 wp-includes/post.php:768
+#: wp-includes/script-loader.php:706
 msgid "Private"
 msgstr "Soukromé"
 
-#: wp-includes/class-wp-editor.php:1051 wp-includes/script-loader.php:681
+#: wp-includes/class-wp-editor.php:1051 wp-includes/script-loader.php:692
 msgid "OK"
 msgstr "OK"
 
-#: wp-includes/script-loader.php:699
+#: wp-includes/script-loader.php:710
 msgid "Privately Published"
 msgstr "Publikován jako soukromý"
 
-#: wp-includes/script-loader.php:693
+#: wp-includes/script-loader.php:704
 msgid "Save as Pending"
 msgstr "Uložit do fronty na schválení"
 
@@ -11789,12 +12195,12 @@ msgstr "Uložit do fronty na schválení"
 msgid "Image URL"
 msgstr "URL obrázku"
 
-#: wp-includes/class-wp-editor.php:1103
+#: wp-includes/class-wp-editor.php:1103 wp-includes/media.php:4022
 msgid "Media"
 msgstr "Média"
 
 #: wp-includes/media-template.php:330 wp-includes/media-template.php:528
-#: wp-includes/media.php:3568
+#: wp-includes/media.php:3569
 msgid "Edit Image"
 msgstr "Upravit obrázek"
 
@@ -11877,11 +12283,11 @@ msgstr "Náhled"
 msgid "Redo"
 msgstr "Znovu"
 
-#: wp-includes/general-template.php:397 wp-login.php:992
+#: wp-includes/general-template.php:397 wp-login.php:1030
 msgid "Password"
 msgstr "Heslo"
 
-#: wp-login.php:805
+#: wp-login.php:806
 msgid "Username"
 msgstr "Uživatelské jméno"
 
@@ -11921,7 +12327,7 @@ msgid "Reply"
 msgstr "Odpovědět"
 
 #: wp-includes/class-wp-customize-manager.php:4622
-#: wp-includes/script-loader.php:551 wp-includes/script-loader.php:694
+#: wp-includes/script-loader.php:551 wp-includes/script-loader.php:705
 msgid "Save Draft"
 msgstr "Uložit koncept"
 
@@ -11933,9 +12339,9 @@ msgstr "Štítky"
 msgid "Content"
 msgstr "Obsah"
 
-#: wp-includes/class-wp-editor.php:1052 wp-includes/class-wp-editor.php:1741
+#: wp-includes/class-wp-editor.php:1052 wp-includes/class-wp-editor.php:1749
 #: wp-includes/media.php:3498 wp-includes/script-loader.php:510
-#: wp-includes/script-loader.php:561 wp-includes/script-loader.php:682
+#: wp-includes/script-loader.php:561 wp-includes/script-loader.php:693
 msgid "Cancel"
 msgstr "Zrušit"
 
@@ -11958,12 +12364,13 @@ msgid "RSS"
 msgstr "RSS"
 
 #: wp-includes/class-wp-theme.php:732 wp-includes/comment-template.php:31
+#: wp-includes/comment.php:3327
 msgid "Anonymous"
 msgstr "Anonym"
 
 #: wp-includes/customize/class-wp-customize-nav-menu-control.php:55
 #: wp-includes/customize/class-wp-widget-area-customize-control.php:61
-#: wp-includes/script-loader.php:880
+#: wp-includes/script-loader.php:891
 msgid "Done"
 msgstr "Hotovo"
 
@@ -11971,15 +12378,15 @@ msgstr "Hotovo"
 msgid "Users"
 msgstr "Uživatelé"
 
-#: wp-includes/post.php:1389
+#: wp-includes/post.php:1448
 msgid "Edit Post"
 msgstr "Upravit příspěvek"
 
-#: wp-includes/post.php:1391
+#: wp-includes/post.php:1450
 msgid "View Post"
 msgstr "Zobrazit příspěvek"
 
-#: wp-includes/post.php:1387
+#: wp-includes/post.php:1446
 msgctxt "post"
 msgid "Add New"
 msgstr "Vytvořit příspěvek"
@@ -12003,7 +12410,7 @@ msgstr "Žádné"
 msgid "Description"
 msgstr "Popis"
 
-#: wp-includes/comment-template.php:2198
+#: wp-includes/comment-template.php:2201
 msgid "Name"
 msgstr "Jméno"
 
@@ -12022,11 +12429,11 @@ msgstr "Zobrazení odkazu"
 msgid "Categories"
 msgstr "Rubriky"
 
-#: wp-includes/class-wp-editor.php:1121 wp-includes/script-loader.php:722
+#: wp-includes/class-wp-editor.php:1121 wp-includes/script-loader.php:733
 msgid "Save"
 msgstr "Uložit"
 
-#: wp-includes/class-wp-editor.php:1744 wp-includes/script-loader.php:525
+#: wp-includes/class-wp-editor.php:1752 wp-includes/script-loader.php:525
 msgid "Add Link"
 msgstr "Vytvořit odkaz"
 
@@ -12055,16 +12462,16 @@ msgid "Excerpt"
 msgstr "Stručný výpis příspěvku"
 
 #: wp-includes/class-wp-customize-manager.php:4617
-#: wp-includes/script-loader.php:549 wp-includes/script-loader.php:690
+#: wp-includes/script-loader.php:549 wp-includes/script-loader.php:701
 msgid "Publish"
 msgstr "Publikovat"
 
-#: wp-includes/script-loader.php:656
+#: wp-includes/comment.php:3258 wp-includes/script-loader.php:656
 msgid "Comments"
 msgstr "Komentáře"
 
 #: wp-includes/class-wp-customize-widgets.php:751
-#: wp-includes/class-wp-editor.php:1261 wp-includes/media.php:3537
+#: wp-includes/class-wp-editor.php:1261 wp-includes/media.php:3538
 msgid "Apply"
 msgstr "Použít"
 
@@ -12091,16 +12498,16 @@ msgstr "Ne"
 msgid "Are you sure you want to do this?"
 msgstr "Opravdu to chcete udělat?"
 
-#: wp-includes/comment-template.php:1082 wp-includes/comment-template.php:2218
+#: wp-includes/comment-template.php:1082 wp-includes/comment-template.php:2223
 msgctxt "noun"
 msgid "Comment"
 msgstr "Komentář"
 
 #: wp-includes/class-wp-customize-nav-menus.php:1111
-#: wp-includes/class-wp-editor.php:1136 wp-includes/class-wp-editor.php:1700
+#: wp-includes/class-wp-editor.php:1136 wp-includes/class-wp-editor.php:1708
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:86
 #: wp-includes/media-template.php:376 wp-includes/media-template.php:557
-#: wp-includes/media.php:3494
+#: wp-includes/media.php:3494 wp-includes/media.php:4017
 #: wp-includes/widgets/class-wp-widget-media-image.php:105
 msgid "URL"
 msgstr "URL"
@@ -12118,20 +12525,20 @@ msgstr "Odhlásit se"
 msgid "Visit Site"
 msgstr "Zobrazit web"
 
-#: wp-includes/class-wp-editor.php:1634
+#: wp-includes/class-wp-editor.php:1642
 msgid "Y/m/d"
 msgstr "j. n. Y"
 
-#: wp-includes/post.php:703 wp-includes/post.php:724
+#: wp-includes/post.php:746 wp-includes/post.php:767
 msgid "Draft"
 msgstr "Koncept"
 
-#: wp-includes/post.php:704
+#: wp-includes/post.php:747
 msgid "Pending Review"
 msgstr "Čeká na schválení"
 
-#: wp-includes/post.php:706 wp-includes/post.php:726
-#: wp-includes/script-loader.php:550 wp-includes/script-loader.php:700
+#: wp-includes/post.php:749 wp-includes/post.php:769
+#: wp-includes/script-loader.php:550 wp-includes/script-loader.php:711
 msgid "Published"
 msgstr "Publikováno"
 
@@ -12140,35 +12547,35 @@ msgstr "Publikováno"
 msgid "Title"
 msgstr "Název"
 
-#: wp-includes/post.php:1394
+#: wp-includes/post.php:1453
 msgid "No posts found."
 msgstr "Nebyly nalezeny žádné příspěvky."
 
-#: wp-activate.php:134 wp-includes/post-template.php:1611
+#: wp-activate.php:136 wp-includes/post-template.php:1611
 msgid "Password:"
 msgstr "Heslo:"
 
-#: wp-activate.php:133 wp-signup.php:230
+#: wp-activate.php:135 wp-signup.php:230
 msgid "Username:"
 msgstr "Uživatelské jméno:"
 
-#: wp-activate.php:122
+#: wp-activate.php:124
 msgid "An error occurred during the activation"
 msgstr "Během aktivace účtu došlo k chybě"
 
-#: wp-activate.php:97 wp-activate.php:130
+#: wp-activate.php:99 wp-activate.php:132
 msgid "Your account is now active!"
 msgstr "Registrovaný účet byl úspěšně aktivován!"
 
-#: wp-activate.php:85 wp-includes/script-loader.php:830
-#: wp-includes/script-loader.php:831
+#: wp-activate.php:87 wp-includes/script-loader.php:841
+#: wp-includes/script-loader.php:842
 msgid "Activate"
 msgstr "Aktivovat"
 
-#: wp-activate.php:81
+#: wp-activate.php:83
 msgid "Activation Key:"
 msgstr "Aktivační klíč:"
 
-#: wp-activate.php:78
+#: wp-activate.php:80
 msgid "Activation Key Required"
 msgstr "Pro ověření registrace je vyžadován aktivační klíč"

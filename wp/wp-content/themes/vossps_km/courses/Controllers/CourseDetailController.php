@@ -49,7 +49,8 @@ class CourseDetailController {
 				'sign_closed_reason' => $post->getSignClosedReason(),
 				'form_errors' => ( isset( $form ) ) ? $form->getErrors( true ) : false,
 				'recaptcha_sitekey' => $this->config[ 'recaptcha' ][ 'sitekey' ],
-				'terms_of_service' => $this->getTermsOfService()
+				'terms_of_service' => $this->getTermsOfService(),
+				'gdpr_consent_file_link' => $post->getGdprConsentFileLink()
 			];
 			Timber::render( 'course_detail.twig', array_merge( Timber::get_context(), $data ) );
 			return;

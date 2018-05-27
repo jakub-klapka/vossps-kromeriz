@@ -1,12 +1,10 @@
 {
     "key": "group_58c8383cb9445",
-    "title": "Nastaven\u00ed kurz\u016f",
+    "title": "Nastavení kurzů",
     "fields": [
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_58e3cb31ab585",
-            "label": "Popis kategorie kurz\u016f",
+            "label": "Popis kategorie kurzů",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -16,32 +14,32 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "default_value": "",
-            "delay": 0,
             "key": "field_58e3cb46ab586",
             "label": "Popis kategorie",
             "name": "course_type_description",
             "type": "wysiwyg",
-            "instructions": "Tyto informace jsou zobrazeny na str\u00e1nce s v\u00fdpisem dostupn\u00fdch kurz\u016f v t\u00e9to kategorii.",
+            "instructions": "Tyto informace jsou zobrazeny na stránce s výpisem dostupných kurzů v této kategorii.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0
         },
         {
-            "placement": "top",
-            "endpoint": 0,
             "key": "field_58e3cb21ab584",
-            "label": "E-mailov\u00e9 notifikace",
+            "label": "E-mailové notifikace",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -51,45 +49,82 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "default_value": "",
-            "delay": 0,
             "key": "field_58d041c75aea5",
-            "label": "Notifika\u010dn\u00ed e-mail pro \u00fa\u010dastn\u00edka - platba hotov\u011b",
+            "label": "Notifikační e-mail pro účastníka - platba hotově",
             "name": "student_email_template_cash",
             "type": "wysiwyg",
-            "instructions": "Pro vlo\u017een\u00ed v\u00fdpisu zadan\u00fdch \u00fadaj\u016f pou\u017eijte tag <b>[zadane_udaje]<\/b>",
+            "instructions": "Pro vložení výpisu zadaných údajů použijte tag <b>[zadane_udaje]<\/b>",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
-        },
-        {
+            },
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
             "default_value": "",
-            "delay": 0,
+            "delay": 0
+        },
+        {
             "key": "field_58d04b9cc8b32",
-            "label": "Notifika\u010dn\u00ed e-mail pro \u00fa\u010dastn\u00edka - platba p\u0159evodem",
+            "label": "Notifikační e-mail pro účastníka - platba převodem",
             "name": "student_email_template_invoice",
             "type": "wysiwyg",
-            "instructions": "Pro vlo\u017een\u00ed v\u00fdpisu zadan\u00fdch \u00fadaj\u016f pou\u017eijte tag <b>[zadane_udaje]<\/b>",
+            "instructions": "Pro vložení výpisu zadaných údajů použijte tag <b>[zadane_udaje]<\/b>",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "default_value": "",
+            "delay": 0
+        },
+        {
+            "key": "field_5b0aeeada69ec",
+            "label": "Souhlas se zpracováním os. ú.",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5b0af3b9a69ed",
+            "label": "Souhlas se zpracováním osobních údajů",
+            "name": "gdpr_consent_file",
+            "type": "file",
+            "instructions": "Vložte soubor, který se zobrazí po kliknutí na \"souhlasím se zpracováním osobních údajů...\".",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "uploadedTo",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -109,5 +144,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1491323860
+    "modified": 1527444491
 }
