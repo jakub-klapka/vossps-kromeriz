@@ -1,0 +1,492 @@
+# Translation of Plugins - Classic Editor - Stable (latest release) in Czech
+# This file is distributed under the same license as the Plugins - Classic Editor - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2018-08-06 13:01:27+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: cs_CZ\n"
+"Project-Id-Version: Plugins - Classic Editor - Stable (latest release)\n"
+
+#: classic-editor.php:178
+msgid "Replace the Gutenberg editor with the Classic editor."
+msgstr "Nahraďte Gutenberg klasickým editorem."
+
+#: classic-editor.php:184
+msgid "Use the Gutenberg editor by default and include optional links back to the Classic editor."
+msgstr "Ve výchozím nastavení použijte Gutenberg editor a zobrazte odkazy na návrat ke Klasickému editoru."
+
+#. Author of the plugin/theme
+msgid "WordPress Contributors"
+msgstr "WordPress Contributors"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org"
+msgstr "https://cs.wordpress.org"
+
+#: classic-edit-form-advanced.php:470
+msgid "<a href=\"https://codex.wordpress.org/Media_Add_New_Screen#Edit_Media\">Documentation on Edit Media</a>"
+msgstr "<a href=\"https://codex.wordpress.org/Media_Add_New_Screen#Edit_Media\" target=\"_blank\">Manuál pro úpravy mediálních souborů</a> (anglicky)"
+
+#: classic-edit-form-advanced.php:453
+msgid "<a href=\"https://codex.wordpress.org/Pages_Add_New_Screen\">Documentation on Adding New Pages</a>"
+msgstr "<a href=\"https://codex.wordpress.org/Pages_Add_New_Screen\" target=\"_blank\">Manuál pro vytváření stránek</a> (anglicky)"
+
+#: classic-edit-form-advanced.php:454
+msgid "<a href=\"https://codex.wordpress.org/Pages_Screen#Editing_Individual_Pages\">Documentation on Editing Pages</a>"
+msgstr "<a href=\"https://codex.wordpress.org/Pages_Screen#Editing_Individual_Pages\" target=\"_blank\">Manuál pro úpravy stránek</a> (anglicky)"
+
+#: classic-edit-form-advanced.php:438
+msgid "<a href=\"https://codex.wordpress.org/Posts_Add_New_Screen\">Documentation on Writing and Editing Posts</a>"
+msgstr "<a href=\"https://codex.wordpress.org/Posts_Add_New_Screen\" target=\"_blank\">Manuál pro vytváření a úpravy příspěvků</a> (anglicky)"
+
+#: classic-edit-form-advanced.php:439 classic-edit-form-advanced.php:455
+#: classic-edit-form-advanced.php:471
+msgid "<a href=\"https://wordpress.org/support/\">Support Forums</a>"
+msgstr "Fórum podpory - <a href=\"https://wordpress.org/support/\" target=\"_blank\">anglicky</a> <a href=\"https://www.separatista.net/forum\" target=\"_blank\">česky</a>"
+
+#. translators: %s: Featured Image
+#: classic-edit-form-advanced.php:498
+msgid "<strong>%s</strong> &mdash; This allows you to associate an image with your post without inserting it. This is usually useful only if your theme makes use of the image as a post thumbnail on the home page, a custom header, etc."
+msgstr "<strong>%s</strong> &mdash; Zde můžete zvolit obrázek, který bude spojen s příspěvkem, ale nebude vložen přímo v jeho textu. Tato možnost je užitečná zejména v případě, kdy vaše šablona využívá náhledové obrázky pro graficky přehledné zobrazení příspěvků s ilustračními obrázky na úvodní stránce nebo vlastní proměnlivé záhlaví atd."
+
+#: classic-edit-form-advanced.php:552
+msgid "<strong>Connection lost.</strong> Saving has been disabled until you&#8217;re reconnected."
+msgstr "<strong>Spojení bylo přerušeno.</strong> Ukládání bylo zakázáno, dokud se spojení neobnoví."
+
+#: classic-edit-form-advanced.php:510
+msgid "<strong>Discussion</strong> &mdash; You can turn comments and pings on or off, and if there are comments on the post, you can see them here and moderate them."
+msgstr "<strong>Komentáře</strong> &mdash; Můžete zakázat/povolit komentáře a pingbacky u konkrétního příspěvku. A pokud u tohoto příspěvku už nějaké komentáře jsou, tak je tady uvidíte a můžete je odtud i přímo moderovat."
+
+#: classic-edit-form-advanced.php:493
+msgid "<strong>Format</strong> &mdash; Post Formats designate how your theme will display a specific post. For example, you could have a <em>standard</em> blog post with a title and paragraphs, or a short <em>aside</em> that omits the title and contains a short text blurb. Please refer to the Codex for <a href=\"https://codex.wordpress.org/Post_Formats#Supported_Formats\">descriptions of each post format</a>. Your theme could enable all or some of 10 possible formats."
+msgstr "<strong>Formát</strong> &mdash; Formáty příspěvků stanovují, jak vaše šablona zobrazí specifický příspěvek. Například můžete vytvořit <em>standardní</em> příspěvek blogu s nadpisem a odstavci textu, nebo krátký <em>sloupek</em>, který nemá nadpis a obsahuje krátký výňatek z knihy. Podívejte se proto prosím do kodexu pro <a href=\"https://codex.wordpress.org/Post_Formats#Supported_Formats\">popisy jednotlivých formátů příspěvků</a> (anglicky). Vaše šablona by měla podporovat všechny nebo alespoň některé z 10 možných formátů."
+
+#: classic-edit-form-advanced.php:520
+msgid "<strong>Order</strong> &mdash; Pages are usually ordered alphabetically, but you can choose your own order by entering a number (1 for first, etc.) in this field."
+msgstr "<strong>Pořadí</strong> &mdash; Stránky jsou většinou řazeny podle abecedy, ale pokud chcete, tak můžete jejich pořadí v tomto poli upravit vlastním číslováním, např. zadáním čísla 1 pro první stránku v pořadí atd."
+
+#: classic-edit-form-advanced.php:518
+msgid "<strong>Parent</strong> &mdash; You can arrange your pages in hierarchies. For example, you could have an &#8220;About&#8221; page that has &#8220;Life Story&#8221; and &#8220;My Dog&#8221; pages under it. There are no limits to how many levels you can nest pages."
+msgstr "<strong>Nadřazená stránka</strong> &mdash; Jednotlivé stránky můžete řadit do vlastní hierarchické struktury, kdy budete mít například hlavní stránku &#8222;O mně&#8220;, ke které vytvoříte související podstránky &#8222;Životopis&#8220;, &#8222;Zájmy&#8220; a &#8222;Rodina&#8220;. Neexistuje žádné omezení pro úroveň zanoření jednotlivých stránek."
+
+#: classic-edit-form-advanced.php:422
+msgid "<strong>Post editor</strong> &mdash; Enter the text for your post. There are two modes of editing: Visual and Text. Choose the mode by clicking on the appropriate tab."
+msgstr "<strong>Editor</strong> &mdash; Zadejte text příspěvku. Existují dva způsoby úprav: editor a HTML. Vyberte si požadovaný režim pomocí jedné ze záložek."
+
+#: classic-edit-form-advanced.php:519
+msgid "<strong>Template</strong> &mdash; Some themes have custom templates you can use for certain pages that might have additional features or custom layouts. If so, you&#8217;ll see them in this dropdown menu."
+msgstr "<strong>Šablona stránky</strong> &mdash; Některé šablony ve WordPressu používají pro vybrané stránky speciální šablony stránek. Tímto způsobem lze k vybraným stránkám přidávat různé další funkce nebo upravovat jejich vzhled, aniž by se přitom změnily i ostatní stránky. Pokud nějaké takové šablony stránek ve vaší šabloně existují, budou vám nabídnuty v tomto rozevíracím menu."
+
+#: classic-edit-form-advanced.php:489
+msgid "<strong>Publish</strong> &mdash; You can set the terms of publishing your post in the Publish box. For Status, Visibility, and Publish (immediately), click on the Edit link to reveal more options. Visibility includes options for password-protecting a post or making it stay at the top of your blog indefinitely (sticky). The Password protected option allows you to set an arbitrary password for each post. The Private option hides the post from everyone except editors and administrators. Publish (immediately) allows you to set a future or past date and time, so you can schedule a post to be published in the future or backdate a post."
+msgstr "<strong>Publikovat</strong> &mdash; Tato sekce obsahuje základní možnosti nastavení pro publikování napsaného textu na webu. U jednotlivých nabídek Stav, Viditelnost a Publikovat (okamžitě) můžete kliknutím na odkaz Upravit odkrýt další možnosti nastavení. Viditelnost umožňuje např. ochranu příspěvku zadaným heslem nebo naopak jeho zvýraznění na úvodní stránce. Viditelnost Chráněno heslem umožňuje vytvoření jedinečného hesla pro každý příspěvek. Soukromé příspěvky se zobrazí jen vám, šéfredaktorům a administrátorům. Publikovat (okamžitě) pak dovoluje posunout dobu zveřejnění do minulosti i budoucnosti, takže si můžete vydání příspěvku zatím jen naplánovat, nebo ho naopak opatřit dřívějším datem."
+
+#: classic-edit-form-advanced.php:509
+msgid "<strong>Send Trackbacks</strong> &mdash; Trackbacks are a way to notify legacy blog systems that you&#8217;ve linked to them. Enter the URL(s) you want to send trackbacks. If you link to other WordPress sites they&#8217;ll be notified automatically using pingbacks, and this field is unnecessary."
+msgstr "<strong>Odeslat trackbacky</strong> &mdash; Trackbacky jsou způsobem, jak upozornit jiný web v případě, že na něj v příspěvku odkazujete. Zadejte do příslušného pole konkrétní URL adresu(y), na kterou chcete trackback odeslat, a po zveřejnění příspěvku vše automaticky proběhne. Pokud odkazujete na jiný web fungující ve WordPressu, tak bude upozorněn automaticky pomocí pingbacku a tuto sekci nemusíte vůbec používat."
+
+#: classic-edit-form-advanced.php:421
+msgid "<strong>Title</strong> &mdash; Enter a title for your post. After you enter a title, you&#8217;ll see the permalink below, which you can edit."
+msgstr "<strong>Název</strong> &mdash; Do úvodního pole můžete vložit nějaký výstižný název vytvářeného příspěvku. Jakmile ho zadáte, ihned se pod ním menším písmem zobrazí automaticky vygenerovaný trvalý odkaz, který můžete také upravovat."
+
+#: classic-edit-form-advanced.php:447
+msgid "About Pages"
+msgstr "Obecně o stránkách"
+
+#: classic-edit-form-advanced.php:443
+msgid "Creating a Page is very similar to creating a Post, and the screens can be customized in the same way using drag and drop, the Screen Options tab, and expanding/collapsing boxes as you choose. This screen also has the distraction-free writing space, available in both the Visual and Text modes via the Fullscreen buttons. The Page editor mostly works the same as the Post editor, but there are some Page-specific features in the Page Attributes box."
+msgstr "Vytvoření stránky je velmi podobné vytvoření příspěvku. Zobrazení lze upravit stejným způsobem pomocí přetažení, karty „Možnosti zobrazení“ a rozbalovacích sekcí pode vašich představ. Toto zobrazení má také režim nevyrušovaného psaní. Editor stránek většinou funguje stejně jako editor příspěvků, ale jsou tam některé rozšíření specifické pro stránky nacházející se v oddíle „Nastavení zobrazovaných informací“."
+
+#: classic-edit-form-advanced.php:196 classic-edit-form-advanced.php:210
+msgid "Custom field deleted."
+msgstr "Uživatelské pole bylo smazáno."
+
+#: classic-edit-form-advanced.php:195 classic-edit-form-advanced.php:209
+msgid "Custom field updated."
+msgstr "Uživatelské pole bylo aktualizováno."
+
+#: classic-edit-form-advanced.php:333
+msgid "Custom Fields"
+msgstr "Uživatelská pole"
+
+#: classic-edit-form-advanced.php:417
+msgid "Customizing This Display"
+msgstr "Rozvržení stránky"
+
+#: classic-edit-form-advanced.php:348
+msgid "Discussion"
+msgstr "Komentáře"
+
+#: classic-edit-form-advanced.php:514
+msgid "Discussion Settings"
+msgstr "Nastavení komentářů"
+
+#: classic-edit-form-advanced.php:617
+msgid "Enter title here"
+msgstr "Zadejte název"
+
+#: classic-edit-form-advanced.php:437 classic-edit-form-advanced.php:452
+#: classic-edit-form-advanced.php:469
+msgid "For more information:"
+msgstr "Další informace:"
+
+#: classic-edit-form-advanced.php:642
+msgid "Get Shortlink"
+msgstr "Získat zkrácený odkaz"
+
+#: classic-edit-form-advanced.php:481
+msgid "Inserting Media"
+msgstr "Vkládání médií"
+
+#: classic-edit-form-advanced.php:427
+msgid "Keyboard users: When you&#8217;re working in the visual editor, you can use <kbd>Alt + F10</kbd> to access the toolbar."
+msgstr "Uživatelé klávesnice: Když pracujete v editoru, můžete použít klávesovou zkratku <kbd>Alt + F10</kbd> pro přístup k panelu nástrojů."
+
+#. translators: 1: Name of most recent post author, 2: Post edited date, 3:
+#. Post edited time
+#: classic-edit-form-advanced.php:699
+msgid "Last edited by %1$s on %2$s at %3$s"
+msgstr "Poslední úpravy: %1$s (%2$s @ %3$s)"
+
+#. translators: 1: Post edited date, 2: Post edited time
+#: classic-edit-form-advanced.php:702
+msgid "Last edited on %1$s at %2$s"
+msgstr "Poslední úpravy: %1$s @ %2$s"
+
+#: classic-edit-form-advanced.php:463
+msgid "For images only, you can click on Edit Image under the thumbnail to expand out an inline image editor with icons for cropping, rotating, or flipping the image as well as for undoing and redoing. The boxes on the right give you more options for scaling the image, for cropping it, and for cropping the thumbnail in a different way than you crop the original image. You can click on Help in those boxes to get more information."
+msgstr "Pouze u obrázků však můžete kliknutím na tlačítko &#8222;Upravit obrázek&#8220; (umístěné pod náhledem obrázku) zobrazit vestavěný editor obrázků s několika základními ikonami pro ořezávání, otáčení a překlápění obrázků, společně s funkcemi vrátit provedené změny zpět nebo je naopak zopakovat. Další sekce po pravé straně umožňují změnit velikost obrázku nebo upřesnit parametry pro jeho oříznutí. Můžete také oříznout různým způsobem samotný náhled a původně nahraný obrázek. Kliknutím na odkazy s nápovědou získáte podrobnější informace o jednotlivých funkcích editoru."
+
+#. translators: Publish box date format, see https://secure.php.net/date
+#: classic-edit-form-advanced.php:190
+msgid "M j, Y @ H:i"
+msgstr "j. n. Y @ G:i"
+
+#: classic-edit-form-advanced.php:220
+msgid "Media file updated."
+msgstr "Mediální soubor byl aktualizován."
+
+#: classic-edit-form-advanced.php:464
+msgid "Note that you crop the image by clicking on it (the Crop icon is already selected) and dragging the cropping frame to select the desired part. Then click Save to retain the cropping."
+msgstr "Ořezávání obrázku je předvolené automaticky a stačí pouze kliknutím a tažením tlačítka myši přesně označit část obrázku, kterou chcete oříznout. Poté ještě musíte kliknout na ikonu pro ořezávání, aby mohly být požadované změny zobrazeny v aktuální podobě a nakonec vše potvrdit tlačítkem &#8222;Uložit&#8220;."
+
+#: classic-edit-form-advanced.php:460
+msgid "Overview"
+msgstr "Obecný přehled"
+
+#: classic-edit-form-advanced.php:218
+msgid "Page draft updated."
+msgstr "Koncept stránky byl aktualizován."
+
+#: classic-edit-form-advanced.php:214
+msgid "Page published."
+msgstr "Stránka byla publikována."
+
+#. translators: %s: date and time of the revision
+#: classic-edit-form-advanced.php:213
+msgid "Page restored to revision from %s."
+msgstr "Následující verze stránky byla úspěšně obnovena: %s."
+
+#: classic-edit-form-advanced.php:217
+msgid "Page scheduled for: %s."
+msgstr "Stránka byla naplánována na: %s."
+
+#: classic-edit-form-advanced.php:216
+msgid "Page submitted."
+msgstr "Stránka byla odeslána ke schválení."
+
+#: classic-edit-form-advanced.php:208 classic-edit-form-advanced.php:211
+msgid "Page updated."
+msgstr "Stránka byla aktualizována."
+
+#: classic-edit-form-advanced.php:442
+msgid "Pages are similar to posts in that they have a title, body text, and associated metadata, but they are different in that they are not part of the chronological blog stream, kind of like permanent posts. Pages are not categorized or tagged, but can have a hierarchy. You can nest pages under other pages by making one the &#8220;Parent&#8221; of the other, creating a group of pages."
+msgstr "Stránky se podobají příspěvkům zejména tím, že obsahují mnoho stejných prvků, např. název, pole s editorem pro snadné vytváření obsahu a další související informace. Výrazně se však odlišují z hlediska umístění ve struktuře webu, protože nejsou součástí hlavního chronologického sledu publikovaných příspěvků, ale jde spíše o stálé (statické) informační texty. Stránky nejsou zařazovány do rubrik a nepoužívají se pro ně ani štítky, mohou mít ale zase definovanou hierarchii. Některé stránky tak můžete označovat jako podřazené vůči ostatním, a to jednoduchým výběrem z menu &#8222;Nadřazená stránka&#8220;, čímž vlastně definujete určitou skupinu vzájemně souvisejících stránek."
+
+#: classic-edit-form-advanced.php:204
+msgid "Post draft updated."
+msgstr "Koncept příspěvku byl aktualizován."
+
+#: classic-edit-form-advanced.php:200
+msgid "Post published."
+msgstr "Příspěvek byl publikován."
+
+#. translators: %s: date and time of the revision
+#: classic-edit-form-advanced.php:199
+msgid "Post restored to revision from %s."
+msgstr "Následující verze příspěvku byla úspěšně obnovena: %s."
+
+#: classic-edit-form-advanced.php:215
+msgid "Page saved."
+msgstr "Stránka byla aktualizována."
+
+#: classic-edit-form-advanced.php:201
+msgid "Post saved."
+msgstr "Příspěvek byl aktualizován."
+
+#: classic-edit-form-advanced.php:203
+msgid "Post scheduled for: %s."
+msgstr "Příspěvek byl naplánován na: %s."
+
+#: classic-edit-form-advanced.php:202
+msgid "Post submitted."
+msgstr "Příspěvek byl odeslán ke schválení."
+
+#: classic-edit-form-advanced.php:194 classic-edit-form-advanced.php:197
+msgid "Post updated."
+msgstr "Příspěvek byl aktualizován."
+
+#: classic-edit-form-advanced.php:172 classic-edit-form-advanced.php:178
+msgid "Preview page"
+msgstr "Zobrazit náhled stránky"
+
+#: classic-edit-form-advanced.php:154 classic-edit-form-advanced.php:160
+msgid "Preview post"
+msgstr "Zobrazit náhled příspěvku"
+
+#: classic-edit-form-advanced.php:465
+msgid "Remember to click Update Media to save metadata entered or changed."
+msgstr "Pokud provádíte kromě grafických úprav obrázku i nějaké další změny informací, nezapomeňte také kliknout na tlačítko &#8222;Aktualizovat mediální soubor&#8220;."
+
+#: classic-edit-form-advanced.php:330
+msgid "Send Trackbacks"
+msgstr "Odeslat trackbacky"
+
+#: classic-edit-form-advanced.php:487
+msgid "Several boxes on this screen contain settings for how your content will be published, including:"
+msgstr "Několik sekcí na této stránce obsahuje nastavení způsobu publikování obsahu, včetně:"
+
+#: classic-edit-form-advanced.php:366
+msgid "Slug"
+msgstr "Název v URL"
+
+#: classic-edit-form-advanced.php:424
+msgid "The Text mode allows you to enter HTML along with your post text. Note that &lt;p&gt; and &lt;br&gt; tags are converted to line breaks when switching to the Text editor to make it less cluttered. When you type, a single line break can be used instead of typing &lt;br&gt;, and two line breaks instead of paragraph tags. The line breaks are converted back to tags automatically."
+msgstr "HTML režim umožňuje psát kód HTML spolu s textem příspěvku. Všimněte si, že značky &lt;p&gt; a &lt;br&gt; se při přechodu na HTML převedou na zalomení řádků, aby se ušetřilo místo. Při psaní můžete použít namísto značky &lt;br&gt; jednoduché zalomení řádku (1x Enter), a místo značky pro odstavec použít dvojité zalomení řádku (2x Enter). Zalomení řádků bude automaticky převedeno na konkrétní značky."
+
+#: classic-edit-form-advanced.php:413
+msgid "The title field and the big Post Editing Area are fixed in place, but you can reposition all the other boxes using drag and drop. You can also minimize or expand them by clicking the title bar of each box. Use the Screen Options tab to unhide more boxes (Excerpt, Send Trackbacks, Custom Fields, Discussion, Slug, Author) or to choose a 1- or 2-column layout for this screen."
+msgstr "Pole pro název a velká oblast pro úpravy jsou pevně na svém místě, všechny ostatní sekce můžete přesouvat pomocí přetažení. Můžete je také minimalizovat nebo zvětšit kliknutím na lištu s nadpisem pro každou sekci. Použijte kartu &#8222;Nastavení zobrazených informací&#8220; ke zobrazení více sekcí (Stručný výpis příspěvku, Komentáře, Uživatelská pole, Název v URL, Autor) nebo pro zvolení jedno nebo dvousloupcového grafického rozvržení této stránky."
+
+#: classic-edit-form-advanced.php:259
+msgid "There is an autosave of this post that is more recent than the version below. <a href=\"%s\">View the autosave</a>"
+msgstr "Automaticky uložená verze tohoto příspěvku je novější než aktuálně zobrazená verze. <a href=\"%s\">Prohlédnout automaticky uloženou verzi</a>"
+
+#: classic-edit-form-advanced.php:462
+msgid "This screen allows you to edit four fields for metadata in a file within the media library."
+msgstr "V rámci Knihovny médií můžete u nahraného mediálního souboru upravovat i některé jeho další informace."
+
+#: classic-edit-form-advanced.php:431
+msgid "Title and Post Editor"
+msgstr "Název a editor"
+
+#: classic-edit-form-advanced.php:184
+msgid "View page"
+msgstr "Zobrazit stránku"
+
+#: classic-edit-form-advanced.php:166
+msgid "View post"
+msgstr "Zobrazit příspěvek"
+
+#: classic-edit-form-advanced.php:423
+msgid "Visual mode gives you an editor that is similar to a word processor. Click the Toolbar Toggle button to get a second row of controls."
+msgstr "Vizuální režim vám poskytuje editor, který je podobný textovému editoru. Kliknutím na tlačítko &#8222;Rozšířené možnosti&#8220; získáte druhý řádek ovládacích prvků."
+
+#: classic-edit-form-advanced.php:553
+msgid "We&#8217;re backing up this post in your browser, just in case."
+msgstr "Pro jistotu proběhla záloha tohoto příspěvku do vašeho prohlížeče."
+
+#: classic-edit-form-advanced.php:691
+msgid "Word count: %s"
+msgstr "Počet slov: %s"
+
+#: classic-edit-form-advanced.php:436
+msgid "You can also create posts with the <a href=\"%s\">Press This bookmarklet</a>."
+msgstr "Vytvářet příspěvky můžete také pomocí nástroje <a href=\"%s\">Press This</a>, což je akční záložka (bookmarklet) pro váš prohlížeč."
+
+#: classic-edit-form-advanced.php:477
+msgid "You can also embed media from many popular websites including Twitter, YouTube, Flickr and others by pasting the media URL on its own line into the content of your post/page. Please refer to the Codex to <a href=\"https://codex.wordpress.org/Embeds\">learn more about embeds</a>."
+msgstr "Můžete také vložit média z mnoha oblíbených webů jako jsou Twitter, YouTube, Flickr atd., vložením URL adresy média na svůj vlastní řádek obsahu vašeho příspěvku/stránky. Další <a href=\"https://codex.wordpress.org/Embeds\">informace o vkládání naleznete v manuálu</a> (anglicky)."
+
+#: classic-edit-form-advanced.php:426
+msgid "You can enable distraction-free writing mode using the icon to the right. This feature is not available for old browsers or devices with small screens, and requires that the full-height editor be enabled in Screen Options."
+msgstr "Režim nevyrušovaného psaní můžete aktivovat pomocí ikony vpravo. Tato funkce není k dispozici pro staré prohlížeče nebo zařízení s malými obrazovkami a vyžaduje, aby byla u &#8222;Nastavení zobrazených informací&#8220; v sekci &#8222;Další nastavení&#8220; zatržena možnost automatického roztahování vizuálního editoru."
+
+#: classic-edit-form-advanced.php:425
+msgid "You can insert media files by clicking the icons above the post editor and following the directions. You can align or edit images using the inline formatting toolbar available in Visual mode."
+msgstr "Mediální soubory můžete vkládat kliknutím na ikonu nad editorem příspěvků a dále postupovat podle instrukcí. Pro obrázky pak můžete nastavit zarovnání pomocí nástrojové lišty dostupné ve vizuálním editoru."
+
+#: classic-edit-form-advanced.php:476
+msgid "You can upload and insert media (images, audio, documents, etc.) by clicking the Add Media button. You can select from the images and files already uploaded to the Media Library, or upload new media to add to your page or post. To create an image gallery, select the images to add and click the &#8220;Create a new gallery&#8221; button."
+msgstr "Kliknutím na tlačítko &#8222;Mediální soubory&#8220; můžete nahrávat a vkládat mediální soubory (obrázky, audio, dokumenty, atd.) . Můžete si vybrat z obrázků a souborů již nahraných do knihovny médií nebo nahrát nová média, která chcete přidat na stránku nebo příspěvek. Chcete-li vytvořit galerii obrázků, vyberte obrázky, které do ní chcete přidat, a klikněte na tlačítko &#8222;Vytvořit galerii&#8220;."
+
+#. translators: 1: month, 2: day, 3: year, 4: hour, 5: minute
+#: classic-editor.php:401
+msgid "%1$s %2$s, %3$s @ %4$s:%5$s"
+msgstr "%2$s. %1$s %3$s @ %4$s:%5$s"
+
+#: classic-edit-form-advanced.php:369
+msgid "Author"
+msgstr "Autor"
+
+#: classic-editor.php:396
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: classic-edit-form-advanced.php:361
+msgid "Comments"
+msgstr "Komentáře"
+
+#: classic-edit-form-advanced.php:327
+msgid "Excerpt"
+msgstr "Stručný výpis příspěvku"
+
+#: classic-edit-form-advanced.php:699 classic-edit-form-advanced.php:702
+msgid "F j, Y"
+msgstr "j. n. Y"
+
+#: classic-edit-form-advanced.php:301
+msgctxt "post format"
+msgid "Format"
+msgstr "Formát"
+
+#: classic-edit-form-advanced.php:699 classic-edit-form-advanced.php:702
+msgid "g:i a"
+msgstr "G:i"
+
+#: classic-edit-form-advanced.php:294
+msgid "Metadata"
+msgstr "Strukturované informace"
+
+#: classic-editor.php:403
+msgid "No more comments found."
+msgstr "Nebyly nalezeny žádné další komentáře."
+
+#: classic-editor.php:395
+msgid "OK"
+msgstr "OK"
+
+#: classic-edit-form-advanced.php:524
+msgid "Page Attributes"
+msgstr "Vlastnosti stránky"
+
+#: classic-editor.php:412
+msgid "Password Protected"
+msgstr "Chráněno heslem"
+
+#: classic-editor.php:417
+msgid "Permalink saved"
+msgstr "Trvalý odkaz byl uložen"
+
+#: classic-editor.php:409
+msgid "Private"
+msgstr "Soukromé"
+
+#: classic-editor.php:413
+msgid "Privately Published"
+msgstr "Publikován jako soukromý"
+
+#: classic-editor.php:410
+msgid "Public"
+msgstr "Veřejné"
+
+#: classic-editor.php:411
+msgid "Public, Sticky"
+msgstr "Veřejný, zvýrazněný"
+
+#: classic-edit-form-advanced.php:297 classic-editor.php:404
+msgid "Publish"
+msgstr "Publikovat"
+
+#: classic-editor.php:397
+msgid "Publish on:"
+msgstr "Publikovat:"
+
+#: classic-edit-form-advanced.php:505
+msgid "Publish Settings"
+msgstr "Publikovat nastavení"
+
+#: classic-editor.php:414
+msgid "Published"
+msgstr "Publikováno"
+
+#: classic-editor.php:399
+msgid "Published on:"
+msgstr "Publikováno:"
+
+#: classic-edit-form-advanced.php:283
+msgid "Revisions"
+msgstr "Starší verze"
+
+#: classic-edit-form-advanced.php:290
+msgid "Save"
+msgstr "Uložit"
+
+#: classic-editor.php:407
+msgid "Save as Pending"
+msgstr "Uložit do fronty na schválení"
+
+#: classic-editor.php:408
+msgid "Save Draft"
+msgstr "Uložit koncept"
+
+#: classic-editor.php:416
+msgid "Saving Draft&#8230;"
+msgstr "Ukládání konceptu&#8230;"
+
+#: classic-editor.php:298
+msgid "Settings"
+msgstr "Nastavení"
+
+#: classic-editor.php:402
+msgid "Show more comments"
+msgstr "Zobrazit další komentáře"
+
+#: classic-editor.php:415
+msgid "The changes you made will be lost if you navigate away from this page."
+msgstr "Provedené změny budou ztraceny, pokud opustíte tuto stránku."
+
+#: classic-editor.php:406
+msgid "Update"
+msgstr "Aktualizovat"
+
+#: classic-editor.php:165
+msgid "Classic editor settings"
+msgstr "Nastavení klasického editoru"
+
+#: classic-editor.php:280
+msgid "Edit (Gutenberg)"
+msgstr "Upravit (Gutenberg)"
+
+#: classic-editor.php:405
+msgid "Schedule"
+msgstr "Naplánovat"
+
+#: classic-editor.php:398
+msgid "Schedule for:"
+msgstr "Naplánovat:"
+
+#. translators: %s: post title
+#: classic-editor.php:335
+msgid "Edit &#8220;%s&#8221; in the classic editor"
+msgstr "Upravit &#8222;%s&#8220; v klasickém editoru"
+
+#. Description of the plugin/theme
+msgid "Enables the WordPress classic editor and the old-style Edit Post screen layout (TinyMCE, meta boxes, etc.). Supports the older plugins that extend this screen."
+msgstr "Aktivuje klasický editor WordPressu a původní styl stránky úprav příspěvků (TinyMCE, prvky strukturovaných informací, atd.). Podporuje starší pluginy, které rozšiřují funkce původního editoru."
+
+#: classic-editor.php:243
+msgid "(Classic)"
+msgstr "(klasický)"
+
+#. Plugin Name of the plugin/theme
+msgid "Classic Editor"
+msgstr "Klasický editor"
+
+#: classic-editor.php:286 classic-editor.php:338
+msgid "Edit (Classic)"
+msgstr "Upravit (Klasický)"
