@@ -1,1 +1,1 @@
-!function(n){n(function(){n(".ped_gallery a").fancybox({padding:0,type:"image"})})}(jQuery);
+!function(e){e(function(){e(".gallery_root__section_heading").each(function(){var a=e(this);a.on("click",function(i){i.preventDefault();var o=a.hasClass("is-closed"),n=e("#"+a.data("target"));o?(n.velocity("slideDown",{duration:500}),a.removeClass("is-closed")):(n.velocity("slideUp",{duration:500}),a.addClass("is-closed"))})}),e(".ped_gallery a").fancybox({padding:0,type:"image"})})}(jQuery);

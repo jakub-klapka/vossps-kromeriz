@@ -1,5 +1,106 @@
 @import "global";
 
+.gallery_root {
+	display: flex;
+	flex-direction: column;
+
+		&__section_heading {
+			padding: 0 0 rhythm(1) rhythm(1);
+			position: relative;
+			display: block;
+			border: none;
+			background: none;
+			text-align: left;
+			font-size: 18px;
+			font-weight: bold;
+			font-family: $encode_sans;
+
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 6px;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 10px 5px 0 5px;
+					border-color: $text_grey transparent transparent transparent;
+				}
+
+				&:hover {
+					color: $main_orange;
+					cursor: pointer;
+					transition: color 200ms;
+				}
+
+				&:focus {
+					outline: none;
+				}
+
+				&.is-closed {
+
+						&::before {
+							border-width: 5px 0 5px 10px;
+							border-color: transparent transparent transparent $text_grey;
+						}
+				}
+
+		}
+
+		&__items_container {
+
+
+				&.is-closed {
+					display: none;
+				}
+		}
+
+		&__item {
+			text-decoration: none;
+			color: inherit !important;
+			display: flex;
+			margin-bottom: rhythm(1);
+			//border: 1px solid $main_orange;
+			background-color: lighten( $main_orange, 90% );
+
+				&:hover {
+					color: $main_orange !important;
+				}
+
+				&__image {
+					display: block;
+					width: 100px;
+					height: 56px;
+					margin-right: rhythm(0.5);
+					flex-shrink: 0;
+					align-self: center;
+				}
+
+				&__metadata {
+					padding: rhythm(0.5) rhythm(0.5) rhythm(0.5) 0;
+					display: flex;
+					flex-direction: column;
+					align-self: center;
+
+						& > * {
+							max-width: 611px; //IE10 bug, shouldn't do much harm in other browsers, but won't work anymore when responsive
+						}
+
+						&__heading {
+
+						}
+
+						&__description {
+
+						}
+
+				}
+
+		}
+
+}
+
 .ped_gallery {
 	font-size: 0;
 
