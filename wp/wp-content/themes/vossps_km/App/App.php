@@ -1,11 +1,12 @@
 <?php
 
-namespace Lumiart\Vosspskm\Courses;
+namespace Lumiart\Vosspskm\App;
 
 /**
- * Class App
+ * Generic component app
  *
- * Handles Courses app bootstrapping
+ * Handles autoloading and config for modern theme components.
+ * App expects existig config.php in component root.
  *
  * @package Lumiart\Vosspskm\Courses
  */
@@ -21,8 +22,11 @@ class App {
 	 */
 	private $booted_singletons = [];
 
-	public function __construct() {
-		$this->config = require( 'config.php' );
+	/**
+	 * @param string $component Provide directory name (case-sensitive) of component located in theme root
+	 */
+	public function __construct( string $component ) {
+		$this->config = require( dirname( __DIR__ ) . '/' . $component . '/config.php' );
 	}
 
 	/**

@@ -118,6 +118,19 @@ function lumi_template( $name ) {
 }
 
 /**
- * Courses
+ * Modern components autoloader
  */
-require_once( 'courses/loader.php' );
+spl_autoload_register( function( $class_name ) {
+	$prefix = 'Lumiart\Vosspskm';
+	if( substr( $class_name, 0, strlen( $prefix ) ) === $prefix ) {
+		include_once( str_replace( '\\', '/', substr( $class_name, strlen( $prefix ) + 1 ) ) . '.php' );
+	}
+} );
+
+/**
+ * Load components
+ */
+global $vossps_km_courses_app;
+$vossps_km_courses_app = new \Lumiart\Vosspskm\App\App( 'Courses' );
+$vossps_km_courses_app->boot();
+

@@ -3,10 +3,10 @@
 namespace Lumiart\Vosspskm\Courses\Controllers;
 
 use GuzzleHttp\Client;
-use Lumiart\Vosspskm\Courses\App;
-use Lumiart\Vosspskm\Courses\AutoloadableInterface;
+use Lumiart\Vosspskm\App\App;
+use Lumiart\Vosspskm\App\AutoloadableInterface;
 use Lumiart\Vosspskm\Courses\Models\CoursePost;
-use Lumiart\Vosspskm\Courses\SingletonTrait;
+use Lumiart\Vosspskm\App\SingletonTrait;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormError;

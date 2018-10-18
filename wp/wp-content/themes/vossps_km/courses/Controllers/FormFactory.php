@@ -2,7 +2,7 @@
 
 namespace Lumiart\Vosspskm\Courses\Controllers;
 
-use Lumiart\Vosspskm\Courses\SingletonTrait;
+use Lumiart\Vosspskm\App\SingletonTrait;
 use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
 use Symfony\Component\Form\Forms;
 use Symfony\Component\Validator\Validation;

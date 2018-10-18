@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.9.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-08-03 08:58:57+0000\n"
+"PO-Revision-Date: 2018-10-08 18:04:52+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -365,7 +365,7 @@ msgstr "V této sekci byste měli vysvětlit, jaké práva mají uživatelé nad
 
 #: wp-admin/includes/misc.php:1756
 msgid "What rights you have over your data"
-msgstr "Jaké máte práva?"
+msgstr "Jaká máte práva?"
 
 #: wp-admin/includes/misc.php:1754
 msgid "For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information."
@@ -417,7 +417,7 @@ msgstr "Vložený obsah z dalších webů"
 
 #: wp-admin/includes/misc.php:1731
 msgid "If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day."
-msgstr "Pokud upravujete nebo publikujete článek, bude ve vašem prohlížeči uložen další cookie. Tento cookie neobsahuje žádné osobní data a jednoduše označuje ID příspěvku, který jste právě upravili. Jeho platnost vyprší po 1 dni."
+msgstr "Pokud upravujete nebo publikujete článek, bude ve vašem prohlížeči uložen další cookie. Tento cookie neobsahuje žádná osobní data a jednoduše označuje ID příspěvku, který jste právě upravili. Jeho platnost vyprší po 1 dni."
 
 #: wp-admin/includes/misc.php:1730
 msgid "When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed."
@@ -425,7 +425,7 @@ msgstr "Při přihlašování vám nastavíme také několik souborů cookies pr
 
 #: wp-admin/includes/misc.php:1729
 msgid "If you have an account and you log in to this site, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser."
-msgstr "Pokud máte účet a přihlašujete se k tomuto webu, nastavíme dočasné cookie pro ověření, zda váš prohlížeč přijímá soubory cookies. Tento soubor cookie neobsahuje žádné osobní data a při zavření prohlížeče se zruší."
+msgstr "Pokud máte účet a přihlašujete se k tomuto webu, nastavíme dočasné cookie pro ověření, zda váš prohlížeč přijímá soubory cookies. Tento soubor cookie neobsahuje žádná osobní data a při zavření prohlížeče se zruší."
 
 #: wp-admin/includes/misc.php:1728
 msgid "If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year."
@@ -2369,7 +2369,7 @@ msgstr "Právě probíhá změna administrátorské emailové adresy na %s."
 
 #: wp-admin/install.php:378
 msgid "WordPress has been installed. Thank you, and enjoy!"
-msgstr "WordPress byla úspěšně nainstalován. Děkujeme!"
+msgstr "WordPress byl úspěšně nainstalován. Děkujeme!"
 
 #. translators: %s: DO_NOT_UPGRADE_GLOBAL_TABLES
 #: wp-admin/install.php:272
@@ -7587,7 +7587,7 @@ msgid ""
 msgstr ""
 "Právě si prohlížíte ukázkovou stránku, která byla vytvořena automaticky během instalace WordPressu. Stránky se liší od příspěvků zejména tím, že obsahují nějaký statický text a jsou zobrazovány na stále stejném místě webu (u většiny šablon jde o navigační menu). Lidé obvykle nejdříve vytvářejí základní informační stránky, kde se představují návštěvníkům webu a seznamují je se svými záměry. Může to být např. něco v následujícím stylu (osobní web):\n"
 "\n"
-"<blockquote>Vítejte! Jmenuju se Pavel a bydlím na venkově. Pracuju jako programátor a po nocích překládáme WordPress do češtiny. A tohle je můj web, kde se občas dozvíte nejen něco o programování, ale i o mé rodině a cestování. Rádi totiž jezdíme na výlety, a to bez ohledu na počasí, protože já zpívám v dešti rád...</blockquote>\n"
+"<blockquote>Vítejte! Jmenuju se Pavel a bydlím na venkově. Pracuju jako programátor a po nocích překládám WordPress do češtiny. A tohle je můj web, kde se občas dozvíte nejen něco o programování, ale i o mé rodině a cestování. Rádi totiž jezdíme na výlety, a to bez ohledu na počasí, protože já zpívám v dešti rád...</blockquote>\n"
 "\n"
 "... a nebo něco podobného (firemní web):\n"
 "\n"
