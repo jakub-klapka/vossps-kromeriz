@@ -1,0 +1,84 @@
+{
+    "key": "group_5bce220b6aeac",
+    "title": "Galerie - základní údaje",
+    "fields": [
+        {
+            "key": "field_5bce227782620",
+            "label": "Náhledový obrázek",
+            "name": "thumbnail",
+            "type": "image",
+            "instructions": "Náhledový obrázek je vidět jen na výpisu všech galerií",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5bce22128261e",
+            "label": "Datum galerie",
+            "name": "date",
+            "type": "date_picker",
+            "instructions": "Podle data akce se řadí výpis galerií v jednotlivých školních rocích",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_5bce225a8261f",
+            "label": "Popis galerie",
+            "name": "description",
+            "type": "text",
+            "instructions": "Popis je vidět pouze na výpisu všech galerií",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "gallery"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1540236052
+}

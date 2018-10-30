@@ -134,3 +134,7 @@ global $vossps_km_courses_app;
 $vossps_km_courses_app = new \Lumiart\Vosspskm\App\App( 'Courses' );
 $vossps_km_courses_app->boot();
 
+global $vossps_km_gallery_app;
+$vossps_km_gallery_app = new \Lumiart\Vosspskm\App\App( 'Gallery' );
+$vossps_km_gallery_app->boot();
+
