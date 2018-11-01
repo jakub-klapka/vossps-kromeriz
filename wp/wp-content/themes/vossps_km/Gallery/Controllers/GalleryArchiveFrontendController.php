@@ -36,6 +36,7 @@ class GalleryArchiveFrontendController {
 		] );
 
 		$data['school_years'] = $this->getGalleryGroups();
+		$data['gallery_content'] = get_field( 'gallery_content', 'options' );
 
 		\Timber::render( 'gallery_archive.twig', $data );
 

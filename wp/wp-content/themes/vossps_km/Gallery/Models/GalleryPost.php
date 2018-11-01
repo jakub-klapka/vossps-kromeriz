@@ -52,4 +52,32 @@ class GalleryPost {
 		return $this->wp_post;
 	}
 
+	public function getPostName(): string {
+		return $this->getWpPost()->post_title;
+	}
+
+	public function getPermalink(): string {
+		return get_permalink( $this->getWpPost() );
+	}
+
+	public function getThumbnailSrc(): ?string {
+
+		$attachment_id = get_field( 'thumbnail', $this->getWpPost()->ID );
+
+		if( empty( $attachment_id ) ) {
+			return null;
+		}
+
+		return wp_get_attachment_image_src( $attachment_id, 'original' )[0];
+
+	}
+
+	public function getGalleryDescription(): ?string {
+
+		$field = get_field( 'description', $this->getWpPost()->ID );
+
+		return empty( $field ) ? null : $field;
+
+	}
+
 }

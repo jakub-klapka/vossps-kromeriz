@@ -15,6 +15,7 @@ class RegisterPostTypes implements AutoloadableInterface {
 	public function boot() {
 
 		add_action( 'init', [ $this, 'registerGalleryPostType' ] );
+		add_action( 'init', [ $this, 'registerAcfOptionsPage' ] );
 
 	}
 
@@ -75,6 +76,23 @@ class RegisterPostTypes implements AutoloadableInterface {
 			'show_tagcloud' => true,
 			'show_admin_column' => true,
 			'rewrite' => false
+		] );
+
+	}
+
+	/**
+	 * Register ACF options page for gallery archive content
+	 */
+	public function registerAcfOptionsPage(): void {
+
+		if( ! \function_exists( 'acf_add_options_page' ) ) return;
+
+		acf_add_options_page( [
+			'page_title' => 'Nastavení galerie',
+			'parent_slug' => 'edit.php?post_type=gallery',
+			'redirect' => false,
+			'update_button' => 'Uložit',
+			'updated_message'	=> 'Změny uloženy',
 		] );
 
 	}

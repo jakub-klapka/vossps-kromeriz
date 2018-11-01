@@ -24,18 +24,14 @@ class SingleGalleryFrontendController {
 		$script_ctrl = $this->app->make( ScriptStyleController::class );
 		$script_ctrl->enqueueGalleryScriptsAndStyles();
 
-		$gallery = get_field( 'gallery' );
-		$images = array();
-		foreach( $gallery as $item ) {
-			$images[] = new TimberImage( $item['ID'] );
-		}
-		$data['gallery'] = $images;
-
 		$gallery_post = new \TimberPost();
 
 		$context = Timber::get_context();
 
 		$gallery = get_field( 'photogallery' );
+		if( empty( $gallery ) ) {
+			$gallery = [];
+		}
 		$images = [];
 		foreach( $gallery as $item ) {
 			$images[] = new \TimberImage( $item['ID'] );
@@ -45,7 +41,7 @@ class SingleGalleryFrontendController {
 			'breadcrumbs' => array_merge( $context['breadcrumbs'], [
 				[
 					'name' => 'Fotogalerie',
-					'url' => 'TODO' //TODO
+					'url' => get_post_type_archive_link( 'gallery' )
 				],
 				[
 					'name' => $gallery_post->name(),
