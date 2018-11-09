@@ -2,8 +2,8 @@
 
 namespace Lumiart\Vosspskm\Courses\Controllers;
 
-use Lumiart\Vosspskm\Courses\AutoloadableInterface;
-use Lumiart\Vosspskm\Courses\SingletonTrait;
+use Lumiart\Vosspskm\App\AutoloadableInterface;
+use Lumiart\Vosspskm\App\SingletonTrait;
 
 class RegisterAssets implements AutoloadableInterface {
 	use SingletonTrait;

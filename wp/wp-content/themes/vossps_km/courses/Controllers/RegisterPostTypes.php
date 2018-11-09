@@ -1,9 +1,9 @@
 <?php
 namespace Lumiart\Vosspskm\Courses\Controllers;
 
-use Lumiart\Vosspskm\Courses\App;
-use Lumiart\Vosspskm\Courses\AutoloadableInterface;
-use Lumiart\Vosspskm\Courses\SingletonTrait;
+use Lumiart\Vosspskm\App\App;
+use Lumiart\Vosspskm\App\AutoloadableInterface;
+use Lumiart\Vosspskm\App\SingletonTrait;
 
 /**
  * Class RegisterPostTypes
@@ -16,7 +16,7 @@ class RegisterPostTypes implements AutoloadableInterface {
 	use SingletonTrait;
 
 	/**
-	 * @var App
+	 * @var \Lumiart\Vosspskm\\Lumiart\Vosspskm\App\App
 	 */
 	protected $app;
 

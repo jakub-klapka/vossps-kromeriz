@@ -2,9 +2,9 @@
 
 namespace Lumiart\Vosspskm\Courses\Controllers;
 
-use Lumiart\Vosspskm\Courses\App;
+use Lumiart\Vosspskm\App\App;
 use Lumiart\Vosspskm\Courses\Models\CoursePost;
-use Lumiart\Vosspskm\Courses\SingletonTrait;
+use Lumiart\Vosspskm\App\SingletonTrait;
 use Timber;
 
 class CourseDetailController {

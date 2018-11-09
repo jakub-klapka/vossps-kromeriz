@@ -1,6 +1,6 @@
 <?php
 
-namespace Lumiart\Vosspskm\Courses;
+namespace Lumiart\Vosspskm\App;
 
 /**
  * Class SingletonTrait

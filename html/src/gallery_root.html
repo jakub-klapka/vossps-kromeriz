@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" href="../build/css/layout.css?v=3"/>
 
+	<link rel="stylesheet" href="../build/css/ped_gallery.css"/>
 
 	<link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-touch-icon-60x60.png">
@@ -106,31 +107,7 @@
 	</div>
 </header>
 
-<section class="main_slider" id="main_slider" data-timeout="7000">
-	<div class="main_slider__item">
-		<img alt="" srcset="//placehold.it/1980x340 1980w, //placehold.it/1500x340 1500w, //placehold.it/1024x340 1024w, //placehold.it/960x340 960w" />
-		<div class="main_slider__item__text">
-			<h2 class="main_slider__item__text__tagline">Lorem ipsum dolor sit. lorem20</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, sit!</p>
-		</div>
-	</div>
-	<div class="main_slider__item">
-		<img alt="" srcset="//placehold.it/1980x340 1980w, //placehold.it/1500x340 1500w, //placehold.it/1024x340 1024w, //placehold.it/960x340 960w" />
-		<div class="main_slider__item__text">
-			<h2 class="main_slider__item__text__tagline">Lorem.</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut beatae culpa cum debitis delectus dicta, dignissimos distinctio eum excepturi facere facilis id illum minima molestias mollitia nesciunt non nostrum possimus quaerat quam, quis quo ratione recusandae repellat sed similique veniam voluptate voluptatum? Aut facilis minus quia temporibus voluptas?</p>
-		</div>
-	</div>
-	<div class="main_slider__item">
-		<img alt="" srcset="//placehold.it/1980x340 1980w, //placehold.it/1500x340 1500w, //placehold.it/1024x340 1024w, //placehold.it/960x340 960w" />
-		<div class="main_slider__item__text">
-			<h2 class="main_slider__item__text__tagline">Lorem ipsum dolor sit.</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, sit!</p>
-		</div>
-	</div>
-</section>
-
-<section class="quick_links">
+<section class="quick_links is-wo_slider">
 	<div class="quick_links__wrap">
 
 		<div class="quick_links__wrap__item">
@@ -247,88 +224,197 @@
 		<nav class="main_content__breadcrumbs" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 			<ul class="main_content__breadcrumbs__menu">
 				<li class="main_content__breadcrumbs__menu__item"><a href="" itemprop="url name">Hlavní strana</a></li>
-				<li class="main_content__breadcrumbs__menu__item"><a href="" itemprop="url name">Aktuality</a></li>
+				<li class="main_content__breadcrumbs__menu__item"><a href="" itemprop="url name">Fotogalerie</a></li>
 			</ul>
 		</nav>
 
 		<h1>
 			<span class="heading_icon" aria-hidden="true"><svg><use xlink:href="#icon-teacher_table"></use></svg></span>
-			Aktuality
-			<a href="" class="home_heading_zakovska"><img class="home_heading_zakovska__image" src="images/el_zakovska.svg" alt="Elektronická Žákovská"/></a>
+			Fotogalerie
 		</h1>
 
-		<div class="main_content__news">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita facere perspiciatis possimus sint? Corporis cum debitis delectus ea eos eum in magnam obcaecati perferendis quasi recusandae soluta, ut vitae voluptatibus?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita facere perspiciatis possimus sint? Corporis cum debitis delectus ea eos eum in magnam obcaecati perferendis quasi recusandae soluta, ut vitae voluptatibus?</p>
 
-			<article class="main_content__news__item" itemscope itemtype="http://schema.org/NewsArticle">
-				<a href="" class="main_content__news__item__image" itemprop="url"><img src="//placehold.it/210x150" alt="" itemprop="image"/></a>
-				<div class="main_content__news__item__description" itemprop="description">
-					<h2 itemprop="name">Lorem ipsum dolor sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, inventore?</h2>
+		<nav class="gallery_root">
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum et hic inventore molestiae
-						quaerat quam rerum sed suscipit ullam. Cupiditate doloribus excepturi explicabo id repellat.
-						Alias amet aperiam, asperiores, autem cumque distinctio dolores, ducimus eligendi explicabo fuga
-						illum impedit ipsum minus perferendis quasi quibusdam repellat saepe sapiente voluptas
-						voluptate! Alias, at autem debitis dolores eos eveniet ipsum laborum nobis similique voluptatem!
-						Cumque dolorem dolorum fugit inventore mollitia, repudiandae rerum unde velit. Cum dignissimos
-						ipsam ipsum nisi, praesentium quam quis tenetur ut vitae voluptates. Accusamus, aperiam
-						dignissimos dolorem dolores enim incidunt inventore molestiae neque obcaecati placeat qui,
-						quibusdam sequi veritatis voluptate.</p>
+			<a href="" class="gallery_root__item">
+				<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+				<div class="gallery_root__item__metadata">
+					<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+					<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
 				</div>
+			</a>
 
-				<a class="main_content__news__item__more_link" href="" itemprop="url">Zobrazit více</a>
+			<button class="gallery_root__section_heading" data-target="gallery_root_section_1" aria-controls="gallery_root_section_1">2018/2019</button>
 
-			</article>
+			<div class="gallery_root__items_container" id="gallery_root_section_1">
 
-			<article class="main_content__news__item">
-				<div class="main_content__news__item__description">
-					<h2>Lorem ipsum dolor sit.</h2>
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum et hic inventore molestiae
-						quaerat quam rerum sed suscipit ullam. Cupiditate doloribus excepturi explicabo id repellat.
-						Alias amet aperiam, asperiores, autem cumque distinctio dolores, ducimus eligendi explicabo fuga
-						illum impedit ipsum minus perferendis quasi quibusdam repellat saepe sapiente voluptas
-						voluptate! Alias, at autem debitis dolores eos eveniet ipsum laborum nobis similique voluptatem!
-						Cumque dolorem dolorum fugit inventore mollitia, repudiandae rerum unde velit. Cum dignissimos
-						ipsam ipsum nisi, praesentium quam quis tenetur ut vitae voluptates. Accusamus, aperiam
-						dignissimos dolorem dolores enim incidunt inventore molestiae neque obcaecati placeat qui,
-						quibusdam sequi veritatis voluptate.</p>
-				</div>
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
 
-				<a class="main_content__news__item__more_link" href="">Zobrazit více</a>
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<!--<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>-->
+					</div>
+				</a>
 
-			</article>
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur deleniti dolore eos facere. Consequatur corporis nihil nostrum voluptatum. Cumque.</div>
+					</div>
+				</a>
 
-			<article class="main_content__news__item">
-				<a href="" class="main_content__news__item__image"><img src="//placehold.it/210x150" alt=""/></a>
-				<div class="main_content__news__item__description">
-					<h2>Lorem ipsum dolor sit.</h2>
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum et hic inventore molestiae
-						quaerat quam rerum sed suscipit uore molestiae neque obcaecati placeat qui,
-						quibusdam sequi veritatis voluptate.</p>
-				</div>
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
 
-				<a class="main_content__news__item__more_link" href="">Zobrazit více</a>
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
 
-			</article>
+			</div>
 
-			<nav class="main_content__news__pagination" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-				<ul class="main_content__news__pagination__ul">
-					<li class="main_content__news__pagination__ul__item"><a href="" aria-label="Předchozí" itemprop="name url">&lsaquo;</a></li>
-					<li class="main_content__news__pagination__ul__item"><a href="" itemprop="name url">1</a></li>
-					<li class="main_content__news__pagination__ul__item"><a href="" itemprop="name url">2</a></li>
-					<li class="main_content__news__pagination__ul__item is-dots" aria-hidden="true"></li>
-					<li class="main_content__news__pagination__ul__item"><a href="" itemprop="name url">10</a></li>
-					<li class="main_content__news__pagination__ul__item is-active">11</li>
-					<li class="main_content__news__pagination__ul__item"><a href="" itemprop="name url">12</a></li>
-					<li class="main_content__news__pagination__ul__item is-dots" aria-hidden="true"></li>
-					<li class="main_content__news__pagination__ul__item"><a href="" itemprop="name url">21</a></li>
-					<li class="main_content__news__pagination__ul__item"><a href="" itemprop="name url">22</a></li>
-					<li class="main_content__news__pagination__ul__item"><a href="" aria-label="Následující" itemprop="name url">&rsaquo;</a></li>
-				</ul>
-			</nav>
+			<button class="gallery_root__section_heading is-closed" data-target="gallery_root_section_2" aria-controls="gallery_root_section_2">2017/2018</button>
 
-		</div>
+			<div class="gallery_root__items_container is-closed" id="gallery_root_section_2">
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<!--<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>-->
+					</div>
+				</a>
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur deleniti dolore eos facere. Consequatur corporis nihil nostrum voluptatum. Cumque.</div>
+					</div>
+				</a>
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
+
+			</div>
+
+			<button class="gallery_root__section_heading is-closed" data-target="gallery_root_section_3" aria-controls="gallery_root_section_3">2016/2017</button>
+
+			<div class="gallery_root__items_container is-closed" id="gallery_root_section_3">
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
+
+			</div>
+
+			<button class="gallery_root__section_heading is-closed" data-target="gallery_root_section_4" aria-controls="gallery_root_section_4">2015/2016</button>
+
+			<div class="gallery_root__items_container is-closed" id="gallery_root_section_4">
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
+
+				<a href="" class="gallery_root__item">
+					<img src="https://via.placeholder.com/350x150" alt="" class="gallery_root__item__image">
+					<div class="gallery_root__item__metadata">
+						<h3 class="gallery_root__item__metadata__heading">Vítání školního roku - 1.10.2018</h3>
+						<div class="gallery_root__item__metadata__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, laboriosam.</div>
+					</div>
+				</a>
+
+			</div>
+
+		</nav>
 
 	</section>
 
@@ -336,13 +422,13 @@
 
 <section class="sponsors">
 
-	<!--<div class="sponsors__item">-->
-		<!--<img src="images/sponsors_univ2.png" alt="Univ2" width="70" height="73"/>-->
-	<!--</div>-->
+	<div class="sponsors__item">
+		<img src="images/sponsors_univ2.png" alt="Univ2" width="70" height="73"/>
+	</div>
 
-	<!--<div class="sponsors__item">-->
-		<!--<img src="images/sponsors_projekt_tera.png" alt="Projekt Tera" width="180" height="81"/>-->
-	<!--</div>-->
+	<div class="sponsors__item">
+		<img src="images/sponsors_projekt_tera.png" alt="Projekt Tera" width="180" height="81"/>
+	</div>
 
 	<div class="sponsors__item">
 		<img src="images/sponsors_esf.png" alt="ESF" width="400" height="67"/>
@@ -350,10 +436,6 @@
 
 	<div class="sponsors__item">
 		<img src="images/sponsors_zlinsky_kraj.png" alt="Zlínský kraj" width="330" height="80"/>
-	</div>
-
-	<div class="sponsors__item">
-		<img src="images/sponsors_etwinning.png" alt="Zlínský kraj" width="348" height="80"/>
 	</div>
 
 </section>
@@ -450,9 +532,12 @@
 <script type="text/javascript" src="js/libs/modernizr.js"></script>
 
 <script type="text/javascript" src="js/header_menu.js"></script><!-- jquery, velocity -->
-<script type="text/javascript" src="js/owl_carousel.js"></script><!-- jquery -->
+<!--<script type="text/javascript" src="js/owl_carousel.js"></script>&lt;!&ndash; jquery &ndash;&gt;-->
 <script type="text/javascript" src="js/scroll_to_top.js"></script><!-- jquery -->
 <script type="text/javascript" src="js/smooth_scroll.js"></script><!-- jquery, velocity -->
+
+<script src="js/libs/jquery.fancybox.js"></script> <!-- jquery -->
+<script src="js/gallery.js"></script><!--jquery, fancybox -->
 
 </body>
 </html>

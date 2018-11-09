@@ -1,2 +1,0 @@
-flush timber cache
-add pdfs to all course types

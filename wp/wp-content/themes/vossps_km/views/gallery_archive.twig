@@ -1,0 +1,51 @@
+{% extends 'master.twig' %}
+
+{% block page_title %}Fotogalerie{% endblock %}
+
+{% block main_content %}
+
+    {{ gallery_content }}
+
+    <div style="clear: both"></div>
+
+    <nav class="gallery_root">
+
+        {% macro gallery( gallery ) %}
+            <a href="{{ gallery.getPermalink() }}" class="gallery_root__item">
+                <img src="{{ gallery.getThumbnailSrc() | resize( 100, 56 ) }}" class="gallery_root__item__image">
+                <div class="gallery_root__item__metadata">
+                    <h3 class="gallery_root__item__metadata__heading">{{ gallery.getPostName() }}{% if gallery.getGalleryDate() != null %} - {{ gallery.getGalleryDate().format( 'j. n. Y' ) }}{% endif %}</h3>
+                    {% if gallery.getGalleryDescription %}
+                        <div class="gallery_root__item__metadata__description">{{ gallery.getGalleryDescription }}</div>
+                    {% endif %}
+                </div>
+            </a>
+        {% endmacro %}
+        {% import _self as macro %}
+
+        {% for gallery in school_years['root'] %}
+            {{  macro.gallery( gallery ) }}
+        {% endfor %}
+
+        {% for year, galleries in school_years if year != 'root' %}
+
+            {% set classes = [ 'gallery_root__section_heading' ] %}
+            {% if loop.first != true %}{% set classes = classes|merge(['is-closed']) %}{% endif %}
+            <button class="{{ classes|join(' ') }}" data-target="gallery_root_{{ function( 'md5', year ) }}" aria-controls="gallery_root_{{ function( 'md5', year ) }}">{{ year }}</button>
+
+            {% set classes = [ 'gallery_root__items_container' ] %}
+            {% if loop.first != true %}{% set classes = classes|merge(['is-closed']) %}{% endif %}
+            <div class="{{ classes|join(' ') }}" id="gallery_root_{{ function( 'md5', year ) }}">
+
+                {% for gallery in galleries %}
+                    {{  macro.gallery( gallery ) }}
+                {% endfor %}
+
+            </div>
+
+        {% endfor %}
+
+    </nav>
+
+{% endblock %}
+
