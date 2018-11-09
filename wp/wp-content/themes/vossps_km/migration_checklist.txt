@@ -1,1 +1,2 @@
 - refresh rewrite rules
+- modify yoast seo gallery archive rule

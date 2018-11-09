@@ -31,7 +31,7 @@ class GalleryArchiveFrontendController {
 		$data[ 'breadcrumbs' ] = array_merge( $data['breadcrumbs'], [
 			[
 				'name' => 'Fotogalerie',
-				'url' => 'TODO' //TODO
+				'url' => get_post_type_archive_link( 'gallery' )
 			]
 		] );
 

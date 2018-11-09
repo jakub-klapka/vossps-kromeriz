@@ -73,7 +73,6 @@ class RegisterPostTypes implements AutoloadableInterface {
 			],
 			'hierarchical' => true,
 			'publicly_queryable' => false,
-			'show_tagcloud' => true,
 			'show_admin_column' => true,
 			'rewrite' => false
 		] );

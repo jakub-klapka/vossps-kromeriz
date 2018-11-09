@@ -104,7 +104,7 @@ class Layout {
 	public function add_custom_context_data( $data ) {
 		$data['dokumenty_permalink'] = get_permalink( $this->dokumenty_id );
 		$data['gdpr_permalink'] = get_permalink( $this->gdpr_id );
-		$data['fotogalerie_permalink'] = get_permalink( $this->fotogalerie_id );
+		$data['fotogalerie_permalink'] = get_post_type_archive_link( 'gallery' );
 		$data['school_address'] = get_field( 'school_address', 'option' );
 		$data['school_tel'] = get_field( 'school_tel', 'option' );
 		$data['school_email'] = get_field( 'school_email', 'option' );
