@@ -46,6 +46,13 @@ class PluginConfig {
 		 */
 		add_filter( 'zalomeni_filtry', array( $this, 'add_custom_zalomeni_filter' ) );
 
+		/*
+		 * Page Links To
+		 */
+		add_filter( 'page-links-to-post-types', function( $post_types ) {
+			return ['studium'];
+		} );
+
 
 	}
 
