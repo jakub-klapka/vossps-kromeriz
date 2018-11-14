@@ -74,7 +74,13 @@ class RegisterPostTypes implements AutoloadableInterface {
 			'hierarchical' => true,
 			'publicly_queryable' => false,
 			'show_admin_column' => true,
-			'rewrite' => false
+			'rewrite' => false,
+			'capabilities' => [
+				'manage_terms' => 'manage_school_years',
+				'edit_terms' => 'manage_school_years',
+				'delete_terms' => 'manage_school_years',
+				'assign_terms' => 'edit_posts'
+			]
 		] );
 
 	}
