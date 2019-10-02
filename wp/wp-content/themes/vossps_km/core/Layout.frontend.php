@@ -114,6 +114,7 @@ class Layout {
 		$data['school_address'] = get_field( 'school_address', 'option' );
 		$data['school_tel'] = get_field( 'school_tel', 'option' );
 		$data['school_email'] = get_field( 'school_email', 'option' );
+		$data['school_email_2'] = get_field( 'school_email_2', 'option' );
 		$data['school_email_below'] = get_field( 'school_email_below', 'option' );
 		return $data;
 	}

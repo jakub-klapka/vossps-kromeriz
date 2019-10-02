@@ -3,8 +3,8 @@ vagrantfile:
     vm:
         provider:
             local:
-                box: puphpet/ubuntu1404-x64
-                box_url: puphpet/ubuntu1404-x64
+                box: bento/ubuntu-16.04
+                box_url: 'false'
                 box_version: '0'
                 chosen_virtualizer: virtualbox
                 virtualizers:
@@ -19,11 +19,15 @@ vagrantfile:
                         check_guest_tools: 0
                         update_guest_tools: 0
                 machines:
-                    vflm_x991d6v8ab8l:
+                    machine1:
                         id: pedkm
-                        hostname: ped-km.test
+                        hostname: pedkm.test
                         network:
                             private_network: 192.168.56.101
+                            forwarded_port:
+                                port1:
+                                    host: '7853'
+                                    guest: '22'
                         memory: '512'
                         cpus: '1'
         provision:
@@ -34,17 +38,17 @@ vagrantfile:
                     - puphpet/puppet/manifests
                 options:
                     - '--verbose'
-                    - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
+                    - '--hiera_config /opt/puphpet/puppet/hiera.yaml'
         synced_folder:
-            vflsf_v5sblsdjfkgk:
-                owner: www-data
+            folder1:
+                owner: www-user
                 group: www-data
                 source: ./wp
                 target: /var/www
-                sync_type: smb
+                sync_type: default
                 smb:
                     smb_host: ''
-                    smb_username: 'Kuba'
+                    smb_username: ''
                     smb_password: ''
                     mount_options:
                         dir_mode: '0775'
@@ -93,7 +97,6 @@ locale:
     settings:
         default_locale: cs_CZ.UTF-8
         locales:
-            - cs_CZ.UTF-8
             - en_GB.UTF-8
             - en_US.UTF-8
         timezone: Europe/Prague
@@ -123,52 +126,44 @@ nginx:
         names_hash_bucket_size: 128
     upstreams: {  }
     vhosts:
-        nxv_mpmav2rgf86x:
-            server_name: awesome.dev
+        vhost1:
+            server_name: awesome.test
             server_aliases:
-                - www.awesome.dev
+                - www.awesome.test
             www_root: /var/www/awesome
             listen_port: '80'
             client_max_body_size: 1m
             ssl: '0'
             locations:
-                nxvl_wuve95zyxq9v:
-                    www_root: ''
+                php_html:
+                    www_root: /var/www/awesome
                     location: /
                     autoindex: 'off'
                     internal: 'false'
                     index_files:
                         - index.html
-                        - index.htm
                         - index.php
                     try_files:
                         - $uri
                         - $uri/
                         - /index.php$is_args$args
-                    fastcgi: ''
-                    fastcgi_index: ''
-                    fastcgi_split_path: ''
-                    proxy: ''
-                    proxy_redirect: ''
-                nxvl_7j8qmmbr265m:
-                    www_root: ''
+                php_php:
+                    www_root: /var/www/awesome
                     location: '~ \.php$'
                     autoindex: 'off'
                     internal: 'false'
+                    index_files:
+                        - index.php
                     try_files:
                         - $uri
                         - $uri/
-                        - /index.php$is_args$args
-                    fastcgi: '127.0.0.1:9000'
-                    fastcgi_index: index.php
-                    fastcgi_split_path: '^(.+\.php)(/.*)$'
-                    fast_cgi_params_extra:
-                        - 'SCRIPT_FILENAME $request_filename'
-                        - 'APP_ENV dev'
                     set:
                         - '$path_info $fastcgi_path_info'
-                    proxy: ''
-                    proxy_redirect: ''
+                    fastcgi: '127.0.0.1:9000'
+                    fastcgi_index: index.php
+                    fastcgi_split_path: '^(.+?\.php)(/.*)$'
+                    fast_cgi_params_extra:
+                        - 'SCRIPT_FILENAME $document_root$fastcgi_script_name'
     proxies: {  }
 apache:
     install: '1'
@@ -181,18 +176,19 @@ apache:
         manage_group: false
         sendfile: 0
     modules:
-        - deflate
-        - expires
         - proxy_fcgi
         - rewrite
+        - deflate
+        - expires
     vhosts:
-        av_sklasjdklsf:
-            servername: ped-km.test
+        vhost1:
+            servername: pedkm.test
             serveraliases:
-                - www.ped-km.test
-            docroot: /var/www
+                - www.pedkm.test
+            docroot: /var/www/
             port: '443'
-            custom_fragment: ''
+            setenvif:
+                - 'Authorization "(.*)" HTTP_AUTHORIZATION=$1'
             ssl: '1'
             ssl_cert: ''
             ssl_key: ''
@@ -200,10 +196,12 @@ apache:
             ssl_certs_dir: ''
             ssl_protocol: ''
             ssl_cipher: ''
+            timeout: 30000
             directories:
-                avd_u1w0tsvcda41:
+                php_html:
+                    provider: directory
                     path: /var/www
-                    directoryindex: ''
+                    directoryindex: 'index.php index.html'
                     options:
                         - Indexes
                         - FollowSymlinks
@@ -212,14 +210,10 @@ apache:
                         - All
                     require:
                         - 'all granted'
-                    custom_fragment: ''
-                    provider: directory
-            files_match:
-                avfm_s4vma2cn16so:
-                    path: \.php$
-                    sethandler: 'proxy:fcgi://127.0.0.1:8000'
-                    custom_fragment: ''
+                php_php:
                     provider: filesmatch
+                    path: \.php$
+                    sethandler: 'proxy:fcgi://127.0.0.1:9000'
 letsencrypt:
     install: '1'
     settings:
@@ -246,36 +240,35 @@ php:
         session.save_path: /var/lib/php/session
         date.timezone: Europe/Prague
         error_reporting: '24567'
-        memeory_limit: 128M
         memory_limit: 128M
-        post_max: 32M
-        upload_max: 32M
+        post_max_size: 32M
+        upload_max_filesize: 32M
         disable_functions: 'apache_child_terminate,apache_setenv,define_syslog_variables,diskfreespace,disk_free_space,disk_total_space,dl,escapeshellarg,escapeshellcmd,exec,leak,link,openlog,passthru,pfsockopen,popen,posix_getgrnam,posix_getpgid,posix_getpwuid,posix_getpwnam,posix_getrlimit,posix_initgroups,posix_kill,posix_mkfifo,posix_mknod,posix_setpgid,posix_setsid,posix_setuid,posix_uname,proc_close,proc_get_status,proc_nice,proc_open,proc_terminate,putenv,readlink,register_tick_function,set_time_limit,shell_exec,show_source,symlink,syslog,system'
         max_execution_time: '30000'
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
-        phpfp_f8stqi0damgo:
+        pool1:
             ini:
                 prefix: www
+                listen: '127.0.0.1:9000'
                 security.limit_extensions: .php
                 user: www-user
                 group: www-data
-                listen: '127.0.0.1:8000'
     composer: '0'
     composer_home: ''
 xdebug:
     install: '1'
     settings:
-        xdebug.remote_host: ped-km.test
         xdebug.default_enable: '1'
         xdebug.remote_autostart: '0'
         xdebug.remote_connect_back: '1'
         xdebug.remote_enable: '1'
         xdebug.remote_handler: dbgp
         xdebug.remote_port: '9000'
+        xdebug.remote_host: pedkm.test
 blackfire:
-    install: '1'
+    install: '0'
     settings:
         server_id: ''
         server_token: ''
@@ -288,11 +281,8 @@ blackfire:
             agent_timeout: '0.25'
             log_file: ''
             log_level: '1'
-xhprof:
-    install: '0'
 wpcli:
     install: '0'
-    version: v0.24.1
 drush:
     install: '0'
     version: 8.0.5
@@ -315,15 +305,16 @@ mariadb:
         root_password: '123'
         override_options: {  }
     users:
-        mariadbnu_ewvuyfml35d4:
+        user1:
             name: dbuser
             password: '123'
     databases:
-        mariadbnd_b1xwuuslkxe0:
+        database1:
             name: dbname
+            collate: utf8_general_ci
             sql: ''
     grants:
-        mariadbng_stnzt8l7t4dj:
+        grant1:
             user: dbuser
             table: '*.*'
             privileges:
@@ -336,8 +327,9 @@ mysql:
         override_options: {  }
     users: {  }
     databases:
-        mysqlnd_vgijzy3qqj3i:
+        database1:
             name: pedkm
+            collate: utf8_general_ci
             sql: ''
     grants: {  }
 postgresql:
@@ -348,24 +340,45 @@ postgresql:
             version: '9.6'
         server:
             postgres_password: '123'
-    databases: {  }
-    users: {  }
-    grants: {  }
+    databases:
+        database1:
+            dbname: dbname
+            owner: dbuser
+    users:
+        user1:
+            username: dbuser
+            password: '123'
+            superuser: '1'
+    grants:
+        grant1:
+            role: dbuser
+            db: dbname
+            privilege:
+                - ALL
 mongodb:
     install: '0'
     settings:
         bind_ip: 127.0.0.1
         port: '27017'
     globals:
-        version: 2.6.0
-    databases: {  }
+        version: 3.6.2
+    databases:
+        database1:
+            name: dbname
+            user: dbuser
+            password: '123'
 redis:
     install: '0'
     settings:
         port: '6379'
 sqlite:
     install: '0'
-    databases: {  }
+    databases:
+        database1:
+            name: dbname
+            owner: www-data
+            group: www-data
+            sql_file: ''
 mailhog:
     install: '1'
     settings:
@@ -389,20 +402,24 @@ rabbitmq:
     install: '0'
     settings:
         port: '5672'
-    users: {  }
+    users:
+        user1:
+            admin: '1'
+            name: admin
+            password: '123'
+            tags:
+                - admin
     vhosts: {  }
     plugins: {  }
 elastic_search:
     install: '0'
     settings:
-        version: 2.3.1
+        version: 6.1.2
         java_install: true
     instances:
-        esi_8kvh156m5bz4:
+        instance1:
             name: es-01
-solr:
-    install: '0'
-    settings:
-        version: 5.5.2
-        port: '8984'
+            jvm_options:
+                - '-Xms2G'
+                - '-Xmx2G'
 
